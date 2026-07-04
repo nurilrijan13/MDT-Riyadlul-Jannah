@@ -7,6 +7,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, BookOpen, Award, Users, CheckCircle, GraduationCap, Calendar, Clock, MapPin } from 'lucide-react';
 import { SCHOOL_PROFILE } from '../data';
+import schoolLogo from '../assets/images/school_logo_1783148432809.jpg';
 
 interface HeroProps {
   setCurrentTab: (tab: string) => void;
@@ -113,15 +114,18 @@ export default function Hero({ setCurrentTab }: HeroProps) {
               className="relative bg-emerald-950/70 border border-emerald-500/20 p-6 rounded-2xl shadow-2xl backdrop-blur-md w-full max-w-md overflow-hidden"
             >
               {/* Islamic Pattern Visual Box */}
-              <div className="bg-gradient-to-b from-emerald-800 to-emerald-950 h-48 rounded-xl flex flex-col justify-center items-center text-center p-4 relative overflow-hidden">
-                <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=600')` }} />
-                <div className="absolute text-emerald-300 font-arabic text-4xl mb-2 font-bold select-none opacity-40">
-                  رياض الجنة
-                </div>
-                <h3 className="text-xl font-bold tracking-tight text-white z-10">MDT Riyadlul Jannah</h3>
-                <p className="text-emerald-300 text-xs mt-1 z-10 tracking-widest uppercase">Pasir Gombong - Cikarang</p>
-                <div className="mt-4 px-3 py-1 bg-emerald-900/60 border border-emerald-500/20 text-[10px] text-emerald-200 uppercase tracking-widest rounded-full z-10 flex items-center space-x-1.5 animate-pulse-soft">
-                  <span className="w-2 h-2 bg-emerald-400 rounded-full" />
+              <div className="bg-gradient-to-b from-emerald-800 to-emerald-950 h-52 rounded-xl flex flex-col justify-center items-center text-center p-4 relative overflow-hidden">
+                <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=600')` }} />
+                <img 
+                  src={schoolLogo} 
+                  alt="Logo MDT" 
+                  className="w-24 h-24 md:w-26 md:h-26 object-contain rounded-full border-2 border-emerald-500/30 bg-white p-0.5 z-10 shadow-lg animate-pulse-subtle"
+                  referrerPolicy="no-referrer"
+                />
+                <h3 className="text-base font-bold tracking-tight text-white z-10 mt-2">MDT Riyadlul Jannah</h3>
+                <p className="text-emerald-300 text-[10px] z-10 tracking-widest uppercase">Pasir Gombong - Cikarang Utara</p>
+                <div className="mt-2.5 px-3 py-1 bg-emerald-900/60 border border-emerald-500/20 text-[9px] text-emerald-200 uppercase tracking-widest rounded-full z-10 flex items-center space-x-1.5">
+                  <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
                   <span>Karakter · Al-Qur'an · Akhlak</span>
                 </div>
               </div>

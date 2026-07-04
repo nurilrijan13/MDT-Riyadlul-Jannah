@@ -9,16 +9,16 @@ export const SCHOOL_PROFILE = {
   name: "MDT Riyadlul Jannah",
   fullName: "Madrasah Diniyah Taklimiyah Riyadlul Jannah",
   address: "Jl. Industri No. 114 Kp. Sempu Gardu Ds. Pasir Gombong Kec. Cikarang Utara Kab. Bekasi Prov. Jawa Barat",
-  phone: "+62 812-3456-7890", // Mock WA Number
+  phone: "+62 813-1580-5263", // WhatsApp Humas & PPDB
   email: "info@mdtriyadluljannah.sch.id",
   instagram: "@mdt.riyadluljannah",
   facebook: "MDT Riyadlul Jannah Pasir Gombong",
   youtube: "MDT Riyadlul Jannah Official",
   mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15862.909015941916!2d107.1512836!3d-6.2995572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6984bf41d99999%3A0x6b776f4e138a3795!2sPasirgombong%2C%20Cikarang%20Utara%2C%20Bekasi%20Regency%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid",
   headmaster: "Ust. Mahrus Ali",
-  establishedYear: "2012",
+  establishedYear: "1999",
   tagline: "Membentuk Generasi Islami yang Berakhlakul Karimah, Cerdas, dan Hafal Al-Qur'an",
-  history: "Madrasah Diniyah Taklimiyah (MDT) Riyadlul Jannah didirikan pada tahun 2012 atas inisiasi para tokoh agama dan masyarakat di Kampung Pasir Gombong, Cikarang Utara. Didorong oleh kesadaran akan pentingnya pendidikan agama yang terstruktur bagi anak-anak usia sekolah dasar di tengah pesatnya perkembangan industri di kawasan Cikarang, MDT Riyadlul Jannah hadir sebagai pilar pembinaan moral dan spiritual. Dari awal pendirian dengan hanya belasan santri, kini lembaga ini telah mendidik lebih dari ratusan santri dan dipercaya oleh masyarakat Pasir Gombong untuk membentuk karakter Islami sejak dini.",
+  history: "Madrasah Diniyah Taklimiyah (MDT) Riyadlul Jannah didirikan pada tahun 1999 atas inisiasi para tokoh agama dan masyarakat di Kampung Pasir Gombong, Cikarang Utara. Didorong oleh kesadaran akan pentingnya pendidikan agama yang terstruktur bagi anak-anak usia sekolah dasar di tengah pesatnya perkembangan industri di kawasan Cikarang, MDT Riyadlul Jannah hadir sebagai pilar pembinaan moral dan spiritual. Dari awal pendirian dengan hanya belasan santri, kini lembaga ini telah mendidik lebih dari ratusan santri dan dipercaya oleh masyarakat Pasir Gombong untuk membentuk karakter Islami sejak dini.",
   vision: "Terwujudnya Generasi Qur'ani yang Beriman Kokoh, Berakhlakul Karimah, Unggul dalam Ilmu Agama, dan Mandiri.",
   mission: [
     "Menyelenggarakan pendidikan keagamaan Islam (Diniyah) yang berkualitas bagi anak-anak usia sekolah.",
@@ -81,19 +81,35 @@ export const PROGRAMS: Program[] = [
     ]
   },
   {
-    id: "majelis-taklim",
-    name: "Kajian Mingguan Orang Tua / Umum",
-    description: "Majelis ilmu khusus wali santri dan masyarakat sekitar Pasir Gombong. Membina pemahaman keagamaan keluarga, parenting Islami, dan mempererat tali silaturahim antarwarga.",
+    id: "takhossus-nahwu",
+    name: "Takhossus Nahwiyyah wa Shorrfiyyah",
+    description: "Program intensif pendalaman ilmu alat (Shorof dan Nahwu) untuk membekali santri agar mampu membaca, memahami, dan meng-i'rab kitab-kitab kuning secara mandiri dan presisi.",
+    duration: "2 Tahun",
+    targetAge: "Remaja / Lanjutan",
+    schedule: "Senin s.d. Jumat (16.30 - 18.00 WIB)",
+    icon: "BookOpen",
+    subjects: [
+      "Nahwu (Kitab Al-Jurumiyyah & Imrithi)",
+      "Sharaf (Kitab Al-Amsilah At-Tasrifiyyah)",
+      "I'rabul Qur'an",
+      "Qawaidul Fiqhiyyah Dasar",
+      "Praktek Membaca Kitab Gundul"
+    ]
+  },
+  {
+    id: "bahtsul-masail",
+    name: "Bathul Masa'il Usbu'iyah",
+    description: "Forum diskusi ilmiah mingguan santri tingkat lanjutan untuk membahas dan memecahkan berbagai persoalan keagamaan (Fikih kontemporer) berdasarkan literatur kitab muktabarah.",
     duration: "Rutin Mingguan",
-    targetAge: "Dewasa / Orang Tua Wali",
-    schedule: "Setiap Ahad Pagi (07.30 - 09.00 WIB)",
+    targetAge: "Lanjutan / Umum",
+    schedule: "Setiap Malam Jum'at (Ba'da Isya)",
     icon: "Users",
     subjects: [
-      "Tafsir Yasin & Surah Pilihan",
-      "Fikih Rumah Tangga (Munakahat)",
-      "Parenting Islami (Mendidik Anak Zaman Now)",
-      "Kajian Kitab Riyadhus Shalihin",
-      "Tanya Jawab Keislaman Kontemporer"
+      "Kajian Fikih Kontemporer",
+      "Metodologi Pengambilan Hukum (Istinbath)",
+      "Perbandingan Madzhab Dasar",
+      "Telaah Kitab Fathul Mu'in / Fathul Wahhab",
+      "Teknik Diskusi & Presentasi Ilmiah"
     ]
   }
 ];
@@ -184,7 +200,8 @@ export const TUITION_FEES = {
     "mdt-ula": 120000,  // Package of books for Awaliyah
     "mdt-wustha": 140000,
     "tahfidz-junior": 60000,
-    "majelis-taklim": 0
+    "takhossus-nahwu": 100000,
+    "bahtsul-masail": 0
   },
   uniforms: {
     boy: 180000, // Green and white Moslem uniform with peci

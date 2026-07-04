@@ -14,6 +14,7 @@ import Portal from './components/Portal';
 import Announcements from './components/Announcements';
 import Contact from './components/Contact';
 import { SCHOOL_PROFILE } from './data';
+import schoolLogo from './assets/images/school_logo_1783148432809.jpg';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<string>('home');
@@ -128,6 +129,64 @@ export default function App() {
               </div>
 
             </div>
+
+            {/* Prominent Visi & Misi Section on Home Page */}
+            <div className="border-b border-brand-divider bg-[#FAF9F6] p-8 md:p-12 space-y-10">
+              <div className="text-center max-w-3xl mx-auto space-y-2">
+                <span className="text-[10px] uppercase tracking-widest font-sans font-extrabold text-brand-green px-2.5 py-1 bg-brand-green/10 inline-block">
+                  Arah &amp; Komitmen Kami
+                </span>
+                <h3 className="text-2xl md:text-3xl font-bold text-brand-dark font-serif tracking-tight">
+                  Visi &amp; Misi Madrasah
+                </h3>
+                <p className="text-xs md:text-sm text-slate-500 font-light max-w-xl mx-auto">
+                  Prinsip utama yang memandu seluruh proses pembelajaran, pembinaan karakter, dan pengelolaan pendidikan di MDT Riyadlul Jannah.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                {/* Visi Card */}
+                <div className="lg:col-span-5 bg-brand-green text-brand-cream p-8 rounded-2xl flex flex-col justify-between border border-brand-divider/25">
+                  <div className="space-y-4">
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#C4A484]">Visi</span>
+                    <blockquote className="text-lg md:text-xl font-serif font-semibold italic leading-relaxed">
+                      "{SCHOOL_PROFILE.vision}"
+                    </blockquote>
+                  </div>
+                  <div className="pt-6 border-t border-brand-cream/10 mt-6 flex items-center justify-between text-[11px] uppercase tracking-wider font-mono opacity-80">
+                    <span>MDT Riyadlul Jannah</span>
+                    <span>Sejak {SCHOOL_PROFILE.establishedYear}</span>
+                  </div>
+                </div>
+
+                {/* Misi Card */}
+                <div className="lg:col-span-7 bg-white p-8 rounded-2xl border border-brand-divider flex flex-col justify-between">
+                  <div className="space-y-4">
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-brand-green">Misi</span>
+                    <div className="space-y-3.5">
+                      {SCHOOL_PROFILE.mission.map((item, index) => (
+                        <div key={index} className="flex items-start gap-3">
+                          <span className="w-5 h-5 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">
+                            {index + 1}
+                          </span>
+                          <p className="text-xs text-brand-dark/85 leading-relaxed">
+                            {item}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="pt-4 border-t border-brand-divider/50 mt-4 text-right">
+                    <button 
+                      onClick={() => setCurrentTab('profile')}
+                      className="text-[11px] font-bold text-brand-green hover:text-brand-gold hover:underline"
+                    >
+                      Lihat Detail Struktur Madrasah &rarr;
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         )}
 
@@ -146,10 +205,18 @@ export default function App() {
         {/* Col 1: Brand Info */}
         <div className="md:col-span-4 p-8 border-b md:border-b-0 md:border-r border-brand-divider flex flex-col justify-between bg-brand-cream/20">
           <div className="space-y-4">
-            <div className="flex flex-col">
-              <span className="text-[9px] uppercase tracking-widest font-sans font-extrabold text-brand-green">Madrasah Diniyah Taklimiyah</span>
-              <h4 className="text-xl md:text-2xl font-serif font-black tracking-tight text-brand-dark">RIYADLUL JANNAH</h4>
-              <span className="text-xs italic font-serif text-brand-gold font-bold mt-0.5">Pasir Gombong, Cikarang Utara</span>
+            <div className="flex items-center gap-3">
+              <img 
+                src={schoolLogo} 
+                alt="Logo MDT" 
+                className="w-14 h-14 md:w-16 md:h-16 object-contain rounded-full border border-brand-divider/50 bg-white p-0.5"
+                referrerPolicy="no-referrer"
+              />
+              <div className="flex flex-col">
+                <span className="text-[9px] uppercase tracking-widest font-sans font-extrabold text-brand-green">Madrasah Diniyah Taklimiyah</span>
+                <h4 className="text-xl font-serif font-black tracking-tight text-brand-dark leading-tight">RIYADLUL JANNAH</h4>
+                <span className="text-xs italic font-serif text-brand-gold font-bold mt-0.5">Pasir Gombong, Cikarang Utara</span>
+              </div>
             </div>
             <p className="text-xs font-sans text-brand-dark/65 leading-relaxed font-light">
               Membentuk generasi Qur’ani yang cerdas secara spritual, luhur secara akhlak, dan teguh mengamalkan syari’at Islam Ahlussunnah Wal Jama’ah.

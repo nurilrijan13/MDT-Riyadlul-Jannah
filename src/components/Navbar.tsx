@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { Menu, X, School, BookOpen } from 'lucide-react';
 import { SCHOOL_PROFILE } from '../data';
+import schoolLogo from '../assets/images/school_logo_1783148432809.jpg';
 
 interface NavbarProps {
   currentTab: string;
@@ -36,21 +37,29 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-22 items-center">
           {/* Logo & Brand */}
-          <div className="flex flex-col cursor-pointer select-none" onClick={() => handleNavClick('home')}>
-            <span className="text-[10px] md:text-xs uppercase tracking-widest font-sans font-extrabold text-brand-green">
-              Madrasah Diniyah Taklimiyah
-            </span>
-            <div className="flex items-baseline space-x-1.5">
-              <h1 className="text-xl md:text-3xl font-serif font-black tracking-tight text-brand-dark leading-none">
-                RIYADLUL JANNAH
-              </h1>
-              <span className="text-xs md:text-sm italic font-serif text-brand-gold font-semibold">
-                رياض الجنة
+          <div className="flex items-center gap-3 cursor-pointer select-none" onClick={() => handleNavClick('home')}>
+            <img 
+              src={schoolLogo} 
+              alt="Logo MDT Riyadlul Jannah" 
+              className="w-16 h-16 md:w-18 md:h-18 object-contain rounded-full border border-brand-divider/50 bg-white p-0.5"
+              referrerPolicy="no-referrer"
+            />
+            <div className="flex flex-col">
+              <span className="text-[10px] md:text-xs uppercase tracking-widest font-sans font-extrabold text-brand-green">
+                Madrasah Diniyah Taklimiyah
+              </span>
+              <div className="flex items-baseline space-x-1.5">
+                <h1 className="text-xl md:text-2xl xl:text-3xl font-serif font-black tracking-tight text-brand-dark leading-none">
+                  RIYADLUL JANNAH
+                </h1>
+                <span className="text-xs md:text-sm italic font-serif text-brand-gold font-semibold">
+                  رياض الجنة
+                </span>
+              </div>
+              <span className="text-[9px] md:text-[10px] font-sans text-brand-dark/60 tracking-wider leading-none mt-1">
+                Pasir Gombong, Cikarang Utara, Bekasi
               </span>
             </div>
-            <span className="text-[9px] md:text-[10px] font-sans text-brand-dark/60 tracking-wider leading-none mt-1">
-              Pasir Gombong, Cikarang Utara, Bekasi
-            </span>
           </div>
 
           {/* Desktop Menu */}

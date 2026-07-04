@@ -104,7 +104,7 @@ export default function Contact() {
               <h4 className="font-bold text-slate-800 text-sm uppercase">Hubungi WhatsApp</h4>
               <p className="text-xs text-slate-500 mt-1">Layanan Informasi PPDB & Humas:</p>
               <a 
-                href={`https://wa.me/6281234567890?text=Assalamu%27alaikum%20Humas%20MDT%20Riyadlul%20Jannah%2C%20saya%20ingin%20bertanya%20mengenai...`}
+                href={`https://wa.me/${SCHOOL_PROFILE.phone.replace(/[^0-9]/g, '')}?text=Assalamu%27alaikum%20Humas%20MDT%20Riyadlul%20Jannah%2C%20saya%20ingin%20bertanya%20mengenai...`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-emerald-700 hover:text-emerald-800 font-bold text-sm block mt-1"

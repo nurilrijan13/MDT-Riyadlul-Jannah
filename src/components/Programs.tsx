@@ -71,9 +71,6 @@ export default function Programs() {
                   </div>
                   <div>
                     <h3 className="font-bold text-sm md:text-base leading-tight">{program.name}</h3>
-                    <p className={`text-xs mt-0.5 ${isSelected ? 'text-emerald-150' : 'text-slate-500'}`}>
-                      {program.targetAge}
-                    </p>
                   </div>
                 </button>
               );
