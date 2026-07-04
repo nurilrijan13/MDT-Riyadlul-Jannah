@@ -1,0 +1,6 @@
+{
+  "name": "MDT Riyadlul Jannah",
+  "description": "Website resmi Madrasah Diniyah Taklimiyah (MDT) Riyadlul Jannah Pasir Gombong, Cikarang Utara, Bekasi. Portal informasi, pendaftaran santri baru, dan monitoring akademik.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
