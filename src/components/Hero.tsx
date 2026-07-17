@@ -68,18 +68,18 @@ export default function Hero({ setCurrentTab }: HeroProps) {
               className="flex flex-col sm:flex-row gap-4 pt-2"
             >
               <button 
-                onClick={() => setCurrentTab('programs')}
+                onClick={() => setCurrentTab('registration')}
                 className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 active:scale-98 transition-all text-white font-bold rounded-xl shadow-lg shadow-emerald-950/40 hover:shadow-emerald-500/20 flex items-center justify-center space-x-2 cursor-pointer group"
               >
-                <span>Lihat Program Ajar</span>
+                <span>Daftar Santri Baru</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               
               <button 
-                onClick={() => setCurrentTab('profile')}
+                onClick={() => setCurrentTab('programs')}
                 className="px-8 py-4 bg-white/5 hover:bg-white/10 active:scale-98 border border-white/10 hover:border-white/20 transition-all text-emerald-100 hover:text-white font-semibold rounded-xl flex items-center justify-center space-x-2 cursor-pointer"
               >
-                <span>Kenali Riyadlul Jannah</span>
+                <span>Lihat Program Ajar</span>
               </button>
             </motion.div>
 

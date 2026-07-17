@@ -14,6 +14,7 @@ import Announcements from './components/Announcements';
 import Contact from './components/Contact';
 import Gallery from './components/Gallery';
 import About from './components/About';
+import Registration from './components/Registration';
 import { SCHOOL_PROFILE } from './data';
 import schoolLogo from './assets/images/school_logo_1784044808340.jpg';
 
@@ -193,6 +194,7 @@ export default function App() {
 
         {currentTab === 'profile' && <Profile />}
         {currentTab === 'programs' && <Programs />}
+        {currentTab === 'registration' && <Registration />}
         {currentTab === 'gallery' && <Gallery />}
         {currentTab === 'portal' && <Portal />}
         {currentTab === 'announcements' && <Announcements />}
@@ -237,6 +239,7 @@ export default function App() {
               <button onClick={() => { setCurrentTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Beranda</button>
               <button onClick={() => { setCurrentTab('profile'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Profil &amp; Guru</button>
               <button onClick={() => { setCurrentTab('programs'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Program Ajar</button>
+              <button onClick={() => { setCurrentTab('registration'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer text-emerald-700">Pendaftaran Baru</button>
               <button onClick={() => { setCurrentTab('gallery'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Galeri Foto</button>
               <button onClick={() => { setCurrentTab('portal'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Rapor Santri</button>
               <button onClick={() => { setCurrentTab('announcements'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Berita &amp; Agenda</button>
