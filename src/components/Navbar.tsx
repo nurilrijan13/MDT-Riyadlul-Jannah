@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { Menu, X, School, BookOpen } from 'lucide-react';
 import { SCHOOL_PROFILE } from '../data';
-import schoolLogo from '../assets/images/school_logo_1783148432809.jpg';
+import schoolLogo from '../assets/images/school_logo_1784044808340.jpg';
 
 interface NavbarProps {
   currentTab: string;
@@ -20,9 +20,10 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
     { id: 'home', label: 'Beranda' },
     { id: 'profile', label: 'Profil & Sejarah' },
     { id: 'programs', label: 'Program' },
-    { id: 'admission', label: 'PPDB (Pendaftaran)' },
+    { id: 'gallery', label: 'Galeri Foto' },
     { id: 'portal', label: 'Portal Santri' },
     { id: 'announcements', label: 'Informasi & Agenda' },
+    { id: 'about', label: 'Tentang Kami' },
     { id: 'contact', label: 'Hubungi' }
   ];
 
@@ -85,10 +86,10 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
             </div>
             
             <button
-              onClick={() => handleNavClick('admission')}
+              onClick={() => handleNavClick('contact')}
               className="ml-6 px-5 py-3 bg-brand-green hover:bg-brand-green/90 text-brand-cream font-sans text-xs uppercase tracking-widest font-bold transition-all duration-150 cursor-pointer"
             >
-              Daftar Online
+              Hubungi Kami
             </button>
           </div>
 
@@ -126,14 +127,6 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
                 </button>
               );
             })}
-            <div className="pt-3">
-              <button
-                onClick={() => handleNavClick('admission')}
-                className="w-full py-4 bg-brand-green hover:bg-brand-green/90 text-brand-cream font-sans text-xs uppercase tracking-widest font-bold text-center"
-              >
-                Pendaftaran (PPDB)
-              </button>
-            </div>
           </div>
         </div>
       )}

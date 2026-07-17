@@ -9,12 +9,13 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Profile from './components/Profile';
 import Programs from './components/Programs';
-import Admission from './components/Admission';
 import Portal from './components/Portal';
 import Announcements from './components/Announcements';
 import Contact from './components/Contact';
+import Gallery from './components/Gallery';
+import About from './components/About';
 import { SCHOOL_PROFILE } from './data';
-import schoolLogo from './assets/images/school_logo_1783148432809.jpg';
+import schoolLogo from './assets/images/school_logo_1784044808340.jpg';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<string>('home');
@@ -25,7 +26,7 @@ export default function App() {
       {/* Top Banner with Editorial aesthetic */}
       <div className="bg-brand-green text-brand-cream py-2.5 px-4 text-center border-b border-brand-divider text-[10px] md:text-xs tracking-widest uppercase font-sans font-extrabold flex items-center justify-center gap-2">
         <span className="w-2 h-2 rounded-full bg-[#C4A484] animate-pulse shrink-0" />
-        <span>Penerimaan Santri Baru TA 2026/2027 Telah Dibuka Secara Online &amp; Offline</span>
+        <span>Portal Informasi Resmi Madrasah Diniyah Taklimiyah Riyadlul Jannah Pasir Gombong</span>
       </div>
 
       {/* Cohesive Navbar */}
@@ -192,9 +193,10 @@ export default function App() {
 
         {currentTab === 'profile' && <Profile />}
         {currentTab === 'programs' && <Programs />}
-        {currentTab === 'admission' && <Admission />}
+        {currentTab === 'gallery' && <Gallery />}
         {currentTab === 'portal' && <Portal />}
         {currentTab === 'announcements' && <Announcements />}
+        {currentTab === 'about' && <About />}
         {currentTab === 'contact' && <Contact />}
 
       </main>
@@ -232,12 +234,14 @@ export default function App() {
           <div className="space-y-4">
             <h5 className="text-[10px] uppercase tracking-widest font-sans font-extrabold text-brand-green">Peta Navigasi</h5>
             <div className="grid grid-cols-2 gap-x-4 gap-y-3 font-sans text-xs font-bold text-brand-dark/80">
-              <button onClick={() => setCurrentTab('home')} className="text-left hover:text-brand-green cursor-pointer">Beranda</button>
-              <button onClick={() => setCurrentTab('profile')} className="text-left hover:text-brand-green cursor-pointer">Profil &amp; Guru</button>
-              <button onClick={() => setCurrentTab('programs')} className="text-left hover:text-brand-green cursor-pointer">Program Ajar</button>
-              <button onClick={() => setCurrentTab('admission')} className="text-left hover:text-brand-green cursor-pointer">Pendaftaran</button>
-              <button onClick={() => setCurrentTab('portal')} className="text-left hover:text-brand-green cursor-pointer">Rapor Santri</button>
-              <button onClick={() => setCurrentTab('announcements')} className="text-left hover:text-brand-green cursor-pointer">Berita &amp; Agenda</button>
+              <button onClick={() => { setCurrentTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Beranda</button>
+              <button onClick={() => { setCurrentTab('profile'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Profil &amp; Guru</button>
+              <button onClick={() => { setCurrentTab('programs'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Program Ajar</button>
+              <button onClick={() => { setCurrentTab('gallery'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Galeri Foto</button>
+              <button onClick={() => { setCurrentTab('portal'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Rapor Santri</button>
+              <button onClick={() => { setCurrentTab('announcements'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Berita &amp; Agenda</button>
+              <button onClick={() => { setCurrentTab('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Tentang Kami</button>
+              <button onClick={() => { setCurrentTab('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Hubungi Kami</button>
             </div>
           </div>
           
@@ -270,7 +274,7 @@ export default function App() {
           <div className="flex justify-between items-center pt-8 border-t border-brand-divider/40 font-sans">
             <span className="text-[10px] uppercase font-extrabold text-brand-green">Peta Google Maps</span>
             <a 
-              href="https://maps.google.com" 
+              href={SCHOOL_PROFILE.mapDirectUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="w-9 h-9 border border-brand-dark rounded-full flex items-center justify-center text-brand-dark hover:bg-brand-dark hover:text-brand-cream transition-colors shrink-0 cursor-pointer"

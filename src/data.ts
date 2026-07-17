@@ -9,16 +9,23 @@ export const SCHOOL_PROFILE = {
   name: "MDT Riyadlul Jannah",
   fullName: "Madrasah Diniyah Taklimiyah Riyadlul Jannah",
   address: "Jl. Industri No. 114 Kp. Sempu Gardu Ds. Pasir Gombong Kec. Cikarang Utara Kab. Bekasi Prov. Jawa Barat",
-  phone: "+62 813-1580-5263", // WhatsApp Humas & PPDB
+  phone: "+62 859-6646-1178", // WhatsApp Humas
   email: "info@mdtriyadluljannah.sch.id",
   instagram: "@mdt.riyadluljannah",
   facebook: "MDT Riyadlul Jannah Pasir Gombong",
   youtube: "MDT Riyadlul Jannah Official",
-  mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15862.909015941916!2d107.1512836!3d-6.2995572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6984bf41d99999%3A0x6b776f4e138a3795!2sPasirgombong%2C%20Cikarang%20Utara%2C%20Bekasi%20Regency%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid",
+  mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.736009849206!2d107.1517449!3d-6.2984027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69856376aa60db%3A0xbfa5176193686755!2sSDIT%20Riyadlul%20Jannah!5e0!3m2!1sid!2sid!4v1719999999999!5m2!1sid!2sid",
+  mapDirectUrl: "https://maps.app.goo.gl/7dMgHj19RTKaBU1r7",
   headmaster: "Ust. Mahrus Ali",
   establishedYear: "1999",
   tagline: "Membentuk Generasi Islami yang Berakhlakul Karimah, Cerdas, dan Hafal Al-Qur'an",
   history: "Madrasah Diniyah Taklimiyah (MDT) Riyadlul Jannah didirikan pada tahun 1999 atas inisiasi para tokoh agama dan masyarakat di Kampung Pasir Gombong, Cikarang Utara. Didorong oleh kesadaran akan pentingnya pendidikan agama yang terstruktur bagi anak-anak usia sekolah dasar di tengah pesatnya perkembangan industri di kawasan Cikarang, MDT Riyadlul Jannah hadir sebagai pilar pembinaan moral dan spiritual. Dari awal pendirian dengan hanya belasan santri, kini lembaga ini telah mendidik lebih dari ratusan santri dan dipercaya oleh masyarakat Pasir Gombong untuk membentuk karakter Islami sejak dini.",
+  detailedHistory: [
+    "Madrasah Diniyah Taklimiyah (MDT) Riyadlul Jannah didirikan pada tahun 1999 di Kampung Sempu Gardu, Desa Pasir Gombong, Cikarang Utara, Bekasi. Lembaga ini lahir dari kepedulian mendalam para kiai, tokoh agama, dan sesepuh masyarakat setempat terhadap perkembangan moral anak-anak. Di tengah pesatnya industrialisasi Cikarang yang bertransformasi menjadi kawasan industri terbesar di Asia Tenggara, terdapat kekhawatiran besar akan berkurangnya porsi pendidikan agama bagi anak-anak usia sekolah dasar pasca-jam sekolah umum.",
+    "Pada awal perjalanannya, kegiatan belajar mengajar berlangsung dengan sangat sederhana menggunakan fasilitas musholla kampung dan ruang tamu para ustadz. Dengan jumlah santri generasi pertama yang hanya berkisar belasan anak, para asatidzah berjuang dengan penuh keikhlasan mengajarkan dasar-dasar bacaan Al-Qur'an (Iqro), hafalan surat pendek, serta praktik wudhu dan shalat fardhu. Keikhlasan perjuangan ini membuahkan kepercayaan yang terus tumbuh dari kalangan orang tua santri.",
+    "Memasuki dekade kedua, seiring dengan meningkatnya kebutuhan masyarakat Pasir Gombong, madrasah melakukan pembenahan fasilitas fisik maupun kurikulum. Didukung oleh swadaya masyarakat dan para donatur, MDT Riyadlul Jannah berhasil membangun ruang-ruang kelas yang representatif dan nyaman bagi proses belajar santri. Secara administratif, madrasah pun resmi terdaftar di Kementerian Agama Republik Indonesia, yang menegaskan legalitas operasionalnya.",
+    "Kini, setelah lebih dari dua dekade berkiprah, MDT Riyadlul Jannah telah melahirkan ratusan alumni yang tersebar di berbagai pondok pesantren terkemuka di Jawa dan madrasah lanjutan. Kami terus berkomitmen menjaga tradisi luhur keislaman ala Ahlussunnah wal Jama'ah An-Nahdliyah, sekaligus menerapkan inovasi metode pengajaran tahfidz yang ramah anak guna menjawab tantangan zaman dan membentuk karakter generasi emas bangsa yang sholih dan sholihah."
+  ],
   vision: "Terwujudnya Generasi Qur'ani yang Beriman Kokoh, Berakhlakul Karimah, Unggul dalam Ilmu Agama, dan Mandiri.",
   mission: [
     "Menyelenggarakan pendidikan keagamaan Islam (Diniyah) yang berkualitas bagi anak-anak usia sekolah.",
@@ -26,6 +33,38 @@ export const SCHOOL_PROFILE = {
     "Membina kemampuan membaca, menulis, memahami, dan menghafal Al-Qur'an secara tartil sesuai kaidah tajwid.",
     "Membangun sinergi yang harmonis antara madrasah, orang tua, dan lingkungan masyarakat sekitar untuk perlindungan moral anak.",
     "Mengenalkan nilai-nilai kepemimpinan dan kemandirian berlandaskan ukhuwah Islamiyah."
+  ],
+  coreValues: [
+    {
+      title: "Adab & Akhlakul Karimah",
+      subtitle: "الأَخْلَاقُ الْكَرِيمَةُ",
+      description: "Menempatkan adab di atas ilmu. Kami membimbing santri untuk senantiasa menghormati orang tua, asatidzah, menyayangi sesama, dan berprilaku sopan baik di madrasah maupun di rumah.",
+      icon: "Heart"
+    },
+    {
+      title: "Interaksi & Cinta Al-Qur'an",
+      subtitle: "حُبُّ الْقُرْآنِ",
+      description: "Membiasakan santri akrab dengan Al-Qur'an sejak dini melalui tahsin (perbaikan makhraj), hafalan Juz Amma secara tartil, serta menumbuhkan rasa cinta pada firman-firman Allah SWT.",
+      icon: "Sparkles"
+    },
+    {
+      title: "Tafaqquh Fiddin",
+      subtitle: "التَّفَقُّهُ فِي الدِّينِ",
+      description: "Memberikan pemahaman mendasar yang kokoh terhadap syariat Islam Ahlussunnah wal Jama'ah, mencakup akidah yang lurus, tata cara ibadah yang sah (fiqih), dan keteladanan akhlak Rasulullah.",
+      icon: "BookOpen"
+    },
+    {
+      title: "Disiplin & Istiqomah",
+      subtitle: "الْاِسْتِقَامَةُ",
+      description: "Melatih kebiasaan shalat berjamaah, berdzikir, tertib waktu belajar, serta konsisten dalam mengulang-ulang hafalan (muraja'ah) secara berkesinambungan.",
+      icon: "Clock"
+    },
+    {
+      title: "Ukhuwah & Kebersamaan",
+      subtitle: "الْعَمَلُ الْجَمَاعِيُّ",
+      description: "Memupuk rasa kepedulian sosial, tolong-menolong, dan semangat persaudaraan islam (Ukhuwah Islamiyah) dalam interaksi antar santri guna membangun karakter mandiri yang harmonis.",
+      icon: "Users"
+    }
   ]
 };
 
@@ -160,8 +199,8 @@ export const TEACHERS: Teacher[] = [
 export const ANNOUNCEMENTS: Announcement[] = [
   {
     id: "penerimaan-santri-baru-2026",
-    title: "Pendaftaran Santri Baru (PPDB) Tahun Ajaran 2026/2027 Telah Dibuka",
-    content: "MDT Riyadlul Jannah membuka pendaftaran santri baru untuk jenjang Awaliyah (Ula) dan program Tahfidz Junior. Pendaftaran gelombang I dibuka mulai tanggal 1 Mei hingga 30 Juli 2026. Persyaratan administrasi meliputi fotokopi Akta Kelahiran, fotokopi Kartu Keluarga, dan pasfoto ukuran 3x4 sebanyak 2 lembar. Calon orang tua wali dapat mendaftar secara online melalui website ini pada menu 'Pendaftaran' atau datang langsung ke sekretariat madrasah setiap sore hari kerja.",
+    title: "Informasi Pendaftaran Santri Baru Tahun Ajaran 2026/2027",
+    content: "MDT Riyadlul Jannah menginformasikan pendaftaran santri baru untuk jenjang Awaliyah (Ula) dan program Tahfidz Junior. Calon orang tua wali dapat langsung mengunjungi sekretariat madrasah setiap hari kerja ba'da Ashar untuk berkonsultasi, melihat fasilitas kelas, serta mendaftarkan putra-putrinya secara langsung. Persyaratan administrasi meliputi fotokopi Akta Kelahiran, fotokopi Kartu Keluarga, dan pasfoto ukuran 3x4 sebanyak 2 lembar.",
     date: "2026-05-01",
     category: "pengumuman",
     important: true

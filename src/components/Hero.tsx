@@ -7,7 +7,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, BookOpen, Award, Users, CheckCircle, GraduationCap, Calendar, Clock, MapPin } from 'lucide-react';
 import { SCHOOL_PROFILE } from '../data';
-import schoolLogo from '../assets/images/school_logo_1783148432809.jpg';
+import schoolLogo from '../assets/images/school_logo_1784044808340.jpg';
 
 interface HeroProps {
   setCurrentTab: (tab: string) => void;
@@ -68,10 +68,10 @@ export default function Hero({ setCurrentTab }: HeroProps) {
               className="flex flex-col sm:flex-row gap-4 pt-2"
             >
               <button 
-                onClick={() => setCurrentTab('admission')}
+                onClick={() => setCurrentTab('programs')}
                 className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 active:scale-98 transition-all text-white font-bold rounded-xl shadow-lg shadow-emerald-950/40 hover:shadow-emerald-500/20 flex items-center justify-center space-x-2 cursor-pointer group"
               >
-                <span>Daftar Santri Baru (PPDB)</span>
+                <span>Lihat Program Ajar</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               
@@ -96,7 +96,7 @@ export default function Hero({ setCurrentTab }: HeroProps) {
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Asatidzah Kompeten</span>
+                <span>Asatidz Kompeten</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -184,8 +184,8 @@ export default function Hero({ setCurrentTab }: HeroProps) {
               <div className="text-xs sm:text-sm text-slate-400 uppercase tracking-wider font-medium mt-1">Tahun Pengabdian</div>
             </div>
             <div>
-              <div className="text-2xl sm:text-3xl font-bold text-emerald-400">5+</div>
-              <div className="text-xs sm:text-sm text-slate-400 uppercase tracking-wider font-medium mt-1">Asatidzah Kompeten</div>
+              <div className="text-2xl sm:text-3xl font-bold text-emerald-400">16+</div>
+              <div className="text-xs sm:text-sm text-slate-400 uppercase tracking-wider font-medium mt-1">Asatidz Kompeten</div>
             </div>
             <div>
               <div className="text-2xl sm:text-3xl font-bold text-emerald-400">A (Sangat Baik)</div>

@@ -176,14 +176,14 @@ export default function Announcements() {
                   ))}
                 </div>
 
-                {/* Additional Call to Actions in announcements (e.g. PPDB instructions) */}
+                {/* Additional Call to Actions in announcements */}
                 {activeAnnouncement.category === 'pengumuman' && (
                   <div className="bg-emerald-50 border border-emerald-100 p-4 rounded-xl flex items-start space-x-3 mt-4">
                     <AlertCircle className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
                     <div className="text-xs">
-                      <h4 className="font-bold text-emerald-950">Langkah Pengumpulan Berkas</h4>
+                      <h4 className="font-bold text-emerald-950">Informasi Sekretariat</h4>
                       <p className="text-emerald-800/80 mt-1 leading-relaxed">
-                        Jika Anda mendaftar secara online melalui portal PPDB kami, silakan simpan atau cetak Lembar Register lalu bawa berkas fisik ke kantor MDT Riyadlul Jannah ba'da Ashar untuk validasi lisan santri.
+                        Seluruh berkas fisik atau pertanyaan terkait administrasi madrasah dapat dikonsultasikan langsung di kantor sekretariat MDT Riyadlul Jannah setiap hari kerja ba'da Ashar.
                       </p>
                     </div>
                   </div>
@@ -212,7 +212,7 @@ export default function Announcements() {
           <div className="shrink-0">
             <div className="px-5 py-2.5 bg-white/10 border border-white/10 rounded-xl text-center font-sans text-xs">
               <span className="block font-bold text-emerald-300 uppercase">Sekretariat MDT</span>
-              <span className="block text-[10px] text-white mt-0.5">Buka: Senin-Jumat 13.30 - 17.30 WIB</span>
+              <span className="block text-[10px] text-white mt-0.5">Buka: Senin-Jumat 07.00 - 17.00 WIB</span>
             </div>
           </div>
         </div>

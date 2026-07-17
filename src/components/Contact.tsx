@@ -13,7 +13,7 @@ export default function Contact() {
     parentName: '',
     phone: '',
     email: '',
-    subject: 'Pendaftaran',
+    subject: 'Pertanyaan',
     message: ''
   });
 
@@ -34,8 +34,8 @@ export default function Contact() {
       a: "Sangat diperbolehkan. Meskipun lokasi kami berada di Kampung Pasir Gombong, kami terbuka menerima pendaftaran santri baru dari perumahan sekitar maupun wilayah di luar Cikarang Utara, asalkan transportasi santri dapat diakomodasi oleh orang tua secara mandiri."
     },
     {
-      q: "Bagaimana dengan biaya pendaftaran dan iuran bulanan (SPP)?",
-      a: "Kami berkomitmen menjaga biaya pendidikan tetap terjangkau bagi seluruh lapisan masyarakat. Biaya daftar ulang awal (PPDB) hanya Rp 150.000 (tidak termasuk seragam/buku pilihan), dan iuran syahriyah (SPP bulanan) sebesar Rp 75.000. Tersedia juga keringanan khusus atau beasiswa bagi santri yatim atau kurang mampu."
+      q: "Bagaimana dengan biaya pendidikan dan iuran bulanan (SPP)?",
+      a: "Kami berkomitmen menjaga biaya pendidikan tetap terjangkau bagi seluruh lapisan masyarakat. Biaya administrasi masuk awal hanya Rp 150.000 (tidak termasuk seragam/buku pilihan), dan iuran syahriyah (SPP bulanan) sebesar Rp 75.000. Tersedia juga keringanan khusus atau beasiswa bagi santri yatim atau kurang mampu."
     },
     {
       q: "Apakah ada program setoran hafalan Al-Qur'an (Tahfidz)?",
@@ -56,7 +56,7 @@ export default function Contact() {
       parentName: '',
       phone: '',
       email: '',
-      subject: 'Pendaftaran',
+      subject: 'Pertanyaan',
       message: ''
     });
     setTimeout(() => {
@@ -102,7 +102,7 @@ export default function Contact() {
             </div>
             <div>
               <h4 className="font-bold text-slate-800 text-sm uppercase">Hubungi WhatsApp</h4>
-              <p className="text-xs text-slate-500 mt-1">Layanan Informasi PPDB & Humas:</p>
+              <p className="text-xs text-slate-500 mt-1">Layanan Informasi & Humas:</p>
               <a 
                 href={`https://wa.me/${SCHOOL_PROFILE.phone.replace(/[^0-9]/g, '')}?text=Assalamu%27alaikum%20Humas%20MDT%20Riyadlul%20Jannah%2C%20saya%20ingin%20bertanya%20mengenai...`}
                 target="_blank"
@@ -121,7 +121,7 @@ export default function Contact() {
             <div>
               <h4 className="font-bold text-slate-800 text-sm uppercase">Jam Pelayanan Kantor</h4>
               <p className="text-xs text-slate-500 mt-1">Setiap Senin s.d. Jumat</p>
-              <span className="text-slate-800 font-semibold text-xs block mt-1">13.30 - 17.30 WIB (Sore)</span>
+              <span className="text-slate-800 font-semibold text-xs block mt-1">07.00 - 17.00 WIB</span>
             </div>
           </div>
         </div>
@@ -189,7 +189,7 @@ export default function Contact() {
                     onChange={handleInputChange}
                     className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-emerald-500 rounded-lg"
                   >
-                    <option value="Pendaftaran">Pendaftaran Santri Baru (PPDB)</option>
+                    <option value="Pertanyaan">Pertanyaan Umum / Konsultasi</option>
                     <option value="Kegiatan">Kegiatan & Pembelajaran</option>
                     <option value="Donasi">Donasi & Infaq pembangunan</option>
                     <option value="KritikSaran">Kritik & Saran</option>
@@ -237,10 +237,19 @@ export default function Contact() {
                 />
               </div>
 
-              <div className="pt-2">
-                <p className="text-xs text-slate-500 leading-relaxed font-sans">
+              <div className="pt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-slate-100 mt-2">
+                <p className="text-xs text-slate-500 leading-relaxed font-sans max-w-md">
                   <strong>Lokasi:</strong> Sekretariat kami berada di lingkungan padat Kampung Pasir Gombong, Cikarang Utara. Sangat mudah dijangkau menggunakan kendaraan beroda dua maupun roda empat dari Jalan Raya Cikarang-Cibarusah atau perumahan sekitar.
                 </p>
+                <a
+                  href={(SCHOOL_PROFILE as any).mapDirectUrl || "https://maps.app.goo.gl/7dMgHj19RTKaBU1r7"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center space-x-2 px-4 py-2 bg-[#1B4332] hover:bg-[#153427] text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-xs transition-colors cursor-pointer shrink-0"
+                >
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>Buka Peta</span>
+                </a>
               </div>
             </div>
           </div>
