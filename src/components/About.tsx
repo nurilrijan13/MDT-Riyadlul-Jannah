@@ -43,15 +43,15 @@ export default function About() {
               <div className="relative w-full h-full rounded-xl overflow-hidden bg-brand-cream border border-brand-divider/40">
                 <img 
                   src={developerPhoto} 
-                  alt="Ust. M. Nurul Alim (Wile Alim)" 
+                  alt="NURUL ALIM" 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
               </div>
               <div className="pt-3 text-center">
-                <h4 className="font-serif font-black text-brand-dark text-base">Ust. M. Nurul Alim (Wile Alim)</h4>
-                <p className="text-[10px] font-sans uppercase tracking-widest text-brand-green font-bold mt-0.5">Staf Lembaga, Pendidik &amp; Developer</p>
+                <h4 className="font-serif font-black text-brand-dark text-base">NURUL ALIM</h4>
+                <p className="text-[10px] font-sans uppercase tracking-widest text-brand-green font-bold mt-0.5">Developer &amp; Mahasiswa</p>
               </div>
             </motion.div>
           </div>
@@ -77,8 +77,8 @@ export default function About() {
               {/* Student Metadata Grid */}
               <div className="grid grid-cols-2 gap-4 text-sm font-sans">
                 <div className="space-y-1">
-                  <span className="text-[11px] uppercase tracking-wider text-slate-400 font-bold">Nama Lengkap &amp; Gelar</span>
-                  <p className="font-bold text-slate-800 text-base">Ust. M. Nurul Alim (Wile Alim)</p>
+                  <span className="text-[11px] uppercase tracking-wider text-slate-400 font-bold">Nama Lengkap</span>
+                  <p className="font-bold text-slate-800 text-base">NURUL ALIM</p>
                 </div>
                 <div className="space-y-1">
                   <span className="text-[11px] uppercase tracking-wider text-slate-400 font-bold">NIM</span>
@@ -132,8 +132,8 @@ export default function About() {
                   <Heart className="w-5 h-5 fill-current" />
                 </div>
                 <div>
-                  <h5 className="font-extrabold text-sm text-white font-serif leading-none">Ust. M. Nurul Alim (Wile Alim)</h5>
-                  <p className="text-[10px] uppercase font-sans tracking-widest text-brand-gold mt-1 font-bold">Staf Lembaga, Pendidik &amp; Mahasiswa STIE Ekadharma</p>
+                  <h5 className="font-extrabold text-sm text-white font-serif leading-none">NURUL ALIM</h5>
+                  <p className="text-[10px] uppercase font-sans tracking-widest text-brand-gold mt-1 font-bold">Mahasiswa STIE Ekadharma</p>
                 </div>
               </div>
             </div>
