@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { Menu, X, School, BookOpen } from 'lucide-react';
 import { SCHOOL_PROFILE } from '../data';
-import schoolLogo from '../assets/images/school_logo_1784044808340.jpg';
+import schoolLogo from '../assets/images/lambang_mdt_rj_logo.png';
 
 interface NavbarProps {
   currentTab: string;

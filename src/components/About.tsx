@@ -6,7 +6,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { GraduationCap, User, BookOpen, Quote, ShieldCheck, Heart, Award } from 'lucide-react';
-import developerPhoto from '../assets/images/developer_photo_professional_studio_1784270720143.jpg';
+import developerPhoto from '../assets/images/IMG_20260714_221630.jpg';
 
 export default function About() {
   return (

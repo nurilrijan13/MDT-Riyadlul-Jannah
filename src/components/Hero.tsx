@@ -7,7 +7,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, BookOpen, Award, Users, CheckCircle, GraduationCap, Calendar, Clock, MapPin } from 'lucide-react';
 import { SCHOOL_PROFILE } from '../data';
-import schoolLogo from '../assets/images/school_logo_1784044808340.jpg';
+import schoolLogo from '../assets/images/lambang_mdt_rj_logo.png';
 
 interface HeroProps {
   setCurrentTab: (tab: string) => void;

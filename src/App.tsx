@@ -16,7 +16,7 @@ import Gallery from './components/Gallery';
 import About from './components/About';
 import Registration from './components/Registration';
 import { SCHOOL_PROFILE } from './data';
-import schoolLogo from './assets/images/school_logo_1784044808340.jpg';
+import schoolLogo from './assets/images/lambang_mdt_rj_logo.png';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<string>('home');
