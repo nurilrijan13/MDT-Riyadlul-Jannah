@@ -83,7 +83,7 @@ export default function Contact() {
         </div>
 
         {/* Info Cards Row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div className="bg-white border border-[#D4CFC4] p-6 rounded-2xl flex items-start space-x-4 shadow-xs">
             <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
               <MapPin className="w-5 h-5" />
@@ -122,6 +122,38 @@ export default function Contact() {
               <h4 className="font-bold text-slate-800 text-sm uppercase">Jam Pelayanan Kantor</h4>
               <p className="text-xs text-slate-500 mt-1">Setiap Senin s.d. Jumat</p>
               <span className="text-slate-800 font-semibold text-xs block mt-1">07.00 - 17.00 WIB</span>
+            </div>
+          </div>
+
+          <div className="bg-white border border-[#D4CFC4] p-6 rounded-2xl flex items-start space-x-4 shadow-xs">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
+              <Instagram className="w-5 h-5" />
+            </div>
+            <div className="flex-grow">
+              <h4 className="font-bold text-slate-800 text-sm uppercase">Media Sosial Resmi</h4>
+              <p className="text-xs text-slate-500 mt-1">Ikuti kabar pesantren kami:</p>
+              <div className="space-y-1.5 mt-2 font-sans">
+                <a 
+                  href="https://www.instagram.com/ppriyadluljannahpusat" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-xs text-pink-700 hover:text-pink-800 font-bold"
+                >
+                  <Instagram className="w-3.5 h-3.5 text-pink-600 shrink-0" />
+                  <span className="underline">ppriyadluljannahpusat</span>
+                </a>
+                <a 
+                  href="https://www.tiktok.com/@ppriyadluljannahpusat" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-xs text-slate-800 hover:text-black font-bold"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 text-slate-800 shrink-0">
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.73 4.1 1.13 1.08 2.65 1.66 4.22 1.75v3.86c-1.39-.03-2.76-.41-3.95-1.14-.65-.41-1.22-.95-1.65-1.59v7.8c-.04 2.1-.85 4.14-2.32 5.64-1.62 1.62-3.9 2.49-6.19 2.39-2.3-.04-4.52-.98-6.05-2.72-1.57-1.8-2.31-4.22-2.03-6.59.26-2.22 1.51-4.24 3.39-5.4 1.83-1.12 4.1-1.39 6.16-.72v4.06c-1.1-.53-2.43-.45-3.46.22-1.01.65-1.61 1.78-1.58 2.98.02 1.25.7 2.4 1.77 3.03 1.08.64 2.45.64 3.53 0 1.05-.63 1.71-1.78 1.71-3v-13.8z"/>
+                  </svg>
+                  <span className="underline">ppriyadluljannahpusat</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
