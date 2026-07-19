@@ -9,6 +9,7 @@ import { Image as ImageIcon, Calendar, Tag, ChevronLeft, ChevronRight, X, ZoomIn
 
 import fotoGedungRJ from '../assets/images/fotogedungrj.jpeg';
 import bagianDepanRJ from '../assets/images/bagian depan rj.jpeg';
+import ujianDaur2 from '../assets/images/ujiandaur2.jpeg';
 
 interface GalleryItem {
   id: string;
@@ -21,6 +22,15 @@ interface GalleryItem {
 }
 
 const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: 'gal-ujian-daur2',
+    title: 'Pelaksanaan Ujian Imtihan MDT Daur II',
+    description: 'Pelaksanaan Ujian Imtihan MDT Daur II / Semester 2 yang diadakan pada tanggal 2-5 Juni 2026 sebagai bagian dari evaluasi kompetensi keilmuan santri.',
+    imageUrl: ujianDaur2,
+    category: 'kegiatan',
+    categoryLabel: 'Kegiatan Santri',
+    date: '2026-06-02'
+  },
   {
     id: 'gal-gedung-1',
     title: 'Gedung Utama Pondok Pesantren Riyadlul Jannah',
