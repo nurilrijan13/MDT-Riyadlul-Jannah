@@ -7,6 +7,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Image as ImageIcon, Calendar, Tag, ChevronLeft, ChevronRight, X, ZoomIn, Search, Layers } from 'lucide-react';
 
+import fotoGedungRJ from '../assets/images/fotogedungrj.jpeg';
+import bagianDepanRJ from '../assets/images/bagian depan rj.jpeg';
+
 interface GalleryItem {
   id: string;
   title: string;
@@ -18,6 +21,24 @@ interface GalleryItem {
 }
 
 const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: 'gal-gedung-1',
+    title: 'Gedung Utama Pondok Pesantren Riyadlul Jannah',
+    description: 'Arsitektur megah gedung utama Pondok Pesantren Riyadlul Jannah di Pasir Gombong, Cikarang Utara. Gedung ini berfungsi sebagai pusat kegiatan belajar-mengajar santri (MDT) dan asrama tempat bermukim.',
+    imageUrl: fotoGedungRJ,
+    category: 'fasilitas',
+    categoryLabel: 'Fasilitas & Gedung',
+    date: '2026-07-18'
+  },
+  {
+    id: 'gal-gedung-2',
+    title: 'Bagian Depan Kompleks Riyadlul Jannah',
+    description: 'Pemandangan gerbang depan dan halaman utama kompleks pesantren dan Madrasah Diniyah Takmiliyah (MDT) Riyadlul Jannah yang asri, rapi, dan kondusif untuk menuntut ilmu.',
+    imageUrl: bagianDepanRJ,
+    category: 'fasilitas',
+    categoryLabel: 'Fasilitas & Gedung',
+    date: '2026-07-18'
+  },
   {
     id: 'gal-1',
     title: 'Kajian Kitab Kuning Safinatun Najah',

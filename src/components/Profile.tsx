@@ -18,9 +18,13 @@ import {
   Calendar, 
   ArrowRight,
   Bookmark,
-  CheckCircle2
+  CheckCircle2,
+  Camera
 } from 'lucide-react';
 import { SCHOOL_PROFILE, TEACHERS } from '../data';
+
+import fotoGedungRJ from '../assets/images/fotogedungrj.jpeg';
+import bagianDepanRJ from '../assets/images/bagian depan rj.jpeg';
 
 // Helper function to resolve core values icons dynamically
 const getIcon = (iconName: string) => {
@@ -279,6 +283,131 @@ export default function Profile() {
 
               </div>
 
+            </div>
+          </div>
+        </div>
+
+        {/* Leadership & Caregivers Section */}
+        <div className="space-y-8">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-emerald-50 text-emerald-800 text-[10px] font-extrabold rounded-full uppercase tracking-widest border border-emerald-100">
+              <Users className="w-3.5 h-3.5" />
+              <span>Pimpinan &amp; Pengasuh</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 font-serif">Struktur Pengasuh &amp; Yayasan</h3>
+            <p className="text-slate-600 text-xs md:text-sm font-light">
+              Bimbingan dan keteladanan mulia dari para pengasuh pondok pesantren dan ketua yayasan Riyadlul Jannah.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* Pengasuh Pondok Putra */}
+            <div className="bg-white border border-brand-divider rounded-2xl p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col items-center text-center space-y-4 group">
+              <div className="w-14 h-14 bg-emerald-50 text-emerald-800 rounded-full flex items-center justify-center border border-emerald-100 group-hover:bg-emerald-750 group-hover:text-white transition-colors duration-300">
+                <Users className="w-6 h-6" />
+              </div>
+              <div className="space-y-1">
+                <span className="text-[10px] uppercase tracking-widest font-bold text-emerald-700 block">Pengasuh Pondok Putra</span>
+                <h4 className="font-extrabold text-slate-900 text-base font-serif group-hover:text-emerald-800 transition-colors">
+                  KH. ABDUL HAKAM MAKKI, M. M
+                </h4>
+              </div>
+              <div className="w-10 h-0.5 bg-brand-green/25" />
+              <p className="text-xs text-slate-500 font-light leading-relaxed">
+                Membimbing santri putra dalam penempaan akhlakul karimah, ketertiban ibadah, serta penguasaan kajian kitab-kitab salafiyah.
+              </p>
+            </div>
+
+            {/* Pengasuh Pondok Putri */}
+            <div className="bg-white border border-brand-divider rounded-2xl p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col items-center text-center space-y-4 group">
+              <div className="w-14 h-14 bg-emerald-50 text-emerald-800 rounded-full flex items-center justify-center border border-emerald-100 group-hover:bg-emerald-750 group-hover:text-white transition-colors duration-300">
+                <Users className="w-6 h-6" />
+              </div>
+              <div className="space-y-1">
+                <span className="text-[10px] uppercase tracking-widest font-bold text-emerald-700 block">Pengasuh Pondok Putri</span>
+                <h4 className="font-extrabold text-slate-900 text-base font-serif group-hover:text-emerald-800 transition-colors">
+                  NYAI HJ. MUNIFAH MU'IZ, S. PD. I
+                </h4>
+              </div>
+              <div className="w-10 h-0.5 bg-brand-green/25" />
+              <p className="text-xs text-slate-500 font-light leading-relaxed">
+                Mengasuh santri putri dengan keteladanan budi luhur, kelembutan tutur kata, serta pendalaman hafalan kitab dan Al-Qur'an.
+              </p>
+            </div>
+
+            {/* Ketua Yayasan */}
+            <div className="bg-white border border-brand-divider rounded-2xl p-6 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col items-center text-center space-y-4 group">
+              <div className="w-14 h-14 bg-emerald-50 text-emerald-800 rounded-full flex items-center justify-center border border-emerald-100 group-hover:bg-emerald-750 group-hover:text-white transition-colors duration-300">
+                <Shield className="w-6 h-6" />
+              </div>
+              <div className="space-y-1">
+                <span className="text-[10px] uppercase tracking-widest font-bold text-emerald-700 block">Ketua Yayasan</span>
+                <h4 className="font-extrabold text-slate-900 text-base font-serif group-hover:text-emerald-800 transition-colors">
+                  LORA AMINULLOH HASIB HAKAM
+                </h4>
+              </div>
+              <div className="w-10 h-0.5 bg-brand-green/25" />
+              <p className="text-xs text-slate-500 font-light leading-relaxed">
+                Memimpin sinergi pengelolaan madrasah dan pondok pesantren serta pengembangan infrastruktur pendidikan yang modern dan islami.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Gallery / Dokumentasi Kompleks Pesantren & Madrasah Section */}
+        <div className="space-y-8">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-emerald-50 text-emerald-800 text-[10px] font-extrabold rounded-full uppercase tracking-widest border border-emerald-100">
+              <Camera className="w-3.5 h-3.5" />
+              <span>Gedung &amp; Sarana</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 font-serif">Dokumentasi Kompleks Pesantren</h3>
+            <p className="text-slate-600 text-xs md:text-sm font-light">
+              Tampilan arsitektur fisik serta sarana pendukung kegiatan belajar dan tinggal para santri di Pondok Pesantren Riyadlul Jannah.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto font-sans">
+            {/* Foto 1: Gedung Utama */}
+            <div className="bg-white border border-brand-divider rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col group">
+              <div className="relative aspect-[16/10] overflow-hidden bg-slate-50">
+                <img 
+                  src={fotoGedungRJ} 
+                  alt="Gedung Utama Riyadlul Jannah" 
+                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+                <span className="absolute bottom-4 left-4 text-[9px] uppercase tracking-widest font-extrabold bg-emerald-800 text-brand-cream px-2.5 py-1 rounded-md shadow-md">
+                  Gedung Utama
+                </span>
+              </div>
+              <div className="p-6 space-y-2">
+                <h4 className="font-extrabold text-slate-900 text-base font-serif">Gedung Utama Pondok Pesantren</h4>
+                <p className="text-xs text-slate-500 font-light leading-relaxed">
+                  Fisik bangunan megah yang menjadi asrama bermukim bagi santri putra dan putri sekaligus pusat bimbingan pengajian Al-Qur'an dan kitab-kitab salafiyah.
+                </p>
+              </div>
+            </div>
+
+            {/* Foto 2: Bagian Depan */}
+            <div className="bg-white border border-brand-divider rounded-3xl overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col group">
+              <div className="relative aspect-[16/10] overflow-hidden bg-slate-50">
+                <img 
+                  src={bagianDepanRJ} 
+                  alt="Bagian Depan Kompleks Riyadlul Jannah" 
+                  className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+                <span className="absolute bottom-4 left-4 text-[9px] uppercase tracking-widest font-extrabold bg-emerald-800 text-brand-cream px-2.5 py-1 rounded-md shadow-md">
+                  Halaman Utama
+                </span>
+              </div>
+              <div className="p-6 space-y-2">
+                <h4 className="font-extrabold text-slate-900 text-base font-serif">Bagian Depan &amp; Gerbang Utama</h4>
+                <p className="text-xs text-slate-500 font-light leading-relaxed">
+                  Gerbang utama dan pekarangan kompleks pesantren yang asri, bersih, dan aman. Memberikan suasana sejuk dan tenang bagi para santri saat beristirahat dan belajar.
+                </p>
+              </div>
             </div>
           </div>
         </div>
