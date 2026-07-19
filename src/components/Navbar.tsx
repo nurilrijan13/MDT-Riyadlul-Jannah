@@ -20,6 +20,7 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
     { id: 'home', label: 'Beranda' },
     { id: 'profile', label: 'Profil & Sejarah' },
     { id: 'programs', label: 'Program' },
+    { id: 'rules', label: 'Tata Tertib' },
     { id: 'registration', label: 'Pendaftaran' },
     { id: 'gallery', label: 'Galeri Foto' },
     { id: 'portal', label: 'Portal Santri' },

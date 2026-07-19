@@ -15,6 +15,7 @@ import Contact from './components/Contact';
 import Gallery from './components/Gallery';
 import About from './components/About';
 import Registration from './components/Registration';
+import Rules from './components/Rules';
 import { SCHOOL_PROFILE } from './data';
 import schoolLogo from './assets/images/lambang_mdt_rj_logo.png';
 
@@ -194,6 +195,7 @@ export default function App() {
 
         {currentTab === 'profile' && <Profile />}
         {currentTab === 'programs' && <Programs />}
+        {currentTab === 'rules' && <Rules />}
         {currentTab === 'registration' && <Registration />}
         {currentTab === 'gallery' && <Gallery />}
         {currentTab === 'portal' && <Portal />}
@@ -239,6 +241,7 @@ export default function App() {
               <button onClick={() => { setCurrentTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Beranda</button>
               <button onClick={() => { setCurrentTab('profile'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Profil &amp; Guru</button>
               <button onClick={() => { setCurrentTab('programs'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Program Ajar</button>
+              <button onClick={() => { setCurrentTab('rules'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer text-emerald-800">Tata Tertib</button>
               <button onClick={() => { setCurrentTab('registration'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer text-emerald-700">Pendaftaran Baru</button>
               <button onClick={() => { setCurrentTab('gallery'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Galeri Foto</button>
               <button onClick={() => { setCurrentTab('portal'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Rapor Santri</button>

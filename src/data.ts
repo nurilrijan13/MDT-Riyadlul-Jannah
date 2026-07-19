@@ -73,8 +73,8 @@ export const PROGRAMS: Program[] = [
   {
     id: "mdt-ula",
     name: "MDT Awaliyah / Ula",
-    description: "Program dasar pendidikan diniyah untuk santri usia Sekolah Dasar (SD/MI). Fokus pada pengenalan dasar-dasar akidah, fikih ibadah praktis, membaca Al-Qur'an dengan tajwid, dan hafalan surah-surah pendek.",
-    duration: "4 Tahun",
+    description: "Program dasar pendidikan diniyah. Fokus pada pengenalan dasar-dasar akidah, fikih ibadah praktis, membaca Al-Qur'an dengan tajwid, dan hafalan surah-surah pendek.",
+    duration: "3 Tahun",
     targetAge: "7 - 12 Tahun (Setingkat SD)",
     schedule: "Senin s.d. Jumat (14.00 - 16.30 WIB)",
     icon: "BookOpen",
