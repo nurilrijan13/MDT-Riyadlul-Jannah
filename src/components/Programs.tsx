@@ -8,6 +8,8 @@ import { motion } from 'motion/react';
 import { BookOpen, GraduationCap, HeartHandshake, Users, Check, Clock, Calendar, ShieldCheck, HelpCircle } from 'lucide-react';
 import { PROGRAMS, SCHOOL_PROFILE } from '../data';
 import { Program } from '../types';
+import jadwalMdtPagi from '../assets/images/JADWAL MDT PAGI.jpg';
+import jadwalMdtSore from '../assets/images/JADWAL MDT SORE.jpg';
 
 export default function Programs() {
   const [selectedProgram, setSelectedProgram] = useState<Program>(PROGRAMS[0]);
@@ -139,51 +141,97 @@ export default function Programs() {
 
         {/* Academic Calendar or Study Schedule Visualization */}
         <div className="bg-slate-50 border border-slate-150 rounded-2xl p-6 md:p-8 shadow-xs">
-          <div className="flex items-center space-x-3 mb-6">
+          <div className="flex items-center space-x-3 mb-8 border-b border-slate-200/60 pb-4">
             <Calendar className="w-6 h-6 text-emerald-600" />
             <div>
-              <h3 className="font-bold text-lg md:text-xl text-slate-900">Jadwal Belajar Harian Madrasah</h3>
-              <p className="text-xs text-slate-500">Aktivitas rutin santri MDT Riyadlul Jannah setiap Senin s.d. Jumat</p>
+              <h3 className="font-bold text-lg md:text-xl text-slate-900 font-serif">Jadwal Kegiatan Harian MDT</h3>
+              <p className="text-xs text-slate-500">Rangkaian aktivitas rutin harian santri MDT Riyadlul Jannah</p>
             </div>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="min-w-full text-sm divide-y divide-slate-200">
-              <thead className="bg-emerald-900 text-white rounded-t-lg">
-                <tr>
-                  <th className="px-4 py-3 text-left font-semibold">Waktu (WIB)</th>
-                  <th className="px-4 py-3 text-left font-semibold">Kegiatan</th>
-                  <th className="px-4 py-3 text-left font-semibold">Tujuan / Fokus Pembiasaan</th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-slate-100">
-                <tr>
-                  <td className="px-4 py-3 font-semibold text-emerald-800">13.45 - 14.00</td>
-                  <td className="px-4 py-3 font-medium text-slate-700">Penyambutan & Persiapan Masuk</td>
-                  <td className="px-4 py-3 text-slate-500">Pembiasaan 5S (Senyum, Sapa, Salam, Sopan, Santun)</td>
-                </tr>
-                <tr className="bg-slate-50/50">
-                  <td className="px-4 py-3 font-semibold text-emerald-800">14.00 - 14.30</td>
-                  <td className="px-4 py-3 font-medium text-slate-700">Apersepasi, Pembacaan Asmaul Husna & Juz Amma</td>
-                  <td className="px-4 py-3 text-slate-500">Membentuk kebiasaan membaca Quran sebelum belajar</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 font-semibold text-emerald-800">14.30 - 15.15</td>
-                  <td className="px-4 py-3 font-medium text-slate-700">Pelajaran Jam Ke-1 (Kitab Dirasah)</td>
-                  <td className="px-4 py-3 text-slate-500">Sesuai kurikulum (Fikih, Aqidah, Hadits, SKI, dsb.)</td>
-                </tr>
-                <tr className="bg-slate-50/50">
-                  <td className="px-4 py-3 font-semibold text-emerald-800">15.15 - 15.45</td>
-                  <td className="px-4 py-3 font-medium text-slate-700">Istirahat & Sholat Ashar Berjamaah</td>
-                  <td className="px-4 py-3 text-slate-500">Bimbingan tata cara adzan, wudhu, dan sholat fardhu berjamaah</td>
-                </tr>
-                <tr>
-                  <td className="px-4 py-3 font-semibold text-emerald-800">15.45 - 16.30</td>
-                  <td className="px-4 py-3 font-medium text-slate-700">Pelajaran Jam Ke-2 & Setoran Hafalan</td>
-                  <td className="px-4 py-3 text-slate-500">Setoran ziladah (hafalan baru) atau muraja'ah bersama ustadz/ah</td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { time: "03.30", activity: "Bangun Tidur, Sholat Tahajjud dan Witir" },
+              { time: "05.00", activity: "Sholat Shubuh Berjemaah" },
+              { time: "05.20", activity: "Mengaji Al-Qur'an & Tahfidz" },
+              { time: "06.20", activity: "Sholat Dhuha Berjemaah" },
+              { time: "06.30", activity: "Sarapan, Persiapan sekolah MDT & Formal" },
+              { time: "07.00", activity: "Upacara Senin / Lalaran Nazhom" },
+              { time: "07.30", activity: "Masuk KBM MDT Jam Ke-1" },
+              { time: "08.15", activity: "KBM MDT Jam Ke-2" },
+              { time: "09.00", activity: "KBM Formal MTs & SMAT" },
+              { time: "13.00", activity: "Sholat Dhuhur Berjemaah" },
+              { time: "15.15", activity: "Sholat Ashar Berjemaah" },
+              { time: "16.00", activity: "Kegiatan MDT Sesuai Jadwal" },
+              { time: "17.00", activity: "Istirahat, Makan & Mandi" },
+              { time: "18.00", activity: "Sholat Maghrib Berjemaah" },
+              { time: "18.20", activity: "Mengaji Al-Qur'an & Tahfidz" },
+              { time: "19.30", activity: "Sholat Isya' Berjemaah" },
+              { time: "20.00", activity: "Jam Belajar Malam" },
+              { time: "21.00", activity: "Jam Belajar Tambahan" },
+              { time: "22.00", activity: "Istirahat Tidur" }
+            ].map((item, index) => (
+              <div 
+                key={index} 
+                className="flex items-center space-x-3.5 bg-white p-3.5 rounded-xl border border-slate-100 shadow-2xs hover:border-emerald-100 transition-colors"
+              >
+                <div className="px-2.5 py-1 bg-emerald-50 text-emerald-800 text-[11px] font-bold rounded-lg tracking-wider shrink-0 font-mono border border-emerald-100">
+                  {item.time}
+                </div>
+                <div className="text-slate-700 text-xs sm:text-sm font-medium">
+                  {item.activity}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Flyer Jadwal Pagi & Sore */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 pt-8 border-t border-slate-200/60">
+            <div className="bg-white border border-slate-150 rounded-2xl p-5 md:p-6 shadow-2xs hover:shadow-xs transition-shadow flex flex-col justify-between group/card">
+              <div className="space-y-1 mb-5">
+                <div className="flex items-center space-x-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <h4 className="font-extrabold text-base md:text-lg text-slate-900 font-serif">
+                    Jadwal MDT Pagi
+                  </h4>
+                </div>
+                <p className="text-xs text-slate-500 font-light">
+                  Poster infografis resmi untuk rincian kegiatan &amp; jadwal madrasah pagi hari.
+                </p>
+              </div>
+              <div className="relative rounded-xl overflow-hidden border border-slate-100 bg-slate-50 group cursor-zoom-in">
+                <img 
+                  src={jadwalMdtPagi} 
+                  alt="Jadwal MDT Pagi" 
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/5 transition-colors duration-350" />
+              </div>
+            </div>
+
+            <div className="bg-white border border-slate-150 rounded-2xl p-5 md:p-6 shadow-2xs hover:shadow-xs transition-shadow flex flex-col justify-between group/card">
+              <div className="space-y-1 mb-5">
+                <div className="flex items-center space-x-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-orange-500 animate-pulse"></span>
+                  <h4 className="font-extrabold text-base md:text-lg text-slate-900 font-serif">
+                    Jadwal MDT Sore
+                  </h4>
+                </div>
+                <p className="text-xs text-slate-500 font-light">
+                  Poster infografis resmi untuk rincian kegiatan &amp; jadwal madrasah sore hari.
+                </p>
+              </div>
+              <div className="relative rounded-xl overflow-hidden border border-slate-100 bg-slate-50 group cursor-zoom-in">
+                <img 
+                  src={jadwalMdtSore} 
+                  alt="Jadwal MDT Sore" 
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/5 transition-colors duration-350" />
+              </div>
+            </div>
           </div>
         </div>
 
