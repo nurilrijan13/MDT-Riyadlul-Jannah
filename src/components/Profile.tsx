@@ -279,13 +279,13 @@ export default function Profile() {
         {/* Teachers Section */}
         <div className="space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-2">
-            <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 font-serif">Dewan Asatidzah & Tenaga Pendidik</h3>
+            <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 font-serif">Dewan Asatidz &amp; Tenaga Pendidikan</h3>
             <p className="text-slate-600 text-xs md:text-sm font-light">
-              Dibersamai oleh guru-guru yang berdedikasi tinggi, amanah, berpengalaman santri, dan mumpuni dalam bidang ilmu alat maupun ketahfidzan Al-Qur'an.
+              Dibersamai oleh guru-guru yang berdedikasi tinggi, amanah, berpengalaman santri, dan mumpuni dalam mendidik moral serta keagamaan putra-putri kita.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
             {TEACHERS.map((teacher, index) => (
               <motion.div
                 key={teacher.id}
@@ -308,25 +308,29 @@ export default function Profile() {
                     <h4 className="font-extrabold text-slate-800 text-sm leading-tight group-hover:text-emerald-700 transition-colors font-serif">
                       {teacher.name}
                     </h4>
-                    <p className="text-emerald-700 text-[11px] font-bold mt-1 uppercase tracking-wider">
-                      {teacher.role}
-                    </p>
+                    {teacher.role && (
+                      <p className="text-emerald-700 text-[11px] font-bold mt-1 uppercase tracking-wider">
+                        {teacher.role}
+                      </p>
+                    )}
                   </div>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-slate-100 text-[11px] text-slate-500 space-y-1">
-                  {teacher.education && (
-                    <div className="flex items-center justify-center space-x-1">
-                      <GraduationCap className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                      <span className="truncate max-w-xs">{teacher.education}</span>
-                    </div>
-                  )}
-                  {teacher.subject && (
-                    <div className="font-bold text-emerald-800 bg-emerald-50 rounded-md py-0.5 px-2 mt-2 inline-block text-[10px]">
-                      Spesialisasi: {teacher.subject}
-                    </div>
-                  )}
-                </div>
+                {(teacher.education || teacher.subject) && (
+                  <div className="mt-5 pt-3 border-t border-slate-100 text-[11px] text-slate-500 space-y-1">
+                    {teacher.education && (
+                      <div className="flex items-center justify-center space-x-1">
+                        <GraduationCap className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                        <span className="truncate max-w-xs">{teacher.education}</span>
+                      </div>
+                    )}
+                    {teacher.subject && (
+                      <div className="font-bold text-emerald-800 bg-emerald-50 rounded-md py-0.5 px-2 mt-2 inline-block text-[10px]">
+                        Spesialisasi: {teacher.subject}
+                      </div>
+                    )}
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>

@@ -4,6 +4,7 @@
  */
 
 import { Announcement, Teacher, Program, StudentProfile } from './types';
+import asatidzPhoto from './assets/images/asatidz.jpg';
 
 export const SCHOOL_PROFILE = {
   name: "MDT Riyadlul Jannah",
@@ -155,44 +156,52 @@ export const PROGRAMS: Program[] = [
 
 export const TEACHERS: Teacher[] = [
   {
+    id: "u-iin-sholihin",
+    name: "Ust. Iin Sholihin",
+    role: "",
+    avatar: asatidzPhoto
+  },
+  {
+    id: "u-m-nurul-alim",
+    name: "Ust. M. Nurul Alim",
+    role: "",
+    avatar: asatidzPhoto
+  },
+  {
     id: "u-mahrus-ali",
     name: "Ust. Mahrus Ali",
-    role: "Kepala Madrasah & Pengajar Fikih Wustha",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300",
-    education: "Alumni Pondok Pesantren Salafiyah & Praktisi Pendidikan Islam",
-    subject: "Fikih, Nahwu Sharaf"
+    role: "",
+    avatar: asatidzPhoto
   },
   {
-    id: "u-solehudin",
-    name: "Ust. Sholehudin, S.Sy.",
-    role: "Wakil Kepala Madrasah & Pengajar Akidah Akhlak",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=300",
-    education: "S1 Hukum Syariah - UIN Sunan Gunung Djati",
-    subject: "Akidah Akhlak, SKI"
+    id: "u-misbahul-fatih",
+    name: "Ust. Misbahul Fatih",
+    role: "",
+    avatar: asatidzPhoto
   },
   {
-    id: "ustdz-halimah",
-    name: "Ustazah Halimah Sa'diyyah, S.Ag.",
-    role: "Koordinator Kurikulum & Pengajar Quran Tajwid Ula",
-    avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300",
-    education: "S1 Tafsir Hadits - UIN Syarif Hidayatullah",
-    subject: "Al-Qur'an Tajwid, Bahasa Arab Dasar"
+    id: "u-m-anas-abdul-muhith",
+    name: "Ust. M. Anas Abdul Muhith",
+    role: "",
+    avatar: asatidzPhoto
   },
   {
-    id: "ustdz-fatimah",
-    name: "Ustazah Fatimah Az-Zahra",
-    role: "Pembina Tahfidz Putri & Pengajar Doa Harian",
-    avatar: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80&w=300",
-    education: "Alumni Pondok Pesantren Daarul Qur'an (Hafizhah 30 Juz)",
-    subject: "Tahfidzul Qur'an, Khat (Kaligrafi)"
+    id: "u-ihya-ulumuddin",
+    name: "Ust. Ihya Ulumuddin",
+    role: "",
+    avatar: asatidzPhoto
   },
   {
-    id: "u-luqman",
-    name: "Ust. Luqman Hakim",
-    role: "Pembina Tahfidz Putra & Ekstrakurikuler Rebana",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=300",
-    education: "Alumni Institut Ilmu Al-Qur'an (IIQ) Jakarta",
-    subject: "Tahfidz, Seni Hadroh/Rebana"
+    id: "u-agus-maulana",
+    name: "Ust. Agus Maulana",
+    role: "",
+    avatar: asatidzPhoto
+  },
+  {
+    id: "u-sofyan",
+    name: "Ust. Sofyan",
+    role: "",
+    avatar: asatidzPhoto
   }
 ];
 
