@@ -10,6 +10,7 @@ import { Image as ImageIcon, Calendar, Tag, ChevronLeft, ChevronRight, X, ZoomIn
 import fotoGedungRJ from '../assets/images/fotogedungrj.jpeg';
 import bagianDepanRJ from '../assets/images/bagian depan rj.jpeg';
 import ujianDaur2 from '../assets/images/ujiandaur2.jpeg';
+import haflah26 from '../assets/images/haflah26.jpeg';
 
 interface GalleryItem {
   id: string;
@@ -22,6 +23,15 @@ interface GalleryItem {
 }
 
 const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: 'gal-haflah26',
+    title: 'Haflatul Imtihan Wisuda Akhirussanah - Purnasiswa',
+    description: 'Telah terlaksana rangkaian Acara HAFLATUL IMTIHAN WISUDA AKHIRUSSANAH - PURNASISWA yang di laksanakan di PP. Riyadlul Jannah Internasional 2 Karawang 28 Juni 2026 / 13 Muharram 1448, seperti Wisuda MDT dan Formal, Penampilan Lalaran Hidayatus Shibyan oleh Murid² 1 Awaliyah, Lalaran Amtsilatut Tasrif oleh Murid² kelas 2 Awaliyah, Demontrasi kitab Kuning / Kitab salaf oleh Murid Wisudawan/wati kelas 3 Awaliyah dan Takhossus, ditutup dengan pembagian hadiah untuk juarawan ranking MDT.',
+    imageUrl: haflah26,
+    category: 'kegiatan',
+    categoryLabel: 'Kegiatan Santri',
+    date: '2026-06-28'
+  },
   {
     id: 'gal-ujian-daur2',
     title: 'Pelaksanaan Ujian Imtihan MDT Daur II',
