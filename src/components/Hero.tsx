@@ -56,7 +56,7 @@ export default function Hero({ setCurrentTab }: HeroProps) {
                 </span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-emerald-100/80 max-w-2xl font-light leading-relaxed">
-                Selamat Datang di <strong className="font-semibold text-white">{SCHOOL_PROFILE.fullName}</strong> Pasir Gombong, Cikarang Utara. Wahana pendidikan diniyah keislaman terbaik untuk putra-putri Anda.
+                Selamat Datang di <strong className="font-semibold text-white">Madrasah Diniyah Taklimiyah Riyadlul Jannah</strong> dibawah naungan <span className="text-emerald-300 font-semibold">Pondok Pesantren Riyadlul Jannah</span> Pasir Gombong, Cikarang Utara.
               </p>
             </motion.div>
 
@@ -174,10 +174,14 @@ export default function Hero({ setCurrentTab }: HeroProps) {
       {/* Stats Counter Section (Bottom of Hero) */}
       <div className="bg-slate-900/80 backdrop-blur-md border-t border-emerald-900/40 py-6 md:py-8 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-4 text-center divide-x-0 md:divide-x divide-emerald-800/30">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-6 gap-x-4 text-center divide-x-0 lg:divide-x divide-emerald-800/30">
             <div>
               <div className="text-2xl sm:text-3xl font-bold text-emerald-400">150+</div>
               <div className="text-xs sm:text-sm text-slate-400 uppercase tracking-wider font-medium mt-1">Santri Aktif</div>
+            </div>
+            <div>
+              <div className="text-2xl sm:text-3xl font-bold text-emerald-400">Ribuan</div>
+              <div className="text-xs sm:text-sm text-slate-400 uppercase tracking-wider font-medium mt-1">Alumni Tersebar</div>
             </div>
             <div>
               <div className="text-2xl sm:text-3xl font-bold text-emerald-400">12+</div>
@@ -187,8 +191,8 @@ export default function Hero({ setCurrentTab }: HeroProps) {
               <div className="text-2xl sm:text-3xl font-bold text-emerald-400">16+</div>
               <div className="text-xs sm:text-sm text-slate-400 uppercase tracking-wider font-medium mt-1">Asatidz Kompeten</div>
             </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-bold text-emerald-400">A (Sangat Baik)</div>
+            <div className="col-span-2 sm:col-span-1">
+              <div className="text-2xl sm:text-3xl font-bold text-emerald-400 animate-pulse-subtle">A (Sangat Baik)</div>
               <div className="text-xs sm:text-sm text-slate-400 uppercase tracking-wider font-medium mt-1">Rekomendasi Mutu</div>
             </div>
           </div>

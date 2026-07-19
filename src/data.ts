@@ -9,6 +9,7 @@ import asatidzPhoto from './assets/images/asatidz.jpg';
 export const SCHOOL_PROFILE = {
   name: "MDT Riyadlul Jannah",
   fullName: "Madrasah Diniyah Taklimiyah Riyadlul Jannah",
+  statisticNumber: "322232160308",
   address: "Jl. Industri No. 114 Kp. Sempu Gardu Ds. Pasir Gombong Kec. Cikarang Utara Kab. Bekasi Prov. Jawa Barat",
   phone: "+62 859-6646-1178", // WhatsApp Humas
   email: "info@mdtriyadluljannah.sch.id",

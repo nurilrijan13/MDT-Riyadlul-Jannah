@@ -139,6 +139,114 @@ export default function Programs() {
           </div>
         </div>
 
+        {/* Mata Pelajaran / Kitab Madrasah Section */}
+        <div className="bg-slate-50 border border-slate-150 rounded-2xl p-6 md:p-8 shadow-xs space-y-8">
+          <div className="flex items-center space-x-3 border-b border-slate-200/60 pb-4">
+            <BookOpen className="w-6 h-6 text-emerald-600" />
+            <div>
+              <h3 className="font-bold text-lg md:text-xl text-slate-900 font-serif">Mata Pelajaran MDT Riyadlul Jannah</h3>
+              <p className="text-xs text-slate-500">Daftar Fan Ilmu dan Kitab Salaf yang dipelajari oleh para santri</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+            {[
+              {
+                category: "1. Fan Nahwu (Sintaksis)",
+                kitabs: ["Jurmiyyah", "Imrithi", "Alfiyah Ibnu Malik", "Iktisyaf"],
+                color: "border-emerald-100 bg-emerald-50/20 text-emerald-900",
+                badge: "bg-emerald-100 text-emerald-800"
+              },
+              {
+                category: "2. Fan Fiqh (Hukum Islam)",
+                kitabs: ["Safinatun Najah", "Safinatus Sholat", "Mabadil Fiqh", "Taqrib", "Fathul Qorib"],
+                color: "border-sky-100 bg-sky-50/20 text-sky-900",
+                badge: "bg-sky-100 text-sky-800"
+              },
+              {
+                category: "3. Fan Tajwid (Tartil)",
+                kitabs: ["Hidayatus Shibyan", "Tuhfatul Athfal"],
+                color: "border-amber-100 bg-amber-50/20 text-amber-900",
+                badge: "bg-amber-100 text-amber-800"
+              },
+              {
+                category: "4. Fan Akhlaq (Adab)",
+                kitabs: ["Washiyatul Aba Lil Abna'", "Ta'lim Mutaallim", "Adabut Ta'lim Mutaallim"],
+                color: "border-rose-100 bg-rose-50/20 text-rose-900",
+                badge: "bg-rose-100 text-rose-800"
+              },
+              {
+                category: "5. Fan Tauhid (Teologi)",
+                kitabs: ["Aqidatul 'Awwam", "Jawahirul Kalamiyah", "Aqidatud Diniyyah"],
+                color: "border-indigo-100 bg-indigo-50/20 text-indigo-900",
+                badge: "bg-indigo-100 text-indigo-800"
+              },
+              {
+                category: "6. Fan Hadist",
+                kitabs: ["Arbain Nawawi", "Bulughul Maram"],
+                color: "border-purple-100 bg-purple-50/20 text-purple-900",
+                badge: "bg-purple-100 text-purple-800"
+              },
+              {
+                category: "7. Fan Ushul Fiqh",
+                kitabs: ["Taysirul Ushul Ila Ilmu Ushul"],
+                color: "border-teal-100 bg-teal-50/20 text-teal-900",
+                badge: "bg-teal-100 text-teal-800"
+              },
+              {
+                category: "8. Fan Ilmu Hadist / Mustholah",
+                kitabs: ["Minhatul Mugits"],
+                color: "border-cyan-100 bg-cyan-50/20 text-cyan-900",
+                badge: "bg-cyan-100 text-cyan-800"
+              },
+              {
+                category: "9. Fan Shorrof (Morfologi)",
+                kitabs: ["Amtsilatut Tasrifiyah", "Nadhom Maqsud"],
+                color: "border-orange-100 bg-orange-50/20 text-orange-900",
+                badge: "bg-orange-100 text-orange-800"
+              },
+              {
+                category: "10. Fan Tarekh (Sejarah)",
+                kitabs: ["Tarikhul Islam", "Kholasoh Nurul Yaqin I, II & III"],
+                color: "border-lime-100 bg-lime-50/20 text-lime-900",
+                badge: "bg-lime-100 text-lime-800"
+              },
+              {
+                category: "11. Fan Qoidah Fiqih",
+                kitabs: ["Mabadil Awaliyah"],
+                color: "border-slate-150 bg-slate-100/30 text-slate-900",
+                badge: "bg-slate-200 text-slate-800"
+              },
+              {
+                category: "12. Pegon Wa Imla",
+                kitabs: ["Pegon Wa Imla"],
+                color: "border-yellow-100 bg-yellow-50/20 text-yellow-900",
+                badge: "bg-yellow-100 text-yellow-800"
+              }
+            ].map((fan, index) => (
+              <div 
+                key={index}
+                className={`p-5 rounded-2xl border ${fan.color} shadow-2xs hover:shadow-xs transition-all duration-300 flex flex-col space-y-3.5 bg-white`}
+              >
+                <div className="flex items-center justify-between">
+                  <h4 className="font-bold text-sm text-slate-900 leading-tight">
+                    {fan.category}
+                  </h4>
+                </div>
+                <div className="h-px bg-slate-200/60" />
+                <ul className="space-y-2 flex-grow">
+                  {fan.kitabs.map((kitab, kIdx) => (
+                    <li key={kIdx} className="flex items-center space-x-2 text-xs text-slate-700 font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
+                      <span>{kitab}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Academic Calendar or Study Schedule Visualization */}
         <div className="bg-slate-50 border border-slate-150 rounded-2xl p-6 md:p-8 shadow-xs">
           <div className="flex items-center space-x-3 mb-8 border-b border-slate-200/60 pb-4">

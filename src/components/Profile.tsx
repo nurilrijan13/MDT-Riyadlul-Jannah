@@ -241,8 +241,15 @@ export default function Profile() {
                   <p className="text-xs text-emerald-800/80 leading-relaxed font-light">
                     MDT Riyadlul Jannah beroperasi penuh di bawah pembinaan Direktorat Pendidikan Diniyah dan Pondok Pesantren Kementerian Agama Republik Indonesia, menjamin ijazah resmi santri diakui kelayakannya.
                   </p>
-                  <div className="px-3.5 py-1 bg-emerald-100 text-emerald-800 text-[10px] uppercase font-bold tracking-widest rounded-full inline-block border border-emerald-200">
-                    Kementerian Agama Terdaftar
+                  <div className="flex flex-col space-y-2 items-center justify-center pt-1">
+                    <div className="px-3.5 py-1 bg-emerald-100 text-emerald-800 text-[10px] uppercase font-bold tracking-widest rounded-full inline-block border border-emerald-200">
+                      Kementerian Agama Terdaftar
+                    </div>
+                    {SCHOOL_PROFILE.statisticNumber && (
+                      <div className="text-[11px] text-emerald-900 font-mono font-bold bg-white/90 px-3.5 py-1 rounded-lg border border-emerald-150 shadow-3xs tracking-wide">
+                        No. Statistik MDT: <span className="text-emerald-700">{SCHOOL_PROFILE.statisticNumber}</span>
+                      </div>
+                    )}
                   </div>
                 </div>
 
