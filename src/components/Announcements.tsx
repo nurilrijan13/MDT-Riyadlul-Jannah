@@ -5,8 +5,8 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Calendar, Tag, Search, MessageSquare, AlertCircle, ChevronRight, Award } from 'lucide-react';
-import { ANNOUNCEMENTS } from '../data';
+import { Calendar, Tag, Search, MessageSquare, AlertCircle, ChevronRight, Award, Trophy, Star, Crown, Sparkles } from 'lucide-react';
+import { ANNOUNCEMENTS, RANKING_DATA_DAUR_2 } from '../data';
 import { Announcement } from '../types';
 
 export default function Announcements() {
@@ -52,10 +52,10 @@ export default function Announcements() {
             <span>Papan Informasi Madrasah</span>
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#2D2D2D] tracking-tight font-serif">
-            Berita, Kegiatan & Agenda Terkini
+            Berita, Kegiatan &amp; Agenda Terkini
           </h2>
           <p className="text-slate-600 text-sm md:text-base font-light">
-            Ikuti kabar terbaru seputar proses belajar, pengumuman libur, imtihan, dan agenda hari besar Islam di MDT Riyadlul Jannah.
+            Ikuti kabar terbaru seputar proses belajar, pengumuman libur, imtihan, ranking santri, dan agenda di MDT Riyadlul Jannah.
           </p>
         </div>
 
@@ -176,6 +176,45 @@ export default function Announcements() {
                   ))}
                 </div>
 
+                {/* Special Visual Ranking Display if viewing Ranking announcement */}
+                {activeAnnouncement.id === 'pengumuman-ranking-daur-2-2026' && (
+                  <div className="bg-emerald-50/70 border border-emerald-100 rounded-2xl p-5 space-y-4 mt-4">
+                    <div className="flex items-center space-x-2 text-emerald-900 font-serif font-extrabold text-sm">
+                      <Trophy className="w-5 h-5 text-amber-500 shrink-0" />
+                      <span>Rincian Juarawan &amp; Juarawati Daur II</span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                      {RANKING_DATA_DAUR_2.classes.map((c, i) => (
+                        <div key={i} className="bg-white p-3.5 rounded-xl border border-emerald-100/80 shadow-2xs space-y-2">
+                          <div className="font-extrabold text-emerald-800 border-b border-emerald-50 pb-1 flex justify-between items-center">
+                            <span>{c.className}</span>
+                            <span className="text-[9px] bg-emerald-100 text-emerald-900 px-1.5 py-0.5 rounded-md font-sans">
+                              Rank 1-3
+                            </span>
+                          </div>
+                          <ul className="space-y-1 text-slate-700">
+                            {c.rankings.map((r) => (
+                              <li key={r.rank} className="flex justify-between items-center">
+                                <span className="font-medium">
+                                  {r.rank === 1 ? '🥇 ' : r.rank === 2 ? '🥈 ' : '🥉 '}
+                                  Rank {r.rank}: <strong className="text-slate-900">{r.name}</strong>
+                                </span>
+                                <span className="font-mono text-[11px] text-emerald-700 font-bold">({r.score})</span>
+                              </li>
+                            ))}
+                          </ul>
+                          {c.specialAward && (
+                            <div className="pt-1.5 border-t border-dashed border-slate-100 text-[11px] text-amber-800 font-medium flex items-center gap-1">
+                              <Star className="w-3 h-3 text-amber-500 fill-amber-400 shrink-0" />
+                              <span>Muhafazhoh: <strong>{c.specialAward.recipient}</strong></span>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
                 {/* Additional Call to Actions in announcements */}
                 {activeAnnouncement.category === 'pengumuman' && (
                   <div className="bg-emerald-50 border border-emerald-100 p-4 rounded-xl flex items-start space-x-3 mt-4">
@@ -196,6 +235,102 @@ export default function Announcements() {
             )}
           </div>
 
+        </div>
+
+        {/* Dedicated Papan Ranking & Juarawan Daur II Section */}
+        <div className="bg-white border border-[#D4CFC4] rounded-3xl p-6 md:p-10 shadow-xs space-y-8 font-sans">
+          <div className="text-center max-w-3xl mx-auto space-y-2">
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-amber-50 text-amber-800 text-[10px] font-extrabold rounded-full uppercase tracking-widest border border-amber-200">
+              <Trophy className="w-3.5 h-3.5 text-amber-600" />
+              <span>Kehormatan &amp; Prestasi Santri</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 font-serif">
+              NAMA-NAMA JUARAWAN / JUARAWATI RANKING
+            </h3>
+            <p className="text-emerald-800 font-bold text-xs uppercase tracking-widest font-mono">
+              MADRASAH DINIYAH TAKLIMIYAH RIYADLUL JANNAH • DAUR II / SEMESTER II (TA 2025-2026 M / 1447 H)
+            </p>
+          </div>
+
+          {/* Ranking Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {RANKING_DATA_DAUR_2.classes.map((cls, idx) => (
+              <div 
+                key={idx} 
+                className="bg-gradient-to-b from-white to-emerald-50/30 border border-brand-divider/80 rounded-2xl p-5 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between space-y-4 relative overflow-hidden group"
+              >
+                <div className="absolute top-0 right-0 w-16 h-16 bg-amber-400/10 rounded-bl-full pointer-events-none" />
+                
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between border-b border-brand-divider/40 pb-3">
+                    <span className="font-serif font-extrabold text-base text-emerald-950 flex items-center gap-1.5">
+                      <Crown className="w-4 h-4 text-amber-500 shrink-0" />
+                      {cls.className}
+                    </span>
+                    <span className="text-[10px] font-mono font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full">
+                      Daur II
+                    </span>
+                  </div>
+
+                  <div className="space-y-2.5 pt-1">
+                    {cls.rankings.map((r) => (
+                      <div 
+                        key={r.rank} 
+                        className={`p-2.5 rounded-xl border flex items-center justify-between transition-colors ${
+                          r.rank === 1 
+                            ? 'bg-amber-50/80 border-amber-200 text-amber-950 font-semibold' 
+                            : r.rank === 2 
+                            ? 'bg-slate-50 border-slate-200 text-slate-900 font-medium' 
+                            : 'bg-orange-50/50 border-orange-100 text-slate-800 font-medium'
+                        }`}
+                      >
+                        <div className="flex items-center space-x-2.5">
+                          <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
+                            r.rank === 1 
+                              ? 'bg-amber-400 text-amber-950 shadow-xs' 
+                              : r.rank === 2 
+                              ? 'bg-slate-300 text-slate-800' 
+                              : 'bg-amber-700/20 text-amber-900'
+                          }`}>
+                            {r.rank}
+                          </span>
+                          <span className="text-xs">{r.name}</span>
+                        </div>
+                        <span className="text-xs font-bold font-mono text-emerald-800 bg-white/80 px-2 py-0.5 rounded-md border border-slate-200/60 shadow-2xs">
+                          {r.score}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {cls.specialAward ? (
+                  <div className="mt-3 pt-3 border-t border-dashed border-emerald-200/80 bg-amber-50/50 -mx-1 px-3 py-2 rounded-lg">
+                    <span className="text-[9px] uppercase tracking-wider font-extrabold text-amber-800 block flex items-center gap-1">
+                      <Sparkles className="w-3 h-3 text-amber-500 shrink-0" />
+                      {cls.specialAward.title}
+                    </span>
+                    <span className="text-xs font-bold text-slate-900 block mt-0.5">
+                      {cls.specialAward.recipient}
+                    </span>
+                  </div>
+                ) : (
+                  <div className="mt-3 pt-3 border-t border-dashed border-emerald-200/80 text-center">
+                    <span className="text-[10px] italic text-slate-400 block">
+                      Apresiasi Penghargaan Santri
+                    </span>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-4 text-center text-xs text-slate-500 font-mono font-medium flex flex-col md:flex-row items-center justify-between gap-2">
+            <span>Ditetapkan secara resmi pada: <strong>{RANKING_DATA_DAUR_2.date}</strong></span>
+            <span className="text-emerald-800 font-bold font-sans">
+              Selamat dan Sukses Kepada Seluruh Santri Juarawan &amp; Juarawati! 🎉
+            </span>
+          </div>
         </div>
 
         {/* Dynamic Islamic Quotes Calendar Banner */}

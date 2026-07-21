@@ -209,6 +209,40 @@ export const TEACHERS: Teacher[] = [
 
 export const ANNOUNCEMENTS: Announcement[] = [
   {
+    id: "pengumuman-ranking-daur-2-2026",
+    title: "Pengumuman Nama-Nama Juarawan & Juarawati Ranking MDT Riyadlul Jannah Daur II / Semester II (TA 2025-2026)",
+    content: `Segala puji bagi Allah SWT. Berikut adalah Daftar Nama Juarawan & Juarawati Ranking Madrasah Diniyah Taklimiyah (MDT) Riyadlul Jannah Daur II / Semester II Tahun Ajaran 2025-2026 M (1447 H):
+
+1 AWALIYAH:
+• Ranking 1 : Layla Maulida (Nilai Rata-Rata: 89)
+• Ranking 2 : Nur Hasanah (Nilai Rata-Rata: 83)
+• Ranking 3 : Zahra Tazkiya Nafisah (Nilai Rata-Rata: 82)
+• Muhafazhoh Terbanyak : Musfiyah Zasty Maulida
+
+2 AWALIYAH:
+• Ranking 1 : Try Anggita Dewi (Nilai Rata-Rata: 82)
+• Ranking 2 : Siti Lutfiah (Nilai Rata-Rata: 76)
+• Ranking 3 : Zidanir Rizqi (Nilai Rata-Rata: 72)
+• Muhafazhoh Terbanyak : Nur Hasanah
+
+3 AWALIYAH:
+• Ranking 1 : Nurul Aulia (Nilai Rata-Rata: 87)
+• Ranking 2 : Shakiya Khoirul Bariya (Nilai Rata-Rata: 78)
+• Ranking 3 : Muhammad Rafif Chandra (Nilai Rata-Rata: 77)
+• Muhafazhoh Terbanyak : Sabastian Abdillah
+
+1 WUSTHO:
+• Ranking 1 : Arfi Hamada (Nilai Rata-Rata: 82)
+• Ranking 2 : Lailatus Sakiah (Nilai Rata-Rata: 77)
+• Ranking 3 : Dhita Khoirunnisa (Nilai Rata-Rata: 76)
+
+Ditetapkan pada: Ahad, 28 Juni 2026 M / 12 Muharram 1448 H.
+Selamat kepada seluruh juarawan dan juarawati atas prestasi gemilang yang diraih!`,
+    date: "2026-06-28",
+    category: "akademik",
+    important: true
+  },
+  {
     id: "penerimaan-santri-baru-2026",
     title: "Informasi Pendaftaran Santri Baru Tahun Ajaran 2026/2027",
     content: "MDT Riyadlul Jannah menginformasikan pendaftaran santri baru untuk jenjang Awaliyah (Ula) dan program Tahfidz Junior. Calon orang tua wali dapat langsung mengunjungi sekretariat madrasah setiap hari kerja ba'da Ashar untuk berkonsultasi, melihat fasilitas kelas, serta mendaftarkan putra-putrinya secara langsung. Persyaratan administrasi meliputi fotokopi Akta Kelahiran, fotokopi Kartu Keluarga, dan pasfoto ukuran 3x4 sebanyak 2 lembar.",
@@ -241,6 +275,60 @@ export const ANNOUNCEMENTS: Announcement[] = [
     important: false
   }
 ];
+
+export const RANKING_DATA_DAUR_2 = {
+  title: "NAMA-NAMA JUARAWAN/JUARAWATI RANKING",
+  institution: "MADRASAH DINIYAH TAKLIMIYAH RIYADLUL JANNAH",
+  term: "DAUR II / SEMESTER II",
+  academicYear: "TAHUN AJARAN : 2025-2026 M (1447 H)",
+  date: "Ahad, 28 Juni 2026 M / 12 Muharram 1448 H",
+  classes: [
+    {
+      className: "1 AWALIYAH",
+      rankings: [
+        { rank: 1, name: "Layla Maulida", score: 89 },
+        { rank: 2, name: "Nur Hasanah", score: 83 },
+        { rank: 3, name: "Zahra Tazkiya Nafisah", score: 82 }
+      ],
+      specialAward: {
+        title: "Muhafazhoh Terbanyak",
+        recipient: "Musfiyah Zasty Maulida"
+      }
+    },
+    {
+      className: "2 AWALIYAH",
+      rankings: [
+        { rank: 1, name: "Try Anggita Dewi", score: 82 },
+        { rank: 2, name: "Siti Lutfiah", score: 76 },
+        { rank: 3, name: "Zidanir Rizqi", score: 72 }
+      ],
+      specialAward: {
+        title: "Muhafazhoh Terbanyak",
+        recipient: "Nur Hasanah"
+      }
+    },
+    {
+      className: "3 AWALIYAH",
+      rankings: [
+        { rank: 1, name: "Nurul Aulia", score: 87 },
+        { rank: 2, name: "Shakiya Khoirul Bariya", score: 78 },
+        { rank: 3, name: "Muhammad Rafif Chandra", score: 77 }
+      ],
+      specialAward: {
+        title: "Muhafazhoh Terbanyak",
+        recipient: "Sabastian Abdillah"
+      }
+    },
+    {
+      className: "1 WUSTHO",
+      rankings: [
+        { rank: 1, name: "Arfi Hamada", score: 82 },
+        { rank: 2, name: "Lailatus Sakiah", score: 77 },
+        { rank: 3, name: "Dhita Khoirunnisa", score: 76 }
+      ]
+    }
+  ]
+};
 
 // Fee Simulator configuration
 export const TUITION_FEES = {
