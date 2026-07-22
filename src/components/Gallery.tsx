@@ -11,6 +11,7 @@ import fotoGedungRJ from '../assets/images/fotogedungrj.jpeg';
 import bagianDepanRJ from '../assets/images/bagian depan rj.jpeg';
 import ujianDaur2 from '../assets/images/ujiandaur2.jpeg';
 import haflah26 from '../assets/images/haflah26.jpeg';
+import piagamIzin from '../assets/images/piagamizin.jpg.jpeg';
 
 interface GalleryItem {
   id: string;
@@ -23,6 +24,15 @@ interface GalleryItem {
 }
 
 const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: 'gal-piagam-izin',
+    title: 'Piagam Izin Operasional Kemenag MDT Riyadlul Jannah',
+    description: 'Surat Keputusan dan Piagam Izin Operasional Resmi Madrasah Diniyah Takmiliyah (MDT) Riyadlul Jannah dari Kantor Kementerian Agama (Kemenag) Kabupaten Bekasi dengan Nomor Statistik Madrasah (NSM) 322232160308.',
+    imageUrl: piagamIzin,
+    category: 'fasilitas',
+    categoryLabel: 'Dokumen & Legalitas',
+    date: '2024-04-23'
+  },
   {
     id: 'gal-haflah26',
     title: 'Haflatul Imtihan Wisuda Akhirussanah - Purnasiswa',

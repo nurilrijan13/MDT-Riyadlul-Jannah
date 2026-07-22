@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   Building2, 
   BookOpen, 
@@ -17,14 +17,19 @@ import {
   GraduationCap, 
   Compass, 
   MapPin, 
-  Phone
+  Phone,
+  FileCheck,
+  ZoomIn,
+  X
 } from 'lucide-react';
 import fotoGedungRJ from '../assets/images/fotogedungrj.jpeg';
 import bagianDepanRJ from '../assets/images/bagian depan rj.jpeg';
 import asatidzPhoto from '../assets/images/asatidz.jpg';
+import piagamIzin from '../assets/images/piagamizin.jpg.jpeg';
 import { SCHOOL_PROFILE } from '../data';
 
 export default function About() {
+  const [showDocModal, setShowDocModal] = useState(false);
   return (
     <div className="py-16 bg-[#FAF9F6] selection:bg-emerald-100 selection:text-emerald-900 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -133,6 +138,57 @@ export default function About() {
             </div>
           </div>
 
+        </div>
+
+        {/* Legal Document Feature Card / Piagam Izin Operasional */}
+        <div className="bg-emerald-900/5 border border-emerald-800/15 rounded-3xl p-6 md:p-8 max-w-6xl mx-auto shadow-xs">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7 space-y-4">
+              <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-emerald-100 text-emerald-900 text-xs font-bold rounded-full uppercase tracking-widest border border-emerald-200">
+                <FileCheck className="w-3.5 h-3.5 text-emerald-700" />
+                <span>Dokumen Resmi &amp; Legalitas</span>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 font-serif leading-tight">
+                Piagam Izin Operasional Kementerian Agama RI
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed font-light">
+                Madrasah Diniyah Takmiliyah (MDT) Riyadlul Jannah telah memiliki Izin Operasional Resmi tertanggal <strong className="font-semibold text-slate-800">23 April 2024</strong> dari Kementerian Agama Republik Indonesia Kantor Kabupaten Bekasi dengan Nomor Statistik Madrasah (NSM): <span className="font-bold text-emerald-800 font-mono">{SCHOOL_PROFILE.statisticNumber}</span>.
+              </p>
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <button
+                  onClick={() => setShowDocModal(true)}
+                  className="inline-flex items-center space-x-2 px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold transition-all shadow-xs cursor-pointer group"
+                >
+                  <ZoomIn className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  <span>Lihat Piagam Izin Operasional</span>
+                </button>
+                <span className="text-xs text-slate-500 font-medium italic">Klik untuk memperbesar dokumen</span>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 flex justify-center">
+              <div 
+                onClick={() => setShowDocModal(true)}
+                className="relative cursor-pointer group max-w-xs rounded-2xl overflow-hidden border-2 border-emerald-600/30 shadow-md bg-white p-2 hover:shadow-xl transition-all duration-300"
+              >
+                <div className="relative aspect-[3/4] rounded-xl overflow-hidden bg-slate-100">
+                  <img 
+                    src={piagamIzin} 
+                    alt="Piagam Izin Operasional MDT Riyadlul Jannah" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-bold text-xs gap-2">
+                    <ZoomIn className="w-5 h-5" />
+                    <span>Perbesar</span>
+                  </div>
+                </div>
+                <div className="p-2 text-center">
+                  <span className="text-[11px] font-bold text-slate-800 block font-serif">Piagam Izin Operasional MDT</span>
+                  <span className="text-[10px] text-emerald-700 font-mono font-semibold">Kemenag Kab. Bekasi</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* 4 Core Pillars of Education */}
@@ -262,6 +318,55 @@ export default function About() {
         </div>
 
       </div>
+
+      {/* Lightbox Modal for Piagam Izin Operasional */}
+      <AnimatePresence>
+        {showDocModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-white rounded-3xl overflow-hidden max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-700"
+            >
+              <div className="p-4 bg-emerald-900 text-white flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <FileCheck className="w-5 h-5 text-emerald-300" />
+                  <h4 className="font-serif font-bold text-sm md:text-base">
+                    Piagam Izin Operasional - MDT Riyadlul Jannah
+                  </h4>
+                </div>
+                <button
+                  onClick={() => setShowDocModal(false)}
+                  className="p-1.5 hover:bg-white/10 rounded-full text-emerald-100 transition-colors cursor-pointer"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="p-4 overflow-y-auto bg-slate-100 flex items-center justify-center min-h-[300px]">
+                <img
+                  src={piagamIzin}
+                  alt="Piagam Izin Operasional Kementerian Agama"
+                  className="max-h-[75vh] w-auto object-contain rounded-lg shadow-md border border-slate-200"
+                />
+              </div>
+
+              <div className="p-4 bg-white border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
+                <span>
+                  Terbit: <strong>23 April 2024</strong> | NSM: <strong className="text-emerald-800 font-mono">{SCHOOL_PROFILE.statisticNumber}</strong>
+                </span>
+                <button
+                  onClick={() => setShowDocModal(false)}
+                  className="px-4 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold rounded-lg transition-colors cursor-pointer"
+                >
+                  Tutup
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
