@@ -210,6 +210,23 @@ export const TEACHERS: Teacher[] = [
 
 export const ANNOUNCEMENTS: Announcement[] = [
   {
+    id: "rapat-tahun-ajaran-baru-2026-2027",
+    title: "Berita Acara Rapat Tahun Ajaran Baru 2026-2027 M / 1448 H MDT Riyadlul Jannah",
+    content: `Assalamu'alaikum Wr. Wb.
+
+Telah terlaksana Rapat Tahun Ajaran Baru 2026-2027 M / 1448 H pada Hari Rabu, 8 Juli 2026 M / 23 Muharrom 1448 H bertempat di MDT Riyadlul Jannah Pasir Gombong.
+
+Agenda rapat musyawarah tersebut membahas beberapa poin keputusan penting:
+• Penentuan Wali Kelas yang baru untuk jenjang MDT Awaliyah dan Wustha.
+• Penentuan Kitab-kitab Kajian & Guru / Ustadz Pengampu untuk setiap mata pelajaran.
+• Penetapan Program Pelaksanaan Kegiatan Belajar Mengajar (KBM) MDT Riyadlul Jannah.
+
+Semoga hasil keputusan rapat ini membawa keberkahan, kelancaran, serta keistiqomahan dalam proses pendidikan dan pembinaan akhlak santri MDT Riyadlul Jannah di Tahun Ajaran Baru ini.`,
+    date: "2026-07-08",
+    category: "kegiatan",
+    important: true
+  },
+  {
     id: "kalender-akademik-mdt-2025-2026",
     title: "Rilis Resmi Kalender Akademik MDT Riyadlul Jannah TA 2025/2026 & 2026/2027",
     content: "Assalamu'alaikum Wr. Wb. Diumumkan kepada seluruh orang tua / wali santri dan para santri MDT Riyadlul Jannah bahwa Jadwal Kalender Akademik Resmi Madrasah Diniyah Taklimiyah (MDT) Riyadlul Jannah untuk Daur I (Semester Ganjil) & Daur II (Semester Genap) telah diterbitkan. Kalender ini memuat seluruh tanggal penting pelaksanaan Kegiatan Belajar Mengajar (KBM), Imtihan Nisfu Daur, Imtihan Akhir Daur, Pengajian Pasaran Ramadhan, Peringatan Hari Besar Islam (PHBI), Pendaftaran Santri Baru (PSB), dan Haflatul Imtihan Wisuda Akhirussanah. Bapak/Ibu wali santri dapat mengakses menu 'Kalender Akademik' di portal website ini untuk melihat rincian tanggal secara lengkap.",
