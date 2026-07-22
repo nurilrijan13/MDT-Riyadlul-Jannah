@@ -11,7 +11,7 @@ export const SCHOOL_PROFILE = {
   fullName: "Madrasah Diniyah Taklimiyah Riyadlul Jannah",
   statisticNumber: "322232160308",
   address: "Jl. Industri No. 114 Kp. Sempu Gardu Ds. Pasir Gombong Kec. Cikarang Utara Kab. Bekasi Prov. Jawa Barat",
-  phone: "+62 859-6646-1178", // WhatsApp Humas
+  phone: "",
   email: "mdtriyadluljannahcikut@gmail.com",
   instagram: "ppriyadluljannahpusat",
   tiktok: "ppriyadluljannahpusat",

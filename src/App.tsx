@@ -295,10 +295,12 @@ export default function App() {
                 <MapPin className="w-4 h-4 text-brand-green shrink-0 mt-0.5" />
                 <span className="leading-relaxed">{SCHOOL_PROFILE.address}</span>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-brand-green shrink-0" />
-                <span>{SCHOOL_PROFILE.phone}</span>
-              </div>
+              {SCHOOL_PROFILE.phone && (
+                <div className="flex items-center gap-2.5">
+                  <Phone className="w-4 h-4 text-brand-green shrink-0" />
+                  <span>{SCHOOL_PROFILE.phone}</span>
+                </div>
+              )}
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-brand-green shrink-0" />
                 <span>{SCHOOL_PROFILE.email}</span>

@@ -74,18 +74,16 @@ export default function Contact() {
 
           <div className="bg-white border border-[#D4CFC4] p-6 rounded-2xl flex items-start space-x-4 shadow-xs">
             <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
-              <Phone className="w-5 h-5" />
+              <Mail className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-bold text-slate-800 text-sm uppercase">Hubungi WhatsApp</h4>
+              <h4 className="font-bold text-slate-800 text-sm uppercase">Email Surat & Informasi</h4>
               <p className="text-xs text-slate-500 mt-1">Layanan Informasi & Humas:</p>
               <a 
-                href={`https://wa.me/${SCHOOL_PROFILE.phone.replace(/[^0-9]/g, '')}?text=Assalamu%27alaikum%20Humas%20MDT%20Riyadlul%20Jannah%2C%20saya%20ingin%20bertanya%20mengenai...`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-emerald-700 hover:text-emerald-800 font-bold text-sm block mt-1"
+                href={`mailto:${SCHOOL_PROFILE.email}`}
+                className="text-emerald-700 hover:text-emerald-800 font-bold text-xs md:text-sm block mt-1 break-all"
               >
-                {SCHOOL_PROFILE.phone} (WhatsApp)
+                {SCHOOL_PROFILE.email}
               </a>
             </div>
           </div>
