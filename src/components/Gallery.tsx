@@ -12,6 +12,8 @@ import bagianDepanRJ from '../assets/images/bagian depan rj.jpeg';
 import ujianDaur2 from '../assets/images/ujiandaur2.jpeg';
 import haflah26 from '../assets/images/haflah26.jpeg';
 import piagamIzin from '../assets/images/piagamizin.jpg.jpeg';
+import rapatBulanan from '../assets/images/rapatbulanan.jpeg';
+import musyawarahMalam from '../assets/images/musyawarahmalam.jpeg';
 
 interface GalleryItem {
   id: string;
@@ -24,6 +26,24 @@ interface GalleryItem {
 }
 
 const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: 'gal-musyawarah-lbm',
+    title: 'Musyawarah Bahtsul Masail Lajnah Bahtsul Masail (LBM)',
+    description: 'Lajnah Bahtsul Masail (LBM) MDT Riyadlul Jannah menggelar Musyawarah Bahtsul Masail rutin yang diadakan 2 pekan sekali. Forum kajian keilmuan Islam dan literasi kitab kuning ini bertujuan untuk mengasah pemikiran kritis santri, mengkaji permasalahan fikih kontemporer, serta melatih kecakapan pendalaman dalil Kitab-kitab Fiqih Ulama Salaf, dan kutubut turats.',
+    imageUrl: musyawarahMalam,
+    category: 'belajar',
+    categoryLabel: 'LBM & Kajian Kitab',
+    date: '2026-07-15'
+  },
+  {
+    id: 'gal-rapat-bulanan',
+    title: 'Rapat Rutin Bulanan Evaluasi KBM MDT Riyadlul Jannah',
+    description: 'Kegiatan Rutin Bulanan Rapat MDT dalam rangka Evaluasi Kegiatan Belajar Mengajar (KBM) bersama para Asatidz dan Staf Pengajar MDT Riyadlul Jannah. Pertemuan ini diselenggarakan untuk meningkatkan mutu pendidikan, menyelaraskan kedisiplinan santri, serta merumuskan strategi pembelajaran keagamaan yang efektif.',
+    imageUrl: rapatBulanan,
+    category: 'kegiatan',
+    categoryLabel: 'Rapat & Evaluasi',
+    date: '2026-07-01'
+  },
   {
     id: 'gal-piagam-izin',
     title: 'Piagam Izin Operasional Kemenag MDT Riyadlul Jannah',
