@@ -24,6 +24,7 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
     { id: 'registration', label: 'Pendaftaran' },
     { id: 'gallery', label: 'Galeri Foto' },
     { id: 'portal', label: 'Portal Santri' },
+    { id: 'calendar', label: 'Kalender Akademik' },
     { id: 'announcements', label: 'Informasi & Agenda' },
     { id: 'about', label: 'Tentang Kami' },
     { id: 'contact', label: 'Hubungi' }

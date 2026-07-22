@@ -209,6 +209,14 @@ export const TEACHERS: Teacher[] = [
 
 export const ANNOUNCEMENTS: Announcement[] = [
   {
+    id: "kalender-akademik-mdt-2025-2026",
+    title: "Rilis Resmi Kalender Akademik MDT Riyadlul Jannah TA 2025/2026 & 2026/2027",
+    content: "Assalamu'alaikum Wr. Wb. Diumumkan kepada seluruh orang tua / wali santri dan para santri MDT Riyadlul Jannah bahwa Jadwal Kalender Akademik Resmi Madrasah Diniyah Taklimiyah (MDT) Riyadlul Jannah untuk Daur I (Semester Ganjil) & Daur II (Semester Genap) telah diterbitkan. Kalender ini memuat seluruh tanggal penting pelaksanaan Kegiatan Belajar Mengajar (KBM), Imtihan Nisfu Daur, Imtihan Akhir Daur, Pengajian Pasaran Ramadhan, Peringatan Hari Besar Islam (PHBI), Pendaftaran Santri Baru (PSB), dan Haflatul Imtihan Wisuda Akhirussanah. Bapak/Ibu wali santri dapat mengakses menu 'Kalender Akademik' di portal website ini untuk melihat rincian tanggal secara lengkap.",
+    date: "2026-07-15",
+    category: "akademik",
+    important: true
+  },
+  {
     id: "pengumuman-ranking-daur-2-2026",
     title: "Pengumuman Nama-Nama Juarawan & Juarawati Ranking MDT Riyadlul Jannah Daur II / Semester II (TA 2025-2026)",
     content: `Segala puji bagi Allah SWT. Berikut adalah Daftar Nama Juarawan & Juarawati Ranking Madrasah Diniyah Taklimiyah (MDT) Riyadlul Jannah Daur II / Semester II Tahun Ajaran 2025-2026 M (1447 H):
@@ -463,4 +471,213 @@ export const MOCK_STUDENTS: Record<string, StudentProfile> = {
       { month: "Juni", present: 9, absent: 1, sick: 0, permission: 0 }
     ]
   }
+};
+
+export const ACADEMIC_CALENDAR = {
+  academicYear: "2026/2027 (Semester 1 / Daur I Ganjil Juli - Desember 2026)",
+  institution: "Madrasah Diniyah Taklimiyah Riyadlul Jannah Pasir Gombong",
+  daurList: ["Semua Daur", "Semester 1 (Juli - Des 2026)", "Daur II (Genap 2026)", "Daur I (Ganjil 2025)"],
+  events: [
+    // --- SEMESTER 1 / DAUR I (GANJIL) TA 2026/2027 (JULI - DESEMBER 2026) ---
+    {
+      id: "cal-2026-1",
+      month: "Juli 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "13 - 19 Juli 2026",
+      title: "Pendaftaran & Registrasi Ulang Santri Baru (PSB) TA 2026/2027",
+      description: "Pendaftaran santri baru jenjang Awaliyah (1-3) & Wustho serta registrasi ulang santri tingkat lanjut.",
+      category: "pendaftaran" as const,
+      important: true
+    },
+    {
+      id: "cal-2026-2",
+      month: "Juli 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "20 Juli 2026",
+      title: "Awal Masuk KBM Daur I (Semester 1 / Ganjil) & Masa Ta'aruf Diniyah",
+      description: "Halaqah pengajian perdana, orientasi tata tertib santri, dan dimulainya KBM MDT Pagi & Sore.",
+      category: "kbm" as const,
+      important: true
+    },
+    {
+      id: "cal-2026-3",
+      month: "Agustus 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "17 Agustus 2026",
+      title: "Peringatan HUT Kemerdekaan RI ke-81 & Gebyar Lomba Santri",
+      description: "Upacara bendera, tasyakuran kemerdekaan, dan perlombaan keagamaan antar santri MDT.",
+      category: "phbi" as const
+    },
+    {
+      id: "cal-2026-4",
+      month: "Agustus 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "25 Agustus 2026 (12 Rabiul Awal 1448 H)",
+      title: "Peringatan Maulid Nabi Muhammad SAW",
+      description: "Pembacaan Diba'/Barzanji bersama seluruh santri & asatidz, tausiyah keagamaan, dan santunan santri.",
+      category: "phbi" as const
+    },
+    {
+      id: "cal-2026-5",
+      month: "September 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "21 - 26 September 2026",
+      title: "Ujian Tengah Semester 1 / Imtihan Nisfu Daur I TA 2026/2027",
+      description: "Evaluasi capaian hafalan juz, nadhom kitab kuning, dan pemahaman materi pertengahan Semester 1.",
+      category: "ujian" as const,
+      important: true
+    },
+    {
+      id: "cal-2026-6",
+      month: "Oktober 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "22 Oktober 2026",
+      title: "Peringatan Hari Santri Nasional (HSN 2026)",
+      description: "Pawai obor santri, istighotsah kubro mendoakan kebaikan bangsa, dan perlombaan lalaran nadhom.",
+      category: "acara" as const
+    },
+    {
+      id: "cal-2026-7",
+      month: "November 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "23 - 28 November 2026",
+      title: "Pelaksanaan Ujian Akhir Semester 1 / Imtihan Daur I TA 2026/2027",
+      description: "Ujian tulis dan syafahi (lisan/demonstrasi kitab salaf) seluruh mata pelajaran Semester 1 (Daur I).",
+      category: "ujian" as const,
+      important: true
+    },
+    {
+      id: "cal-2026-8",
+      month: "Desember 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "13 Desember 2026",
+      title: "Pembagian Raport Semester 1 / Daur I & Silaturahmi Wali Santri",
+      description: "Penyerahan laporan hasil belajar santri Semester 1 (Daur I) serta musyawarah evaluasi bersama orang tua/wali santri.",
+      category: "acara" as const,
+      important: true
+    },
+    {
+      id: "cal-2026-9",
+      month: "Desember 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "14 - 31 Desember 2026",
+      title: "Libur Semester 1 / Daur I TA 2026/2027",
+      description: "Masa libur kegiatan belajar mengajar madrasah akhir Semester 1 / Daur I.",
+      category: "libur" as const
+    },
+
+    // --- DAUR II (GENAP 2026) & ARCHIVED HISTORICAL EVENTS ---
+    {
+      id: "cal-10",
+      month: "Januari 2026",
+      semester: "Daur II (Genap 2026)" as const,
+      date: "5 Januari 2026",
+      title: "Awal Masuk KBM Daur II (Semester Genap)",
+      description: "Dimulainya kembali kegiatan belajar mengajar semester genap Daur II.",
+      category: "kbm" as const
+    },
+    {
+      id: "cal-11",
+      month: "Januari 2026",
+      semester: "Daur II (Genap 2026)" as const,
+      date: "27 Januari 2026 (27 Rajab 1447 H)",
+      title: "Peringatan Isra Mi'raj Nabi Muhammad SAW",
+      description: "Kajian keagamaan tema ibadah shalat dan pemantapan adab akhlakul karimah.",
+      category: "phbi" as const
+    },
+    {
+      id: "cal-12",
+      month: "Februari 2026",
+      semester: "Daur II (Genap 2026)" as const,
+      date: "16 - 21 Februari 2026",
+      title: "Imtihan Nisfu Daur II (UTS Semester Genap)",
+      description: "Ujian tengah semester genap dan evaluasi hafalan juz & nadhom.",
+      category: "ujian" as const
+    },
+    {
+      id: "cal-13",
+      month: "Maret - April 2026",
+      semester: "Daur II (Genap 2026)" as const,
+      date: "2 - 22 Maret 2026",
+      title: "Pengajian Pasaran Ramadhan Kitab Kuning",
+      description: "Program intensif khataman kitab-kitab salafiyah selama bulan suci Ramadhan.",
+      category: "kbm" as const
+    },
+    {
+      id: "cal-14",
+      month: "Maret - April 2026",
+      semester: "Daur II (Genap 2026)" as const,
+      date: "23 Maret - 12 April 2026",
+      title: "Libur Idul Fitri 1447 H",
+      description: "Libur merayakan Hari Raya Idul Fitri 1447 H bersama keluarga.",
+      category: "libur" as const
+    },
+    {
+      id: "cal-15",
+      month: "Juni 2026",
+      semester: "Daur II (Genap 2026)" as const,
+      date: "2 - 5 Juni 2026",
+      title: "Pelaksanaan Ujian Imtihan MDT Daur II / Semester 2",
+      description: "Pelaksanaan Ujian Imtihan MDT Daur II / Semester 2 sebagai bagian dari evaluasi kompetensi keilmuan santri.",
+      category: "ujian" as const,
+      important: true
+    },
+    {
+      id: "cal-16",
+      month: "Juni 2026",
+      semester: "Daur II (Genap 2026)" as const,
+      date: "28 Juni 2026 (13 Muharram 1448 H)",
+      title: "HAFLATUL IMTIHAN WISUDA AKHIRUSSANAH - PURNASISWA",
+      description: "Acara Wisuda MDT & Formal, Lalaran Hidayatus Shibyan (Kelas 1 Awaliyah), Lalaran Amtsilatut Tasrif (Kelas 2 Awaliyah), Demonstrasi Kitab Kuning Wisudawan (Kelas 3 Awaliyah & Takhossus), dan Pembagian Hadiah Ranking MDT.",
+      category: "acara" as const,
+      important: true
+    },
+
+    // --- DAUR I (GANJIL 2025) ARCHIVED ---
+    {
+      id: "cal-1",
+      month: "Juli 2025",
+      semester: "Daur I (Ganjil 2025)" as const,
+      date: "14 - 20 Juli 2025",
+      title: "Pendaftaran & Registrasi Ulang Santri 2025",
+      description: "Pendaftaran santri baru jenjang Awaliyah & Wustho serta pendaftaran ulang santri tingkat lanjut.",
+      category: "pendaftaran" as const
+    },
+    {
+      id: "cal-2",
+      month: "Juli 2025",
+      semester: "Daur I (Ganjil 2025)" as const,
+      date: "21 Juli 2025",
+      title: "Awal Masuk KBM Daur I (Semester Ganjil 2025)",
+      description: "Halaqah pengajian perdana dan dimulainya Kegiatan Belajar Mengajar (KBM) MDT Pagi & Sore.",
+      category: "kbm" as const
+    },
+    {
+      id: "cal-5",
+      month: "September 2025",
+      semester: "Daur I (Ganjil 2025)" as const,
+      date: "22 - 27 September 2025",
+      title: "Ujian Tengah Semester (UTS) / Imtihan Nisfu Daur I 2025",
+      description: "Evaluasi capaian hafalan dan pemahaman materi kitab salaf pertengahan Daur I.",
+      category: "ujian" as const
+    },
+    {
+      id: "cal-7",
+      month: "November 2025",
+      semester: "Daur I (Ganjil 2025)" as const,
+      date: "24 - 29 November 2025",
+      title: "Pelaksanaan Ujian Akhir Daur I (Imtihan Daur I 2025)",
+      description: "Ujian tulis dan syafahi (lisan/demonstrasi kitab) seluruh mata pelajaran Daur I.",
+      category: "ujian" as const
+    },
+    {
+      id: "cal-8",
+      month: "Desember 2025",
+      semester: "Daur I (Ganjil 2025)" as const,
+      date: "14 Desember 2025",
+      title: "Pembagian Raport Daur I 2025",
+      description: "Penyerahan laporan hasil belajar santri Daur I serta musyawarah bersama orang tua wali.",
+      category: "acara" as const
+    }
+  ]
 };

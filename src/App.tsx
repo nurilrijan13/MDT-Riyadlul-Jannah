@@ -16,6 +16,7 @@ import Gallery from './components/Gallery';
 import About from './components/About';
 import Registration from './components/Registration';
 import Rules from './components/Rules';
+import AcademicCalendar from './components/AcademicCalendar';
 import { SCHOOL_PROFILE } from './data';
 import schoolLogo from './assets/images/lambang_mdt_rj_logo.png';
 
@@ -199,6 +200,7 @@ export default function App() {
         {currentTab === 'registration' && <Registration />}
         {currentTab === 'gallery' && <Gallery />}
         {currentTab === 'portal' && <Portal />}
+        {currentTab === 'calendar' && <AcademicCalendar />}
         {currentTab === 'announcements' && <Announcements />}
         {currentTab === 'about' && <About />}
         {currentTab === 'contact' && <Contact />}

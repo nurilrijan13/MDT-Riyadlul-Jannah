@@ -64,6 +64,17 @@ export interface AttendanceRecord {
   permission: number;
 }
 
+export interface AcademicCalendarEvent {
+  id: string;
+  month: string;
+  semester: 'Daur I (Ganjil)' | 'Daur II (Genap)' | 'Tahun Ajaran Baru';
+  date: string;
+  title: string;
+  description: string;
+  category: 'kbm' | 'ujian' | 'libur' | 'pendaftaran' | 'acara' | 'phbi';
+  important?: boolean;
+}
+
 export interface StudentProfile {
   nis: string;
   fullName: string;
