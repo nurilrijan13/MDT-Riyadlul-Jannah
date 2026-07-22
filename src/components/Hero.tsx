@@ -68,10 +68,10 @@ export default function Hero({ setCurrentTab }: HeroProps) {
               className="flex flex-col sm:flex-row gap-4 pt-2"
             >
               <button 
-                onClick={() => setCurrentTab('registration')}
+                onClick={() => setCurrentTab('contact')}
                 className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 active:scale-98 transition-all text-white font-bold rounded-xl shadow-lg shadow-emerald-950/40 hover:shadow-emerald-500/20 flex items-center justify-center space-x-2 cursor-pointer group"
               >
-                <span>Daftar Santri Baru</span>
+                <span>Hubungi Sekretariat</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
               

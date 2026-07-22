@@ -4,17 +4,15 @@
  */
 
 import React, { useState } from 'react';
-import { ArrowUpRight, ShieldCheck, Mail, MapPin, Phone, Instagram } from 'lucide-react';
+import { ArrowUpRight, ShieldCheck, Mail, MapPin, Phone, Instagram, Youtube } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Profile from './components/Profile';
 import Programs from './components/Programs';
-import Portal from './components/Portal';
 import Announcements from './components/Announcements';
 import Contact from './components/Contact';
 import Gallery from './components/Gallery';
 import About from './components/About';
-import Registration from './components/Registration';
 import Rules from './components/Rules';
 import AcademicCalendar from './components/AcademicCalendar';
 import { SCHOOL_PROFILE } from './data';
@@ -197,9 +195,7 @@ export default function App() {
         {currentTab === 'profile' && <Profile />}
         {currentTab === 'programs' && <Programs />}
         {currentTab === 'rules' && <Rules />}
-        {currentTab === 'registration' && <Registration />}
         {currentTab === 'gallery' && <Gallery />}
-        {currentTab === 'portal' && <Portal />}
         {currentTab === 'calendar' && <AcademicCalendar />}
         {currentTab === 'announcements' && <Announcements />}
         {currentTab === 'about' && <About />}
@@ -251,6 +247,15 @@ export default function App() {
                 </svg>
                 <span>TikTok: <span className="underline">ppriyadluljannahpusat</span></span>
               </a>
+              <a 
+                href={SCHOOL_PROFILE.youtubeUrl} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs font-bold text-red-600 hover:text-red-700 transition-all font-sans group"
+              >
+                <Youtube className="w-4 h-4 text-red-600 shrink-0 group-hover:scale-110 transition-transform" />
+                <span>YouTube: <span className="underline">{SCHOOL_PROFILE.youtube}</span></span>
+              </a>
             </div>
           </div>
           <span className="text-[10px] uppercase font-mono tracking-widest text-brand-dark/40 mt-8 block">
@@ -267,9 +272,8 @@ export default function App() {
               <button onClick={() => { setCurrentTab('profile'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Profil &amp; Guru</button>
               <button onClick={() => { setCurrentTab('programs'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Program Ajar</button>
               <button onClick={() => { setCurrentTab('rules'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer text-emerald-800">Tata Tertib</button>
-              <button onClick={() => { setCurrentTab('registration'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer text-emerald-700">Pendaftaran Baru</button>
               <button onClick={() => { setCurrentTab('gallery'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Galeri Foto</button>
-              <button onClick={() => { setCurrentTab('portal'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Rapor Santri</button>
+              <button onClick={() => { setCurrentTab('calendar'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Kalender Akademik</button>
               <button onClick={() => { setCurrentTab('announcements'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Berita &amp; Agenda</button>
               <button onClick={() => { setCurrentTab('about'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Tentang Kami</button>
               <button onClick={() => { setCurrentTab('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Hubungi Kami</button>

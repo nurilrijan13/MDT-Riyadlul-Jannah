@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { MapPin, Phone, Mail, Instagram, MessageSquare, ChevronDown, ChevronUp, Clock, HelpCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Clock, Youtube } from 'lucide-react';
 import { SCHOOL_PROFILE } from '../data';
 
 export default function Contact() {
@@ -17,31 +17,7 @@ export default function Contact() {
     message: ''
   });
 
-  const [faqOpen, setFaqOpen] = useState<number | null>(0); // Open first FAQ by default
   const [submitSuccess, setSubmitSuccess] = useState(false);
-
-  const faqs = [
-    {
-      q: "Apakah ijazah MDT Riyadlul Jannah resmi terdaftar di Kementerian Agama?",
-      a: "Ya. MDT Riyadlul Jannah adalah lembaga resmi berizin operasional di bawah Kementerian Agama Kabupaten Bekasi. Setiap santri yang lulus akan mendapatkan ijazah (Syahadah) resmi yang dapat digunakan sebagai bukti kelulusan diniyah untuk pendaftaran sekolah tingkat lanjutan (SMP/MTs)."
-    },
-    {
-      q: "Bagaimana pembagian waktu belajar santri MDT?",
-      a: "Waktu belajar utama adalah hari Senin sampai dengan Jumat, mulai pukul 14.00 hingga 16.30 WIB. Jadwal ini dirancang agar tidak berbenturan dengan waktu pulang sekolah dasar (SD) umum, sehingga anak-anak memiliki waktu yang cukup untuk berganti pakaian dan makan siang sebelum berangkat ke madrasah."
-    },
-    {
-      q: "Apakah santri di luar wilayah Pasir Gombong diperbolehkan mendaftar?",
-      a: "Sangat diperbolehkan. Meskipun lokasi kami berada di Kampung Pasir Gombong, kami terbuka menerima pendaftaran santri baru dari perumahan sekitar maupun wilayah di luar Cikarang Utara, asalkan transportasi santri dapat diakomodasi oleh orang tua secara mandiri."
-    },
-    {
-      q: "Bagaimana dengan biaya pendidikan dan iuran bulanan (SPP)?",
-      a: "Kami berkomitmen menjaga biaya pendidikan tetap terjangkau bagi seluruh lapisan masyarakat. Biaya administrasi masuk awal hanya Rp 150.000 (tidak termasuk seragam/buku pilihan), dan iuran syahriyah (SPP bulanan) sebesar Rp 75.000. Tersedia juga keringanan khusus atau beasiswa bagi santri yatim atau kurang mampu."
-    },
-    {
-      q: "Apakah ada program setoran hafalan Al-Qur'an (Tahfidz)?",
-      a: "Ya, kami memiliki Program Khusus Tahfidz Junior terintegrasi yang berfokus pada tahsin pembacaan dan hafalan Juz 30 (Juz Amma). Setoran hafalan dipandu langsung oleh Ustadz/Ustazah hafizh Qur'an secara individual setiap hari sebelum atau sesudah jam pelajaran diniyah utama."
-    }
-  ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -153,6 +129,15 @@ export default function Contact() {
                   </svg>
                   <span className="underline">ppriyadluljannahpusat</span>
                 </a>
+                <a 
+                  href={SCHOOL_PROFILE.youtubeUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-xs text-red-600 hover:text-red-700 font-bold"
+                >
+                  <Youtube className="w-3.5 h-3.5 text-red-600 shrink-0" />
+                  <span className="underline">{SCHOOL_PROFILE.youtube}</span>
+                </a>
               </div>
             </div>
           </div>
@@ -164,7 +149,7 @@ export default function Contact() {
           {/* Form Box */}
           <div className="lg:col-span-6 bg-white border border-[#D4CFC4] p-6 md:p-8 rounded-3xl shadow-sm flex flex-col justify-between">
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-[#1B4332] font-serif border-b border-slate-100 pb-3">Kirim Pesan Online</h3>
+              <h3 className="text-xl font-bold text-[#1B4332] font-serif border-b border-slate-100 pb-3">Kotak Saran, Pertanyaan, Pesan &amp; Kritikan</h3>
               
               {submitSuccess && (
                 <div className="p-4 bg-emerald-50 border border-emerald-100 text-emerald-800 rounded-xl text-xs font-semibold leading-relaxed">
@@ -284,43 +269,6 @@ export default function Contact() {
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-
-        {/* FAQ Accordion Section */}
-        <div className="bg-white border border-[#D4CFC4] rounded-3xl p-6 md:p-10 shadow-xs">
-          <div className="flex items-center space-x-2.5 mb-8 border-b border-slate-100 pb-4 justify-center md:justify-start">
-            <HelpCircle className="w-6 h-6 text-emerald-700" />
-            <h3 className="text-2xl font-bold text-[#1B4332] font-serif">Pertanyaan yang Sering Diajukan (FAQ)</h3>
-          </div>
-
-          <div className="space-y-4 font-sans">
-            {faqs.map((faq, index) => {
-              const isOpen = faqOpen === index;
-              return (
-                <div key={index} className="border-b border-slate-100 pb-4 last:border-0 last:pb-0">
-                  <button
-                    onClick={() => setFaqOpen(isOpen ? null : index)}
-                    className="w-full flex items-center justify-between text-left py-2 focus:outline-hidden group cursor-pointer"
-                  >
-                    <span className="font-semibold text-slate-800 text-sm md:text-base group-hover:text-emerald-700 transition-colors">
-                      {faq.q}
-                    </span>
-                    {isOpen ? <ChevronUp className="w-5 h-5 text-slate-400 shrink-0" /> : <ChevronDown className="w-5 h-5 text-slate-400 shrink-0" />}
-                  </button>
-
-                  {isOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      className="text-xs md:text-sm text-slate-600 font-light leading-relaxed mt-2 pl-1 font-sans"
-                    >
-                      {faq.a}
-                    </motion.div>
-                  )}
-                </div>
-              );
-            })}
           </div>
         </div>
 
