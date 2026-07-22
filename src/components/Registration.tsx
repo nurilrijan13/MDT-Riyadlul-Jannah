@@ -93,15 +93,17 @@ _Pendaftaran online dikirim melalui Portal Web MDT Riyadlul Jannah pada ${new Da
     // Encode text for URL
     const encodedText = encodeURIComponent(message);
     
-    // Clean target WhatsApp number (085966461178 -> 6285966461178)
-    const targetPhone = "6285966461178";
-    const waUrl = `https://wa.me/${targetPhone}?text=${encodedText}`;
+    // Clean target WhatsApp number if available
+    const targetPhone = SCHOOL_PROFILE.phone ? SCHOOL_PROFILE.phone.replace(/[^0-9]/g, '') : '';
+    const waUrl = targetPhone ? `https://wa.me/${targetPhone}?text=${encodedText}` : null;
 
-    // Small delay to simulate action, then redirect
+    // Small delay to simulate action, then set submitted
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
-      window.open(waUrl, '_blank');
+      if (waUrl) {
+        window.open(waUrl, '_blank');
+      }
     }, 1200);
   };
 

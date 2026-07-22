@@ -79,32 +79,32 @@ export const PROGRAMS: Program[] = [
     description: "Program dasar pendidikan diniyah. Fokus pada pengenalan dasar-dasar akidah, fikih ibadah praktis, membaca Al-Qur'an dengan tajwid, dan hafalan surah-surah pendek.",
     duration: "3 Tahun",
     targetAge: "7 - 12 Tahun (Setingkat SD)",
-    schedule: "Senin s.d. Jumat (14.00 - 16.30 WIB)",
+    schedule: "Senin - Jumat (07.00 - 09.00 & 16.00 - 17.00 WIB)",
     icon: "BookOpen",
     subjects: [
       "Al-Qur'an & Tajwid",
       "Akidah Akhlak",
       "Fikih Ibadah",
-      "Tarikh / Sejarah Kebudayaan Islam (SKI)",
-      "Bahasa Arab Dasar",
+      "Tarikh",
+      "Nahwu Shorrof Dasar",
       "Hadits Pilihan & Doa Harian"
     ]
   },
   {
     id: "mdt-wustha",
     name: "MDT Wustha",
-    description: "Program lanjutan diniyah untuk santri usia Sekolah Menengah Pertama (SMP/MTs). Pendalaman kajian kitab fiqih dasar, bahasa arab menengah, sejarah peradaban Islam, dan penguatan akhlak remaja.",
+    description: "Program lanjutan diniyah. Pendalaman kajian kitab fiqih dasar, bahasa arab menengah, sejarah peradaban Islam, dan penguatan akhlak remaja.",
     duration: "3 Tahun",
-    targetAge: "12 - 15 Tahun (Setingkat SMP)",
-    schedule: "Senin s.d. Jumat (16.30 - 18.00 WIB)",
+    targetAge: "12 - 15 Tahun",
+    schedule: "Senin - Jumat (07.00 - 09.00 & 16.00 - 17.00 WIB)",
     icon: "GraduationCap",
     subjects: [
-      "Fikih Muamalah & Ibadah (Kitab Safinatun Najah/Fathul Qarib)",
-      "Akidah (Kitab Aqidatul Awam)",
-      "Akhlak Mulia (Kitab Akhlaqul Banin/Banat)",
-      "Nahwu & Sharaf (Bahasa Arab)",
-      "Al-Qur'an & Tafsir Ringkas",
-      "Tarikh Islam Lanjutan"
+      "Fikih Muamalah & Nikah (Kitab Fathul Qarib)",
+      "Mustholah Hadits",
+      "Akhlak Mulia (Kitab Ta'lim Muta'allim)",
+      "Nahwu & Sharaf (Imrithi & Alfiyah Ibnu Malik)",
+      "Ushul Fiqih",
+      "Qoidah Fiqih"
     ]
   },
   {
@@ -113,7 +113,7 @@ export const PROGRAMS: Program[] = [
     description: "Program khusus bimbingan menghafal Al-Qur'an yang diintegrasikan dengan kurikulum diniyah. Dirancang dengan metode setoran (ziyadah) dan pengulangan (muraja'ah) yang ramah anak.",
     duration: "Berkelanjutan",
     targetAge: "7 - 15 Tahun",
-    schedule: "Senin s.d. Kamis (13.00 - 14.00 WIB & Ba'da Maghrib)",
+    schedule: "Setiap Hari (05.00 - 06.00 WIB & 18.00 - 19.30 WIB / Ba'da Shubuh & Ba'da Maghrib dan Senin Sore 16.00 - 17.00)",
     icon: "HeartHandshake",
     subjects: [
       "Tahsin Al-Qur'an (Perbaikan Makhorijul Huruf)",
@@ -129,7 +129,7 @@ export const PROGRAMS: Program[] = [
     description: "Program intensif pendalaman ilmu alat (Shorof dan Nahwu) untuk membekali santri agar mampu membaca, memahami, dan meng-i'rab kitab-kitab kuning secara mandiri dan presisi.",
     duration: "2 Tahun",
     targetAge: "Remaja / Lanjutan",
-    schedule: "Senin s.d. Jumat (16.30 - 18.00 WIB)",
+    schedule: "Setiap Rabu & Jumat (16.00 - 17.00 WIB)",
     icon: "BookOpen",
     subjects: [
       "Nahwu (Kitab Al-Jurumiyyah & Imrithi)",
@@ -145,13 +145,13 @@ export const PROGRAMS: Program[] = [
     description: "Forum diskusi ilmiah mingguan santri tingkat lanjutan untuk membahas dan memecahkan berbagai persoalan keagamaan (Fikih kontemporer) berdasarkan literatur kitab muktabarah.",
     duration: "Rutin Mingguan",
     targetAge: "Lanjutan / Umum",
-    schedule: "Setiap Malam Jum'at (Ba'da Isya)",
+    schedule: "Setiap Selasa (16.00 - 17.00 WIB)",
     icon: "Users",
     subjects: [
       "Kajian Fikih Kontemporer",
       "Metodologi Pengambilan Hukum (Istinbath)",
       "Perbandingan Madzhab Dasar",
-      "Telaah Kitab Fathul Mu'in / Fathul Wahhab",
+      "Telaah Kitab Fathul Qorib / Fathul Mu'in",
       "Teknik Diskusi & Presentasi Ilmiah"
     ]
   }
@@ -172,7 +172,7 @@ export const TEACHERS: Teacher[] = [
   },
   {
     id: "u-mahrus-ali",
-    name: "Ust. Mahrus Ali",
+    name: "Ust. Mahrus 'Ali",
     role: "",
     avatar: asatidzPhoto
   },
