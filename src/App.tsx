@@ -15,6 +15,7 @@ import Gallery from './components/Gallery';
 import About from './components/About';
 import Rules from './components/Rules';
 import AcademicCalendar from './components/AcademicCalendar';
+import WisdomBanner from './components/WisdomBanner';
 import { SCHOOL_PROFILE } from './data';
 import schoolLogo from './assets/images/lambang_mdt_rj_logo.png';
 
@@ -64,6 +65,9 @@ export default function App() {
         {currentTab === 'home' && (
           <div>
             <Hero setCurrentTab={setCurrentTab} />
+            
+            {/* Wisdom / Maqolah Banner */}
+            <WisdomBanner />
             
             {/* Quick Home Page Intro Featurettes */}
             <div className="grid grid-cols-1 md:grid-cols-3 border-b border-brand-divider bg-brand-cream/10 font-sans">
