@@ -6,6 +6,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Image as ImageIcon, Calendar, Tag, ChevronLeft, ChevronRight, X, ZoomIn, Search, Layers } from 'lucide-react';
+import ShareButton from './ShareButton';
 
 import fotoGedungRJ from '../assets/images/fotogedungrj.jpeg';
 import bagianDepanRJ from '../assets/images/bagian depan rj.jpeg';
@@ -352,6 +353,16 @@ export default function Gallery() {
                     >
                       Perbesar Foto &rarr;
                     </button>
+                    <ShareButton
+                      variant="outline"
+                      label="Bagikan"
+                      shareData={{
+                        title: item.title,
+                        text: item.description,
+                        imageUrl: item.imageUrl,
+                        category: item.categoryLabel
+                      }}
+                    />
                   </div>
                 </div>
               </motion.div>
@@ -447,13 +458,25 @@ export default function Gallery() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3">
-                <span className="px-2.5 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-md text-[10px] font-extrabold uppercase tracking-widest text-emerald-400">
-                  {filteredItems[lightboxIndex].categoryLabel}
-                </span>
-                <span className="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
-                  <Calendar className="w-4 h-4 text-slate-500" />
-                  {formatDateIndo(filteredItems[lightboxIndex].date)}
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="px-2.5 py-1 bg-emerald-500/20 border border-emerald-500/30 rounded-md text-[10px] font-extrabold uppercase tracking-widest text-emerald-400">
+                    {filteredItems[lightboxIndex].categoryLabel}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
+                    <Calendar className="w-4 h-4 text-slate-500" />
+                    {formatDateIndo(filteredItems[lightboxIndex].date)}
+                  </span>
+                </div>
+                <ShareButton
+                  variant="dark-pill"
+                  label="Bagikan Foto"
+                  shareData={{
+                    title: filteredItems[lightboxIndex].title,
+                    text: filteredItems[lightboxIndex].description,
+                    imageUrl: filteredItems[lightboxIndex].imageUrl,
+                    category: filteredItems[lightboxIndex].categoryLabel
+                  }}
+                />
               </div>
 
               <div className="space-y-1.5">

@@ -8,6 +8,7 @@ import { motion } from 'motion/react';
 import { Calendar, Tag, Search, MessageSquare, AlertCircle, ChevronRight, Award, Trophy, Star, Crown, Sparkles } from 'lucide-react';
 import { ANNOUNCEMENTS, RANKING_DATA_DAUR_2 } from '../data';
 import { Announcement } from '../types';
+import ShareButton from './ShareButton';
 
 export default function Announcements() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -152,17 +153,28 @@ export default function Announcements() {
                 className="space-y-6"
               >
                 <div className="border-b border-slate-100 pb-5 space-y-3">
-                  <div className="flex items-center space-x-3 text-xs">
-                    <span className={`px-2.5 py-1 text-[10px] font-bold rounded-md border uppercase tracking-widest ${getCategoryStyle(activeAnnouncement.category)}`}>
-                      {activeAnnouncement.category}
-                    </span>
-                    <span className="text-slate-400 font-semibold">{activeAnnouncement.date}</span>
-                    {activeAnnouncement.important && (
-                      <span className="px-2 py-0.5 bg-red-100 text-red-800 text-[9px] font-bold rounded-sm uppercase tracking-wider flex items-center space-x-1">
-                        <AlertCircle className="w-3 h-3" />
-                        <span>Sangat Penting</span>
+                  <div className="flex items-center justify-between gap-2 flex-wrap text-xs">
+                    <div className="flex items-center space-x-2 flex-wrap gap-y-1">
+                      <span className={`px-2.5 py-1 text-[10px] font-bold rounded-md border uppercase tracking-widest ${getCategoryStyle(activeAnnouncement.category)}`}>
+                        {activeAnnouncement.category}
                       </span>
-                    )}
+                      <span className="text-slate-400 font-semibold">{activeAnnouncement.date}</span>
+                      {activeAnnouncement.important && (
+                        <span className="px-2 py-0.5 bg-red-100 text-red-800 text-[9px] font-bold rounded-sm uppercase tracking-wider flex items-center space-x-1">
+                          <AlertCircle className="w-3 h-3" />
+                          <span>Sangat Penting</span>
+                        </span>
+                      )}
+                    </div>
+                    <ShareButton
+                      variant="pill"
+                      label="Bagikan Berita"
+                      shareData={{
+                        title: activeAnnouncement.title,
+                        text: activeAnnouncement.content,
+                        category: activeAnnouncement.category
+                      }}
+                    />
                   </div>
                   <h3 className="text-xl md:text-2xl font-bold text-[#1B4332] font-serif leading-tight">
                     {activeAnnouncement.title}
@@ -214,6 +226,20 @@ export default function Announcements() {
                     </div>
                   </div>
                 )}
+
+                {/* Bottom Share Bar */}
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-xs text-slate-400 font-medium">Sukai &amp; Bagikan pengumuman ini:</span>
+                  <ShareButton
+                    variant="button"
+                    label="Bagikan Pengumuman"
+                    shareData={{
+                      title: activeAnnouncement.title,
+                      text: activeAnnouncement.content,
+                      category: activeAnnouncement.category
+                    }}
+                  />
+                </div>
 
                 {/* Additional Call to Actions in announcements */}
                 {activeAnnouncement.category === 'pengumuman' && (

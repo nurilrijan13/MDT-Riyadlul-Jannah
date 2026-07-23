@@ -8,6 +8,7 @@ import { motion } from 'motion/react';
 import { BookOpen, GraduationCap, HeartHandshake, Users, Check, Clock, Calendar, ShieldCheck, HelpCircle } from 'lucide-react';
 import { PROGRAMS, SCHOOL_PROFILE } from '../data';
 import { Program } from '../types';
+import ShareButton from './ShareButton';
 import jadwalMdtPagi from '../assets/images/JADWAL MDT PAGI.jpg';
 import jadwalMdtSore from '../assets/images/JADWAL MDT SORE.jpg';
 
@@ -94,11 +95,20 @@ export default function Programs() {
                   <p className="text-xs text-emerald-600 font-semibold uppercase tracking-wider mt-1">Jenjang Durasi: {selectedProgram.duration}</p>
                 </div>
                 
-                <div className="inline-flex flex-wrap gap-2 text-xs">
+                <div className="inline-flex flex-wrap items-center gap-2 text-xs">
                   <span className="flex items-center space-x-1.5 px-3 py-1.5 bg-white border border-slate-200 text-slate-700 rounded-lg">
                     <Clock className="w-3.5 h-3.5 text-emerald-600" />
                     <span>{selectedProgram.schedule}</span>
                   </span>
+                  <ShareButton
+                    variant="pill"
+                    label="Bagikan Program"
+                    shareData={{
+                      title: `Program ${selectedProgram.name} - MDT Riyadlul Jannah`,
+                      text: selectedProgram.description,
+                      category: 'Program Pendidikan'
+                    }}
+                  />
                 </div>
               </div>
 

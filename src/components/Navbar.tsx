@@ -4,16 +4,18 @@
  */
 
 import React, { useState } from 'react';
-import { Menu, X, School, BookOpen } from 'lucide-react';
+import { Menu, X, School, BookOpen, Sun, Moon } from 'lucide-react';
 import { SCHOOL_PROFILE } from '../data';
 import schoolLogo from '../assets/images/lambang_mdt_rj_logo.png';
 
 interface NavbarProps {
   currentTab: string;
   setCurrentTab: (tab: string) => void;
+  isDarkMode?: boolean;
+  toggleDarkMode?: () => void;
 }
 
-export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
+export default function Navbar({ currentTab, setCurrentTab, isDarkMode = false, toggleDarkMode }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
@@ -35,7 +37,7 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-brand-cream border-b border-brand-divider text-brand-dark">
+    <nav className="sticky top-0 z-50 bg-brand-cream border-b border-brand-divider text-brand-dark transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-22 items-center">
           {/* Logo & Brand */}
@@ -65,8 +67,8 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-1">
-            <div className="flex gap-4 xl:gap-6 font-sans text-[11px] uppercase tracking-widest font-bold">
+          <div className="hidden lg:flex items-center space-x-2">
+            <div className="flex gap-3 xl:gap-5 font-sans text-[11px] uppercase tracking-widest font-bold">
               {menuItems.map((item) => {
                 const isActive = currentTab === item.id;
                 return (
@@ -85,17 +87,54 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
                 );
               })}
             </div>
+
+            {/* Dark/Light Mode Switcher Desktop */}
+            {toggleDarkMode && (
+              <button
+                type="button"
+                onClick={toggleDarkMode}
+                title={isDarkMode ? 'Beralih ke Tema Terang' : 'Beralih ke Tema Gelap'}
+                className="ml-2 p-2.5 rounded-xl border border-brand-divider bg-white/60 dark:bg-emerald-950/40 hover:bg-white text-brand-dark transition-all cursor-pointer flex items-center justify-center gap-1.5 text-xs font-bold shadow-2xs"
+              >
+                {isDarkMode ? (
+                  <>
+                    <Sun className="w-4 h-4 text-amber-400 shrink-0" />
+                    <span className="text-[10px] uppercase tracking-wider font-extrabold text-amber-300">Terang</span>
+                  </>
+                ) : (
+                  <>
+                    <Moon className="w-4 h-4 text-emerald-800 shrink-0" />
+                    <span className="text-[10px] uppercase tracking-wider font-extrabold text-emerald-900">Gelap</span>
+                  </>
+                )}
+              </button>
+            )}
             
             <button
               onClick={() => handleNavClick('contact')}
-              className="ml-6 px-5 py-3 bg-brand-green hover:bg-brand-green/90 text-brand-cream font-sans text-xs uppercase tracking-widest font-bold transition-all duration-150 cursor-pointer"
+              className="ml-3 px-4 py-2.5 bg-brand-green hover:bg-brand-green/90 text-brand-cream font-sans text-xs uppercase tracking-widest font-bold transition-all duration-150 cursor-pointer rounded-lg"
             >
               Hubungi Kami
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex items-center lg:hidden">
+          {/* Mobile Actions (Theme toggle + Hamburger) */}
+          <div className="flex items-center gap-2 lg:hidden">
+            {toggleDarkMode && (
+              <button
+                type="button"
+                onClick={toggleDarkMode}
+                title={isDarkMode ? 'Beralih ke Tema Terang' : 'Beralih ke Tema Gelap'}
+                className="p-2 rounded-lg border border-brand-divider bg-white/60 dark:bg-emerald-950/40 text-brand-dark transition-colors cursor-pointer"
+              >
+                {isDarkMode ? (
+                  <Sun className="w-5 h-5 text-amber-400" />
+                ) : (
+                  <Moon className="w-5 h-5 text-emerald-800" />
+                )}
+              </button>
+            )}
+
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-sm text-brand-green hover:bg-brand-dark/5 focus:outline-hidden"
@@ -128,6 +167,24 @@ export default function Navbar({ currentTab, setCurrentTab }: NavbarProps) {
                 </button>
               );
             })}
+
+            {/* Mobile Theme Switch Button inside drawer */}
+            {toggleDarkMode && (
+              <div className="pt-2 border-t border-brand-divider mt-2">
+                <button
+                  onClick={toggleDarkMode}
+                  className="w-full py-3 px-3 rounded-xl border border-brand-divider bg-white/80 dark:bg-emerald-950/60 flex items-center justify-between text-xs uppercase tracking-wider font-extrabold text-brand-dark cursor-pointer"
+                >
+                  <span className="flex items-center gap-2">
+                    {isDarkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-emerald-800" />}
+                    <span>{isDarkMode ? 'Ganti ke Tema Terang' : 'Ganti ke Tema Gelap'}</span>
+                  </span>
+                  <span className="text-[10px] px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-100 font-mono">
+                    {isDarkMode ? 'Gelap Active' : 'Terang Active'}
+                  </span>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       )}

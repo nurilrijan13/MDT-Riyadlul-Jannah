@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, ShieldCheck, Mail, MapPin, Phone, Instagram, Youtube } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -20,9 +20,33 @@ import schoolLogo from './assets/images/lambang_mdt_rj_logo.png';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<string>('home');
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        return savedTheme === 'dark';
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prev) => !prev);
+  };
 
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-dark flex flex-col font-sans select-text selection:bg-emerald-100 selection:text-emerald-900">
+    <div className="min-h-screen bg-brand-cream text-brand-dark flex flex-col font-sans select-text selection:bg-emerald-100 selection:text-emerald-900 transition-colors duration-300">
       
       {/* Top Banner with Editorial aesthetic */}
       <div className="bg-brand-green text-brand-cream py-2.5 px-4 text-center border-b border-brand-divider text-[10px] md:text-xs tracking-widest uppercase font-sans font-extrabold flex items-center justify-center gap-2">
@@ -30,8 +54,8 @@ export default function App() {
         <span>Portal Informasi Resmi Madrasah Diniyah Taklimiyah Riyadlul Jannah Pasir Gombong</span>
       </div>
 
-      {/* Cohesive Navbar */}
-      <Navbar currentTab={currentTab} setCurrentTab={setCurrentTab} />
+      {/* Cohesive Navbar with Theme Switcher */}
+      <Navbar currentTab={currentTab} setCurrentTab={setCurrentTab} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
 
       {/* Main Page Layout Container */}
       <main className="flex-1 w-full max-w-7xl mx-auto border-x border-brand-divider bg-white">
