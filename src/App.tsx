@@ -253,37 +253,40 @@ export default function App() {
             <p className="text-xs font-sans text-brand-dark/65 leading-relaxed font-light">
               Membentuk generasi Qur’ani yang cerdas secara spritual, luhur secara akhlak, dan teguh mengamalkan syari’at Islam Ahlussunnah Wal Jama’ah.
             </p>
-            {/* Social Media Links */}
-            <div className="flex flex-col gap-2.5 pt-3 border-t border-brand-divider/20">
-              <a 
-                href="https://www.instagram.com/ppriyadluljannahpusat" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-bold text-pink-700 hover:text-pink-800 transition-all font-sans group"
-              >
-                <Instagram className="w-4 h-4 text-pink-600 shrink-0 group-hover:scale-110 transition-transform" />
-                <span>Instagram: <span className="underline">ppriyadluljannahpusat</span></span>
-              </a>
-              <a 
-                href="https://www.tiktok.com/@ppriyadluljannahpusat" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-bold text-slate-800 hover:text-black transition-all font-sans group"
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-slate-800 shrink-0 group-hover:scale-110 transition-transform">
-                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.73 4.1 1.13 1.08 2.65 1.66 4.22 1.75v3.86c-1.39-.03-2.76-.41-3.95-1.14-.65-.41-1.22-.95-1.65-1.59v7.8c-.04 2.1-.85 4.14-2.32 5.64-1.62 1.62-3.9 2.49-6.19 2.39-2.3-.04-4.52-.98-6.05-2.72-1.57-1.8-2.31-4.22-2.03-6.59.26-2.22 1.51-4.24 3.39-5.4 1.83-1.12 4.1-1.39 6.16-.72v4.06c-1.1-.53-2.43-.45-3.46.22-1.01.65-1.61 1.78-1.58 2.98.02 1.25.7 2.4 1.77 3.03 1.08.64 2.45.64 3.53 0 1.05-.63 1.71-1.78 1.71-3v-13.8z"/>
-                </svg>
-                <span>TikTok: <span className="underline">ppriyadluljannahpusat</span></span>
-              </a>
-              <a 
-                href={SCHOOL_PROFILE.youtubeUrl} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-bold text-red-600 hover:text-red-700 transition-all font-sans group"
-              >
-                <Youtube className="w-4 h-4 text-red-600 shrink-0 group-hover:scale-110 transition-transform" />
-                <span>YouTube: <span className="underline">{SCHOOL_PROFILE.youtube}</span></span>
-              </a>
+            {/* Social Media Links (Logo Only) */}
+            <div className="flex items-center gap-3 pt-3 border-t border-brand-divider/20 font-sans">
+              <span className="text-[10px] uppercase tracking-wider font-extrabold text-brand-dark/50">Media Sosial:</span>
+              <div className="flex items-center gap-2">
+                <a 
+                  href="https://www.instagram.com/ppriyadluljannahpusat" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  title="Instagram"
+                  className="w-9 h-9 rounded-full bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-2xs cursor-pointer"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+                <a 
+                  href="https://www.tiktok.com/@ppriyadluljannahpusat" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  title="TikTok"
+                  className="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:scale-110 transition-transform shadow-2xs cursor-pointer"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.73 4.1 1.13 1.08 2.65 1.66 4.22 1.75v3.86c-1.39-.03-2.76-.41-3.95-1.14-.65-.41-1.22-.95-1.65-1.59v7.8c-.04 2.1-.85 4.14-2.32 5.64-1.62 1.62-3.9 2.49-6.19 2.39-2.3-.04-4.52-.98-6.05-2.72-1.57-1.8-2.31-4.22-2.03-6.59.26-2.22 1.51-4.24 3.39-5.4 1.83-1.12 4.1-1.39 6.16-.72v4.06c-1.1-.53-2.43-.45-3.46.22-1.01.65-1.61 1.78-1.58 2.98.02 1.25.7 2.4 1.77 3.03 1.08.64 2.45.64 3.53 0 1.05-.63 1.71-1.78 1.71-3v-13.8z"/>
+                  </svg>
+                </a>
+                <a 
+                  href={SCHOOL_PROFILE.youtubeUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  title="YouTube"
+                  className="w-9 h-9 rounded-full bg-red-600 text-white flex items-center justify-center hover:scale-110 transition-transform shadow-2xs cursor-pointer"
+                >
+                  <Youtube className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
           <span className="text-[10px] uppercase font-mono tracking-widest text-brand-dark/40 mt-8 block">
