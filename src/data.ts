@@ -9,6 +9,9 @@ import asatidzPhoto from './assets/images/asatidz.jpg';
 export const SCHOOL_PROFILE = {
   name: "MDT Riyadlul Jannah",
   fullName: "Madrasah Diniyah Taklimiyah Riyadlul Jannah",
+  arabicSub: "المدرسة الدّينيّة التعليميّة",
+  arabicMain: "رياض الجنّة",
+  arabicFullName: "المدرسة الدّينيّة التعليميّة رياض الجنّة",
   statisticNumber: "322232160308",
   address: "Jl. Industri No. 114 Kp. Sempu Gardu Ds. Pasir Gombong Kec. Cikarang Utara Kab. Bekasi Prov. Jawa Barat",
   phone: "",

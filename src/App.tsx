@@ -245,9 +245,15 @@ export default function App() {
                 referrerPolicy="no-referrer"
               />
               <div className="flex flex-col">
-                <span className="text-[9px] uppercase tracking-widest font-sans font-extrabold text-brand-green">Madrasah Diniyah Taklimiyah</span>
-                <h4 className="text-xl font-serif font-black tracking-tight text-brand-dark leading-tight">RIYADLUL JANNAH</h4>
-                <span className="text-xs italic font-serif text-brand-gold font-bold mt-0.5">Pasir Gombong, Cikarang Utara</span>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[9px] uppercase tracking-widest font-sans font-extrabold text-brand-green">Madrasah Diniyah Taklimiyah</span>
+                  <span className="text-[10px] font-serif text-brand-green font-bold" dir="rtl">المدرسة الدّينيّة التعليميّة</span>
+                </div>
+                <div className="flex items-baseline space-x-2">
+                  <h4 className="text-xl font-serif font-black tracking-tight text-brand-dark leading-tight">RIYADLUL JANNAH</h4>
+                  <span className="text-sm font-serif text-brand-gold font-bold" dir="rtl">رياض الجنّة</span>
+                </div>
+                <span className="text-xs font-sans text-brand-dark/60 mt-0.5">Pasir Gombong, Cikarang Utara</span>
               </div>
             </div>
             <p className="text-xs font-sans text-brand-dark/65 leading-relaxed font-light">

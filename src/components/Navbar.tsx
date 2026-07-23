@@ -49,15 +49,20 @@ export default function Navbar({ currentTab, setCurrentTab, isDarkMode = false, 
               referrerPolicy="no-referrer"
             />
             <div className="flex flex-col">
-              <span className="text-[10px] md:text-xs uppercase tracking-widest font-sans font-extrabold text-brand-green">
-                Madrasah Diniyah Taklimiyah
-              </span>
-              <div className="flex items-baseline space-x-1.5">
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-[10px] md:text-xs uppercase tracking-widest font-sans font-extrabold text-brand-green">
+                  Madrasah Diniyah Taklimiyah
+                </span>
+                <span className="text-[10px] md:text-xs font-serif text-brand-green font-bold" dir="rtl">
+                  المدرسة الدّينيّة التعليميّة
+                </span>
+              </div>
+              <div className="flex items-baseline space-x-2">
                 <h1 className="text-xl md:text-2xl xl:text-3xl font-serif font-black tracking-tight text-brand-dark leading-none">
                   RIYADLUL JANNAH
                 </h1>
-                <span className="text-xs md:text-sm italic font-serif text-brand-gold font-semibold">
-                  رياض الجنة
+                <span className="text-sm md:text-lg font-serif text-brand-gold font-bold" dir="rtl">
+                  رياض الجنّة
                 </span>
               </div>
               <span className="text-[9px] md:text-[10px] font-sans text-brand-dark/60 tracking-wider leading-none mt-1">
