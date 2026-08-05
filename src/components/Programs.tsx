@@ -9,6 +9,7 @@ import { BookOpen, GraduationCap, HeartHandshake, Users, Check, Clock, Calendar,
 import { PROGRAMS, SCHOOL_PROFILE } from '../data';
 import { Program } from '../types';
 import ShareButton from './ShareButton';
+import StudentStats from './StudentStats';
 import jadwalMdtPagi from '../assets/images/JADWAL MDT PAGI.jpg';
 import jadwalMdtSore from '../assets/images/JADWAL MDT SORE.jpg';
 
@@ -352,6 +353,9 @@ export default function Programs() {
             </div>
           </div>
         </div>
+
+        {/* Student Statistics Section */}
+        <StudentStats />
 
       </div>
     </div>

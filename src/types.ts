@@ -75,6 +75,14 @@ export interface AcademicCalendarEvent {
   important?: boolean;
 }
 
+export interface ClassStudentCount {
+  level: string;
+  total: number;
+  putra: number;
+  putri: number;
+  category: 'Awaliyah' | 'Wustho';
+}
+
 export interface StudentProfile {
   nis: string;
   fullName: string;

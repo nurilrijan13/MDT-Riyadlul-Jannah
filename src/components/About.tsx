@@ -28,6 +28,7 @@ import asatidzPhoto from '../assets/images/asatidz.jpg';
 import piagamIzin from '../assets/images/piagamizin.jpg.jpeg';
 import { SCHOOL_PROFILE } from '../data';
 import WisdomBanner from './WisdomBanner';
+import StudentStats from './StudentStats';
 
 export default function About() {
   const [showDocModal, setShowDocModal] = useState(false);
@@ -317,6 +318,9 @@ export default function About() {
             </a>
           </div>
         </div>
+
+        {/* Student Stats Component */}
+        <StudentStats />
 
         {/* Wisdom Banner / Maqolah Masyhur */}
         <WisdomBanner className="rounded-3xl shadow-xl border border-emerald-800/40" />

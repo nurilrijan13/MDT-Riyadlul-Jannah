@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Announcement, Teacher, Program, StudentProfile } from './types';
+import { Announcement, Teacher, Program, StudentProfile, ClassStudentCount } from './types';
 import asatidzPhoto from './assets/images/asatidz.jpg';
 
 export const SCHOOL_PROFILE = {
@@ -702,3 +702,41 @@ export const ACADEMIC_CALENDAR = {
     }
   ]
 };
+
+export const STUDENT_STATS: ClassStudentCount[] = [
+  {
+    level: "1 Awaliyah",
+    total: 33,
+    putra: 18,
+    putri: 15,
+    category: "Awaliyah"
+  },
+  {
+    level: "2 Awaliyah",
+    total: 19,
+    putra: 3,
+    putri: 16,
+    category: "Awaliyah"
+  },
+  {
+    level: "3 Awaliyah",
+    total: 20,
+    putra: 9,
+    putri: 11,
+    category: "Awaliyah"
+  },
+  {
+    level: "1 Wustho",
+    total: 11,
+    putra: 9,
+    putri: 3,
+    category: "Wustho"
+  },
+  {
+    level: "2 Wustho",
+    total: 7,
+    putra: 3,
+    putri: 4,
+    category: "Wustho"
+  }
+];

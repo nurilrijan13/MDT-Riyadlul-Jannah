@@ -16,6 +16,7 @@ import About from './components/About';
 import Rules from './components/Rules';
 import AcademicCalendar from './components/AcademicCalendar';
 import WisdomBanner from './components/WisdomBanner';
+import StudentStats from './components/StudentStats';
 import { SCHOOL_PROFILE } from './data';
 import schoolLogo from './assets/images/lambang_mdt_rj_logo.png';
 
@@ -216,6 +217,11 @@ export default function App() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Student Statistics Section */}
+            <div className="p-6 sm:p-10 bg-slate-50 border-b border-brand-divider">
+              <StudentStats />
             </div>
           </div>
         )}
