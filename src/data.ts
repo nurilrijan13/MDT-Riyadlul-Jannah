@@ -213,6 +213,14 @@ export const TEACHERS: Teacher[] = [
 
 export const ANNOUNCEMENTS: Announcement[] = [
   {
+    id: "sesi-foto-bersama-murid-mdt-2026",
+    title: "Kegiatan Sesi Foto Bersama Murid MDT Riyadlul Jannah Untuk Kelengkapan Administrasi (Raport, KTM, & Ijazah)",
+    content: "Para Murid Madrasah Diniyah Takmiliyah (MDT) antusias mengikuti kegiatan sesi foto bersama yang diselenggarakan oleh pihak pengelola madrasah pada hari ini, Jum'at 7 Agustus 2026 M/ 23 Shofar 1448. Kegiatan ini bertujuan untuk melengkapi kelengkapan administrasi para murid, mulai dari kebutuhan foto untuk Raport, Kartu Tanda Murid (KTM), hingga pengurusan Ijazah mendatang.",
+    date: "2026-08-07",
+    category: "kegiatan",
+    important: true
+  },
+  {
     id: "rapat-tahun-ajaran-baru-2026-2027",
     title: "Berita Acara Rapat Tahun Ajaran Baru 2026-2027 M / 1448 H MDT Riyadlul Jannah",
     content: `Assalamu'alaikum Wr. Wb.
