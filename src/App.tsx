@@ -161,23 +161,23 @@ export default function App() {
 
             </div>
 
-            {/* Prominent Visi & Misi Section on Home Page */}
+            {/* Prominent Visi, Misi & Tujuan Section on Home Page */}
             <div className="border-b border-brand-divider bg-[#FAF9F6] p-8 md:p-12 space-y-10">
               <div className="text-center max-w-3xl mx-auto space-y-2">
                 <span className="text-[10px] uppercase tracking-widest font-sans font-extrabold text-brand-green px-2.5 py-1 bg-brand-green/10 inline-block">
                   Arah &amp; Komitmen Kami
                 </span>
                 <h3 className="text-2xl md:text-3xl font-bold text-brand-dark font-serif tracking-tight">
-                  Visi &amp; Misi Madrasah
+                  Visi, Misi &amp; Tujuan Madrasah
                 </h3>
                 <p className="text-xs md:text-sm text-slate-500 font-light max-w-xl mx-auto">
-                  Prinsip utama yang memandu seluruh proses pembelajaran, pembinaan karakter, dan pengelolaan pendidikan di MDT Riyadlul Jannah.
+                  Prinsip utama yang memandu seluruh proses pembelajaran, pembinaan karakter, dan pencapaian prestasi santri di MDT Riyadlul Jannah.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
                 {/* Visi Card */}
-                <div className="lg:col-span-5 bg-brand-green text-brand-cream p-8 rounded-2xl flex flex-col justify-between border border-brand-divider/25">
+                <div className="lg:col-span-5 bg-brand-green text-brand-cream p-8 rounded-2xl flex flex-col justify-between border border-brand-divider/25 shadow-sm">
                   <div className="space-y-4">
                     <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#C4A484]">Visi</span>
                     <blockquote className="text-lg md:text-xl font-serif font-semibold italic leading-relaxed">
@@ -191,7 +191,7 @@ export default function App() {
                 </div>
 
                 {/* Misi Card */}
-                <div className="lg:col-span-7 bg-white p-8 rounded-2xl border border-brand-divider flex flex-col justify-between">
+                <div className="lg:col-span-7 bg-white p-8 rounded-2xl border border-brand-divider flex flex-col justify-between shadow-2xs">
                   <div className="space-y-4">
                     <span className="text-[10px] font-extrabold uppercase tracking-widest text-brand-green">Misi</span>
                     <div className="space-y-3.5">
@@ -200,7 +200,7 @@ export default function App() {
                           <span className="w-5 h-5 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5">
                             {index + 1}
                           </span>
-                          <p className="text-xs text-brand-dark/85 leading-relaxed">
+                          <p className="text-xs text-brand-dark/85 leading-relaxed font-light">
                             {item}
                           </p>
                         </div>
@@ -210,13 +210,35 @@ export default function App() {
                   <div className="pt-4 border-t border-brand-divider/50 mt-4 text-right">
                     <button 
                       onClick={() => setCurrentTab('profile')}
-                      className="text-[11px] font-bold text-brand-green hover:text-brand-gold hover:underline"
+                      className="text-[11px] font-bold text-brand-green hover:text-brand-gold hover:underline cursor-pointer"
                     >
-                      Lihat Detail Struktur Madrasah &rarr;
+                      Lihat Tujuan &amp; Struktur Madrasah &rarr;
                     </button>
                   </div>
                 </div>
               </div>
+
+              {/* Tujuan Summary Strip on Home */}
+              {SCHOOL_PROFILE.goals && (
+                <div className="bg-white rounded-2xl p-6 border border-brand-divider shadow-2xs space-y-4">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-amber-700 bg-amber-100/70 px-2 py-0.5 rounded">
+                      Tujuan Pendidikan
+                    </span>
+                    <span className="text-xs font-serif font-bold text-slate-800">
+                      Output Kompetensi &amp; Karakter Santri
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                    {SCHOOL_PROFILE.goals.map((g, i) => (
+                      <div key={i} className="p-3.5 rounded-xl bg-slate-50 border border-slate-100 text-xs text-slate-700 leading-relaxed font-light flex flex-col justify-between">
+                        <p className="mb-2">{g}</p>
+                        <span className="text-[10px] font-bold text-emerald-700">Tujuan 0{i + 1}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Student Statistics Section */}

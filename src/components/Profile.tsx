@@ -19,7 +19,9 @@ import {
   ArrowRight,
   Bookmark,
   CheckCircle2,
-  Camera
+  Camera,
+  Target,
+  Compass
 } from 'lucide-react';
 import { SCHOOL_PROFILE, TEACHERS } from '../data';
 
@@ -127,6 +129,49 @@ export default function Profile() {
             </div>
           </div>
         </div>
+
+        {/* Goals / Tujuan Pendidikan Section */}
+        {SCHOOL_PROFILE.goals && SCHOOL_PROFILE.goals.length > 0 && (
+          <div className="bg-gradient-to-br from-amber-50/70 via-emerald-50/40 to-slate-50 border border-emerald-800/15 rounded-3xl p-8 md:p-10 shadow-sm relative overflow-hidden">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 pb-6 border-b border-emerald-800/10">
+              <div className="space-y-2">
+                <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-amber-500/10 text-amber-900 text-[10px] uppercase font-extrabold tracking-widest rounded-full border border-amber-500/20">
+                  <Target className="w-3.5 h-3.5 text-amber-700" />
+                  <span>Sasaran Kompetensi &amp; Output Santri</span>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 font-serif">
+                  Tujuan Pendidikan MDT Riyadlul Jannah
+                </h3>
+              </div>
+              <p className="text-xs md:text-sm text-slate-600 font-light max-w-md">
+                Tolok ukur keberhasilan pembinaan santri dalam penguasaan Al-Qur'an, kitab kuning salaf, ubudiyah harian, serta pembentukan akhlak mulia.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {SCHOOL_PROFILE.goals.map((goal, idx) => (
+                <div 
+                  key={idx} 
+                  className={`bg-white rounded-2xl p-5 border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-emerald-500/40 transition-all flex flex-col justify-between ${
+                    idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
+                  }`}
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="w-7 h-7 rounded-xl bg-emerald-700 text-white font-extrabold text-xs flex items-center justify-center shadow-xs">
+                        0{idx + 1}
+                      </span>
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                    </div>
+                    <p className="text-xs md:text-sm text-slate-700 leading-relaxed font-sans font-medium">
+                      {goal}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Section: Core Values / Nilai Utama (NEW) */}
         {coreValues.length > 0 && (

@@ -33,13 +33,20 @@ export const SCHOOL_PROFILE = {
     "Memasuki dekade kedua, seiring dengan meningkatnya kebutuhan masyarakat Pasir Gombong, madrasah melakukan pembenahan fasilitas fisik maupun kurikulum. Didukung oleh swadaya masyarakat dan para donatur, MDT Riyadlul Jannah berhasil membangun ruang-ruang kelas yang representatif dan nyaman bagi proses belajar santri. Secara administratif, madrasah pun resmi terdaftar di Kementerian Agama Republik Indonesia, yang menegaskan legalitas operasionalnya.",
     "Kini, setelah lebih dari dua dekade berkiprah, MDT Riyadlul Jannah telah melahirkan ratusan alumni yang tersebar di berbagai pondok pesantren terkemuka di Jawa dan madrasah lanjutan. Kami terus berkomitmen menjaga tradisi luhur keislaman ala Ahlussunnah wal Jama'ah An-Nahdliyah, sekaligus menerapkan inovasi metode pengajaran tahfidz yang ramah anak guna menjawab tantangan zaman dan membentuk karakter generasi emas bangsa yang sholih dan sholihah."
   ],
-  vision: "Terwujudnya Generasi Qur'ani yang Beriman Kokoh, Berakhlakul Karimah, Unggul dalam Ilmu Agama, dan Mandiri.",
+  vision: "Terwujud nya generasi Insan Robbani yang berilmu, berdisiplin, dan berakhlak mulia melalui penguasaan Al-Qur'an dan Kitab Salaf, serta keseimbangan prestasi Duniawi dan Ukhrawi",
   mission: [
-    "Menyelenggarakan pendidikan keagamaan Islam (Diniyah) yang berkualitas bagi anak-anak usia sekolah.",
-    "Membiasakan pengamalan ibadah praktis harian dan akhlakul karimah dalam kehidupan sehari-hari.",
-    "Membina kemampuan membaca, menulis, memahami, dan menghafal Al-Qur'an secara tartil sesuai kaidah tajwid.",
-    "Membangun sinergi yang harmonis antara madrasah, orang tua, dan lingkungan masyarakat sekitar untuk perlindungan moral anak.",
-    "Mengenalkan nilai-nilai kepemimpinan dan kemandirian berlandaskan ukhuwah Islamiyah."
+    "Menyelenggarakan pembelajaran Al-Qur'an secara tartil dengan penguasaan hukum-hukum tajwid yang benar dan fasih.",
+    "Mendidik Murid agar mampu membaca, mengartikan, dan memahami Kitab salaf (Kitab Kuning) melalui pemahaman dasar kaidah Nahwu dan Shorof.",
+    "Membiasakan dan membimbing Murid dalam prakter Ubudiyah harian sesuai kaidah fiqih yang shahih.",
+    "Menanamkan nilai-nilai moral, adab, dan budi pekerti luhur berlandaskan Al-Qur'an, Sunnah dan Salafunassholeh dalam kehidupan sehari-hari.",
+    "Membentuk karakter Murid yang tangguh, tepat waktu, serta taat pada aturan agama dan madrasah."
+  ],
+  goals: [
+    "Menghasilkan lulusan yang mampu membaca Al-Qur'an secara tartil, fasih, dan menguasai hukum-hukum tajwid dengan benar.",
+    "Mewujudkan santri/murid yang mampu membaca, mengartikan, dan memahami Kitab Salaf (Kitab Kuning) dasar melalui penguasaan kaidah Nahwu dan Shorof.",
+    "Membentuk kebiasaan dan kemandirian murid dalam menjalankan ibadah/ubudiyah harian (syariat) terutama Hafal bacaan & gerakan Rukun Qolbi,Qouli dan Fi'li didalam sholat",
+    "Menanamkan adab, moral, dan budi pekerti luhur dalam kepribadian murid sehari-hari berlandaskan ajaran Al-Qur'an, Sunnah, dan keteladanan Salafussholeh.",
+    "Membentuk pribadi murid yang tangguh, taat aturan, tepat waktu, serta mampu meraih keseimbangan antara prestasi akademik/duniawi dan kesiapan ukhrawi."
   ],
   coreValues: [
     {
