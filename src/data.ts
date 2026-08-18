@@ -34,7 +34,7 @@ export const SCHOOL_PROFILE = {
     "Memasuki dekade kedua, seiring dengan meningkatnya kebutuhan masyarakat Pasir Gombong, madrasah melakukan pembenahan fasilitas fisik maupun kurikulum. Didukung oleh swadaya masyarakat dan para donatur, MDT Riyadlul Jannah berhasil membangun ruang-ruang kelas yang representatif dan nyaman bagi proses belajar santri. Secara administratif, madrasah pun resmi terdaftar di Kementerian Agama Republik Indonesia, yang menegaskan legalitas operasionalnya.",
     "Kini, setelah lebih dari dua dekade berkiprah, MDT Riyadlul Jannah telah melahirkan ratusan alumni yang tersebar di berbagai pondok pesantren terkemuka di Jawa dan madrasah lanjutan. Kami terus berkomitmen menjaga tradisi luhur keislaman ala Ahlussunnah wal Jama'ah An-Nahdliyah, sekaligus menerapkan inovasi metode pengajaran tahfidz yang ramah anak guna menjawab tantangan zaman dan membentuk karakter generasi emas bangsa yang sholih dan sholihah."
   ],
-  vision: "Terwujud nya generasi Insan Robbani yang berilmu, berdisiplin, dan berakhlak mulia melalui penguasaan Al-Qur'an dan Kitab Salaf, serta keseimbangan prestasi Duniawi dan Ukhrawi",
+  vision: "Terwujud nya generasi Insan Robbani yang berilmu, beriman, berdisiplin, dan berakhlak mulia, serta keseimbangan prestasi Duniawi dan Ukhrawi",
   mission: [
     "Menyelenggarakan pembelajaran Al-Qur'an secara tartil dengan penguasaan hukum-hukum tajwid yang benar dan fasih.",
     "Mendidik Murid agar mampu membaca, mengartikan, dan memahami Kitab salaf (Kitab Kuning) melalui pemahaman dasar kaidah Nahwu dan Shorof.",
