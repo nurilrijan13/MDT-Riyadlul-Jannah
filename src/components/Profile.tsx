@@ -243,12 +243,11 @@ export default function Profile() {
                 <div className="relative border-l-2 border-emerald-100 pl-6 space-y-8 ml-2">
                   
                   {historyParagraphs.map((para, idx) => {
-                    // Let's create beautiful markers for the timeline
+                    // Timeline markers corresponding to MDT history phases
                     const markers = [
-                      { label: "1999", title: "Inisiasi & Latar Belakang Pendirian" },
-                      { label: "Awal", title: "Masa-Masa Perjuangan & Kesederhanaan" },
-                      { label: "Fasilitas", title: "Pembenahan Kelas & Legalitas Formal" },
-                      { label: "Masa Kini", title: "Melangkah Pasti Menuju Masa Depan" }
+                      { label: "Awal", title: "Berawal dari 6 Santri & Kesederhanaan" },
+                      { label: "1999", title: "Inisiasi, Doa Para Ulama, & Pembentukan Lembaga Terstruktur" },
+                      { label: "Masa Kini", title: "MDT Riyadlul Jannah Hari Ini" }
                     ];
                     
                     const marker = markers[idx] || { label: `Fase ${idx+1}`, title: "Langkah Pengabdian" };
