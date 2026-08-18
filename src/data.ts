@@ -536,6 +536,16 @@ export const ACADEMIC_CALENDAR = {
   events: [
     // --- SEMESTER 1 / DAUR I (GANJIL) TA 2026/2027 (JULI - DESEMBER 2026) ---
     {
+      id: "cal-2026-0",
+      month: "Juli 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "8 Juli 2026 (23 Muharrom 1448 H)",
+      title: "Rapat Pleno Asatidz: Tahun Ajaran Baru 2026-2027",
+      description: "Penentuan Wali Kelas, Penentuan Kitab Kajian Salaf & Guru Pengampu, serta Penetapan Program KBM TA 2026-2027.",
+      category: "rapat" as const,
+      important: true
+    },
+    {
       id: "cal-2026-1",
       month: "Juli 2026",
       semester: "Semester 1 (Juli - Des 2026)" as const,
@@ -556,6 +566,16 @@ export const ACADEMIC_CALENDAR = {
       important: true
     },
     {
+      id: "cal-2026-foto",
+      month: "Agustus 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "7 Agustus 2026 (23 Shofar 1448 H)",
+      title: "Sesi Foto Bersama Murid MDT Untuk Administrasi (Raport, KTM & Ijazah)",
+      description: "Pengambilan foto resmi seluruh santri Awaliyah & Wustha untuk kelengkapan administrasi Raport, Kartu Tanda Murid, dan berkas Ijazah.",
+      category: "kegiatan" as const,
+      important: true
+    },
+    {
       id: "cal-2026-3",
       month: "Agustus 2026",
       semester: "Semester 1 (Juli - Des 2026)" as const,
@@ -563,6 +583,16 @@ export const ACADEMIC_CALENDAR = {
       title: "Peringatan HUT Kemerdekaan RI ke-81 & Gebyar Lomba Santri",
       description: "Upacara bendera, tasyakuran kemerdekaan, dan perlombaan keagamaan antar santri MDT.",
       category: "phbi" as const
+    },
+    {
+      id: "cal-2026-rapat-18",
+      month: "Agustus 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "18 Agustus 2026 (6 Rabiul Awwal 1448 H)",
+      title: "Rapat Internal Staff Pengajar MDT & Dewan Asatidz",
+      description: "Musyawarah internal membahas penataan kelembagaan, pemantapan Visi, Misi & Tujuan, kurikulum pengajaran kitab salaf, serta evaluasi berkala KBM.",
+      category: "rapat" as const,
+      important: true
     },
     {
       id: "cal-2026-4",

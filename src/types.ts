@@ -67,11 +67,11 @@ export interface AttendanceRecord {
 export interface AcademicCalendarEvent {
   id: string;
   month: string;
-  semester: 'Daur I (Ganjil)' | 'Daur II (Genap)' | 'Tahun Ajaran Baru';
+  semester: string;
   date: string;
   title: string;
   description: string;
-  category: 'kbm' | 'ujian' | 'libur' | 'pendaftaran' | 'acara' | 'phbi';
+  category: 'kbm' | 'ujian' | 'libur' | 'pendaftaran' | 'acara' | 'phbi' | 'informasi' | 'rapat' | 'kegiatan' | 'akademik';
   important?: boolean;
 }
 
