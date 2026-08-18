@@ -172,7 +172,8 @@ export default function Announcements() {
                       shareData={{
                         title: activeAnnouncement.title,
                         text: activeAnnouncement.content,
-                        category: activeAnnouncement.category
+                        category: activeAnnouncement.category,
+                        imageUrl: activeAnnouncement.image
                       }}
                     />
                   </div>
@@ -180,6 +181,17 @@ export default function Announcements() {
                     {activeAnnouncement.title}
                   </h3>
                 </div>
+
+                {/* Announcement Featured Image (if available) */}
+                {activeAnnouncement.image && (
+                  <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-sm max-h-[320px] bg-slate-900">
+                    <img 
+                      src={activeAnnouncement.image} 
+                      alt={activeAnnouncement.title}
+                      className="w-full h-full max-h-[320px] object-cover hover:scale-102 transition-transform duration-300"
+                    />
+                  </div>
+                )}
 
                 {/* Content text */}
                 <div className="space-y-4 text-slate-600 text-sm md:text-base leading-relaxed font-light font-sans">
@@ -236,7 +248,8 @@ export default function Announcements() {
                     shareData={{
                       title: activeAnnouncement.title,
                       text: activeAnnouncement.content,
-                      category: activeAnnouncement.category
+                      category: activeAnnouncement.category,
+                      imageUrl: activeAnnouncement.image
                     }}
                   />
                 </div>

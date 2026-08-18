@@ -5,6 +5,7 @@
 
 import { Announcement, Teacher, Program, StudentProfile, ClassStudentCount } from './types';
 import asatidzPhoto from './assets/images/asatidz.jpg';
+import musyawarahMalam from './assets/images/musyawarahmalam.jpeg';
 
 export const SCHOOL_PROFILE = {
   name: "MDT Riyadlul Jannah",
@@ -219,6 +220,26 @@ export const TEACHERS: Teacher[] = [
 ];
 
 export const ANNOUNCEMENTS: Announcement[] = [
+  {
+    id: "rapat-internal-dewan-asatidz-18-agustus-2026",
+    title: "Rapat Internal Staff Pengajar MDT & Dewan Asatidz: Penataan Kelembagaan, Visi Misi, Kurikulum & Evaluasi KBM",
+    content: `BEKASI, MDT RIYADLUL JANNAH — MDT (Madrasah Diniyah Takmiliyah) Riyadlul Jannah menyelenggarakan rapat internal Staff Pengajar MDT dan Dewan Asatidz pada Selasa, 18 Agustus 2026 (bertepatan dengan 6 Rabiul Awwal 1448 H).
+
+Rapat yang berlangsung mulai pukul 20.20 hingga 22.20 WIB di Tennis Madin ini membahas agenda strategis terkait penataan kelembagaan, Visi, Misi dan Tujuan, kurikulum, serta evaluasi Kegiatan Belajar Mengajar (KBM).
+
+Poin-poin pembahasan utama dalam rapat musyawarah meliputi:
+• Penataan Struktur Kelembagaan & Manajemen Madrasah.
+• Pemantapan dan Sosialisasi Rumusan Visi, Misi, serta Tujuan Pendidikan Santri.
+• Penyelarasan Kurikulum Pengajaran Kitab Salaf (Kitab Kuning) & Tajwid Al-Qur'an.
+• Evaluasi Berkala Pelaksanaan Kegiatan Belajar Mengajar (KBM) MDT Pagi dan Sore.
+• Penguatan Kedisiplinan, Adab, dan Pembiasaan Ubudiyah Harian Santri.
+
+Semoga terselenggaranya rapat internal ini semakin memperkokoh soliditas dewan asatidz dan membawa keberkahan bagi kemajuan pendidikan santri MDT Riyadlul Jannah.`,
+    date: "2026-08-18",
+    category: "kegiatan",
+    important: true,
+    image: musyawarahMalam
+  },
   {
     id: "sesi-foto-bersama-murid-mdt-2026",
     title: "Kegiatan Sesi Foto Bersama Murid MDT Riyadlul Jannah Untuk Kelengkapan Administrasi (Raport, KTM, & Ijazah)",
