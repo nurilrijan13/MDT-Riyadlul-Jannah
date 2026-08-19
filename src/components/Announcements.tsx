@@ -5,8 +5,8 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Calendar, Tag, Search, MessageSquare, AlertCircle, ChevronRight, Award, Trophy, Star, Crown, Sparkles } from 'lucide-react';
-import { ANNOUNCEMENTS, RANKING_DATA_DAUR_2 } from '../data';
+import { Calendar, Tag, Search, MessageSquare, AlertCircle, ChevronRight, Award, Trophy, Star, Crown, Sparkles, BookOpen, HelpCircle, CheckCircle2, MapPin, Clock, UserCheck, FileText, Scale, BookMarked } from 'lucide-react';
+import { ANNOUNCEMENTS, RANKING_DATA_DAUR_2, BAHTSUL_MASAIL_SESSION_AUGUST_2026 } from '../data';
 import { Announcement } from '../types';
 import ShareButton from './ShareButton';
 
@@ -193,12 +193,148 @@ export default function Announcements() {
                   </div>
                 )}
 
-                {/* Content text */}
-                <div className="space-y-4 text-slate-600 text-sm md:text-base leading-relaxed font-light font-sans">
-                  {activeAnnouncement.content.split('\n\n').map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
-                  ))}
-                </div>
+                {/* Content text (for standard announcements) */}
+                {activeAnnouncement.id !== 'bahtsul-masail-usbuyah-4-agustus-2026' && (
+                  <div className="space-y-4 text-slate-600 text-sm md:text-base leading-relaxed font-light font-sans">
+                    {activeAnnouncement.content.split('\n\n').map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
+                  </div>
+                )}
+
+                {/* Special Visual Bahtsul Masail Display */}
+                {activeAnnouncement.id === 'bahtsul-masail-usbuyah-4-agustus-2026' && (
+                  <div className="space-y-6">
+                    {/* Header Banner */}
+                    <div className="bg-gradient-to-br from-emerald-900 to-slate-900 text-white p-6 rounded-2xl border border-emerald-700/50 shadow-md space-y-4">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-emerald-800/80 pb-3">
+                        <div>
+                          <span className="text-[11px] font-bold text-amber-400 uppercase tracking-widest block font-mono">
+                            {BAHTSUL_MASAIL_SESSION_AUGUST_2026.institution}
+                          </span>
+                          <h4 className="text-lg md:text-xl font-bold font-serif text-white mt-0.5">
+                            {BAHTSUL_MASAIL_SESSION_AUGUST_2026.forum}
+                          </h4>
+                        </div>
+                        <span className="px-3 py-1 bg-emerald-800/80 border border-emerald-600/40 rounded-full text-xs font-medium text-emerald-200 shrink-0 self-start sm:self-auto">
+                          Kajian Fiqih Salaf
+                        </span>
+                      </div>
+
+                      {/* Metadata Grid */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs">
+                        <div className="bg-emerald-950/60 p-2.5 rounded-xl border border-emerald-800/40 space-y-1">
+                          <span className="text-emerald-400 font-medium flex items-center gap-1.5 text-[11px]">
+                            <Calendar className="w-3.5 h-3.5 text-amber-400" /> Waktu Pelaksanaan
+                          </span>
+                          <p className="font-semibold text-slate-100">{BAHTSUL_MASAIL_SESSION_AUGUST_2026.dateMasehi}</p>
+                          <p className="text-[11px] text-emerald-300 font-mono">{BAHTSUL_MASAIL_SESSION_AUGUST_2026.dateHijriah} • {BAHTSUL_MASAIL_SESSION_AUGUST_2026.time}</p>
+                        </div>
+
+                        <div className="bg-emerald-950/60 p-2.5 rounded-xl border border-emerald-800/40 space-y-1">
+                          <span className="text-emerald-400 font-medium flex items-center gap-1.5 text-[11px]">
+                            <MapPin className="w-3.5 h-3.5 text-amber-400" /> Tempat &amp; Maqro'
+                          </span>
+                          <p className="font-semibold text-slate-100">{BAHTSUL_MASAIL_SESSION_AUGUST_2026.location}</p>
+                          <p className="text-[11px] text-emerald-300">{BAHTSUL_MASAIL_SESSION_AUGUST_2026.maqro}</p>
+                        </div>
+
+                        <div className="bg-emerald-950/60 p-2.5 rounded-xl border border-emerald-800/40 space-y-1 sm:col-span-2 lg:col-span-1">
+                          <span className="text-emerald-400 font-medium flex items-center gap-1.5 text-[11px]">
+                            <UserCheck className="w-3.5 h-3.5 text-amber-400" /> Dewan Sidang
+                          </span>
+                          <p className="text-[11px] text-slate-200">
+                            <strong>Mod:</strong> {BAHTSUL_MASAIL_SESSION_AUGUST_2026.moderator}
+                          </p>
+                          <p className="text-[11px] text-slate-200">
+                            <strong>Mushohhih:</strong> {BAHTSUL_MASAIL_SESSION_AUGUST_2026.mushohhih.join(', ')}
+                          </p>
+                          <p className="text-[11px] text-emerald-300">
+                            <strong>Muhararrir:</strong> {BAHTSUL_MASAIL_SESSION_AUGUST_2026.muhararrir.join(' & ')}
+                          </p>
+                          <p className="text-[11px] text-emerald-300">
+                            <strong>Qori':</strong> {BAHTSUL_MASAIL_SESSION_AUGUST_2026.qori.join(' & ')}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Deskripsi Masalah */}
+                    <div className="bg-amber-50/70 border border-amber-200/80 rounded-2xl p-5 space-y-2.5">
+                      <div className="flex items-center space-x-2 text-amber-900 font-serif font-bold text-sm">
+                        <FileText className="w-4 h-4 text-amber-700 shrink-0" />
+                        <span>A. DESKRIPSI MASALAH</span>
+                      </div>
+                      <p className="text-slate-700 text-xs md:text-sm leading-relaxed font-light">
+                        {BAHTSUL_MASAIL_SESSION_AUGUST_2026.description}
+                      </p>
+                    </div>
+
+                    {/* Pertanyaan, Jawaban & Ibarat */}
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+                        <h4 className="font-serif font-bold text-emerald-950 text-base flex items-center gap-2">
+                          <Scale className="w-4 h-4 text-emerald-700" />
+                          <span>B. PERTANYAAN &amp; C. KEPUTUSAN HUKUM</span>
+                        </h4>
+                        <span className="text-xs text-slate-500 font-medium">3 Permasalahan (Mas'alah)</span>
+                      </div>
+
+                      <div className="space-y-4">
+                        {BAHTSUL_MASAIL_SESSION_AUGUST_2026.questions.map((q) => (
+                          <div
+                            key={q.number}
+                            className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-2xs space-y-4 hover:border-emerald-300 transition-colors"
+                          >
+                            {/* Pertanyaan */}
+                            <div className="flex items-start gap-3 bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                              <span className="w-6 h-6 rounded-full bg-emerald-700 text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                                {q.number}
+                              </span>
+                              <div className="space-y-1">
+                                <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800">Pertanyaan #{q.number}</span>
+                                <h5 className="font-bold text-slate-900 text-sm">{q.question}</h5>
+                              </div>
+                            </div>
+
+                            {/* Jawaban */}
+                            <div className="space-y-2 pl-2 sm:pl-4 border-l-2 border-emerald-600">
+                              <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 flex items-center gap-1.5">
+                                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                                Keputusan / Jawaban:
+                              </span>
+                              <div className="text-slate-700 text-xs md:text-sm leading-relaxed space-y-2">
+                                {q.answer.split('\n\n').map((p, pIdx) => (
+                                  <p key={pIdx}>{p}</p>
+                                ))}
+                              </div>
+                            </div>
+
+                            {/* Referensi & Ibarat Kitab Kuning */}
+                            <div className="bg-emerald-950 text-slate-100 rounded-xl p-4 space-y-2.5 border border-emerald-800/60">
+                              <div className="flex items-center justify-between border-b border-emerald-800 pb-2">
+                                <span className="text-[11px] font-bold text-amber-400 flex items-center gap-1.5">
+                                  <BookMarked className="w-3.5 h-3.5" /> Referensi Kitab:
+                                </span>
+                                <span className="text-xs font-serif text-emerald-200 font-semibold text-right">
+                                  {q.reference.book}
+                                </span>
+                              </div>
+                              <div className="p-3 bg-emerald-900/40 rounded-lg border border-emerald-800/40">
+                                <p 
+                                  dir="rtl" 
+                                  className="text-right font-serif text-sm sm:text-base leading-loose text-amber-100 font-medium tracking-wide selection:bg-amber-700"
+                                >
+                                  {q.reference.arabicText}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 {/* Special Visual Ranking Display if viewing Ranking announcement */}
                 {activeAnnouncement.id === 'pengumuman-ranking-daur-2-2026' && (

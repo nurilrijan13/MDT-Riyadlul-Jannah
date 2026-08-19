@@ -13,6 +13,33 @@ export interface Announcement {
   important?: boolean;
 }
 
+export interface BahtsulMasailQuestion {
+  number: number;
+  question: string;
+  answer: string;
+  reference: {
+    book: string;
+    arabicText: string;
+  };
+}
+
+export interface BahtsulMasailSession {
+  id: string;
+  institution: string;
+  forum: string;
+  dateMasehi: string;
+  dateHijriah: string;
+  time: string;
+  location: string;
+  moderator: string;
+  mushohhih: string[];
+  muhararrir: string[];
+  qori: string[];
+  maqro: string;
+  description: string;
+  questions: BahtsulMasailQuestion[];
+}
+
 export interface Teacher {
   id: string;
   name: string;

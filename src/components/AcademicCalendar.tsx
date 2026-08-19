@@ -27,7 +27,7 @@ import {
   ExternalLink,
   BookOpen
 } from 'lucide-react';
-import { ACADEMIC_CALENDAR, ANNOUNCEMENTS } from '../data';
+import { ACADEMIC_CALENDAR, ANNOUNCEMENTS, BAHTSUL_MASAIL_SESSION_AUGUST_2026 } from '../data';
 import { AcademicCalendarEvent, Announcement } from '../types';
 import ShareButton from './ShareButton';
 
@@ -288,6 +288,7 @@ export default function AcademicCalendar() {
                 {
                   month: 'Agustus 2026',
                   events: [
+                    '4 Agustus: Musyawarah Usbu\'iyah Lajnah Bahtsul Masail (Hukum Air Mutlak)',
                     '7 Agustus: Sesi Foto Bersama Murid MDT untuk Raport & Ijazah',
                     '17 Agustus: Peringatan HUT RI ke-81 & Lomba Santri',
                     '18 Agustus: Rapat Internal Dewan Asatidz (Kelembagaan & KBM)',
@@ -638,10 +639,54 @@ export default function AcademicCalendar() {
                         {/* Content text */}
                         <div className="text-xs md:text-sm text-slate-600 font-light leading-relaxed pt-1">
                           {isExpanded ? (
-                            <div className="space-y-3 pt-2 border-t border-slate-100">
-                              {item.content.split('\n\n').map((para, pIdx) => (
-                                <p key={pIdx} className="leading-relaxed whitespace-pre-line">{para}</p>
-                              ))}
+                            <div className="space-y-4 pt-2 border-t border-slate-100">
+                              {item.id === 'bahtsul-masail-usbuyah-4-agustus-2026' ? (
+                                <div className="space-y-4">
+                                  <div className="bg-slate-900 text-white p-4 rounded-xl space-y-2 border border-emerald-800">
+                                    <span className="text-[10px] font-bold text-amber-400 uppercase tracking-widest font-mono">
+                                      {BAHTSUL_MASAIL_SESSION_AUGUST_2026.institution}
+                                    </span>
+                                    <h4 className="font-bold text-sm text-white font-serif">{BAHTSUL_MASAIL_SESSION_AUGUST_2026.forum}</h4>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs pt-1 border-t border-slate-800 text-slate-300">
+                                      <div>📅 {BAHTSUL_MASAIL_SESSION_AUGUST_2026.dateMasehi} ({BAHTSUL_MASAIL_SESSION_AUGUST_2026.dateHijriah})</div>
+                                      <div>⏰ {BAHTSUL_MASAIL_SESSION_AUGUST_2026.time} • 📍 {BAHTSUL_MASAIL_SESSION_AUGUST_2026.location}</div>
+                                      <div>🎙️ Moderator: {BAHTSUL_MASAIL_SESSION_AUGUST_2026.moderator}</div>
+                                      <div>⚖️ Mushohhih: {BAHTSUL_MASAIL_SESSION_AUGUST_2026.mushohhih.join(', ')}</div>
+                                      <div>✍️ Muhararrir: {BAHTSUL_MASAIL_SESSION_AUGUST_2026.muhararrir.join(' & ')}</div>
+                                      <div>📖 Qori': {BAHTSUL_MASAIL_SESSION_AUGUST_2026.qori.join(' & ')}</div>
+                                    </div>
+                                  </div>
+
+                                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-3.5 space-y-1">
+                                    <span className="font-bold text-amber-900 text-xs font-serif">A. DESKRIPSI MASALAH:</span>
+                                    <p className="text-slate-700 text-xs leading-relaxed">{BAHTSUL_MASAIL_SESSION_AUGUST_2026.description}</p>
+                                  </div>
+
+                                  <div className="space-y-3">
+                                    <span className="font-bold text-emerald-950 text-xs font-serif block">B. PERTANYAAN &amp; C. KEPUTUSAN HUKUM:</span>
+                                    {BAHTSUL_MASAIL_SESSION_AUGUST_2026.questions.map((q) => (
+                                      <div key={q.number} className="bg-slate-50 border border-slate-200 rounded-xl p-3.5 space-y-2.5">
+                                        <div className="font-bold text-slate-900 text-xs flex items-start gap-2">
+                                          <span className="w-5 h-5 rounded-full bg-emerald-700 text-white flex items-center justify-center text-[10px] shrink-0">{q.number}</span>
+                                          <span>{q.question}</span>
+                                        </div>
+                                        <div className="text-xs text-slate-700 space-y-1.5 pl-3 border-l-2 border-emerald-600">
+                                          <strong className="text-emerald-800 block text-[11px]">Jawaban:</strong>
+                                          <p className="whitespace-pre-line">{q.answer}</p>
+                                        </div>
+                                        <div className="bg-emerald-950 text-amber-100 p-3 rounded-lg text-xs space-y-1.5 border border-emerald-800">
+                                          <div className="text-[10px] font-bold text-amber-400">Referensi: {q.reference.book}</div>
+                                          <p dir="rtl" className="text-right font-serif text-sm leading-relaxed text-amber-50">{q.reference.arabicText}</p>
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              ) : (
+                                item.content.split('\n\n').map((para, pIdx) => (
+                                  <p key={pIdx} className="leading-relaxed whitespace-pre-line">{para}</p>
+                                ))
+                              )}
                             </div>
                           ) : (
                             <p className="line-clamp-2">

@@ -15,6 +15,7 @@ import Gallery from './components/Gallery';
 import About from './components/About';
 import Rules from './components/Rules';
 import AcademicCalendar from './components/AcademicCalendar';
+import LBM from './components/LBM';
 import WisdomBanner from './components/WisdomBanner';
 import StudentStats from './components/StudentStats';
 import { SCHOOL_PROFILE } from './data';
@@ -250,6 +251,7 @@ export default function App() {
 
         {currentTab === 'profile' && <Profile />}
         {currentTab === 'programs' && <Programs />}
+        {currentTab === 'lbm' && <LBM />}
         {currentTab === 'rules' && <Rules />}
         {currentTab === 'gallery' && <Gallery />}
         {currentTab === 'calendar' && <AcademicCalendar />}
@@ -336,7 +338,8 @@ export default function App() {
               <button onClick={() => { setCurrentTab('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Beranda</button>
               <button onClick={() => { setCurrentTab('profile'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Profil &amp; Guru</button>
               <button onClick={() => { setCurrentTab('programs'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Program Ajar</button>
-              <button onClick={() => { setCurrentTab('rules'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer text-emerald-800">Tata Tertib</button>
+              <button onClick={() => { setCurrentTab('lbm'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer text-emerald-800 font-extrabold">LBM (Bahtsul Masail)</button>
+              <button onClick={() => { setCurrentTab('rules'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Tata Tertib</button>
               <button onClick={() => { setCurrentTab('gallery'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Galeri Foto</button>
               <button onClick={() => { setCurrentTab('calendar'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Kalender Akademik</button>
               <button onClick={() => { setCurrentTab('announcements'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-left hover:text-brand-green cursor-pointer">Berita &amp; Agenda</button>

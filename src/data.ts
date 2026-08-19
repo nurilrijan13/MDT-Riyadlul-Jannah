@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Announcement, Teacher, Program, StudentProfile, ClassStudentCount } from './types';
+import { Announcement, Teacher, Program, StudentProfile, ClassStudentCount, BahtsulMasailSession } from './types';
 import asatidzPhoto from './assets/images/asatidz.jpg';
 import musyawarahMalam from './assets/images/musyawarahmalam.jpeg';
 
@@ -218,7 +218,130 @@ export const TEACHERS: Teacher[] = [
   }
 ];
 
+export const LBM_PROFILE = {
+  name: "Lajnah Bahtsul Masail (LBM)",
+  fullName: "Lajnah Bahtsul Masail MDT Riyadlul Jannah",
+  arabicName: "لَجْنَةُ بَحْثِ الْمَسَائِلِ - رِيَاضُ الْجَنَّةِ",
+  tagline: "Forum Musyawarah Ilmiah Fiqhiyyah & Pengkajian Kitab Turats Salafiyyah Mazhab Syafi'i",
+  description: "Lajnah Bahtsul Masail (LBM) MDT Riyadlul Jannah adalah wahana intelektual dan wadah bahtsul masail bagi para santri dan asatidz untuk menelaah, mengkaji, serta merumuskan kepastian hukum Islam terhadap berbagai persoalan ibadah, muamalah, maupun problematika kontemporer berlandaskan maraji' kutubut turats (kitab kuning mu'tabarah).",
+  vision: "Menjadi pusat kajian fiqih salaf yang melahirkan kader mutafaqqih fiddin, tangguh dalam literasi kitab kuning, dan bijak dalam merespon dinamika hukum Islam di masyarakat.",
+  mission: [
+    "Menumbuhkan tradisi kajian ilmiah dan budaya musyawarah kutubus salaf di kalangan santri dan asatidz.",
+    "Melatih santri dalam ketajaman membaca, membedah, dan mengontekstualisasikan ibarat kitab kuning (tahqiqul kutub).",
+    "Memberikan bimbingan dan jawaban hukum fiqih yang akurat, berlandaskan dalil yang kokoh dan sanad keilmuan yang bersambung.",
+    "Membudayakan adab ikhtilaf (toleransi perbedaan pendapat) di kalangan ulama fiqih Ahlussunnah wal Jama'ah an-Nahdliyyah."
+  ],
+  schedule: {
+    routine: "Setiap Selasa Sore (Musyawarah Usbu'iyah)",
+    time: "Pukul 16:00 - 17:30 WIB",
+    location: "Musholla Putra MDT Riyadlul Jannah Pasir Gombong"
+  },
+  structure: {
+    advisor: "Kiai Haji Abdul Hakam Makky",
+    supervisor: "Ust. Mahrus Ali (Kepala MDT)",
+    moderator: "Ust. Ihya Ulumuddin",
+    mushohhih: ["Ust. Agus Maulana", "Ust. Mahrus Ali", "Ust. Subhan"],
+    muhararrir: ["Ust. Anas", "Ust. Fatih", "Ust. Sofyan"],
+    qoriMaqro: ["M. Rafif Chandra", "Try Anggita Dewi", "Santri Kelas Wustho & Awaliyah"]
+  },
+  referenceBooks: [
+    { title: "Matan Al-Ghayah wat Taqrib", author: "Al-Qadhi Abu Syuja' Al-Ashfahani", category: "Matan Dasar Fiqih" },
+    { title: "Fathul Qorib Al-Mujib", author: "Al-Allamah Ibnu Qasim Al-Ghazzi", category: "Syarah Dasar Fiqih" },
+    { title: "Hasyiyah Al-Bajuri 'ala Ibni Qasim", author: "Syaikh Ibrahim Al-Bajuri", category: "Hasyiyah Analitis Fiqih" },
+    { title: "Mughni Al-Muhtaj ila Ma'rifati Ma'ani Alfadzil Minhaj", author: "Al-Khathib Asy-Syirbini", category: "Syarah Mu'tamad" },
+    { title: "Fathul Mu'in bi Syarhi Qurratil 'Ain", author: "Syaikh Zainuddin Al-Malibari", category: "Fiqih Madzhab Syafi'i" },
+    { title: "I'anatuth Thalibin", author: "Sayyid Abu Bakar Syatha Ad-Dimyathi", category: "Hasyiyah Fathul Mu'in" },
+    { title: "Kifayatul Akhyar fi Halli Ghayatil Ikhtishar", author: "Imam Taqiyuddin Abu Bakar Al-Hishni", category: "Fiqih & Dalil Hadits" }
+  ]
+};
+
+export const BAHTSUL_MASAIL_SESSION_AUGUST_2026: BahtsulMasailSession = {
+  id: "bm-2026-08-04",
+  institution: "Lajnah Bahtsul Masail MDT Riyadlul Jannah",
+  forum: "Musyawarah Usbu'iyah [ Mingguan ]",
+  dateMasehi: "Selasa, 4 Agustus 2026 M",
+  dateHijriah: "20 Safar 1448 H",
+  time: "16:00 WIB (Selasa Sore)",
+  location: "Musholla Putra MDT Riyadlul Jannah",
+  moderator: "Ust. Ihya Ulumuddin",
+  mushohhih: ["Ust. Agus Maulana", "Ust. Mahrus Ali"],
+  muhararrir: ["Ust. Anas", "Ust. Fatih"],
+  qori: ["M. Rafif Chandra", "Try Anggita Dewi"],
+  maqro: "Kitab Thaharoh Awal Kitab Taqrib & Fathul Qorib",
+  description: "Sekilas pembahasan air di dalam kitab Taqrib terlihat sederhana namun kalau dicermati lebih lanjut sepertinya perlu kajian yang lebih mendalam untuk mengetahui esensi pembagian air itu sendiri baik dari segi pengertian, contohnya, dan hal apa saja yang tidak masuk pada pembahasan tersebut. Di dalam kitab Taqrib air dibagi menjadi empat bagian salah satunya air suci, menyucikan serta tidak makruh dalam penggunaannya, yakni air mutlak (الماء المطلق). Di dalam kitab Taqrib, pengertian dan contoh-contohnya tidak disebutkan, bahkan Fathul Qorib pun tidak menyebutkan, justru di sana hanya menyebutkan contoh qayyid munfak (القيد المنفك) yang sejatinya secara hukum masuk kategori hukum air mutlak. Demikian ini memberikan ruang bagi kita para Santri untuk menelaah lebih dalam hakikat air mutlak itu sendiri.",
+  questions: [
+    {
+      number: 1,
+      question: "Sebenarnya apa hakikat air mutlak ?",
+      answer: "Air mutlak adalah Air yang terbebas dari qayid (batasan) yang mengikat menurut orang yang memiliki kapasitas untuk mengetahui kondisi air tersebut.",
+      reference: {
+        book: "حاشية الباجوري على ابن قاسم الغزي ۲۸/۱",
+        arabicText: "(قَوْلُهُ الْمَاءُ الْمُطْلَقِ ) هُوَ مَا يُسَمَّى مَاءً بِلَا قَيْدٍ لازِم عِنْدَ الْعَالِمِ بِحَالِهِ مِنْ أَهْلِ الْعُرْفِ وَاللِّسَانِ"
+      }
+    },
+    {
+      number: 2,
+      question: "Kenapa air sumur secara hukum masuk kategori air mutlak?",
+      answer: "Hukum air sumur berdasarkan beberapa definisi bahwa air mutlak memiliki beberapa kriteria; Pertama, suci dan menyucikan; kedua, sebutan namanya tidak perlu dikaitkan dengan nama lain; ketiga, sebutan kata air secara mutlak tanpa perlu dikaitkan hanya pada tujuh macam air, yaitu: air hujan, air laut, air sungai, air sumur, air mata air, air salju, air beku (hujan es) dan air yang keluar dari celah-celah jemari Rasulullah Saw. Penyandaran kata-kata hujan, laut, sungai, sumur, mata air, salju, dan beku (al-bard), tidak berarti menafikan ke-mutlak-an air tersebut, karena penyandaran kata-kata ini sesuai dengan sumbernya masing-masing. Ketujuh macam air ini dapat difahami bahwa benda itu air tanpa harus dikaitkan dengan nama-nama sumbernya.\n\nArtinya, penyandaran seperti ini disebut dengan qayd al-munfak. Berbeda dengan kata-kata, misalnya; air bunga, air kelapa, air kopi, air gula, dan lain-lain, karena keempat jenis air ini tidak akan difahami tanpa dikaitkan dengan bunga, kelapa, kopi, dan gula. Penyandaran kata pada contoh-contoh ini disebut dengan qayd al-lazim.",
+      reference: {
+        book: "مغني المحتاج إلى معرفة معاني ألفاظ المنهاج ٤٦/١ دار الكتب العلمية ۲۰۰۹",
+        arabicText: "(وَهُوَ مَا يَقَعُ عَلَيْهِ اسْمُ مَاءٍ بِلَا قَيْدٍ بِإِضَافَةٍ كَمَاءِ وَرْدِ أَوْ بِصِفَةٍ كَمَاءٍ دَافِقٍ أَوْ فَاللَّامُ عَهْدٍ كَقَوْلِهِ : نَعَمْ إِذَا رَأَتْ الْمَاءَ} يَعْنِي الْمَنِي. قَالَ الْوَلِيُّ الْعِرَاقِيُّ: وَلَا يُحْتَاجُ لِتَقْبِيدِ الْقَيْدِ بِكَوْنِهِ لَا زِمًا لِأَنَّ الْقَيْدَ الَّذِي لَيْسَ بِلَازِمٍ كَمَاءِ الْبِثْرِ مَثَلًا يُطْلَقُ اسْمُ الْمَاءِ عَلَيْهِ بِدُونِهِ فَلَا حَاجَةَ لِلِاحْتِرَازِ عَنْهُ."
+      }
+    },
+    {
+      number: 3,
+      question: "Apakah air Aqua & air AC masuk hukum air mutlak sehingga bisa dibuat berwudu’?",
+      answer: "Hukum air mineral (Aqua) & air AC: Termasuk air mutlak.\nSebab Jika bahan campurannya tidak menghalangi kemutlakan nama air, seperti sedikit terjadi perubahan air karena bercampur dengan benda suci lain atau suatu zat yang sifatnya menyerupai air dan antara zat ataupun air bisa dibedakan namun tidak merubah sifat air, maka bahan campuran tersebut tidak merusak kesucian air, air tersebut tetap bisa mensucikan lainnya.",
+      reference: {
+        book: "kitab Fathul Qorib Al-Mujib juz 1",
+        arabicText: "فَإِنْ لَمْ يَمْنَعْ اِطْلاَقَ اسْمِ الْمَاءِ عَلَيْهِ بِأَنْ كَانَ تَغَيُّرُهُ بِالطَّاهِرِ يَسِيْرًا أَوْ بِمَا يُوَافِق الْمَاءَ فِيْ صِفَاتِهِ وَقُدِّرَ مُخَالِفًا وَلَمْ يُغَيِّرْهُ فَلاَ يَسْلُبُ طُهُوْرِيَّتُهُ فَهُوَ مُطَهِّرٌ لِغَيْرِهِ."
+      }
+    }
+  ]
+};
+
 export const ANNOUNCEMENTS: Announcement[] = [
+  {
+    id: "bahtsul-masail-usbuyah-4-agustus-2026",
+    title: "Hasil Musyawarah Usbu'iyah Lajnah Bahtsul Masail MDT Riyadlul Jannah: Hakikat Air Mutlak, Hukum Air Sumur, Air Mineral & Air AC",
+    content: `LAJNAH BAHTSUL MASAIL
+MADRASAH DINIYAH TAKLIMIYAH RIYADLUL JANNAH
+ 
+✦ MUSYAWARAH USBU'IYAH [ MINGGUAN ] ✦
+Tanggal : 4 Agustus 2026 M / 20 Safar 1448 H
+Jam : 16:00 Selasa Sore
+Tempat : Musholla Putra
+MODERATOR : Ust. Ihya Ulumuddin
+MUSHOHHIH I : Ust. Agus Maulana
+MUSHOHHIH II : Ust. Mahrus Ali
+MUHARARRIR : Ust. Anas & Ust. Fatih
+QORI’ : M. Rafif Chandra & Try Anggita Dewi
+MAQRO’ : Kitab Thaharoh Awal Kitab Taqrib & Fathul Qorib
+
+A. DESKRIPSI MASALAH
+Sekilas pembahasan air di dalam kitab Taqrib terlihat sederhana namun kalau dicermati lebih lanjut sepertinya perlu kajian yang lebih mendalam untuk mengetahui esensi pembagian air itu sendiri baik dari segi pengertian, contohnya, dan hal apa saja yang tidak masuk pada pembahasan tersebut. Di dalam kitab Taqrib air dibagi menjadi empat bagian salah satunya air suci, menyucikan serta tidak makruh dalam penggunaannya, yakni air mutlak (الماء المطلق). Di dalam kitab Taqrib, pengertian dan contoh-contohnya tidak disebutkan, bahkan Fathul Qorib pun tidak menyebutkan, justru di sana hanya menyebutkan contoh qayyid munfak (القيد المنفك) yang sejatinya secara hukum masuk kategori hukum air mutlak. Demikian ini memberikan ruang bagi kita para Santri untuk menelaah lebih dalam hakikat air mutlak itu sendiri.
+
+B. PERTANYAAN
+1. Sebenarnya apa hakikat air mutlak ?
+2. Kenapa air sumur secara hukum masuk kategori air mutlak?
+3. Apakah air Aqua & air AC masuk hukum air mutlak sehingga bisa dibuat berwudu’?
+
+C. JAWABAN & REFERENSI IBARAT
+1. Air mutlak adalah Air yang terbebas dari qayid (batasan) yang mengikat menurut orang yang memiliki kapasitas untuk mengetahui kondisi air tersebut.
+Referensi: Hasyiyah Al-Bajuri 'ala Ibni Qosim Al-Ghozzi 1/28:
+(قَوْلُهُ الْمَاءُ الْمُطْلَقِ ) هُوَ مَا يُسَمَّى مَاءً بِلَا قَيْدٍ لازِم عِنْدَ الْعَالِمِ بِحَالِهِ مِنْ أَهْلِ الْعُرْفِ وَاللِّسَانِ
+
+2. Hukum air sumur berdasarkan kriteria air mutlak (Qayyid Munfak): Air sumur tetap berstatus air mutlak karena penyandaran kata sumur adalah qayd al-munfak yang tidak menafikan kemutlakan air.
+Referensi: Mughni Al-Muhtaj 1/46:
+(وَهُوَ مَا يَقَعُ عَلَيْهِ اسْمُ مَاءٍ بِلَا قَيْدٍ بِإِضَافَةٍ كَمَاءِ وَرْدِ أَوْ بِصِفَةٍ كَمَاءٍ دَافِقٍ أَوْ فَاللَّامُ عَهْدٍ...)
+
+3. Hukum air mineral (Aqua) & air AC: Termasuk air mutlak dan sah digunakan untuk berwudhu'.
+Referensi: Fathul Qorib Al-Mujib Juz 1:
+فَإِنْ لَمْ يَمْنَعْ اِطْلاَقَ اسْمِ الْمَاءِ عَلَيْهِ بِأَنْ كَانَ تَغَيُّرُهُ بِالطَّاهِرِ يَسِيْرًا... فَلاَ يَسْلُبُ طُهُوْرِيَّتُهُ فَهُوَ مُطَهِّرٌ لِغَيْرِهِ.`,
+    date: "2026-08-04",
+    category: "kegiatan",
+    important: true
+  },
   {
     id: "rapat-internal-dewan-asatidz-18-agustus-2026",
     title: "Rapat Internal Staff Pengajar MDT & Dewan Asatidz: Penataan Kelembagaan, Visi Misi, Kurikulum & Evaluasi KBM",
@@ -563,6 +686,16 @@ export const ACADEMIC_CALENDAR = {
       title: "Awal Masuk KBM Daur I (Semester 1 / Ganjil) & Masa Ta'aruf Diniyah",
       description: "Halaqah pengajian perdana, orientasi tata tertib santri, dan dimulainya KBM MDT Pagi & Sore.",
       category: "kbm" as const,
+      important: true
+    },
+    {
+      id: "cal-2026-bahtsul-masail",
+      month: "Agustus 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "4 Agustus 2026 (20 Safar 1448 H)",
+      title: "Lajnah Bahtsul Masail: Musyawarah Usbu'iyah (Kajian Hukum Air Mutlak & Fiqih Thoharoh)",
+      description: "Musyawarah ilmiah mingguan santri membahas hakikat air mutlak, status hukum air sumur, air mineral Aqua dan air AC bertempat di Musholla Putra MDT.",
+      category: "kegiatan" as const,
       important: true
     },
     {
