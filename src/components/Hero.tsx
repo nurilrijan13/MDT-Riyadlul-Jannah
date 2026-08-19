@@ -136,32 +136,35 @@ export default function Hero({ setCurrentTab }: HeroProps) {
                 
                 <div className="space-y-3">
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-900/50 border border-emerald-700/30 flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-900/50 border border-emerald-700/30 flex items-center justify-center shrink-0 mt-0.5">
                       <BookOpen className="w-4 h-4 text-emerald-300" />
                     </div>
                     <div>
-                      <h5 className="text-sm font-semibold text-emerald-100">Dirasah Islamiyah (Kitab Kuning)</h5>
-                      <p className="text-xs text-emerald-200/60">Pembelajaran fikih praktis, akidah, akhlak, tajwid, dan tarikh islam dasar.</p>
+                      <p className="text-xs text-emerald-100/90 leading-relaxed font-normal">
+                        Kemampuan membaca Al-Qur'an secara tartil, fasih, dan sesuai tajwid.
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-900/50 border border-emerald-700/30 flex items-center justify-center shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-900/50 border border-emerald-700/30 flex items-center justify-center shrink-0 mt-0.5">
                       <GraduationCap className="w-4 h-4 text-emerald-300" />
                     </div>
                     <div>
-                      <h5 className="text-sm font-semibold text-emerald-100">Tahfidz & Tahsin Al-Qur'an</h5>
-                      <p className="text-xs text-emerald-200/60">Bimbingan hafalan Juz Amma dengan metode tabaqqul, muraja'ah & setoran rutin.</p>
+                      <p className="text-xs text-emerald-100/90 leading-relaxed font-normal">
+                        Penguasaan dasar membaca, mengartikan, dan memahami kitab klasik melalui kaidah Nahwu dan Shorof.
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-900/50 border border-emerald-700/30 flex items-center justify-center shrink-0">
-                      <Clock className="w-4 h-4 text-emerald-300" />
+                    <div className="w-8 h-8 rounded-lg bg-emerald-900/50 border border-emerald-700/30 flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle className="w-4 h-4 text-emerald-300" />
                     </div>
                     <div>
-                      <h5 className="text-sm font-semibold text-emerald-100">Bimbingan Pembiasaan Ibadah</h5>
-                      <p className="text-xs text-emerald-200/60">Sholat berjamaah, pembacaan zikir, doa harian, dan latihan dakwah santri.</p>
+                      <p className="text-xs text-emerald-100/90 leading-relaxed font-normal">
+                        Pembiasaan ibadah harian yang shahih sesuai kaidah fiqih (termasuk hafalan bacaan dan gerakan Rukun Qolbi, Qouli, serta Fi'li dalam shalat).
+                      </p>
                     </div>
                   </div>
                 </div>

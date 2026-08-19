@@ -200,7 +200,7 @@ export const TEACHERS: Teacher[] = [
   },
   {
     id: "u-ihya-ulumuddin",
-    name: "Ust. Ihya Ulumuddin",
+    name: "Ust. Ihya 'Ulumuddin",
     role: "",
     avatar: asatidzPhoto
   },
@@ -213,6 +213,24 @@ export const TEACHERS: Teacher[] = [
   {
     id: "u-sofyan",
     name: "Ust. Sofyan",
+    role: "",
+    avatar: asatidzPhoto
+  },
+  {
+    id: "u-imam-syafii",
+    name: "Ust. Imam Syafi'i",
+    role: "",
+    avatar: asatidzPhoto
+  },
+  {
+    id: "u-afifuddin",
+    name: "Ust. Afifuddin",
+    role: "",
+    avatar: asatidzPhoto
+  },
+  {
+    id: "u-ahmad-syarif",
+    name: "Ust. Ahmad Syarif",
     role: "",
     avatar: asatidzPhoto
   }
@@ -239,8 +257,9 @@ export const LBM_PROFILE = {
   structure: {
     advisor: "Kiai Haji Abdul Hakam Makky",
     supervisor: "Ust. Mahrus Ali (Kepala MDT)",
-    moderator: "Ust. Ihya Ulumuddin",
-    mushohhih: ["Ust. Agus Maulana", "Ust. Mahrus Ali", "Ust. Subhan"],
+    chairman: "Ust. Ihya 'Ulumuddin",
+    moderator: "Ust. Ihya 'Ulumuddin",
+    mushohhih: ["Ust. Agus Maulana", "Ust. Mahrus Ali"],
     muhararrir: ["Ust. Anas", "Ust. Fatih", "Ust. Sofyan"],
     qoriMaqro: ["M. Rafif Chandra", "Try Anggita Dewi", "Santri Kelas Wustho & Awaliyah"]
   },
@@ -263,7 +282,7 @@ export const BAHTSUL_MASAIL_SESSION_AUGUST_2026: BahtsulMasailSession = {
   dateHijriah: "20 Safar 1448 H",
   time: "16:00 WIB (Selasa Sore)",
   location: "Musholla Putra MDT Riyadlul Jannah",
-  moderator: "Ust. Ihya Ulumuddin",
+  moderator: "Ust. Ihya 'Ulumuddin",
   mushohhih: ["Ust. Agus Maulana", "Ust. Mahrus Ali"],
   muhararrir: ["Ust. Anas", "Ust. Fatih"],
   qori: ["M. Rafif Chandra", "Try Anggita Dewi"],

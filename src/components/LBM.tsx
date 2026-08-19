@@ -521,10 +521,10 @@ export default function LBM() {
 
                 <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-2">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded font-mono">
-                    Moderator Sidang
+                    Ketua LBM
                   </span>
-                  <h4 className="font-bold text-slate-900 text-sm font-serif">{LBM_PROFILE.structure.moderator}</h4>
-                  <p className="text-xs text-slate-500 font-light">Pemandu Musyawarah &amp; Dinamika Forum Fiqih</p>
+                  <h4 className="font-bold text-slate-900 text-sm font-serif">{LBM_PROFILE.structure.chairman || LBM_PROFILE.structure.moderator}</h4>
+                  <p className="text-xs text-slate-500 font-light">Ketua Lajnah &amp; Pemandu Musyawarah Fiqih</p>
                 </div>
 
                 <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-2">
