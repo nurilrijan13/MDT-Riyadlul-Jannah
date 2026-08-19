@@ -678,6 +678,16 @@ export const ACADEMIC_CALENDAR = {
   events: [
     // --- SEMESTER 1 / DAUR I (GANJIL) TA 2026/2027 (JULI - DESEMBER 2026) ---
     {
+      id: "cal-2026-1",
+      month: "Juli 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "1 - 12 Juli 2026",
+      title: "Pendaftaran & Registrasi Ulang Santri",
+      description: "Pendaftaran santri baru jenjang Awaliyah (1-3) & Wustho serta registrasi ulang seluruh santri MDT Riyadlul Jannah TA 2026/2027.",
+      category: "pendaftaran" as const,
+      important: true
+    },
+    {
       id: "cal-2026-0",
       month: "Juli 2026",
       semester: "Semester 1 (Juli - Des 2026)" as const,
@@ -688,23 +698,43 @@ export const ACADEMIC_CALENDAR = {
       important: true
     },
     {
-      id: "cal-2026-1",
+      id: "cal-2026-kembali-santri",
       month: "Juli 2026",
       semester: "Semester 1 (Juli - Des 2026)" as const,
-      date: "13 - 19 Juli 2026",
-      title: "Pendaftaran & Registrasi Ulang Santri Baru (PSB) TA 2026/2027",
-      description: "Pendaftaran santri baru jenjang Awaliyah (1-3) & Wustho serta registrasi ulang santri tingkat lanjut.",
-      category: "pendaftaran" as const,
+      date: "12 Juli 2026",
+      title: "Santri Riyadlul Jannah Kembali ke Pondok Pesantren",
+      description: "Kepulangan dan kedatangan kembali seluruh santri mukim & santri MDT ke lingkungan Pondok Pesantren Riyadlul Jannah setelah libur ajaran baru.",
+      category: "kegiatan" as const,
       important: true
     },
     {
-      id: "cal-2026-2",
+      id: "cal-2026-awal-kbm",
       month: "Juli 2026",
       semester: "Semester 1 (Juli - Des 2026)" as const,
-      date: "20 Juli 2026",
-      title: "Awal Masuk KBM Daur I (Semester 1 / Ganjil) & Masa Ta'aruf Diniyah",
-      description: "Halaqah pengajian perdana, orientasi tata tertib santri, dan dimulainya KBM MDT Pagi & Sore.",
+      date: "13 Juli 2026",
+      title: "Awal Masuk KBM Daur I",
+      description: "Pembukaan dan permulaan resmi Kegiatan Belajar Mengajar (KBM) Daur I (Semester Ganjil) MDT Riyadlul Jannah.",
       category: "kbm" as const,
+      important: true
+    },
+    {
+      id: "cal-2026-matamuda",
+      month: "Juli 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "13 - 16 Juli 2026",
+      title: "Masa Ta'arruf Santri / Matamuda",
+      description: "Masa Ta'aruf Murid Diniyah (Matamuda) / Orientasi pengenalan lingkungan madrasah, adab tholabul 'ilmi, dan pembiasaan ubudiyah harian santri.",
+      category: "kegiatan" as const,
+      important: true
+    },
+    {
+      id: "cal-2026-raker-yayasan",
+      month: "Juli 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "27 Juli 2026",
+      title: "Rapat Kerja (Raker) Yayasan Pendidikan Islam Riyadlul Jannah : MTs, SMAT & MDT",
+      description: "Musyawarah koordinasi dan sinkronisasi program kerja kelembagaan Yayasan Pendidikan Islam Riyadlul Jannah bersama seluruh unit pendidikan: MTs, SMAT, dan MDT.",
+      category: "rapat" as const,
       important: true
     },
     {
@@ -728,13 +758,24 @@ export const ACADEMIC_CALENDAR = {
       important: true
     },
     {
-      id: "cal-2026-3",
+      id: "cal-2026-hut-lomba",
       month: "Agustus 2026",
       semester: "Semester 1 (Juli - Des 2026)" as const,
-      date: "17 Agustus 2026",
-      title: "Peringatan HUT Kemerdekaan RI ke-81 & Gebyar Lomba Santri",
-      description: "Upacara bendera, tasyakuran kemerdekaan, dan perlombaan keagamaan antar santri MDT.",
-      category: "phbi" as const
+      date: "17 - 18 Agustus 2026",
+      title: "Peringatan HUT RI ke-81 & Lomba 17 Agustusan",
+      description: "Rangkaian semarak peringatan Hari Ulang Tahun Kemerdekaan Republik Indonesia ke-81 serta aneka perlombaan santri MDT Riyadlul Jannah.",
+      category: "phbi" as const,
+      important: true
+    },
+    {
+      id: "cal-2026-upacara-hut",
+      month: "Agustus 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "18 Agustus 2026",
+      title: "Upacara Peringatan HUT RI ke-81",
+      description: "Pelaksanaan upacara bendera memperingati HUT Kemerdekaan RI ke-81 secara khidmat bersama seluruh santri, dewan asatidz, dan pengurus yayasan.",
+      category: "phbi" as const,
+      important: true
     },
     {
       id: "cal-2026-rapat-18",
@@ -747,13 +788,24 @@ export const ACADEMIC_CALENDAR = {
       important: true
     },
     {
-      id: "cal-2026-4",
+      id: "cal-2026-manaqib-maulid",
       month: "Agustus 2026",
       semester: "Semester 1 (Juli - Des 2026)" as const,
-      date: "25 Agustus 2026 (12 Rabiul Awal 1448 H)",
-      title: "Peringatan Maulid Nabi Muhammad SAW",
-      description: "Pembacaan Diba'/Barzanji bersama seluruh santri & asatidz, tausiyah keagamaan, dan santunan santri.",
-      category: "phbi" as const
+      date: "23 Agustus 2026",
+      title: "Manaqib Syech Abdul Qodir Al-Jaelani Al-Khidmah & Memperingati Maulid Nabi Muhammad SAW",
+      description: "Majelis dzikir dan pembacaan Manaqib Syech Abdul Qodir Al-Jaelani bersama Jama'ah Al-Khidmah sekaligus peringatan Maulid Nabi Muhammad SAW.",
+      category: "phbi" as const,
+      important: true
+    },
+    {
+      id: "cal-2026-maulid-12-robiulawwal",
+      month: "Agustus 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "25 Agustus 2026",
+      title: "Maulid Nabi Muhammad SAW 12 Robi'ul Awwal 1448 H",
+      description: "Peringatan hari kelahiran Baginda Nabi Muhammad SAW 12 Robi'ul Awwal 1448 H, pembacaan Maulid Simthudduror / Diba'iyyah, tausiyah keagamaan, dan penanaman mahabbah Rasulullah SAW.",
+      category: "phbi" as const,
+      important: true
     },
     {
       id: "cal-2026-5",

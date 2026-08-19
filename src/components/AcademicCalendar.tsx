@@ -228,8 +228,8 @@ export default function AcademicCalendar() {
               </div>
               <div className="space-y-1">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-200 block font-bold">Awal Semester 1 (Daur I)</span>
-                <h4 className="font-serif font-extrabold text-sm leading-snug text-white">Awal Masuk KBM &amp; Orientasi Santri</h4>
-                <p className="text-xs text-emerald-100/80 font-light">20 Juli 2026 (PSB: 13-19 Juli 2026)</p>
+                <h4 className="font-serif font-extrabold text-sm leading-snug text-white">Awal Masuk KBM Daur I &amp; Matamuda</h4>
+                <p className="text-xs text-emerald-100/80 font-light">13 Juli 2026 (PSB: 1-12 Juli • Kembali: 12 Juli)</p>
               </div>
             </div>
 
@@ -280,9 +280,12 @@ export default function AcademicCalendar() {
                 {
                   month: 'Juli 2026',
                   events: [
+                    '1 - 12 Juli: Pendaftaran & Registrasi Ulang Santri',
                     '8 Juli: Rapat Pleno Penetapan Wali Kelas & Kitab Salaf',
-                    '13 - 19 Juli: Pendaftaran & Registrasi Ulang Santri',
-                    '20 Juli: Awal Masuk KBM Daur I & Orientasi Santri',
+                    '12 Juli: Santri Riyadlul Jannah Kembali ke Pondok Pesantren',
+                    '13 Juli: Awal Masuk KBM Daur I',
+                    '13 - 16 Juli: Masa Ta\'arruf Santri / Matamuda',
+                    '27 Juli: Rapat Kerja (Raker) Yayasan Pendidikan Islam Riyadlul Jannah : MTs, SMAT & MDT',
                   ],
                 },
                 {
@@ -290,9 +293,10 @@ export default function AcademicCalendar() {
                   events: [
                     '4 Agustus: Musyawarah Usbu\'iyah Lajnah Bahtsul Masail (Hukum Air Mutlak)',
                     '7 Agustus: Sesi Foto Bersama Murid MDT untuk Raport & Ijazah',
-                    '17 Agustus: Peringatan HUT RI ke-81 & Lomba Santri',
-                    '18 Agustus: Rapat Internal Dewan Asatidz (Kelembagaan & KBM)',
-                    '25 Agustus: Peringatan Maulid Nabi SAW (12 Rabiul Awal)',
+                    '17 - 18 Agustus: Peringatan HUT RI ke-81 & Lomba 17 Agustusan',
+                    '18 Agustus: Upacara Peringatan HUT RI ke-81 & Rapat Asatidz',
+                    '23 Agustus: Manaqib Syech Abdul Qodir Al-Jaelani Al-Khidmah & Memperingati Maulid Nabi Muhammad SAW',
+                    '25 Agustus: Maulid Nabi Muhammad SAW 12 Robi\'ul Awwal 1448 H',
                   ],
                 },
                 {
