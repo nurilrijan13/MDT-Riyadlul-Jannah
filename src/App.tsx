@@ -89,7 +89,7 @@ export default function App() {
                 <div>
                   <h4 className="text-xs uppercase font-extrabold tracking-widest text-brand-dark mb-1">Pendidik Berkompeten</h4>
                   <p className="text-[11px] leading-relaxed text-brand-dark/70">
-                    Dibersamai oleh asatidzah alumni pondok pesantren terkemuka yang bersertifikat dan amanah.
+                    Dibersamai oleh Asatidz Alumni Pondok Pesantren terkemuka yang bersanad dan amanah.
                   </p>
                 </div>
               </div>

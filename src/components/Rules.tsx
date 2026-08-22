@@ -81,7 +81,7 @@ export default function Rules() {
             <div className="bg-white p-3 rounded-lg border border-slate-100 space-y-1.5">
               <span className="font-bold text-slate-800 block text-[11px] uppercase tracking-wide text-emerald-700">Putra</span>
               <p className="text-slate-600 leading-relaxed font-medium">
-                Wajib memakai baju koko putih rapi, sarung dan peci hitam di <strong className="text-emerald-800">Pagi hari</strong> serta peci putih di <strong className="text-emerald-800">Sore hari</strong>.
+                Wajib memakai baju koko putih rapi lengan panjang, celana panjang / sarung dan berpeci songkok hitam.
               </p>
             </div>
             <div className="bg-white p-3 rounded-lg border border-slate-100 space-y-1.5">
