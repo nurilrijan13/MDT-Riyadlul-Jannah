@@ -5,10 +5,12 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { MapPin, Phone, Mail, Instagram, Clock, Youtube } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, Clock, Youtube, Send, MessageCircle } from 'lucide-react';
 import { SCHOOL_PROFILE } from '../data';
 
 export default function Contact() {
+  const targetPhone = "6285966461178";
+
   const [formData, setFormData] = useState({
     parentName: '',
     phone: '',
@@ -17,6 +19,7 @@ export default function Contact() {
     message: ''
   });
 
+  const [lastSubmittedText, setLastSubmittedText] = useState('');
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -26,8 +29,32 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.parentName || !formData.phone || !formData.message) return;
+
+    const waMessage = 
+`*KOTAK SARAN, PERTANYAAN, PESAN & KRITIKAN*
+*MDT RIYADLUL JANNAH*
+
+Assalamu'alaikum Wr. Wb.
+
+*Data Pengirim:*
+• *Nama:* ${formData.parentName}
+• *No. WhatsApp:* ${formData.phone}
+• *Email:* ${formData.email.trim() || '-'}
+• *Kategori:* ${formData.subject}
+
+*Isi Pesan / Pertanyaan / Saran:*
+"${formData.message}"
+
+Mohon respon dan tanggapan dari pihak Sekretariat MDT Riyadlul Jannah. Terima kasih.`;
+
+    setLastSubmittedText(waMessage);
     setSubmitSuccess(true);
-    // Reset
+
+    const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(waMessage)}`;
+    window.open(waUrl, '_blank');
+
+    // Reset form fields
     setFormData({
       parentName: '',
       phone: '',
@@ -35,9 +62,6 @@ export default function Contact() {
       subject: 'Pertanyaan',
       message: ''
     });
-    setTimeout(() => {
-      setSubmitSuccess(false);
-    }, 6000);
   };
 
   return (
@@ -54,12 +78,34 @@ export default function Contact() {
             Hubungi & Kunjungi Sekretariat
           </h2>
           <p className="text-slate-600 text-sm md:text-base font-light">
-            Butuh informasi lebih detail tentang pendaftaran, kerja sama, donasi, atau jadwal belajar? Silakan hubungi kami atau datang langsung ke madrasah.
+            Butuh informasi lebih detail tentang pendaftaran, konsultasi fiqih, saran, kerja sama, donasi, atau jadwal belajar? Silakan hubungi nomor WhatsApp resmi kami atau datang langsung ke madrasah.
           </p>
         </div>
 
         {/* Info Cards Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* WhatsApp Card */}
+          <div className="bg-white border border-[#D4CFC4] p-6 rounded-2xl flex items-start space-x-4 shadow-xs hover:border-emerald-500 transition-colors">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
+              <MessageCircle className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="font-bold text-slate-800 text-sm uppercase">WhatsApp Resmi</h4>
+              <p className="text-xs text-slate-500 mt-1">Layanan Informasi &amp; Humas:</p>
+              <a 
+                href={`https://wa.me/${targetPhone}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-700 hover:text-emerald-800 font-bold text-xs md:text-sm block mt-1 break-all flex items-center gap-1.5"
+              >
+                <span>+62 859-6646-1178</span>
+              </a>
+              <span className="inline-block mt-2 px-2 py-0.5 bg-emerald-100 text-emerald-800 text-[10px] font-bold rounded-full">
+                Chat Langsung
+              </span>
+            </div>
+          </div>
+
           <div className="bg-white border border-[#D4CFC4] p-6 rounded-2xl flex items-start space-x-4 shadow-xs">
             <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
               <MapPin className="w-5 h-5" />
@@ -77,8 +123,8 @@ export default function Contact() {
               <Mail className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-bold text-slate-800 text-sm uppercase">Email Surat & Informasi</h4>
-              <p className="text-xs text-slate-500 mt-1">Layanan Informasi & Humas:</p>
+              <h4 className="font-bold text-slate-800 text-sm uppercase">Email Informasi</h4>
+              <p className="text-xs text-slate-500 mt-1">Surat &amp; Kerjasama:</p>
               <a 
                 href={`mailto:${SCHOOL_PROFILE.email}`}
                 className="text-emerald-700 hover:text-emerald-800 font-bold text-xs md:text-sm block mt-1 break-all"
@@ -90,22 +136,11 @@ export default function Contact() {
 
           <div className="bg-white border border-[#D4CFC4] p-6 rounded-2xl flex items-start space-x-4 shadow-xs">
             <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
-              <Clock className="w-5 h-5" />
-            </div>
-            <div>
-              <h4 className="font-bold text-slate-800 text-sm uppercase">Jam Pelayanan Kantor</h4>
-              <p className="text-xs text-slate-500 mt-1">Setiap Senin s.d. Jumat</p>
-              <span className="text-slate-800 font-semibold text-xs block mt-1">07.00 - 17.00 WIB</span>
-            </div>
-          </div>
-
-          <div className="bg-white border border-[#D4CFC4] p-6 rounded-2xl flex items-start space-x-4 shadow-xs">
-            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
               <Instagram className="w-5 h-5" />
             </div>
             <div className="flex-grow">
               <h4 className="font-bold text-slate-800 text-sm uppercase">Media Sosial Resmi</h4>
-              <p className="text-xs text-slate-500 mt-1">Klik logo untuk membuka media sosial:</p>
+              <p className="text-xs text-slate-500 mt-1">Klik logo untuk membuka:</p>
               <div className="flex items-center gap-2.5 mt-3">
                 <a 
                   href="https://www.instagram.com/ppriyadluljannahpusat" 
@@ -147,31 +182,68 @@ export default function Contact() {
           {/* Form Box */}
           <div className="lg:col-span-6 bg-white border border-[#D4CFC4] p-6 md:p-8 rounded-3xl shadow-sm flex flex-col justify-between">
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-[#1B4332] font-serif border-b border-slate-100 pb-3">Kotak Saran, Pertanyaan, Pesan &amp; Kritikan</h3>
+              <div className="border-b border-slate-100 pb-3">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-emerald-100 text-emerald-900 text-[10px] font-mono font-bold rounded-full mb-1.5">
+                  <MessageCircle className="w-3 h-3 text-emerald-700" />
+                  <span>TERHUBUNG LANGSUNG KE WHATSAPP</span>
+                </div>
+                <h3 className="text-xl font-bold text-[#1B4332] font-serif">Kotak Saran, Pertanyaan, Pesan &amp; Kritikan</h3>
+                <p className="text-xs text-slate-500 font-light mt-1">
+                  Pesan Anda akan otomatis terkirim langsung ke nomor WhatsApp resmi (+62 859-6646-1178) untuk segera ditanggapi oleh pihak madrasah.
+                </p>
+              </div>
               
               {submitSuccess && (
-                <div className="p-4 bg-emerald-50 border border-emerald-100 text-emerald-800 rounded-xl text-xs font-semibold leading-relaxed">
-                  Pesan Anda berhasil terkirim! Tim Sekretariat MDT Riyadlul Jannah akan segera menghubungi Anda kembali melalui nomor WhatsApp atau Email yang Anda cantumkan. Jazakumullah khair.
+                <div className="p-4 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-2xl text-xs space-y-3 animate-in fade-in duration-300">
+                  <div className="flex items-start gap-2.5">
+                    <div className="w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center shrink-0 mt-0.5">
+                      ✓
+                    </div>
+                    <div className="space-y-1">
+                      <p className="font-bold text-sm text-emerald-950">Pesan Telah Diteruskan ke WhatsApp!</p>
+                      <p className="text-emerald-800 leading-relaxed">
+                        Formulir saran/pertanyaan Anda telah diformat dan diarahkan ke WhatsApp Admin MDT Riyadlul Jannah (+62 859-6646-1178).
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-2 flex flex-wrap gap-2">
+                    <a
+                      href={`https://wa.me/${targetPhone}?text=${encodeURIComponent(lastSubmittedText)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl font-bold text-xs shadow-xs cursor-pointer transition-colors"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      <span>Buka Ulang di WhatsApp (+62 859-6646-1178)</span>
+                    </a>
+                    <button
+                      onClick={() => setSubmitSuccess(false)}
+                      className="px-3 py-2 bg-white border border-emerald-300 text-emerald-800 hover:bg-emerald-100 rounded-xl font-semibold text-xs transition-colors cursor-pointer"
+                    >
+                      Tulis Pesan Baru
+                    </button>
+                  </div>
                 </div>
               )}
 
               <form onSubmit={handleSubmit} className="space-y-4 text-xs font-sans">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
-                    <label className="font-bold text-slate-600 uppercase">Nama Anda</label>
+                    <label className="font-bold text-slate-600 uppercase">Nama Anda *</label>
                     <input 
                       type="text" 
                       name="parentName"
                       required
                       value={formData.parentName}
                       onChange={handleInputChange}
-                      placeholder="Contoh: Sutisna"
+                      placeholder="Contoh: H. Sutisna / Wali Santri"
                       className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-emerald-500 rounded-lg"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="font-bold text-slate-600 uppercase">No. WhatsApp</label>
+                    <label className="font-bold text-slate-600 uppercase">No. WhatsApp Anda *</label>
                     <input 
                       type="tel" 
                       name="phone"
@@ -197,38 +269,40 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="font-bold text-slate-600 uppercase">Kategori Pertanyaan</label>
+                  <label className="font-bold text-slate-600 uppercase">Kategori Pesan</label>
                   <select
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
                     className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-emerald-500 rounded-lg"
                   >
-                    <option value="Pertanyaan">Pertanyaan Umum / Konsultasi</option>
-                    <option value="Kegiatan">Kegiatan & Pembelajaran</option>
-                    <option value="Donasi">Donasi & Infaq pembangunan</option>
-                    <option value="KritikSaran">Kritik & Saran</option>
+                    <option value="Pertanyaan Umum">Pertanyaan Umum / Konsultasi</option>
+                    <option value="Saran & Kritik">Saran &amp; Kritik Konstruktif</option>
+                    <option value="Kegiatan & Pembelajaran">Kegiatan &amp; Pembelajaran Santri</option>
+                    <option value="Donasi & Infaq">Donasi &amp; Infaq Pembangunan</option>
+                    <option value="Lainnya">Pesan Lainnya</option>
                   </select>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="font-bold text-slate-600 uppercase">Isi Pesan / Pertanyaan</label>
+                  <label className="font-bold text-slate-600 uppercase">Isi Pesan / Pertanyaan / Kritikan *</label>
                   <textarea 
                     name="message"
                     required
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
-                    placeholder="Tuliskan pesan, pertanyaan, atau tanggapan Anda di sini..."
+                    placeholder="Tuliskan saran, pertanyaan, pesan, atau kritikan Anda di sini..."
                     className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 focus:border-emerald-500 rounded-lg resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3 bg-[#1B4332] hover:bg-[#153427] text-white font-bold text-xs uppercase tracking-wider rounded-lg shadow-xs cursor-pointer"
+                  className="w-full py-3.5 bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-xs cursor-pointer flex items-center justify-center gap-2 transition-colors"
                 >
-                  Kirim Pesan
+                  <MessageCircle className="w-4 h-4 text-emerald-300" />
+                  <span>Kirim Pesan Langsung ke WhatsApp</span>
                 </button>
               </form>
             </div>

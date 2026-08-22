@@ -31,7 +31,8 @@ import {
   Award,
   BookCheck,
   ShieldCheck,
-  AlertCircle
+  AlertCircle,
+  MessageCircle
 } from 'lucide-react';
 import { LBM_PROFILE, BAHTSUL_MASAIL_SESSION_AUGUST_2026 } from '../data';
 import ShareButton from './ShareButton';
@@ -44,7 +45,9 @@ export default function LBM() {
   const [expandedQuestion, setExpandedQuestion] = useState<number | null>(1);
 
   // Form State for Tanya Fiqih / Ajukan Mas'alah
+  const targetPhone = "6285966461178";
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [lastSubmittedMasail, setLastSubmittedMasail] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     status: 'Santri MDT',
@@ -70,7 +73,31 @@ export default function LBM() {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.title || !formData.description) return;
+
+    const waMessage =
+`*PENGAJUAN PERTANYAAN / MASAIL FIQHIYYAH*
+*LAJNAH BAHTSUL MASAIL (LBM) MDT RIYADLUL JANNAH*
+
+Assalamu'alaikum Wr. Wb.
+
+*Data Pengaju:*
+• *Nama Pengaju:* ${formData.name}
+• *Status / Jenjang:* ${formData.status}
+• *Bidang Masalah:* ${formData.category}
+
+*Pokok / Judul Masalah:*
+*${formData.title}*
+
+*Deskripsi Kasus / Waqi'iyyah Lengkap:*
+"${formData.description}"
+
+Mohon kesediaan Dewan Mushohhih & Dewan Muhararrir LBM MDT Riyadlul Jannah untuk menelaah dan membahas hukum fiqihnya. Jazakumullah khairan katsiran.`;
+
+    setLastSubmittedMasail(waMessage);
     setFormSubmitted(true);
+
+    const waUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(waMessage)}`;
+    window.open(waUrl, '_blank');
   };
 
   const filteredQuestions = BAHTSUL_MASAIL_SESSION_AUGUST_2026.questions.filter((q) => {
@@ -684,44 +711,56 @@ export default function LBM() {
             
             <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-2xs space-y-6">
               <div className="border-b border-slate-100 pb-4 space-y-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono border border-emerald-200">
-                  <Send className="w-3.5 h-3.5" />
-                  <span>FORMULIR PENGAJUAN MAS'ALAH</span>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-mono border border-emerald-200">
+                  <MessageCircle className="w-3.5 h-3.5 text-emerald-700" />
+                  <span>TERHUBUNG KE WHATSAPP LBM (+62 859-6646-1178)</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-slate-900">
                   Ajukan Pertanyaan / Masail Fiqhiyyah
                 </h3>
                 <p className="text-xs text-slate-500 font-light">
-                  Punya pertanyaan seputar hukum sholat, thoharoh, muamalah, atau persoalan ibadah harian? Ajukan untuk dibahas pada musyawarah pekanan LBM.
+                  Punya pertanyaan seputar hukum sholat, thoharoh, muamalah, atau persoalan ibadah harian? Mas'alah Anda akan otomatis diformat dan diteruskan langsung ke nomor WhatsApp resmi LBM MDT Riyadlul Jannah (+62 859-6646-1178) untuk ditelaah oleh dewan mushohhih &amp; muhararrir.
                 </p>
               </div>
 
               {formSubmitted ? (
-                <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-center space-y-4 animate-in fade-in duration-300">
-                  <div className="w-12 h-12 rounded-full bg-emerald-700 text-white flex items-center justify-center mx-auto shadow-sm">
-                    <Check className="w-6 h-6" />
+                <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 sm:p-8 text-center space-y-5 animate-in fade-in duration-300">
+                  <div className="w-14 h-14 rounded-full bg-emerald-700 text-white flex items-center justify-center mx-auto shadow-sm">
+                    <Check className="w-7 h-7" />
                   </div>
-                  <div className="space-y-1">
-                    <h4 className="font-bold text-emerald-950 text-base font-serif">Pertanyaan Berhasil Diajukan!</h4>
-                    <p className="text-xs text-emerald-800 max-w-md mx-auto leading-relaxed">
-                      Jazakumullah Khairan. Mas'alah Anda dengan judul <strong>"{formData.title}"</strong> telah dicatat dan akan ditelaah oleh Dewan Muhararrir untuk diagendakan pada Musyawarah Usbu'iyah mendatang.
+                  <div className="space-y-2">
+                    <h4 className="font-bold text-emerald-950 text-lg font-serif">Pertanyaan Telah Diarahkan ke WhatsApp!</h4>
+                    <p className="text-xs text-emerald-800 max-w-lg mx-auto leading-relaxed">
+                      Jazakumullah Khairan. Mas'alah Anda dengan pokok <strong>"{formData.title || 'Pertanyaan Fiqih'}"</strong> telah disusun dalam format standar LBM dan diarahkan ke WhatsApp Admin / Dewan LBM MDT (+62 859-6646-1178).
                     </p>
                   </div>
-                  <button
-                    onClick={() => {
-                      setFormSubmitted(false);
-                      setFormData({
-                        name: '',
-                        status: 'Santri MDT',
-                        category: 'Thoharoh (Bersuci)',
-                        title: '',
-                        description: ''
-                      });
-                    }}
-                    className="px-4 py-2 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl text-xs font-bold transition-colors cursor-pointer"
-                  >
-                    Ajukan Mas'alah Lainnya
-                  </button>
+                  
+                  <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+                    <a
+                      href={`https://wa.me/${targetPhone}?text=${encodeURIComponent(lastSubmittedMasail)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl text-xs font-bold transition-all shadow-xs cursor-pointer"
+                    >
+                      <MessageCircle className="w-4 h-4 text-emerald-300" />
+                      <span>Buka Ulang di WhatsApp (+62 859-6646-1178)</span>
+                    </a>
+                    <button
+                      onClick={() => {
+                        setFormSubmitted(false);
+                        setFormData({
+                          name: '',
+                          status: 'Santri MDT',
+                          category: 'Thoharoh (Bersuci)',
+                          title: '',
+                          description: ''
+                        });
+                      }}
+                      className="px-4 py-2.5 bg-white border border-emerald-300 text-emerald-800 hover:bg-emerald-100 rounded-xl text-xs font-bold transition-colors cursor-pointer"
+                    >
+                      Ajukan Mas'alah Lainnya
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleFormSubmit} className="space-y-4">
@@ -731,7 +770,7 @@ export default function LBM() {
                       <input
                         type="text"
                         required
-                        placeholder="Contoh: Muhammad Rafif"
+                        placeholder="Contoh: Muhammad Rafif / Wali Santri"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:bg-white focus:outline-hidden focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600"
@@ -801,10 +840,10 @@ export default function LBM() {
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full sm:w-auto px-6 py-3 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                      className="w-full sm:w-auto px-6 py-3.5 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                     >
-                      <Send className="w-4 h-4" />
-                      <span>Kirim Mas'alah ke Dewan LBM</span>
+                      <MessageCircle className="w-4 h-4 text-emerald-300" />
+                      <span>Kirim Mas'alah Langsung ke WhatsApp (+62 859-6646-1178)</span>
                     </button>
                   </div>
                 </form>
