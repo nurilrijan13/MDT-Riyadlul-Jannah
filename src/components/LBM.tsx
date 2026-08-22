@@ -842,8 +842,8 @@ Mohon kesediaan Dewan Mushohhih & Dewan Muhararrir LBM MDT Riyadlul Jannah untuk
                       type="submit"
                       className="w-full sm:w-auto px-6 py-3.5 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
                     >
-                      <MessageCircle className="w-4 h-4 text-emerald-300" />
-                      <span>Kirim Mas'alah Langsung ke WhatsApp (+62 859-6646-1178)</span>
+                      <Send className="w-4 h-4 text-emerald-300" />
+                      <span>Kirim Mas'alah</span>
                     </button>
                   </div>
                 </form>

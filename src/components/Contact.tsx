@@ -301,8 +301,8 @@ Mohon respon dan tanggapan dari pihak Sekretariat MDT Riyadlul Jannah. Terima ka
                   type="submit"
                   className="w-full py-3.5 bg-emerald-800 hover:bg-emerald-900 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-xs cursor-pointer flex items-center justify-center gap-2 transition-colors"
                 >
-                  <MessageCircle className="w-4 h-4 text-emerald-300" />
-                  <span>Kirim Pesan Langsung ke WhatsApp</span>
+                  <Send className="w-4 h-4 text-emerald-300" />
+                  <span>Kirim</span>
                 </button>
               </form>
             </div>
