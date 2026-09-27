@@ -28,6 +28,15 @@ interface GalleryItem {
 
 const GALLERY_ITEMS: GalleryItem[] = [
   {
+    id: 'gal-rapat-18-sep-2026',
+    title: 'Rapat MDT Evaluasi Bulanan & Pembentukan Panitia HSN 2026',
+    description: 'Telah terlaksana Rapat MDT Evaluasi Bulanan KBM serta pembentukan Panitia & persiapan Hari Santri Nasional 2026 pada Jum\'at malam Sabtu, 18 September 2026 (7 Rabius Tsani 1448 H) pukul 20:30 s/d 22:30 WIB bersama segenap Dewan Asatidz dan Pengurus MDT Riyadlul Jannah.',
+    imageUrl: rapatBulanan,
+    category: 'kegiatan',
+    categoryLabel: 'Rapat & Evaluasi',
+    date: '2026-09-18'
+  },
+  {
     id: 'gal-musyawarah-lbm',
     title: 'Musyawarah Bahtsul Masail Lajnah Bahtsul Masail (LBM)',
     description: 'Lajnah Bahtsul Masail (LBM) MDT Riyadlul Jannah menggelar Musyawarah Bahtsul Masail rutin yang diadakan 2 pekan sekali. Forum kajian keilmuan Islam dan literasi kitab kuning ini bertujuan untuk mengasah pemikiran kritis santri, mengkaji permasalahan fikih kontemporer, serta melatih kecakapan pendalaman dalil Kitab-kitab Fiqih Ulama Salaf, dan kutubut turats.',

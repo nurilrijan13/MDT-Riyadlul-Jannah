@@ -6,6 +6,7 @@
 import { Announcement, Teacher, Program, StudentProfile, ClassStudentCount, BahtsulMasailSession } from './types';
 import asatidzPhoto from './assets/images/asatidz.jpg';
 import musyawarahMalam from './assets/images/musyawarahmalam.jpeg';
+import rapatBulanan from './assets/images/rapatbulanan.jpeg';
 
 export const SCHOOL_PROFILE = {
   name: "MDT Riyadlul Jannah",
@@ -320,6 +321,39 @@ export const BAHTSUL_MASAIL_SESSION_AUGUST_2026: BahtsulMasailSession = {
 };
 
 export const ANNOUNCEMENTS: Announcement[] = [
+  {
+    id: "rapat-evaluasi-bulanan-dan-persiapan-hsn-2026",
+    title: "Telah Terlaksana Rapat MDT Evaluasi Bulanan serta Pembentukan Panitia & Persiapan Hari Santri Nasional 2026",
+    content: `BEKASI, MDT RIYADLUL JANNAH — Telah terlaksana Rapat MDT Evaluasi Bulanan serta Pembentukan Panitia & Persiapan Hari Santri Nasional 2026 di Madrasah Diniyah Takmiliyah (MDT) Riyadlul Jannah Pasir Gombong, Cikarang Utara.
+
+✦ INFORMASI PELAKSANAAN RAPAT ✦
+Hari / Tanggal : Jum'at malam Sabtu, 18 September 2026 (7 Rabius Tsani 1448 H)
+Waktu : 20:30 s/d 22:30 WIB
+Tempat : Gedung MDT Riyadlul Jannah Pasir Gombong
+Peserta : Dewan Asatidz, Staf Pengajar & Pengurus MDT Riyadlul Jannah
+
+✦ AGENDA & HASIL KESEPAKATAN RAPAT ✦
+1. Evaluasi Bulanan KBM MDT:
+   • Evaluasi berkala pelaksanaan Kegiatan Belajar Mengajar (KBM) kelas 1-3 Awaliyah (Ula) dan Wustha.
+   • Penguatan ketertiban absensi santri, pembinaan adab tholabul 'ilmi, serta pembiasaan ubudiyah harian (hafalan rukun sholat & doa harian).
+   • Kesiapan teknis santri dan asatidz menghadapi agenda Imtihan Nisfu Daur I (Ujian Tengah Semester 1) tanggal 21 - 26 September 2026.
+
+2. Pembentukan Panitia Peringatan Hari Santri Nasional (HSN) 2026:
+   • Penetapan dan pengesahan susunan panitia pelaksana HSN 2026 (Penanggung Jawab, Ketua Pelaksana, Sekretaris, Bendahara, serta Seksi Acara, Perlombaan, Perlengkapan, dan Keamanan).
+   • Pembagian tugas teknis kepada segenap dewan asatidz demi optimalnya penyelenggaraan.
+
+3. Rencana & Persiapan Peringatan Hari Santri Nasional (22 Oktober 2026):
+   • Pelaksanaan Upacara Bendera Peringatan Hari Santri Nasional 2026 secara khidmat.
+   • Pawai Ta'aruf & Pawai Obor Semarak Santri di lingkungan Desa Pasir Gombong.
+   • Musabaqah / Perlombaan Antarsantri: Lomba Lalaran Nadhom Kitab Salaf (Aqidatul Awam, Al-Jurumiyyah & Imrithi), Musabaqah Hifdzil Qur'an (MHQ) Juz Amma, Praktek Fiqih Sholat, dan Pidato Da'i Cilik.
+   • Istighotsah Kubro & Doa Bersama untuk keselamatan bangsa dan kejayaan santri Indonesia.
+
+Semoga hasil keputusan musyawarah ini mendatangkan keberkahan, kemudahan, serta kelancaran bagi seluruh agenda madrasah dan suksesnya peringatan Hari Santri Nasional 2026.`,
+    date: "2026-09-18",
+    category: "kegiatan",
+    important: true,
+    image: rapatBulanan
+  },
   {
     id: "bahtsul-masail-usbuyah-4-agustus-2026",
     title: "Hasil Musyawarah Usbu'iyah Lajnah Bahtsul Masail MDT Riyadlul Jannah: Hakikat Air Mutlak, Hukum Air Sumur, Air Mineral & Air AC",
@@ -805,6 +839,16 @@ export const ACADEMIC_CALENDAR = {
       title: "Maulid Nabi Muhammad SAW 12 Robi'ul Awwal 1448 H",
       description: "Peringatan hari kelahiran Baginda Nabi Muhammad SAW 12 Robi'ul Awwal 1448 H, pembacaan Maulid Simthudduror / Diba'iyyah, tausiyah keagamaan, dan penanaman mahabbah Rasulullah SAW.",
       category: "phbi" as const,
+      important: true
+    },
+    {
+      id: "cal-2026-rapat-evaluasi-hsn",
+      month: "September 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "18 September 2026 (7 Rabius Tsani 1448 H)",
+      title: "Rapat MDT Evaluasi Bulanan & Pembentukan Panitia HSN 2026",
+      description: "Telah terlaksana Rapat MDT Evaluasi Bulanan KBM serta pembentukan susunan kepanitiaan dan persiapan peringatan Hari Santri Nasional (HSN) 2026 (Pukul 20:30 s/d 22:30 WIB).",
+      category: "rapat" as const,
       important: true
     },
     {

@@ -302,6 +302,7 @@ export default function AcademicCalendar() {
                 {
                   month: 'September 2026',
                   events: [
+                    '18 September: Rapat MDT Evaluasi Bulanan & Persiapan HSN 2026 (20:30 - 22:30 WIB)',
                     '21 - 26 September: Imtihan Nisfu Daur I (UTS Semester 1)',
                     'Penguatan hafalan juz & nadhom kitab kuning',
                   ],
