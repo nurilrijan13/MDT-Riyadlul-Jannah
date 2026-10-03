@@ -154,15 +154,30 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
               </div>
 
               {/* Theme Badge */}
-              <div className="p-4 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-xs flex items-start gap-3">
-                <Flame className="w-6 h-6 text-amber-400 shrink-0 mt-0.5" />
-                <div>
-                  <span className="text-[10px] uppercase font-mono tracking-widest text-emerald-200 block font-bold">
+              <div className="p-4 sm:p-5 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-xs space-y-2.5">
+                <div className="flex items-center gap-2">
+                  <Flame className="w-5 h-5 text-amber-400 shrink-0" />
+                  <span className="text-[10px] sm:text-[11px] uppercase font-mono tracking-widest text-emerald-200 block font-bold">
                     Tema Resmi Hari Santri 2026:
                   </span>
-                  <p className="text-base sm:text-lg font-serif font-extrabold text-amber-200 italic">
-                    "{HSN_2026_DATA.theme}"
-                  </p>
+                </div>
+                <div className="space-y-2 pt-0.5">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2">
+                    <span className="px-2 py-0.5 rounded-md bg-amber-400 text-emerald-950 text-[10px] font-mono font-extrabold uppercase shrink-0 w-fit">
+                      Kemenag
+                    </span>
+                    <p className="text-sm sm:text-base font-serif font-extrabold text-amber-200 italic">
+                      "{HSN_2026_DATA.themeKemenag}"
+                    </p>
+                  </div>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2">
+                    <span className="px-2 py-0.5 rounded-md bg-emerald-700 text-emerald-100 border border-emerald-500/40 text-[10px] font-mono font-extrabold uppercase shrink-0 w-fit">
+                      PBNU
+                    </span>
+                    <p className="text-sm sm:text-base font-serif font-extrabold text-emerald-100 italic">
+                      "{HSN_2026_DATA.themePBNU}"
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -913,11 +928,11 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
                 />
               </div>
 
-              <div className="flex items-center justify-between text-xs text-slate-500 pt-1">
-                <span>Tema: "{HSN_2026_DATA.theme}"</span>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-500 pt-1">
+                <span>Tema: "{HSN_2026_DATA.themeKemenag}" (Kemenag) &amp; "{HSN_2026_DATA.themePBNU}" (PBNU)</span>
                 <button
                   onClick={handleShareWA}
-                  className="text-emerald-700 font-bold hover:underline flex items-center gap-1 cursor-pointer"
+                  className="text-emerald-700 font-bold hover:underline flex items-center gap-1 cursor-pointer shrink-0"
                 >
                   <Share2 className="w-3.5 h-3.5" />
                   <span>Kirim ke WhatsApp</span>

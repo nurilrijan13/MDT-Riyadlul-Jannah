@@ -312,7 +312,9 @@ export const BAHTSUL_MASAIL_SESSION_AUGUST_2026: BahtsulMasailSession = {
 export const HSN_2026_DATA = {
   title: "Peringatan Hari Santri Nasional (HSN) 2026",
   shortTitle: "Hari Santri Nasional 2026",
-  theme: "Menyambung Juang Merengkuh Masa Depan",
+  theme: "Santri Menguatkan Negeri, Menuju Indonesia Emas (Kemenag) & Menguatkan Akar Tradisi, Menjaga Keutuhan Negeri (PBNU)",
+  themeKemenag: "Santri Menguatkan Negeri, Menuju Indonesia Emas",
+  themePBNU: "Menguatkan Akar Tradisi, Menjaga Keutuhan Negeri",
   institution: "Madrasah Diniyah Takmiliyah Riyadlul Jannah Pasir Gombong",
   foundation: "Pondok Pesantren Riyadlul Jannah Pasir Gombong",
   arabicTitle: "يَوْمُ السَّنْتِرِيِّ الْوَطَنِيِّ ٢٠٢٦ م / ١٤٤٨ هـ",
@@ -523,7 +525,9 @@ export const ANNOUNCEMENTS: Announcement[] = [
   {
     id: "peringatan-hari-santri-nasional-2026",
     title: "Semarak Peringatan Hari Santri Nasional (HSN) 2026 MDT Riyadlul Jannah: Rangkaian Upacara, Pawai Obor, Musabaqah Lalaran & Doa Bersama",
-    content: `BEKASI, MDT RIYADLUL JANNAH — Dalam rangka menyambut dan memeriahkan Peringatan Hari Santri Nasional (HSN) 2026, Madrasah Diniyah Takmiliyah (MDT) Riyadlul Jannah Pasir Gombong mempersembahkan rangkaian kegiatan semarak santri dengan tema resmi: "Menyambung Juang Merengkuh Masa Depan".
+    content: `BEKASI, MDT RIYADLUL JANNAH — Dalam rangka menyambut dan memeriahkan Peringatan Hari Santri Nasional (HSN) 2026, Madrasah Diniyah Takmiliyah (MDT) Riyadlul Jannah Pasir Gombong mempersembahkan rangkaian kegiatan semarak santri dengan tema resmi:
+• "Santri Menguatkan Negeri, Menuju Indonesia Emas" (Kemenag)
+• "Menguatkan Akar Tradisi, Menjaga Keutuhan Negeri" (PBNU)
 
 ✦ WAKTU & TEMPAT PELAKSANAAN PUNCAK ✦
 Hari / Tanggal : Kamis, 22 Oktober 2026 M (11 Jumadil Ula 1448 H)

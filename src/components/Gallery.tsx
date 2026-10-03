@@ -31,7 +31,7 @@ const GALLERY_ITEMS: GalleryItem[] = [
   {
     id: 'gal-logo-hsn-2026',
     title: 'Logo Resmi Hari Santri Nasional (HSN) 2026 MDT Riyadlul Jannah',
-    description: 'Rilis Logo Resmi Peringatan Hari Santri Nasional (HSN) 2026 Madrasah Diniyah Takmiliyah (MDT) Riyadlul Jannah Pasir Gombong dengan tema "Menyambung Juang Merengkuh Masa Depan".',
+    description: 'Rilis Logo Resmi Peringatan Hari Santri Nasional (HSN) 2026 Madrasah Diniyah Takmiliyah (MDT) Riyadlul Jannah Pasir Gombong dengan tema resmi: "Santri Menguatkan Negeri, Menuju Indonesia Emas" (Kemenag) dan "Menguatkan Akar Tradisi, Menjaga Keutuhan Negeri" (PBNU).',
     imageUrl: logoHSN,
     category: 'kegiatan',
     categoryLabel: 'Hari Santri 2026',

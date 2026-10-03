@@ -90,7 +90,7 @@ export default function App() {
                     Peringatan Hari Santri Nasional (HSN) 2026 MDT Riyadlul Jannah
                   </h3>
                   <p className="text-xs text-emerald-100/80 font-light">
-                    Tema: "Menyambung Juang Merengkuh Masa Depan" — Upacara, Pawai Obor, Musabaqah &amp; Doa Bersama.
+                    Tema: "Santri Menguatkan Negeri, Menuju Indonesia Emas" (Kemenag) &amp; "Menguatkan Akar Tradisi, Menjaga Keutuhan Negeri" (PBNU).
                   </p>
                 </div>
               </div>
