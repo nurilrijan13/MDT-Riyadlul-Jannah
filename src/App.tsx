@@ -291,7 +291,7 @@ export default function App() {
         {currentTab === 'hari-santri' && <HariSantri setCurrentTab={setCurrentTab} />}
         {currentTab === 'rules' && <Rules />}
         {currentTab === 'gallery' && <Gallery />}
-        {currentTab === 'calendar' && <AcademicCalendar />}
+        {currentTab === 'calendar' && <AcademicCalendar setCurrentTab={setCurrentTab} />}
         {currentTab === 'announcements' && <Announcements />}
         {currentTab === 'about' && <About />}
         {currentTab === 'contact' && <Contact />}

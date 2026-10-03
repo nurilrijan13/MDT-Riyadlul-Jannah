@@ -26,7 +26,7 @@ export const SCHOOL_PROFILE = {
   youtubeUrl: "https://www.youtube.com/@mirajmedia127",
   mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.736009849206!2d107.1517449!3d-6.2984027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69856376aa60db%3A0xbfa5176193686755!2sSDIT%20Riyadlul%20Jannah!5e0!3m2!1sid!2sid!4v1719999999999!5m2!1sid!2sid",
   mapDirectUrl: "https://maps.app.goo.gl/7dMgHj19RTKaBU1r7",
-  headmaster: "Ust. Mahrus Ali",
+  headmaster: "Ust. M. Nurul Alim",
   establishedYear: "1999",
   tagline: "Membentuk Generasi Islami yang Berakhlakul Karimah, Cerdas, dan Hafal Al-Qur'an",
   history: "Perjalanan MDT Riyadlul Jannah berakar dari ketulusan dan amanah masyarakat Kampung Pasir Gombong saat mempercayakan putra-putrinya mengaji Kitabullah Al-Qur'anul Karim kepada Kiai Haji Abdul Hakam Makky. Berawal dari 6 santri di serambi rumah yang amat sederhana hingga berkembang pesat berkat keikhlasan, doa para Asatidz, Habaib, serta restu KH. Abdul Muiz. Pada tahun 1999, Pondok Pesantren & MDT Riyadlul Jannah resmi didirikan dan kini telah mendidik ratusan santri.",
@@ -171,14 +171,14 @@ export const PROGRAMS: Program[] = [
 
 export const TEACHERS: Teacher[] = [
   {
-    id: "u-iin-sholihin",
-    name: "Ust. Iin Sholihin",
-    role: "",
+    id: "u-m-nurul-alim",
+    name: "Ust. M. Nurul Alim",
+    role: "Kepala MDT Riyadlul Jannah",
     avatar: asatidzPhoto
   },
   {
-    id: "u-m-nurul-alim",
-    name: "Ust. M. Nurul Alim",
+    id: "u-iin-sholihin",
+    name: "Ust. Iin Sholihin",
     role: "",
     avatar: asatidzPhoto
   },
@@ -223,18 +223,6 @@ export const TEACHERS: Teacher[] = [
     name: "Ust. Imam Syafi'i",
     role: "",
     avatar: asatidzPhoto
-  },
-  {
-    id: "u-afifuddin",
-    name: "Ust. Afifuddin",
-    role: "",
-    avatar: asatidzPhoto
-  },
-  {
-    id: "u-ahmad-syarif",
-    name: "Ust. Ahmad Syarif",
-    role: "",
-    avatar: asatidzPhoto
   }
 ];
 
@@ -258,7 +246,7 @@ export const LBM_PROFILE = {
   },
   structure: {
     advisor: "Kiai Haji Abdul Hakam Makky",
-    supervisor: "Ust. Mahrus Ali (Kepala MDT)",
+    supervisor: "Ust. M. Nurul Alim (Kepala MDT)",
     chairman: "Ust. Ihya 'Ulumuddin",
     moderator: "Ust. Ihya 'Ulumuddin",
     mushohhih: ["Ust. Agus Maulana", "Ust. Mahrus Ali"],
@@ -343,7 +331,7 @@ export const HSN_2026_DATA = {
   },
   committee: {
     pelindung: "Kiai Haji Abdul Hakam Makky",
-    penasehat: "Ust. Mahrus Ali (Kepala MDT Riyadlul Jannah)",
+    penasehat: "Ust. M. Nurul Alim (Kepala MDT Riyadlul Jannah)",
     koordinatorPJ: "Ust. Sofyan",
     ketua: "Rafif Chandra",
     wakilKetua: "Siti Mutmainnah",
@@ -1100,13 +1088,80 @@ export const ACADEMIC_CALENDAR = {
       category: "ujian" as const,
       important: true
     },
+    // --- SEMARAK RUNDOWN TIMELINE HARI SANTRI NASIONAL (HSN 2026) ---
     {
-      id: "cal-2026-6",
+      id: "cal-2026-hsn-1",
       month: "Oktober 2026",
       semester: "Semester 1 (Juli - Des 2026)" as const,
-      date: "22 Oktober 2026 (11 Jumadil Ula 1448 H)",
-      title: "Peringatan Hari Santri Nasional (HSN 2026)",
-      description: "Upacara bendera santri, Musabaqah Lalaran Nadhom Kitab Salaf & MHQ, Pawai Obor Semarak Santri, serta Istighotsah Kubro dan Shalawat Bersama.",
+      date: "19 Oktober 2026 (Ahad Malam Senin | 20:00 - 22:00 WIB)",
+      title: "HSN 2026 (Rundown 1): Pembukaan HSN & Musyabaqoh Kaligrafi",
+      description: "Pembukaan resmi semarak Hari Santri Nasional 2026 MDT Riyadlul Jannah dilanjutkan pelaksanaan Musabaqah Seni Kaligrafi Islam (Khat Al-Qur'an).",
+      category: "acara" as const,
+      important: true,
+      image: logoHSN
+    },
+    {
+      id: "cal-2026-hsn-2",
+      month: "Oktober 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "20 Oktober 2026 (Senin Malam Selasa | 20:00 - 22:00 WIB)",
+      title: "HSN 2026 (Rundown 2): MTQ Awaliyah & MHQ Wustho",
+      description: "Musabaqah Tilawatil Qur'an (MTQ) untuk santri jenjang Awaliyah dan Musabaqah Hifdzil Qur'an (MHQ) hafalan Al-Qur'an untuk santri jenjang Wustho.",
+      category: "acara" as const,
+      important: true,
+      image: logoHSN
+    },
+    {
+      id: "cal-2026-hsn-3",
+      month: "Oktober 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "20 Oktober 2026 (Selasa Malam Rabu | 20:00 - 22:00 WIB)",
+      title: "HSN 2026 (Rundown 3): MQK Awaliyah & MQK Wustho (Kitab Kuning)",
+      description: "Musabaqah Qira'atil Kutub (MQK) membaca, memaknai pegon, dan membedah ibarat Kitab Kuning / Kitab Salaf karya Ulama Salafussholih.",
+      category: "acara" as const,
+      important: true,
+      image: logoHSN
+    },
+    {
+      id: "cal-2026-hsn-4",
+      month: "Oktober 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "21 Oktober 2026 (Rabu | 14:00 - 17:00 WIB)",
+      title: "HSN 2026 (Rundown 4): Lomba Futsal Putra & Badminton Putri",
+      description: "Pertandingan olahraga persahabatan santri: Turnamen Futsal Putra (PJ: Anwar) dan Turnamen Badminton Putri (PJ: Amira) di Lapangan Olahraga MDT Riyadlul Jannah.",
+      category: "kegiatan" as const,
+      important: true,
+      image: logoHSN
+    },
+    {
+      id: "cal-2026-hsn-5",
+      month: "Oktober 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "21 Oktober 2026 (Rabu Malam Kamis | 20:00 - 21:00 WIB)",
+      title: "HSN 2026 (Rundown 5): Kirab Santri “Pawai Obor”",
+      description: "Kirab Santri akbar membawa obor bambu menyusuri rute Kp. Sempu Gardu & Desa Pasir Gombong dengan lantunan shalawat thola'al badru dan qasidah santri.",
+      category: "acara" as const,
+      important: true,
+      image: logoHSN
+    },
+    {
+      id: "cal-2026-hsn-6",
+      month: "Oktober 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "22 Oktober 2026 (Kamis | 07:00 - 09:00 WIB)",
+      title: "HSN 2026 (Rundown 6): Apel Upacara Hari Santri & Nobar Film “Sang Kiai”",
+      description: "Apel Upacara Resmi Peringatan Hari Santri Nasional 2026 berbusana putih khas santri & sarung, dilanjutkan Nonton Bareng (Nobar) Film Edukasi Sejarah Pesantren “Sang Kiai”.",
+      category: "phbi" as const,
+      important: true,
+      image: logoHSN
+    },
+    {
+      id: "cal-2026-hsn-7",
+      month: "Oktober 2026",
+      semester: "Semester 1 (Juli - Des 2026)" as const,
+      date: "22 Oktober 2026 (Kamis | 16:00 - 17:00 WIB)",
+      title: "HSN 2026 (Rundown 7): Pembagian Hadiah, Souvenir & Penutupan",
+      description: "Pengumuman para pemenang seluruh musabaqah, penyerahan piala dan hadiah juarawan, pembagian souvenir resmi Hari Santri 2026, serta doa penutupan oleh Pengasuh & Dewan Asatidz.",
       category: "acara" as const,
       important: true,
       image: logoHSN

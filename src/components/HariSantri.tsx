@@ -833,9 +833,6 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
             <h3 className="text-xl sm:text-2xl font-extrabold font-serif">
               Sukseskan Semarak Hari Santri Nasional 2026 MDT Riyadlul Jannah
             </h3>
-            <p className="text-xs sm:text-sm text-emerald-100/80 font-light max-w-xl">
-              Kami mengundang segenap orang tua/wali santri, alumni, dan masyarakat Pasir Gombong untuk menghadiri upacara bendera, pawai obor santri, serta doa bersama.
-            </p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">

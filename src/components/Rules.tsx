@@ -18,6 +18,7 @@ import {
   Sparkles,
   BookOpen
 } from 'lucide-react';
+import { SCHOOL_PROFILE } from '../data';
 
 export default function Rules() {
   const rulesData = [
@@ -260,6 +261,7 @@ export default function Rules() {
               <div className="pt-4 text-center border-t border-brand-divider/20">
                 <p className="text-[10px] text-slate-400 italic">Tertanda,</p>
                 <p className="font-bold text-slate-800 font-serif mt-1">Kepala MDT Riyadlul Jannah</p>
+                <p className="text-xs font-serif font-bold text-emerald-900 mt-1">{SCHOOL_PROFILE.headmaster}</p>
                 <div className="w-20 h-0.5 bg-emerald-800/20 mx-auto my-2"></div>
                 <p className="text-[11px] font-bold text-emerald-800">Dewan Asatidz &amp; Pengurus</p>
               </div>

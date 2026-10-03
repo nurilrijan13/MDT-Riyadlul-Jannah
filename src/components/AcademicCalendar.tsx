@@ -25,13 +25,19 @@ import {
   ChevronUp,
   Layers,
   ExternalLink,
-  BookOpen
+  BookOpen,
+  Flame,
+  MapPin
 } from 'lucide-react';
-import { ACADEMIC_CALENDAR, ANNOUNCEMENTS, BAHTSUL_MASAIL_SESSION_AUGUST_2026 } from '../data';
+import { ACADEMIC_CALENDAR, ANNOUNCEMENTS, BAHTSUL_MASAIL_SESSION_AUGUST_2026, HSN_2026_DATA } from '../data';
 import { AcademicCalendarEvent, Announcement } from '../types';
 import ShareButton from './ShareButton';
 
-export default function AcademicCalendar() {
+interface AcademicCalendarProps {
+  setCurrentTab?: (tab: string) => void;
+}
+
+export default function AcademicCalendar({ setCurrentTab }: AcademicCalendarProps) {
   const [activeView, setActiveView] = useState<'kalender' | 'arsip' | 'gabungan'>('kalender');
   const [selectedSemester, setSelectedSemester] = useState<string>('Semua Daur');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -310,8 +316,13 @@ export default function AcademicCalendar() {
                 {
                   month: 'Oktober 2026',
                   events: [
-                    '22 Oktober: Hari Santri Nasional (HSN 2026)',
-                    'Pawai obor, Istighotsah & Perlombaan Lalaran',
+                    '19 Okt (20:00): Pembukaan HSN & Musyabaqoh Kaligrafi',
+                    '20 Okt (20:00): MTQ Awaliyah & MHQ Wustho',
+                    '20 Okt (20:00): MQK Awaliyah & Wustho (Kitab Kuning)',
+                    '21 Okt (14:00): Lomba Futsal Putra & Badminton Putri',
+                    '21 Okt (20:00): Kirab Santri "Pawai Obor"',
+                    '22 Okt (07:00): Apel Upacara Hari Santri & Nobar Film "Sang Kiai"',
+                    '22 Okt (16:00): Pembagian Hadiah, Souvenir & Penutupan',
                   ],
                 },
                 {
@@ -352,6 +363,110 @@ export default function AcademicCalendar() {
                   </ul>
                 </div>
               ))}
+            </div>
+          </div>
+        )}
+
+        {/* RUNDOWN TIMELINE HARI SANTRI NASIONAL 2026 - SPECIAL INTEGRATED CALENDAR SECTION */}
+        {activeView !== 'arsip' && (
+          <div className="bg-gradient-to-br from-emerald-950 via-emerald-900 to-emerald-950 text-white rounded-3xl p-6 md:p-8 border-2 border-emerald-600/70 shadow-lg space-y-6 relative overflow-hidden">
+            {/* Background embellishment */}
+            <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-emerald-800/80 pb-5">
+              <div className="space-y-1.5">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-400 text-emerald-950 text-[10px] font-extrabold uppercase tracking-widest rounded-full shadow-xs font-mono">
+                  <Flame className="w-3.5 h-3.5 fill-emerald-950" />
+                  <span>Agenda Akbar Madrasah • Oktober 2026</span>
+                </div>
+                <h3 className="text-xl md:text-2xl font-black font-serif tracking-tight text-white flex items-center gap-2">
+                  <span>RUNDOWN TIMELINE HARI SANTRI NASIONAL 2026</span>
+                </h3>
+                <p className="text-xs md:text-sm text-emerald-200/90 font-light">
+                  Madrasah Diniyah Taklimiyah Riyadlul Jannah • Rangkaian Kegiatan, Musabaqah &amp; Peringatan Puncak
+                </p>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2 shrink-0">
+                {setCurrentTab && (
+                  <button
+                    onClick={() => setCurrentTab('hari-santri')}
+                    className="px-4 py-2 bg-amber-400 hover:bg-amber-300 text-emerald-950 text-xs font-bold rounded-xl transition-all shadow-sm flex items-center gap-1.5 cursor-pointer font-sans"
+                  >
+                    <span>Buka Halaman Hari Santri</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                )}
+                <ShareButton
+                  variant="pill"
+                  label="Bagikan Rundown HSN"
+                  shareData={{
+                    title: "RUNDOWN TIMELINE HARI SANTRI NASIONAL 2026 MDT Riyadlul Jannah",
+                    text: `RUNDOWN TIMELINE HARI SANTRI NASIONAL 2026\nMadrasah Diniyah Taklimiyah Riyadlul Jannah\n\n1️⃣ Ahad Malam Senin, 19 Oktober\n⏰ 20:00 - 22:00 WIB\n🎯 Pembukaan HSN & Musyabaqoh Kaligrafi\n\n2️⃣ Senin Malam Selasa, 20 Oktober\n⏰ 20:00 - 22:00 WIB\n🎯 MTQ Awaliyah & MHQ Wustho\n\n3️⃣ Selasa Malam Rabu, 20 Oktober\n⏰ 20:00 - 22:00 WIB\n🎯 MQK Awaliyah & MQK Wustho\n\n4️⃣ Rabu, 21 Oktober\n⏰ 14:00 - 17:00 WIB\n🎯 Lomba Futsal Putra & Badminton Putri\n\n5️⃣ Rabu Malam Kamis, 21 Oktober\n⏰ 20:00 - 21:00 WIB\n🎯 Kirab Santri “Pawai Obor”\n\n6️⃣ Kamis, 22 Oktober\n⏰ 07:00 - 09:00 WIB\n🎯 Apel Upacara Hari Santri & Nobar Film “Sang Kiai”\n\n7️⃣ Kamis, 22 Oktober\n⏰ 16:00 - 17:00 WIB\n🎯 Pembagian Hadiah, Souvenir & Penutupan`,
+                    category: 'acara'
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* 7 Timeline Grid Cards */}
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {HSN_2026_DATA.events.map((item) => (
+                <div
+                  key={item.step}
+                  className={`rounded-2xl p-4.5 border transition-all duration-300 flex flex-col justify-between space-y-3 ${
+                    item.step === 6
+                      ? 'bg-gradient-to-br from-amber-500/25 via-emerald-900/60 to-emerald-950 border-amber-400/70 shadow-md ring-1 ring-amber-400/30'
+                      : 'bg-emerald-900/60 hover:bg-emerald-800/70 border-emerald-700/60 shadow-xs'
+                  }`}
+                >
+                  <div className="space-y-2.5">
+                    {/* Header: Step & Time */}
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="flex items-center justify-center w-7 h-7 rounded-xl bg-amber-400 text-emerald-950 font-black text-xs font-mono shadow-xs shrink-0">
+                        {item.step}
+                      </span>
+                      <span className="px-2 py-0.5 bg-emerald-800/90 text-emerald-200 border border-emerald-700 rounded-md text-[10px] font-mono font-bold flex items-center gap-1">
+                        <Clock className="w-3 h-3 text-amber-300" />
+                        <span>{item.time}</span>
+                      </span>
+                    </div>
+
+                    {/* Day / Date */}
+                    <div>
+                      <span className="text-[11px] font-bold text-amber-300 block font-mono">
+                        {item.day}
+                      </span>
+                      <h4 className="text-sm font-extrabold text-white font-serif mt-0.5 leading-snug">
+                        {item.title}
+                      </h4>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-xs text-emerald-100/80 font-light leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  {/* Location badge */}
+                  <div className="pt-2 border-t border-emerald-800/60 flex items-center gap-1.5 text-[10px] text-emerald-300/80">
+                    <MapPin className="w-3 h-3 text-amber-400 shrink-0" />
+                    <span className="truncate">{item.location}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Quick footer info */}
+            <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 pt-2 text-xs text-emerald-300/90 font-light border-t border-emerald-800/40">
+              <span className="flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                <span>Koordinator/PJ HSN: <strong>{HSN_2026_DATA.committee.koordinatorPJ}</strong> • Ketua: <strong>{HSN_2026_DATA.committee.ketua}</strong></span>
+              </span>
+              <span className="text-[11px] text-amber-300/90 font-mono">
+                Puncak Upacara &amp; Penutupan: Kamis, 22 Oktober 2026
+              </span>
             </div>
           </div>
         )}
