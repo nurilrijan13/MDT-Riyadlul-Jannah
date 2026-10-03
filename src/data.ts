@@ -7,6 +7,7 @@ import { Announcement, Teacher, Program, StudentProfile, ClassStudentCount, Baht
 import asatidzPhoto from './assets/images/asatidz.jpg';
 import musyawarahMalam from './assets/images/musyawarahmalam.jpeg';
 import rapatBulanan from './assets/images/rapatbulanan.jpeg';
+import logoHSN from './assets/images/logo hsn 26.jpg';
 
 export const SCHOOL_PROFILE = {
   name: "MDT Riyadlul Jannah",
@@ -320,7 +321,186 @@ export const BAHTSUL_MASAIL_SESSION_AUGUST_2026: BahtsulMasailSession = {
   ]
 };
 
+export const HSN_2026_DATA = {
+  title: "Peringatan Hari Santri Nasional (HSN) 2026",
+  shortTitle: "Hari Santri Nasional 2026",
+  theme: "Menyambung Juang Merengkuh Masa Depan",
+  institution: "Madrasah Diniyah Takmiliyah Riyadlul Jannah Pasir Gombong",
+  foundation: "Pondok Pesantren Riyadlul Jannah Pasir Gombong",
+  arabicTitle: "يَوْمُ السَّنْتِرِيِّ الْوَطَنِيِّ ٢٠٢٦ م / ١٤٤٨ هـ",
+  arabicSubtitle: "المدرسة الدينية التعليمية رياض الجنة",
+  logo: logoHSN,
+  dateMasehi: "Kamis, 22 Oktober 2026 M",
+  dateHijriah: "11 Jumadil Ula 1448 H",
+  location: "Kompleks Pondok Pesantren & MDT Riyadlul Jannah, Kp. Sempu Gardu RT 02/03 Ds. Pasir Gombong, Cikarang Utara, Bekasi",
+  preparationMeeting: {
+    title: "Rapat MDT Evaluasi Bulanan & Pembentukan Panitia HSN 2026",
+    status: "Telah Terlaksana",
+    date: "Jum'at malam Sabtu, 18 September 2026 (7 Rabius Tsani 1448 H)",
+    time: "20:30 s/d 22:30 WIB",
+    location: "Gedung MDT Riyadlul Jannah Pasir Gombong",
+    attendees: "Dewan Asatidz, Staf Pengajar & Pengurus MDT Riyadlul Jannah"
+  },
+  committee: {
+    pelindung: "Kiai Haji Abdul Hakam Makky",
+    penasehat: "Ust. Mahrus Ali (Kepala MDT Riyadlul Jannah)",
+    ketua: "Ust. Ihya 'Ulumuddin",
+    wakilKetua: "Ust. Agus Maulana",
+    sekretaris: "Ust. M. Nurul Alim",
+    bendahara: "Ust. Iin Sholihin",
+    seksiAcara: ["Ust. M. Anas Abdul Muhith", "Ust. Misbahul Fatih"],
+    seksiLomba: ["Ust. Sofyan", "Ust. Imam Syafi'i"],
+    seksiPerlengkapan: ["Ust. Afifuddin", "Pengurus Santri"],
+    seksiKeamanan: ["Ust. Ahmad Syarif", "Keamanan Pondok"],
+    seksiDokumentasi: ["Tim Media MDT Riyadlul Jannah (@mirajmedia127)"]
+  },
+  events: [
+    {
+      time: "07.00 - 07.30 WIB",
+      title: "Apel Persiapan & Penataan Barisan Santri",
+      location: "Halaman Utama Madrasah",
+      description: "Seluruh santri putra & putri Awaliyah serta Wustha bersiap mengenakan busana khas santri (baju koko putih, sarung, dan peci hitam untuk putra; gamis putih dan jilbab syar'i untuk putri)."
+    },
+    {
+      time: "07.30 - 09.00 WIB",
+      title: "Upacara Khidmat Peringatan Hari Santri Nasional 2026",
+      location: "Lapangan Pesantren Riyadlul Jannah",
+      description: "Pengibaran Sang Saka Merah Putih, pembacaan Naskah Resolusi Jihad 22 Oktober 1945, Ikrar Santri Indonesia, menyanyikan Mars Hari Santri & Yalal Wathon, serta Amanat Pembina Upacara."
+    },
+    {
+      time: "09.30 - 12.00 WIB",
+      title: "Musabaqah & Perlombaan Santri Sesi Pagi",
+      location: "Ruang Kelas & Panggung Utama MDT",
+      description: "Pelaksanaan aneka lomba keilmuan salaf: Musabaqah Lalaran Nadhom Kitab Salaf (Aqidatul Awam, Al-Jurumiyyah & Imrithi), MHQ Juz Amma, dan Praktek Sholat Fardhu."
+    },
+    {
+      time: "13.30 - 15.30 WIB",
+      title: "Lanjutan Perlombaan & Cerdas Cermat Fiqih",
+      location: "Aula Pertemuan MDT",
+      description: "Lomba Da'i Cilik 3 Bahasa (Arab, Sunda, Indonesia) dan Cerdas Cermat Fiqih Ibadah Dasar."
+    },
+    {
+      time: "18.30 - 20.00 WIB (Ba'da Maghrib)",
+      title: "Semarak Pawai Ta'aruf & Pawai Obor Santri",
+      location: "Rute Sekitar Kp. Sempu Gardu & Desa Pasir Gombong",
+      description: "Pawai syiar Islam beriringan membawa obor bambu damai, melantunkan shalawat thola'al badru dan qasidah perjuangan santri bersama asatidz dan warga sekitar."
+    },
+    {
+      time: "20.15 - 22.30 WIB (Ba'da Isya)",
+      title: "Malam Puncak: Istighotsah Kubro, Doa Bersama & Pembagian Hadiah",
+      location: "Musholla Putra MDT Riyadlul Jannah",
+      description: "Pembacaan Shalawat Nariyah & Shalawat Asyghil, Tausiyah Hari Santri oleh Pimpinan Pondok, Doa untuk Para Pejuang Kemerdekaan & Muassis NU/Pesantren, serta penyerahan piala juarawan lomba."
+    }
+  ],
+  competitions: [
+    {
+      title: "Musabaqah Lalaran Nadhom Kitab Salaf",
+      category: "Kitab Salaf & Nahwu",
+      target: "Santri Kelas 1, 2, 3 Awaliyah & Wustha",
+      materials: "Nadhom Aqidatul Awam, Al-Jurumiyyah, & Al-Imrithi",
+      criteria: "Kelancaran hafalan, ketepatan makhraj dan tajwid, irama lagu lalaran khas pesantren, serta kekompakan kelompok."
+    },
+    {
+      title: "Musabaqah Hifdzil Qur'an (MHQ) Juz Amma",
+      category: "Tahfidz & Tartil",
+      target: "Santri Awaliyah & Program Tahfidz Junior",
+      materials: "Surah-surah pilihan Juz 30 (An-Naba' s/d An-Nas)",
+      criteria: "Tahsin makharijul huruf, hukum tajwid (ghunnah, mad, qalqalah), fashahah, serta kelancaran setoran."
+    },
+    {
+      title: "Praktek Fiqih Ubudiyah & Rukun Sholat",
+      category: "Fiqih Praktis",
+      target: "Santri Awaliyah (Kelas 1 - 3)",
+      materials: "Rukun Qolbi, Qouli, dan Fi'li di dalam Sholat Fardhu beserta doa iftitah & tasyahhud akhir",
+      criteria: "Ketepatan gerakan tuma'ninah, kesempurnaan bacaan sholat, serta pemahaman rukun yang membatalkan."
+    },
+    {
+      title: "Lomba Khitobah / Da'i Cilik Santri",
+      category: "Khitobah & Dakwah",
+      target: "Seluruh Santri MDT Riyadlul Jannah",
+      materials: "Tema: 'Adab Menuntut Ilmu', 'Jihad Santri Menjaga NKRI', atau 'Cinta Rasulullah & Berbakti Kepada Orang Tua'",
+      criteria: "Kesesuaian dalil Al-Qur'an/Hadits, intonasi & retorika, penguasaan panggung, serta kesantunan bahasa."
+    },
+    {
+      title: "Cerdas Cermat Fiqih & Tarikh Salaf",
+      category: "Wawasan Keagamaan",
+      target: "Tim Perwakilan Kelas Diniyah",
+      materials: "Fiqih Safinah/Taqrib, Tarikh Nabi & Salafussholeh, serta Kaidah Bahasa Arab Dasar",
+      criteria: "Kecepatan dan ketepatan menjawab soal wajib dan lemparan/rebutan."
+    }
+  ],
+  dressCode: {
+    putra: "Baju Koko / Gamis Putih, Sarung Rapi (Bukan Celana), Peci Hitam Nasional, dan Sandal/Sepatu Bersih.",
+    putri: "Busana Muslimah Putih, Rok/Kain Panjang Syar'i, Jilbab Putih Menutup Dada, dan Membawa Mukena Sholat.",
+    waliSantri: "Pakaian Muslim/Muslimah sopan, rapi, dan menutup aurat."
+  },
+  resolusiJihad: {
+    date: "22 Oktober 1945",
+    figure: "Hadratussyaikh KH. Muhammad Hasyim Asy'ari",
+    essence: "Mempertahankan kemerdekaan Negara Republik Indonesia dan membela tanah air dari agresi penjajah adalah Fardhu 'Ain (kewajiban mutlak) bagi setiap Muslim yang berada dalam radius 94 km."
+  },
+  marsHariSantri: {
+    title: "Mars Hari Santri Nasional (45 Resolusi Jihad)",
+    lyrics: [
+      "22 Oktober 45",
+      "Resolusi Jihad panggilan jiwa",
+      "Santri dan ulama tetap setia",
+      "Berkorban pertahankan Indonesia",
+      "",
+      "Satu tiang pancang negeri ini",
+      "Keluarga santri tegak berdiri",
+      "Mengabdi sepenuh hati",
+      "Demi marwah dan martabat negeri",
+      "",
+      "Reff:",
+      "Hari Santri, Hari Santri, Hari Santri",
+      "Hari Santri bukti cinta pada negeri",
+      "Ridho dan rahmat dari Ilahi",
+      "NKRI harga mati!",
+      "",
+      "Ayo santri, ayo santri, ayo santri",
+      "Ayo ngaji dan patuh pada kiai",
+      "Jayalah bangsa, jaya negara",
+      "Abadi Indonesia!"
+    ]
+  },
+  ikrarSantri: [
+    "Kami Santri MDT Riyadlul Jannah Pasir Gombong, berikrar:",
+    "1. Senantiasa berpegang teguh pada Aqidah Ahlussunnah wal Jama'ah an-Nahdliyyah, dan taat kepada syariat Islam.",
+    "2. Berbakti kepada orang tua, taat serta hormat kepada para guru, kiai, dan asatidz, serta menjunjung tinggi adab di atas ilmu.",
+    "3. Setia membela dan mempertahankan keutuhan Negara Kesatuan Republik Indonesia yang berdasarkan Pancasila dan UUD 1945.",
+    "4. Bersungguh-sungguh dalam menuntut ilmu syar'i, membaca dan mengkaji Kitabullah serta Kitab Kuning salafiyah demi kemaslahatan umat.",
+    "5. Menjadi pribadi yang jujur, disiplin, berakhlakul karimah, dan siap berkhidmah bagi agama, bangsa, dan negara."
+  ]
+};
+
 export const ANNOUNCEMENTS: Announcement[] = [
+  {
+    id: "peringatan-hari-santri-nasional-2026",
+    title: "Semarak Peringatan Hari Santri Nasional (HSN) 2026 MDT Riyadlul Jannah: Rangkaian Upacara, Pawai Obor, Musabaqah Lalaran & Doa Bersama",
+    content: `BEKASI, MDT RIYADLUL JANNAH — Dalam rangka menyambut dan memeriahkan Peringatan Hari Santri Nasional (HSN) 2026, Madrasah Diniyah Takmiliyah (MDT) Riyadlul Jannah Pasir Gombong mempersembahkan rangkaian kegiatan semarak santri dengan tema resmi: "Menyambung Juang Merengkuh Masa Depan".
+
+✦ WAKTU & TEMPAT PELAKSANAAN PUNCAK ✦
+Hari / Tanggal : Kamis, 22 Oktober 2026 M (11 Jumadil Ula 1448 H)
+Waktu : Pukul 07:00 WIB s/d Selesai
+Tempat : Kompleks Pondok Pesantren & MDT Riyadlul Jannah Pasir Gombong, Cikarang Utara
+
+✦ RANGKAIAN ACARA ✦
+1. Upacara Bendera Resmi Peringatan Hari Santri Nasional 2026 (07.30 WIB).
+2. Musabaqah & Perlombaan Santri Antar-Kelas (Lalaran Nadhom Kitab Salaf, MHQ Juz Amma, Praktek Fiqih Sholat, Khitobah Da'i Cilik, & Cerdas Cermat).
+3. Pawai Ta'aruf & Pawai Obor Semarak Santri keliling Pasir Gombong (Ba'da Maghrib).
+4. Malam Puncak: Istighotsah Kubro, Pembacaan Shalawat Nariyah & Shalawat Asyghil, serta Pengumuman Pemenang Lomba.
+
+✦ KETENTUAN BUSANA ✦
+• Santri Putra : Baju Koko/Gamis Putih, Sarung Rapi, Peci Hitam Nasional.
+• Santri Putri : Busana Muslimah Putih, Jilbab Putih Syar'i Menutup Dada.
+
+Mari bersama-sama kita syiarkan Hari Santri Nasional 2026 sebagai wujud khidmah dan rasa cinta kita kepada ulama, pesantren, dan Negara Kesatuan Republik Indonesia.`,
+    date: "2026-10-01",
+    category: "kegiatan",
+    important: true,
+    image: logoHSN
+  },
   {
     id: "rapat-evaluasi-bulanan-dan-persiapan-hsn-2026",
     title: "Telah Terlaksana Rapat MDT Evaluasi Bulanan serta Pembentukan Panitia & Persiapan Hari Santri Nasional 2026",
@@ -865,10 +1045,12 @@ export const ACADEMIC_CALENDAR = {
       id: "cal-2026-6",
       month: "Oktober 2026",
       semester: "Semester 1 (Juli - Des 2026)" as const,
-      date: "22 Oktober 2026",
+      date: "22 Oktober 2026 (11 Jumadil Ula 1448 H)",
       title: "Peringatan Hari Santri Nasional (HSN 2026)",
-      description: "Pawai obor santri, istighotsah kubro mendoakan kebaikan bangsa, dan perlombaan lalaran nadhom.",
-      category: "acara" as const
+      description: "Upacara bendera santri, Musabaqah Lalaran Nadhom Kitab Salaf & MHQ, Pawai Obor Semarak Santri, serta Istighotsah Kubro dan Shalawat Bersama.",
+      category: "acara" as const,
+      important: true,
+      image: logoHSN
     },
     {
       id: "cal-2026-7",

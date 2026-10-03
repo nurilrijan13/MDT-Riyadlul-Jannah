@@ -20,14 +20,15 @@ export default function Navbar({ currentTab, setCurrentTab, isDarkMode = false, 
 
   const menuItems = [
     { id: 'home', label: 'Beranda' },
-    { id: 'profile', label: 'Profil & Sejarah' },
+    { id: 'profile', label: 'Profil' },
     { id: 'programs', label: 'Program' },
-    { id: 'lbm', label: 'LBM (Lajnah Bahtsul Masail)' },
+    { id: 'lbm', label: 'LBM' },
+    { id: 'hari-santri', label: 'Hari Santri Nasional', special: true },
     { id: 'rules', label: 'Tata Tertib' },
-    { id: 'gallery', label: 'Galeri Foto' },
-    { id: 'calendar', label: 'Kalender Akademik' },
-    { id: 'announcements', label: 'Informasi & Agenda' },
-    { id: 'about', label: 'Tentang Kami' },
+    { id: 'gallery', label: 'Galeri' },
+    { id: 'calendar', label: 'Kalender' },
+    { id: 'announcements', label: 'Informasi' },
+    { id: 'about', label: 'Tentang' },
     { id: 'contact', label: 'Hubungi' }
   ];
 
@@ -74,21 +75,27 @@ export default function Navbar({ currentTab, setCurrentTab, isDarkMode = false, 
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center space-x-2">
-            <div className="flex gap-3 xl:gap-5 font-sans text-[11px] uppercase tracking-widest font-bold">
+            <div className="flex items-center gap-2 xl:gap-3.5 font-sans text-[10px] xl:text-[11px] uppercase tracking-wider font-bold">
               {menuItems.map((item) => {
                 const isActive = currentTab === item.id;
+                const isSpecial = (item as any).special;
                 return (
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
                     id={`nav-item-${item.id}`}
-                    className={`py-2 transition-all duration-150 cursor-pointer ${
+                    className={`py-2 px-1 transition-all duration-150 cursor-pointer flex items-center gap-1 ${
                       isActive
                         ? 'border-b-2 border-brand-green text-brand-green font-extrabold'
+                        : isSpecial
+                        ? 'text-emerald-800 dark:text-emerald-400 hover:text-brand-green border-b-2 border-transparent font-extrabold'
                         : 'text-brand-dark/70 hover:text-brand-green border-b-2 border-transparent'
                     }`}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    {isSpecial && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                    )}
                   </button>
                 );
               })}
@@ -159,17 +166,25 @@ export default function Navbar({ currentTab, setCurrentTab, isDarkMode = false, 
           <div className="px-4 pt-2 pb-6 space-y-2 border-t border-brand-divider">
             {menuItems.map((item) => {
               const isActive = currentTab === item.id;
+              const isSpecial = (item as any).special;
               return (
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`block w-full text-left py-3 px-2 font-sans text-xs uppercase tracking-widest font-bold transition-colors ${
+                  className={`flex items-center justify-between w-full text-left py-3 px-2 font-sans text-xs uppercase tracking-widest font-bold transition-colors ${
                     isActive
                       ? 'border-l-4 border-brand-green bg-brand-green/5 text-brand-green'
+                      : isSpecial
+                      ? 'text-emerald-800 dark:text-emerald-400 font-extrabold hover:bg-brand-dark/5'
                       : 'text-brand-dark/80 hover:bg-brand-dark/5 hover:text-brand-green'
                   }`}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {isSpecial && (
+                    <span className="px-2 py-0.5 rounded-full text-[9px] font-bold bg-amber-400 text-emerald-950 font-mono">
+                      HSN 2026
+                    </span>
+                  )}
                 </button>
               );
             })}

@@ -18,8 +18,10 @@ import AcademicCalendar from './components/AcademicCalendar';
 import LBM from './components/LBM';
 import WisdomBanner from './components/WisdomBanner';
 import StudentStats from './components/StudentStats';
+import HariSantri from './components/HariSantri';
 import { SCHOOL_PROFILE } from './data';
 import schoolLogo from './assets/images/lambang_mdt_rj_logo.png';
+import logoHSN from './assets/images/logo hsn 26.jpg';
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState<string>('home');
@@ -70,6 +72,40 @@ export default function App() {
             
             {/* Wisdom / Maqolah Banner */}
             <WisdomBanner />
+
+            {/* Featured Hari Santri Nasional 2026 Home Callout Banner */}
+            <div className="bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-950 text-white p-4 sm:p-6 border-b border-brand-divider flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-4">
+                <img 
+                  src={logoHSN} 
+                  alt="Logo HSN 2026" 
+                  className="h-14 sm:h-16 w-auto object-contain bg-white/95 rounded-xl p-1.5 border border-amber-400/50 shadow-sm shrink-0" 
+                />
+                <div>
+                  <div className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wider text-amber-300 font-bold mb-0.5">
+                    <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                    <span>22 Oktober 2026 • 11 Jumadil Ula 1448 H</span>
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold font-serif text-white">
+                    Peringatan Hari Santri Nasional (HSN) 2026 MDT Riyadlul Jannah
+                  </h3>
+                  <p className="text-xs text-emerald-100/80 font-light">
+                    Tema: "Menyambung Juang Merengkuh Masa Depan" — Upacara, Pawai Obor, Musabaqah &amp; Doa Bersama.
+                  </p>
+                </div>
+              </div>
+
+              <button
+                onClick={() => {
+                  setCurrentTab('hari-santri');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="shrink-0 px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-emerald-950 rounded-xl font-bold text-xs uppercase tracking-wider transition-all shadow-sm flex items-center gap-1.5 cursor-pointer"
+              >
+                <span>Buka Menu Hari Santri</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </button>
+            </div>
             
             {/* Quick Home Page Intro Featurettes */}
             <div className="grid grid-cols-1 md:grid-cols-3 border-b border-brand-divider bg-brand-cream/10 font-sans">
@@ -252,6 +288,7 @@ export default function App() {
         {currentTab === 'profile' && <Profile />}
         {currentTab === 'programs' && <Programs />}
         {currentTab === 'lbm' && <LBM />}
+        {currentTab === 'hari-santri' && <HariSantri setCurrentTab={setCurrentTab} />}
         {currentTab === 'rules' && <Rules />}
         {currentTab === 'gallery' && <Gallery />}
         {currentTab === 'calendar' && <AcademicCalendar />}

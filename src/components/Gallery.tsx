@@ -15,6 +15,7 @@ import haflah26 from '../assets/images/haflah26.jpeg';
 import piagamIzin from '../assets/images/piagamizin.jpg.jpeg';
 import rapatBulanan from '../assets/images/rapatbulanan.jpeg';
 import musyawarahMalam from '../assets/images/musyawarahmalam.jpeg';
+import logoHSN from '../assets/images/logo hsn 26.jpg';
 
 interface GalleryItem {
   id: string;
@@ -27,6 +28,15 @@ interface GalleryItem {
 }
 
 const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: 'gal-logo-hsn-2026',
+    title: 'Logo Resmi Hari Santri Nasional (HSN) 2026 MDT Riyadlul Jannah',
+    description: 'Rilis Logo Resmi Peringatan Hari Santri Nasional (HSN) 2026 Madrasah Diniyah Takmiliyah (MDT) Riyadlul Jannah Pasir Gombong dengan tema "Menyambung Juang Merengkuh Masa Depan".',
+    imageUrl: logoHSN,
+    category: 'kegiatan',
+    categoryLabel: 'Hari Santri 2026',
+    date: '2026-10-01'
+  },
   {
     id: 'gal-rapat-18-sep-2026',
     title: 'Rapat MDT Evaluasi Bulanan & Pembentukan Panitia HSN 2026',
