@@ -468,9 +468,16 @@ export const HSN_2026_DATA = {
     }
   ],
   dressCode: {
-    putra: "Baju Koko / Gamis Putih, Sarung Rapi (Bukan Celana), Peci Hitam Nasional, dan Sandal/Sepatu Bersih.",
-    putri: "Busana Muslimah Putih, Rok/Kain Panjang Syar'i, Jilbab Putih Menutup Dada, dan Membawa Mukena Sholat.",
-    waliSantri: "Pakaian Muslim/Muslimah sopan, rapi, dan menutup aurat."
+    kirab: {
+      event: "Kirab Santri Pawai Obor",
+      putra: "Koko Putih & Sarung Hijau",
+      putri: "Gamis Hitam & Hijab Hijau"
+    },
+    upacara: {
+      event: "Apel Upacara",
+      putra: "Koko Putih & Sarung Hijau",
+      putri: "Gamis Putih & Hijab Hijau"
+    }
   },
   resolusiJihad: {
     date: "22 Oktober 1945",
@@ -533,8 +540,12 @@ Tempat : Kompleks Pondok Pesantren & MDT Riyadlul Jannah Pasir Gombong, Cikarang
 7. Kamis, 22 Oktober (16:00 - 17:00 WIB) : Pembagian Hadiah, Souvenir & Penutupan
 
 ✦ KETENTUAN BUSANA ✦
-• Santri Putra : Baju Koko/Gamis Putih, Sarung Rapi, Peci Hitam Nasional.
-• Santri Putri : Busana Muslimah Putih, Jilbab Putih Syar'i Menutup Dada.
+• Kirab Santri Pawai Obor : 
+  - Putra : Koko Putih & Sarung Hijau
+  - Putri : Gamis Hitam & Hijab Hijau
+• Apel Upacara : 
+  - Putra : Koko Putih & Sarung Hijau
+  - Putri : Gamis Putih & Hijab Hijau
 
 Mari bersama-sama kita syiarkan Hari Santri Nasional 2026 sebagai wujud khidmah dan rasa cinta kita kepada ulama, pesantren, dan Negara Kesatuan Republik Indonesia.`,
     date: "2026-10-01",

@@ -396,28 +396,51 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
                 })}
               </div>
 
-              {/* Ketentuan Busana / Dresscode */}
+              {/* Ketentuan Busana */}
               <div className="p-6 rounded-2xl bg-amber-50/70 border border-amber-200 space-y-4">
                 <div className="flex items-center gap-2 text-amber-900 font-serif font-bold text-sm sm:text-base">
                   <ShieldCheck className="w-5 h-5 text-amber-700" />
-                  <span>Ketentuan Busana &amp; Perlengkapan Seluruh Santri</span>
+                  <span>Ketentuan Busana</span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-700">
-                  <div className="p-4 bg-white rounded-xl border border-amber-100 space-y-1.5">
-                    <span className="font-extrabold text-emerald-800 uppercase tracking-wider block">
-                      Santri Putra:
-                    </span>
-                    <p className="leading-relaxed font-light">
-                      {HSN_2026_DATA.dressCode.putra}
-                    </p>
+                  {/* Kirab Santri Pawai Obor */}
+                  <div className="p-4 bg-white rounded-xl border border-amber-200/80 space-y-3 shadow-2xs">
+                    <div className="flex items-center gap-2 border-b border-slate-100 pb-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0"></span>
+                      <h4 className="font-extrabold text-sm text-slate-900 font-serif">
+                        Kirab Santri Pawai Obor
+                      </h4>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 bg-emerald-50/70 p-2.5 rounded-lg border border-emerald-100">
+                        <span className="font-extrabold text-emerald-800 shrink-0 min-w-[42px]">Putra:</span>
+                        <span className="font-bold text-slate-800">{HSN_2026_DATA.dressCode.kirab.putra}</span>
+                      </div>
+                      <div className="flex items-center gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-200/80">
+                        <span className="font-extrabold text-slate-700 shrink-0 min-w-[42px]">Putri:</span>
+                        <span className="font-bold text-slate-800">{HSN_2026_DATA.dressCode.kirab.putri}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="p-4 bg-white rounded-xl border border-amber-100 space-y-1.5">
-                    <span className="font-extrabold text-emerald-800 uppercase tracking-wider block">
-                      Santri Putri:
-                    </span>
-                    <p className="leading-relaxed font-light">
-                      {HSN_2026_DATA.dressCode.putri}
-                    </p>
+
+                  {/* Apel Upacara */}
+                  <div className="p-4 bg-white rounded-xl border border-amber-200/80 space-y-3 shadow-2xs">
+                    <div className="flex items-center gap-2 border-b border-slate-100 pb-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-600 shrink-0"></span>
+                      <h4 className="font-extrabold text-sm text-slate-900 font-serif">
+                        Apel Upacara
+                      </h4>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 bg-emerald-50/70 p-2.5 rounded-lg border border-emerald-100">
+                        <span className="font-extrabold text-emerald-800 shrink-0 min-w-[42px]">Putra:</span>
+                        <span className="font-bold text-slate-800">{HSN_2026_DATA.dressCode.upacara.putra}</span>
+                      </div>
+                      <div className="flex items-center gap-2 bg-emerald-50/70 p-2.5 rounded-lg border border-emerald-100">
+                        <span className="font-extrabold text-emerald-800 shrink-0 min-w-[42px]">Putri:</span>
+                        <span className="font-bold text-slate-800">{HSN_2026_DATA.dressCode.upacara.putri}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
