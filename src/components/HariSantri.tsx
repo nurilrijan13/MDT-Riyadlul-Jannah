@@ -74,7 +74,7 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
     return () => clearInterval(interval);
   }, [targetDate]);
 
-  const shareText = `*SEMARAK HARI SANTRI NASIONAL (HSN) 2026*\n*MDT RIYADLUL JANNAH PASIR GOMBONG*\n\nTema: "${HSN_2026_DATA.theme}"\n🗓 Hari/Tgl: ${HSN_2026_DATA.dateMasehi} (${HSN_2026_DATA.dateHijriah})\n📍 Tempat: ${HSN_2026_DATA.location}\n\n✨ Rangkaian Acara:\n• Upacara Bendera Resmi Santri\n• Musabaqah Lalaran Nadhom Kitab Salaf & MHQ\n• Pawai Obor & Ta'aruf Semarak Santri\n• Istighotsah Kubro & Doa Bersama untuk Bangsa\n\nInfo lengkap: ${window.location.origin}`;
+  const shareText = `*RUNDOWN TIMELINE HARI SANTRI NASIONAL 2026*\n*MDT RIYADLUL JANNAH PASIR GOMBONG*\n\n1️⃣ Ahad Malam Senin, 19 Okt (20:00 - 22:00 WIB)\n🎯 Pembukaan HSN & Musyabaqoh Kaligrafi\n\n2️⃣ Senin Malam Selasa, 20 Okt (20:00 - 22:00 WIB)\n🎯 MTQ Awaliyah & MHQ Wustho\n\n3️⃣ Selasa Malam Rabu, 20 Okt (20:00 - 22:00 WIB)\n🎯 MQK Awaliyah & MQK Wustho\n\n4️⃣ Rabu, 21 Okt (14:00 - 17:00 WIB)\n🎯 Lomba Futsal Putra & Badminton Putri\n\n5️⃣ Rabu Malam Kamis, 21 Okt (20:00 - 21:00 WIB)\n🎯 Kirab Santri “Pawai Obor”\n\n6️⃣ Kamis, 22 Okt (07:00 - 09:00 WIB)\n🎯 Apel Upacara Hari Santri & Nobar Film “Sang Kiai”\n\n7️⃣ Kamis, 22 Okt (16:00 - 17:00 WIB)\n🎯 Pembagian Hadiah, Souvenir & Penutupan\n\nInfo lengkap: ${window.location.origin}`;
 
   const handleShareWA = () => {
     const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
@@ -329,45 +329,71 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
             <div className="space-y-8 animate-in fade-in duration-200">
               <div className="border-b border-slate-100 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-100 text-emerald-800 text-[11px] font-mono font-bold rounded-lg uppercase tracking-wider mb-2">
+                    <Calendar className="w-3.5 h-3.5 text-emerald-700" />
+                    <span>RUNDOWN TIMELINE HARI SANTRI NASIONAL 2026</span>
+                  </div>
                   <h3 className="text-xl md:text-2xl font-extrabold font-serif text-slate-900">
-                    Jadwal Rangkaian Acara Hari Santri 2026
+                    Rundown Timeline Acara HSN 2026 MDT Riyadlul Jannah
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-500 font-light">
-                    Kamis, 22 Oktober 2026 M (11 Jumadil Ula 1448 H) • Kompleks MDT &amp; PP Riyadlul Jannah
+                    19 - 22 Oktober 2026 • Madrasah Diniyah Taklimiyah Riyadlul Jannah Pasir Gombong
                   </p>
                 </div>
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-lg font-mono">
                   <Clock className="w-3.5 h-3.5" />
-                  <span>Pagi s/d Malam Hari</span>
+                  <span>7 Tahapan Agenda</span>
                 </div>
               </div>
 
-              {/* Timeline Cards */}
+              {/* Timeline Cards with 1️⃣ - 7️⃣ Steps */}
               <div className="space-y-4">
-                {HSN_2026_DATA.events.map((event, idx) => (
-                  <div 
-                    key={idx}
-                    className="p-5 rounded-2xl border border-slate-200/90 bg-slate-50/50 hover:bg-white hover:border-emerald-300 transition-all shadow-2xs space-y-2"
-                  >
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <span className="px-2.5 py-0.5 bg-emerald-800 text-white rounded-md text-[11px] font-mono font-bold">
-                        {event.time}
-                      </span>
-                      <span className="flex items-center gap-1 text-xs text-slate-500 font-medium">
-                        <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+                {HSN_2026_DATA.events.map((event: any, idx: number) => {
+                  const stepNumber = event.step || idx + 1;
+                  return (
+                    <div 
+                      key={idx}
+                      className="p-5 sm:p-6 rounded-2xl border-2 border-slate-200/90 bg-slate-50/50 hover:bg-white hover:border-emerald-500 transition-all shadow-2xs space-y-3"
+                    >
+                      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200/60 pb-2.5">
+                        <div className="flex items-center gap-2">
+                          <span className="w-7 h-7 rounded-lg bg-emerald-800 text-amber-300 font-extrabold flex items-center justify-center text-xs font-mono">
+                            {stepNumber}
+                          </span>
+                          <span className="font-extrabold text-sm sm:text-base text-slate-900 font-serif">
+                            {event.day}
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <span className="px-2.5 py-1 bg-amber-100 text-amber-900 rounded-md text-xs font-mono font-bold flex items-center gap-1">
+                            <Clock className="w-3.5 h-3.5 text-amber-700" />
+                            <span>{event.time}</span>
+                          </span>
+                          <span className="hidden sm:flex items-center gap-1 text-xs text-slate-500 font-medium">
+                            <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+                            <span>{event.location}</span>
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="space-y-1">
+                        <h4 className="text-base sm:text-lg font-bold font-serif text-emerald-950 flex items-center gap-1.5">
+                          <span className="text-emerald-700 font-bold">🎯</span>
+                          <span>{event.title}</span>
+                        </h4>
+
+                        <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed pl-6">
+                          {event.description}
+                        </p>
+                      </div>
+
+                      <div className="sm:hidden flex items-center gap-1 text-[11px] text-slate-500 font-medium pt-1 border-t border-slate-100">
+                        <MapPin className="w-3 h-3 text-emerald-600" />
                         <span>{event.location}</span>
-                      </span>
+                      </div>
                     </div>
-
-                    <h4 className="text-base sm:text-lg font-bold font-serif text-slate-900">
-                      {event.title}
-                    </h4>
-
-                    <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed">
-                      {event.description}
-                    </p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {/* Ketentuan Busana / Dresscode */}
@@ -402,16 +428,20 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
           {activeTab === 'lomba' && (
             <div className="space-y-6 animate-in fade-in duration-200">
               <div className="border-b border-slate-100 pb-4">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-100 text-emerald-800 text-[11px] font-mono font-bold rounded-lg uppercase tracking-wider mb-2">
+                  <Trophy className="w-3.5 h-3.5 text-emerald-700" />
+                  <span>MUSABAQAH &amp; PERLOMBAAN HARI SANTRI 2026</span>
+                </div>
                 <h3 className="text-xl md:text-2xl font-extrabold font-serif text-slate-900">
-                  Musabaqah &amp; Perlombaan Santri Antar-Kelas
+                  Musabaqah Keagamaan Salaf &amp; Olahraga Santri
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500 font-light">
-                  Ajang unjuk kompetensi pembacaan kitab salaf, tahfidz Al-Qur'an, fiqih ibadah, dan syiar dakwah.
+                  Ajang unjuk kompetensi pembacaan kitab salaf, seni kaligrafi Al-Qur'an, tilawah, tahfidz, serta ketangkasan olahraga santri putra &amp; putri.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                {HSN_2026_DATA.competitions.map((comp, idx) => (
+                {HSN_2026_DATA.competitions.map((comp: any, idx: number) => (
                   <div 
                     key={idx}
                     className="p-5 rounded-2xl border border-slate-200 bg-white hover:border-emerald-400 hover:shadow-xs transition-all flex flex-col justify-between space-y-4"
@@ -431,12 +461,24 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
                       </h4>
 
                       <div className="space-y-1.5 text-xs text-slate-600 font-light">
+                        {comp.schedule && (
+                          <p className="text-amber-900 font-semibold flex items-center gap-1 bg-amber-50 p-1.5 rounded-md border border-amber-100">
+                            <Clock className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+                            <span><strong>Jadwal:</strong> {comp.schedule}</span>
+                          </p>
+                        )}
                         <p>
                           <strong className="font-semibold text-slate-800">Sasaran:</strong> {comp.target}
                         </p>
                         <p>
                           <strong className="font-semibold text-slate-800">Materi Uji:</strong> {comp.materials}
                         </p>
+                        {comp.pj && (
+                          <p className="text-emerald-800 font-bold bg-emerald-50/70 p-2 rounded-lg border border-emerald-100 flex items-center justify-between">
+                            <span>Penanggung Jawab (PJ):</span>
+                            <span className="font-mono text-emerald-950 font-extrabold">{comp.pj}</span>
+                          </p>
+                        )}
                       </div>
                     </div>
 
@@ -452,9 +494,9 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
                 ))}
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 flex items-center justify-between">
-                <span>Pendaftaran peserta lomba dikoordinasikan langsung melalui masing-masing Wali Kelas Awaliyah dan Wustha.</span>
-                <span className="font-bold text-emerald-800">Dewan Juri Asatidz MDT</span>
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-2">
+                <span>Pendaftaran peserta lomba dikoordinasikan langsung melalui PJ Lomba &amp; masing-masing Wali Kelas.</span>
+                <span className="font-bold text-emerald-800">Koordinator PJ: {HSN_2026_DATA.committee.koordinatorPJ}</span>
               </div>
             </div>
           )}
@@ -463,17 +505,21 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
           {activeTab === 'panitia' && (
             <div className="space-y-8 animate-in fade-in duration-200">
               <div className="border-b border-slate-100 pb-4">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-100 text-emerald-800 text-[11px] font-mono font-bold rounded-lg uppercase tracking-wider mb-2">
+                  <Users className="w-3.5 h-3.5 text-emerald-700" />
+                  <span>ORGANIZING COMMITTEE HARI SANTRI NASIONAL 2026</span>
+                </div>
                 <h3 className="text-xl md:text-2xl font-extrabold font-serif text-slate-900">
                   Susunan Panitia Pelaksana Hari Santri Nasional 2026
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500 font-light">
-                  Ditetapkan pada Rapat Evaluasi Bulanan &amp; Pembentukan Panitia HSN, Jum'at malam Sabtu, 18 September 2026 (7 Rabius Tsani 1448 H).
+                  Madrasah Diniyah Taklimiyah Riyadlul Jannah Pasir Gombong, Cikarang Utara
                 </p>
               </div>
 
-              {/* Leadership Hierarchy */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-1">
+              {/* Leadership & Koordinator PJ */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 text-center space-y-1">
                   <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-800 font-bold block">
                     Pelindung
                   </span>
@@ -483,7 +529,7 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
                   <p className="text-xs text-slate-600 font-light">Pengasuh Pondok Pesantren</p>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-1">
+                <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 text-center space-y-1">
                   <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-800 font-bold block">
                     Penasehat
                   </span>
@@ -493,103 +539,164 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
                   <p className="text-xs text-slate-600 font-light">Kepala MDT Riyadlul Jannah</p>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-center space-y-1 sm:col-span-2 lg:col-span-1">
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-amber-900 font-bold block">
-                    Ketua Panitia Pelaksana
+                <div className="p-4 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100/70 border-2 border-amber-300 text-center space-y-1 sm:col-span-1 shadow-2xs">
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-amber-900 font-extrabold block flex items-center justify-center gap-1">
+                    <span>👤</span>
+                    <span>KOORDINATOR / PJ HSN 2026</span>
                   </span>
-                  <h4 className="text-base font-bold font-serif text-slate-900">
-                    {HSN_2026_DATA.committee.ketua}
+                  <h4 className="text-lg font-bold font-serif text-amber-950">
+                    {HSN_2026_DATA.committee.koordinatorPJ}
                   </h4>
-                  <p className="text-xs text-slate-600 font-light">Wakil: {HSN_2026_DATA.committee.wakilKetua}</p>
+                  <p className="text-xs text-amber-800/90 font-medium">Penanggung Jawab Utama Kegiatan</p>
                 </div>
               </div>
 
-              {/* Core Officers */}
+              {/* Core Officers: Ketua & Wakil Ketua */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl border border-slate-200 bg-white flex items-center justify-between">
+                <div className="p-5 rounded-2xl bg-white border-2 border-emerald-600/40 shadow-xs flex items-center justify-between">
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-700 font-extrabold block">
+                      Ketua Pelaksana
+                    </span>
+                    <h4 className="text-lg sm:text-xl font-bold font-serif text-slate-900">
+                      {HSN_2026_DATA.committee.ketua}
+                    </h4>
+                    <p className="text-xs text-slate-500 font-light">Ketua Panitia HSN 2026</p>
+                  </div>
+                  <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-lg font-serif">
+                    01
+                  </div>
+                </div>
+
+                <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-2xs flex items-center justify-between">
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500 font-bold block">
+                      Wakil Ketua
+                    </span>
+                    <h4 className="text-lg sm:text-xl font-bold font-serif text-slate-900">
+                      {HSN_2026_DATA.committee.wakilKetua}
+                    </h4>
+                    <p className="text-xs text-slate-500 font-light">Wakil Ketua Pelaksana</p>
+                  </div>
+                  <div className="w-12 h-12 rounded-xl bg-slate-100 text-slate-700 flex items-center justify-center font-bold text-lg font-serif">
+                    02
+                  </div>
+                </div>
+              </div>
+
+              {/* Sekretaris & Bendahara */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-4.5 rounded-xl border border-slate-200 bg-white flex items-center justify-between shadow-2xs">
                   <div>
                     <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold block">
                       Sekretaris
                     </span>
-                    <h5 className="font-bold text-sm text-slate-800 font-serif">
+                    <h5 className="font-bold text-base text-slate-800 font-serif">
                       {HSN_2026_DATA.committee.sekretaris}
                     </h5>
+                    <p className="text-[11px] text-slate-500 font-light">Administrasi, surat-menyurat &amp; kesekretariatan</p>
                   </div>
-                  <FileText className="w-5 h-5 text-slate-400" />
+                  <FileText className="w-5 h-5 text-emerald-600" />
                 </div>
 
-                <div className="p-4 rounded-xl border border-slate-200 bg-white flex items-center justify-between">
+                <div className="p-4.5 rounded-xl border border-slate-200 bg-white flex items-center justify-between shadow-2xs">
                   <div>
                     <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold block">
                       Bendahara
                     </span>
-                    <h5 className="font-bold text-sm text-slate-800 font-serif">
+                    <h5 className="font-bold text-base text-slate-800 font-serif">
                       {HSN_2026_DATA.committee.bendahara}
                     </h5>
+                    <p className="text-[11px] text-slate-500 font-light">Keuangan &amp; anggaran perayaan HSN 2026</p>
                   </div>
-                  <Award className="w-5 h-5 text-slate-400" />
+                  <Award className="w-5 h-5 text-amber-600" />
                 </div>
               </div>
 
-              {/* Sections / Seksi */}
-              <div className="space-y-3">
-                <span className="text-xs uppercase font-extrabold tracking-widest text-slate-400 block px-1">
-                  Seksi-Seksi Teknis Pelaksana:
+              {/* Bidang, Seksi & Penanggung Jawab Lomba / Olahraga */}
+              <div className="space-y-4">
+                <span className="text-xs uppercase font-extrabold tracking-widest text-slate-500 block px-1">
+                  📋 Susunan Panitia &amp; Penanggung Jawab Bidang:
                 </span>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+                  <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-1">
                     <span className="text-[11px] font-bold text-emerald-800 uppercase tracking-wider block">
-                      Seksi Acara &amp; Upacara
+                      Sesi Acara
                     </span>
-                    <ul className="text-xs text-slate-700 space-y-0.5">
-                      {HSN_2026_DATA.committee.seksiAcara.map((s, i) => (
-                        <li key={i}>• {s}</li>
-                      ))}
-                    </ul>
+                    <p className="text-sm font-bold font-serif text-slate-900">
+                      {HSN_2026_DATA.committee.sesiAcara}
+                    </p>
+                    <p className="text-[10px] text-slate-500">Rundown upacara &amp; susunan kegiatan</p>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                  <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-1">
                     <span className="text-[11px] font-bold text-emerald-800 uppercase tracking-wider block">
-                      Seksi Perlombaan / Musabaqah
+                      PJ Lomba
                     </span>
-                    <ul className="text-xs text-slate-700 space-y-0.5">
-                      {HSN_2026_DATA.committee.seksiLomba.map((s, i) => (
-                        <li key={i}>• {s}</li>
-                      ))}
-                    </ul>
+                    <p className="text-sm font-bold font-serif text-slate-900">
+                      {HSN_2026_DATA.committee.pjLomba}
+                    </p>
+                    <p className="text-[10px] text-slate-500">Musabaqah kitab salaf, MHQ, sholat, da'i cilik</p>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                  <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-1">
                     <span className="text-[11px] font-bold text-emerald-800 uppercase tracking-wider block">
-                      Seksi Perlengkapan &amp; Logistik
+                      PJ Badminton
                     </span>
-                    <ul className="text-xs text-slate-700 space-y-0.5">
-                      {HSN_2026_DATA.committee.seksiPerlengkapan.map((s, i) => (
-                        <li key={i}>• {s}</li>
-                      ))}
-                    </ul>
+                    <p className="text-sm font-bold font-serif text-slate-900">
+                      {HSN_2026_DATA.committee.pjBadminton}
+                    </p>
+                    <p className="text-[10px] text-slate-500">Turnamen bulutangkis santri</p>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
+                  <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-1">
                     <span className="text-[11px] font-bold text-emerald-800 uppercase tracking-wider block">
-                      Seksi Keamanan &amp; Ketertiban
+                      PJ Futsal
                     </span>
-                    <ul className="text-xs text-slate-700 space-y-0.5">
-                      {HSN_2026_DATA.committee.seksiKeamanan.map((s, i) => (
-                        <li key={i}>• {s}</li>
-                      ))}
-                    </ul>
+                    <p className="text-sm font-bold font-serif text-slate-900">
+                      {HSN_2026_DATA.committee.pjFutsal}
+                    </p>
+                    <p className="text-[10px] text-slate-500">Turnamen futsal antar-kelas santri</p>
                   </div>
 
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1 md:col-span-2">
+                  <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-1">
                     <span className="text-[11px] font-bold text-emerald-800 uppercase tracking-wider block">
-                      Seksi Publikasi &amp; Dokumentasi
+                      Keamanan &amp; Kebersihan
                     </span>
-                    <ul className="text-xs text-slate-700 space-y-0.5">
-                      {HSN_2026_DATA.committee.seksiDokumentasi.map((s, i) => (
-                        <li key={i}>• {s}</li>
-                      ))}
-                    </ul>
+                    <p className="text-sm font-bold font-serif text-slate-900">
+                      {HSN_2026_DATA.committee.keamananKebersihan}
+                    </p>
+                    <p className="text-[10px] text-slate-500">Ketertiban kawasan &amp; kebersihan madrasah</p>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-1">
+                    <span className="text-[11px] font-bold text-emerald-800 uppercase tracking-wider block">
+                      Sound System
+                    </span>
+                    <p className="text-sm font-bold font-serif text-slate-900">
+                      {HSN_2026_DATA.committee.soundSystem}
+                    </p>
+                    <p className="text-[10px] text-slate-500">Tata suara upacara, pawai &amp; panggung</p>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-1">
+                    <span className="text-[11px] font-bold text-emerald-800 uppercase tracking-wider block">
+                      Dokumentasi
+                    </span>
+                    <p className="text-sm font-bold font-serif text-slate-900">
+                      {HSN_2026_DATA.committee.dokumentasi}
+                    </p>
+                    <p className="text-[10px] text-slate-500">Foto, rekaman video &amp; arsip media</p>
+                  </div>
+
+                  <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-1">
+                    <span className="text-[11px] font-bold text-emerald-800 uppercase tracking-wider block">
+                      Konsumsi
+                    </span>
+                    <p className="text-sm font-bold font-serif text-slate-900">
+                      {HSN_2026_DATA.committee.konsumsi}
+                    </p>
+                    <p className="text-[10px] text-slate-500">Logistik konsumsi asatidz &amp; santri</p>
                   </div>
                 </div>
               </div>

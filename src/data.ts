@@ -344,89 +344,139 @@ export const HSN_2026_DATA = {
   committee: {
     pelindung: "Kiai Haji Abdul Hakam Makky",
     penasehat: "Ust. Mahrus Ali (Kepala MDT Riyadlul Jannah)",
-    ketua: "Ust. Ihya 'Ulumuddin",
-    wakilKetua: "Ust. Agus Maulana",
-    sekretaris: "Ust. M. Nurul Alim",
-    bendahara: "Ust. Iin Sholihin",
-    seksiAcara: ["Ust. M. Anas Abdul Muhith", "Ust. Misbahul Fatih"],
-    seksiLomba: ["Ust. Sofyan", "Ust. Imam Syafi'i"],
-    seksiPerlengkapan: ["Ust. Afifuddin", "Pengurus Santri"],
-    seksiKeamanan: ["Ust. Ahmad Syarif", "Keamanan Pondok"],
-    seksiDokumentasi: ["Tim Media MDT Riyadlul Jannah (@mirajmedia127)"]
+    koordinatorPJ: "Ust. Sofyan",
+    ketua: "Rafif Chandra",
+    wakilKetua: "Siti Mutmainnah",
+    sekretaris: "Akmal & Dhita",
+    bendahara: "Bastian & Shakiya",
+    keamananKebersihan: "Sheli",
+    soundSystem: "Manaf",
+    dokumentasi: "Rendy & Syahri",
+    konsumsi: "Lilik",
+    sesiAcara: "Dewi & Anwar",
+    pjLomba: "Putri & Khaikal",
+    pjBadminton: "Amira",
+    pjFutsal: "Anwar"
   },
   events: [
     {
-      time: "07.00 - 07.30 WIB",
-      title: "Apel Persiapan & Penataan Barisan Santri",
-      location: "Halaman Utama Madrasah",
-      description: "Seluruh santri putra & putri Awaliyah serta Wustha bersiap mengenakan busana khas santri (baju koko putih, sarung, dan peci hitam untuk putra; gamis putih dan jilbab syar'i untuk putri)."
+      step: 1,
+      day: "Ahad Malam Senin, 19 Oktober",
+      dateMasehi: "19 Oktober 2026",
+      time: "20:00 - 22:00 WIB",
+      title: "Pembukaan HSN & Musyabaqoh Kaligrafi",
+      location: "Gedung MDT Riyadlul Jannah",
+      description: "Pembukaan resmi semarak Hari Santri Nasional 2026 MDT Riyadlul Jannah dilanjutkan pelaksanaan Musabaqah Seni Kaligrafi Islam (Khat Al-Qur'an)."
     },
     {
-      time: "07.30 - 09.00 WIB",
-      title: "Upacara Khidmat Peringatan Hari Santri Nasional 2026",
-      location: "Lapangan Pesantren Riyadlul Jannah",
-      description: "Pengibaran Sang Saka Merah Putih, pembacaan Naskah Resolusi Jihad 22 Oktober 1945, Ikrar Santri Indonesia, menyanyikan Mars Hari Santri & Yalal Wathon, serta Amanat Pembina Upacara."
+      step: 2,
+      day: "Senin Malam Selasa, 20 Oktober",
+      dateMasehi: "20 Oktober 2026",
+      time: "20:00 - 22:00 WIB",
+      title: "MTQ Awaliyah & MHQ Wustho",
+      location: "Aula Utama & Musholla MDT",
+      description: "Musabaqah Tilawatil Qur'an (MTQ) untuk santri jenjang Awaliyah dan Musabaqah Hifdzil Qur'an (MHQ) hafalan Al-Qur'an untuk santri jenjang Wustho."
     },
     {
-      time: "09.30 - 12.00 WIB",
-      title: "Musabaqah & Perlombaan Santri Sesi Pagi",
-      location: "Ruang Kelas & Panggung Utama MDT",
-      description: "Pelaksanaan aneka lomba keilmuan salaf: Musabaqah Lalaran Nadhom Kitab Salaf (Aqidatul Awam, Al-Jurumiyyah & Imrithi), MHQ Juz Amma, dan Praktek Sholat Fardhu."
+      step: 3,
+      day: "Selasa Malam Rabu, 20 Oktober",
+      dateMasehi: "20 Oktober 2026",
+      time: "20:00 - 22:00 WIB",
+      title: "MQK Awaliyah & MQK Wustho",
+      location: "Panggung Utama Madrasah",
+      description: "Musabaqah Qira'atil Kutub (MQK) membaca, memaknai pegon, dan membedah ibarat Kitab Kuning / Kitab Salaf karya Ulama Salafussholih."
     },
     {
-      time: "13.30 - 15.30 WIB",
-      title: "Lanjutan Perlombaan & Cerdas Cermat Fiqih",
-      location: "Aula Pertemuan MDT",
-      description: "Lomba Da'i Cilik 3 Bahasa (Arab, Sunda, Indonesia) dan Cerdas Cermat Fiqih Ibadah Dasar."
+      step: 4,
+      day: "Rabu, 21 Oktober",
+      dateMasehi: "21 Oktober 2026",
+      time: "14:00 - 17:00 WIB",
+      title: "Lomba Futsal Putra & Badminton Putri",
+      location: "Lapangan Olahraga MDT Riyadlul Jannah",
+      description: "Pertandingan olahraga persahabatan santri: Turnamen Futsal Putra (PJ: Anwar) dan Turnamen Badminton Putri (PJ: Amira)."
     },
     {
-      time: "18.30 - 20.00 WIB (Ba'da Maghrib)",
-      title: "Semarak Pawai Ta'aruf & Pawai Obor Santri",
-      location: "Rute Sekitar Kp. Sempu Gardu & Desa Pasir Gombong",
-      description: "Pawai syiar Islam beriringan membawa obor bambu damai, melantunkan shalawat thola'al badru dan qasidah perjuangan santri bersama asatidz dan warga sekitar."
+      step: 5,
+      day: "Rabu Malam Kamis, 21 Oktober",
+      dateMasehi: "21 Oktober 2026",
+      time: "20:00 - 21:00 WIB",
+      title: "Kirab Santri “Pawai Obor”",
+      location: "Rute Keliling Kp. Sempu Gardu & Ds. Pasir Gombong",
+      description: "Kirab Santri akbar membawa obor bambu menyusuri jalanan kampung dengan lantunan shalawat thola'al badru dan qasidah perjuangan santri."
     },
     {
-      time: "20.15 - 22.30 WIB (Ba'da Isya)",
-      title: "Malam Puncak: Istighotsah Kubro, Doa Bersama & Pembagian Hadiah",
-      location: "Musholla Putra MDT Riyadlul Jannah",
-      description: "Pembacaan Shalawat Nariyah & Shalawat Asyghil, Tausiyah Hari Santri oleh Pimpinan Pondok, Doa untuk Para Pejuang Kemerdekaan & Muassis NU/Pesantren, serta penyerahan piala juarawan lomba."
+      step: 6,
+      day: "Kamis, 22 Oktober",
+      dateMasehi: "22 Oktober 2026",
+      time: "07:00 - 09:00 WIB",
+      title: "Apel Upacara Hari Santri & Nobar Film “Sang Kiai”",
+      location: "Lapangan & Aula Pesantren Riyadlul Jannah",
+      description: "Apel Upacara Resmi Peringatan Hari Santri Nasional 2026 berbusana putih khas santri & sarung, dilanjutkan Nonton Bareng (Nobar) Film Edukasi Sejarah Pesantren “Sang Kiai”."
+    },
+    {
+      step: 7,
+      day: "Kamis, 22 Oktober",
+      dateMasehi: "22 Oktober 2026",
+      time: "16:00 - 17:00 WIB",
+      title: "Pembagian Hadiah, Souvenir & Penutupan",
+      location: "Panggung Utama MDT Riyadlul Jannah",
+      description: "Pengumuman para pemenang seluruh musabaqah, penyerahan piala dan hadiah juarawan, pembagian souvenir resmi Hari Santri 2026, serta doa penutupan oleh Pengasuh & Dewan Asatidz."
     }
   ],
   competitions: [
     {
-      title: "Musabaqah Lalaran Nadhom Kitab Salaf",
-      category: "Kitab Salaf & Nahwu",
-      target: "Santri Kelas 1, 2, 3 Awaliyah & Wustha",
-      materials: "Nadhom Aqidatul Awam, Al-Jurumiyyah, & Al-Imrithi",
-      criteria: "Kelancaran hafalan, ketepatan makhraj dan tajwid, irama lagu lalaran khas pesantren, serta kekompakan kelompok."
+      title: "Musabaqah Kaligrafi Islam",
+      category: "Seni Kaligrafi Al-Qur'an",
+      schedule: "Ahad Malam Senin, 19 Oktober (20:00 - 22:00 WIB)",
+      target: "Santri MDT Awaliyah & Wustho",
+      materials: "Khat Naskhi / Riq'ah / Tsuluts lafadz Al-Qur'an & Asmaul Husna",
+      criteria: "Kaidah khat, kerapian, kebersihan goresan, keserasian komposisi, dan kreativitas hiasan mushaf.",
+      pj: "Putri & Khaikal"
     },
     {
-      title: "Musabaqah Hifdzil Qur'an (MHQ) Juz Amma",
+      title: "MTQ Awaliyah (Musabaqah Tilawatil Qur'an)",
+      category: "Tilawah & Tartil",
+      schedule: "Senin Malam Selasa, 20 Oktober (20:00 - 22:00 WIB)",
+      target: "Santri Jenjang Awaliyah (Kelas 1 - 3)",
+      materials: "Maqra' tilawah surah pilihan dengan lagu/nagham Bayyati, Shoba, Hijaz, dll",
+      criteria: "Makharijul huruf, ketepatan tajwid, keindahan fashahah dan variasi lagu/suara.",
+      pj: "Putri & Khaikal"
+    },
+    {
+      title: "MHQ Wustho (Musabaqah Hifdzil Qur'an)",
       category: "Tahfidz & Tartil",
-      target: "Santri Awaliyah & Program Tahfidz Junior",
-      materials: "Surah-surah pilihan Juz 30 (An-Naba' s/d An-Nas)",
-      criteria: "Tahsin makharijul huruf, hukum tajwid (ghunnah, mad, qalqalah), fashahah, serta kelancaran setoran."
+      schedule: "Senin Malam Selasa, 20 Oktober (20:00 - 22:00 WIB)",
+      target: "Santri Jenjang Wustho & Tahfidz Lanjutan",
+      materials: "Hafalan surah-surah Juz 30 / Juz Amma",
+      criteria: "Kelancaran hafalan (tahfidz), ketepatan tajwid (mad, ghunnah, waqaf), dan adab tartil.",
+      pj: "Putri & Khaikal"
     },
     {
-      title: "Praktek Fiqih Ubudiyah & Rukun Sholat",
-      category: "Fiqih Praktis",
-      target: "Santri Awaliyah (Kelas 1 - 3)",
-      materials: "Rukun Qolbi, Qouli, dan Fi'li di dalam Sholat Fardhu beserta doa iftitah & tasyahhud akhir",
-      criteria: "Ketepatan gerakan tuma'ninah, kesempurnaan bacaan sholat, serta pemahaman rukun yang membatalkan."
+      title: "MQK Awaliyah & Wustho (Musabaqah Qira'atil Kutub)",
+      category: "Kitab Salaf (Kitab Kuning)",
+      schedule: "Selasa Malam Rabu, 20 Oktober (20:00 - 22:00 WIB)",
+      target: "Santri Kelas 1-3 Awaliyah & Wustho",
+      materials: "Kitab Fiqih Dasar (Safinatun Najah / Fathul Qorib) & Nahwu (Jurumiyyah / Imrithi)",
+      criteria: "Kebenaran membaca harakat/i'rab (tarkib), ketepatan makna gandul/pegon, kelancaran membedah ibarat kitab, dan pemahaman tanya jawab fiqih.",
+      pj: "Putri & Khaikal"
     },
     {
-      title: "Lomba Khitobah / Da'i Cilik Santri",
-      category: "Khitobah & Dakwah",
-      target: "Seluruh Santri MDT Riyadlul Jannah",
-      materials: "Tema: 'Adab Menuntut Ilmu', 'Jihad Santri Menjaga NKRI', atau 'Cinta Rasulullah & Berbakti Kepada Orang Tua'",
-      criteria: "Kesesuaian dalil Al-Qur'an/Hadits, intonasi & retorika, penguasaan panggung, serta kesantunan bahasa."
+      title: "Lomba Futsal Putra Santri",
+      category: "Olahraga Santri Putra",
+      schedule: "Rabu, 21 Oktober (14:00 - 17:00 WIB)",
+      target: "Santri Putra MDT Riyadlul Jannah (Antar-Kelas)",
+      materials: "Pertandingan Futsal Beregu Sistem Gugur",
+      criteria: "Sportivitas, kekompakan tim, keterampilan mengolah bola, dan disiplin bermain.",
+      pj: "Anwar"
     },
     {
-      title: "Cerdas Cermat Fiqih & Tarikh Salaf",
-      category: "Wawasan Keagamaan",
-      target: "Tim Perwakilan Kelas Diniyah",
-      materials: "Fiqih Safinah/Taqrib, Tarikh Nabi & Salafussholeh, serta Kaidah Bahasa Arab Dasar",
-      criteria: "Kecepatan dan ketepatan menjawab soal wajib dan lemparan/rebutan."
+      title: "Lomba Badminton Putri Santriwati",
+      category: "Olahraga Santriwati",
+      schedule: "Rabu, 21 Oktober (14:00 - 17:00 WIB)",
+      target: "Santriwati Putri MDT Riyadlul Jannah",
+      materials: "Pertandingan Bulutangkis Tunggal & Ganda Putri",
+      criteria: "Sportivitas, kelincahan fisik, ketangkasan pukulan, dan semangat ukhuwah.",
+      pj: "Amira"
     }
   ],
   dressCode: {
@@ -485,11 +535,14 @@ Hari / Tanggal : Kamis, 22 Oktober 2026 M (11 Jumadil Ula 1448 H)
 Waktu : Pukul 07:00 WIB s/d Selesai
 Tempat : Kompleks Pondok Pesantren & MDT Riyadlul Jannah Pasir Gombong, Cikarang Utara
 
-✦ RANGKAIAN ACARA ✦
-1. Upacara Bendera Resmi Peringatan Hari Santri Nasional 2026 (07.30 WIB).
-2. Musabaqah & Perlombaan Santri Antar-Kelas (Lalaran Nadhom Kitab Salaf, MHQ Juz Amma, Praktek Fiqih Sholat, Khitobah Da'i Cilik, & Cerdas Cermat).
-3. Pawai Ta'aruf & Pawai Obor Semarak Santri keliling Pasir Gombong (Ba'da Maghrib).
-4. Malam Puncak: Istighotsah Kubro, Pembacaan Shalawat Nariyah & Shalawat Asyghil, serta Pengumuman Pemenang Lomba.
+✦ RUNDOWN TIMELINE HARI SANTRI NASIONAL 2026 ✦
+1. Ahad Malam Senin, 19 Oktober (20:00 - 22:00 WIB) : Pembukaan HSN & Musyabaqoh Kaligrafi
+2. Senin Malam Selasa, 20 Oktober (20:00 - 22:00 WIB) : MTQ Awaliyah & MHQ Wustho
+3. Selasa Malam Rabu, 20 Oktober (20:00 - 22:00 WIB) : MQK Awaliyah & MQK Wustho
+4. Rabu, 21 Oktober (14:00 - 17:00 WIB) : Lomba Futsal Putra & Badminton Putri
+5. Rabu Malam Kamis, 21 Oktober (20:00 - 21:00 WIB) : Kirab Santri “Pawai Obor”
+6. Kamis, 22 Oktober (07:00 - 09:00 WIB) : Apel Upacara Hari Santri & Nobar Film “Sang Kiai”
+7. Kamis, 22 Oktober (16:00 - 17:00 WIB) : Pembagian Hadiah, Souvenir & Penutupan
 
 ✦ KETENTUAN BUSANA ✦
 • Santri Putra : Baju Koko/Gamis Putih, Sarung Rapi, Peci Hitam Nasional.
@@ -519,8 +572,14 @@ Peserta : Dewan Asatidz, Staf Pengajar & Pengurus MDT Riyadlul Jannah
    • Kesiapan teknis santri dan asatidz menghadapi agenda Imtihan Nisfu Daur I (Ujian Tengah Semester 1) tanggal 21 - 26 September 2026.
 
 2. Pembentukan Panitia Peringatan Hari Santri Nasional (HSN) 2026:
-   • Penetapan dan pengesahan susunan panitia pelaksana HSN 2026 (Penanggung Jawab, Ketua Pelaksana, Sekretaris, Bendahara, serta Seksi Acara, Perlombaan, Perlengkapan, dan Keamanan).
-   • Pembagian tugas teknis kepada segenap dewan asatidz demi optimalnya penyelenggaraan.
+   • Penetapan Organizing Committee HSN 2026 MDT Riyadlul Jannah:
+     - Koordinator / PJ HSN 2026: Ust. Sofyan
+     - Ketua: Rafif Chandra | Wakil Ketua: Siti Mutmainnah
+     - Sekretaris: Akmal & Dhita | Bendahara: Bastian & Shakiya
+     - Keamanan dan Kebersihan: Sheli | Sound System: Manaf
+     - Dokumentasi: Rendy & Syahri | Konsumsi: Lilik
+     - Sesi Acara: Dewi & Anwar | PJ Lomba: Putri & Khaikal
+     - PJ Badminton: Amira | PJ Futsal: Anwar
 
 3. Rencana & Persiapan Peringatan Hari Santri Nasional (22 Oktober 2026):
    • Pelaksanaan Upacara Bendera Peringatan Hari Santri Nasional 2026 secara khidmat.
