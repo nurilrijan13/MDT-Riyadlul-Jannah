@@ -6,7 +6,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Calendar, Tag, Search, MessageSquare, AlertCircle, ChevronRight, Award, Trophy, Star, Crown, Sparkles, BookOpen, HelpCircle, CheckCircle2, MapPin, Clock, UserCheck, FileText, Scale, BookMarked } from 'lucide-react';
-import { ANNOUNCEMENTS, RANKING_DATA_DAUR_2, BAHTSUL_MASAIL_SESSION_AUGUST_2026 } from '../data';
+import { ANNOUNCEMENTS, RANKING_DATA_DAUR_2, BAHTSUL_MASAIL_SESSION_AUGUST_2026, HSN_2026_DATA } from '../data';
 import { Announcement } from '../types';
 import ShareButton from './ShareButton';
 
@@ -194,11 +194,84 @@ export default function Announcements() {
                 )}
 
                 {/* Content text (for standard announcements) */}
-                {activeAnnouncement.id !== 'bahtsul-masail-usbuyah-4-agustus-2026' && (
+                {activeAnnouncement.id !== 'bahtsul-masail-usbuyah-4-agustus-2026' && activeAnnouncement.id !== 'sang-juarawan-lomba-hsn-2026' && (
                   <div className="space-y-4 text-slate-600 text-sm md:text-base leading-relaxed font-light font-sans">
                     {activeAnnouncement.content.split('\n\n').map((paragraph, index) => (
                       <p key={index}>{paragraph}</p>
                     ))}
+                  </div>
+                )}
+
+                {/* Special Visual Display for Sang Juarawan Lomba HSN 2026 */}
+                {activeAnnouncement.id === 'sang-juarawan-lomba-hsn-2026' && (
+                  <div className="space-y-6">
+                    <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-950 text-white border border-emerald-700/60 shadow-md space-y-3">
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-400 text-amber-950 rounded-full text-[11px] font-mono font-extrabold uppercase">
+                        <span>🏆</span>
+                        <span>Daftar Resmi Pemenang Musabaqah</span>
+                      </div>
+                      <h4 className="text-xl sm:text-2xl font-black font-serif text-white tracking-tight">
+                        {HSN_2026_DATA.winnersAnnouncementTitle}
+                      </h4>
+                      <p className="text-xs text-emerald-200/90 font-light">
+                        Madrasah Diniyah Takmiliyah Riyadlul Jannah • Pasir Gombong, Cikarang Utara, Bekasi
+                      </p>
+                    </div>
+
+                    {/* 8 Winners Cards */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {HSN_2026_DATA.winners.map((winner: any) => {
+                        const isTeam = !!winner.isTeam;
+                        return (
+                          <div 
+                            key={winner.no}
+                            className={`p-4 rounded-xl border ${
+                              isTeam 
+                                ? 'sm:col-span-2 bg-gradient-to-br from-amber-50 via-white to-emerald-50 border-amber-300 shadow-xs' 
+                                : 'bg-white border-slate-200 hover:border-emerald-400'
+                            }`}
+                          >
+                            <div className="flex items-center justify-between border-b border-slate-100 pb-2 mb-2">
+                              <span className="text-[10px] font-mono font-extrabold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">
+                                #{winner.no} {winner.category}
+                              </span>
+                              <span className="text-xs font-mono font-bold text-amber-700">
+                                {winner.medal} {winner.badge}
+                              </span>
+                            </div>
+
+                            <div className="flex items-center gap-3">
+                              <span className="text-2xl select-none">{winner.medal}</span>
+                              <div>
+                                <h5 className="font-bold text-base font-serif text-slate-900 text-emerald-950">
+                                  {winner.winner}
+                                </h5>
+                                <p className="text-xs text-slate-500 font-light">
+                                  {winner.stage}
+                                </p>
+                              </div>
+                            </div>
+
+                            {/* Futsal Roster if Team */}
+                            {isTeam && winner.teamMembers && (
+                              <div className="mt-4 pt-3 border-t border-amber-200 space-y-2">
+                                <span className="text-xs font-mono font-bold text-amber-900 block">
+                                  ⚽ Susunan Personil Tim Juara Green Matcha:
+                                </span>
+                                <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-2 text-xs">
+                                  {winner.teamMembers.map((m: any) => (
+                                    <div key={m.no} className="p-2 bg-white rounded-lg border border-amber-200/70">
+                                      <div className="font-bold text-slate-900 text-[11px]">{m.no}. {m.name}</div>
+                                      <div className="text-[10px] text-emerald-700 font-semibold">{m.role}</div>
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 )}
 

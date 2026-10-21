@@ -28,7 +28,11 @@ import {
   ExternalLink,
   MessageCircle,
   HelpCircle,
-  Heart
+  Heart,
+  Copy,
+  Check,
+  Medal,
+  Star
 } from 'lucide-react';
 import { HSN_2026_DATA, SCHOOL_PROFILE } from '../data';
 import logoHSN from '../assets/images/logo hsn 26.jpg';
@@ -39,9 +43,11 @@ interface HariSantriProps {
 }
 
 export default function HariSantri({ setCurrentTab }: HariSantriProps) {
-  const [activeTab, setActiveTab] = useState<'agenda' | 'lomba' | 'panitia' | 'resolusi' | 'mars'>('agenda');
+  const [activeTab, setActiveTab] = useState<'agenda' | 'juara' | 'lomba' | 'panitia' | 'resolusi' | 'mars'>('agenda');
   const [isLogoModalOpen, setIsLogoModalOpen] = useState(false);
   const [copiedText, setCopiedText] = useState(false);
+  const [copiedWinnersText, setCopiedWinnersText] = useState(false);
+  const [winnerCategoryFilter, setWinnerCategoryFilter] = useState<'all' | 'keagamaan' | 'olahraga'>('all');
 
   // Countdown timer to 22 October 2026
   const targetDate = new Date('2026-10-22T07:00:00+07:00').getTime();
@@ -76,14 +82,28 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
 
   const shareText = `*RUNDOWN TIMELINE HARI SANTRI NASIONAL 2026*\n*MDT RIYADLUL JANNAH PASIR GOMBONG*\n\n1️⃣ Ahad Malam Senin, 19 Okt (20:00 - 22:00 WIB)\n🎯 Pembukaan HSN & Musyabaqoh Kaligrafi\n\n2️⃣ Senin Malam Selasa, 20 Okt (20:00 - 22:00 WIB)\n🎯 MTQ Awaliyah & MHQ Wustho\n\n3️⃣ Selasa Malam Rabu, 20 Okt (20:00 - 22:00 WIB)\n🎯 MQK Awaliyah & MQK Wustho\n\n4️⃣ Rabu, 21 Okt (14:00 - 17:00 WIB)\n🎯 Lomba Futsal Putra & Badminton Putri\n\n5️⃣ Rabu Malam Kamis, 21 Okt (20:00 - 21:00 WIB)\n🎯 Kirab Santri “Pawai Obor”\n\n6️⃣ Kamis, 22 Okt (07:00 - 09:00 WIB)\n🎯 Apel Upacara Hari Santri & Nobar Film “Sang Kiai”\n\n7️⃣ Kamis, 22 Okt (16:00 - 17:00 WIB)\n🎯 Pembagian Hadiah, Souvenir & Penutupan\n\nInfo lengkap: ${window.location.origin}`;
 
+  const shareWinnersText = `*SANG JUARAWAN LOMBA*\n*MUSYABAQOH HARI SANTRI NASIONAL 22 OKTOBER 2026*\n*MDT RIYADLUL JANNAH CIKARANG UTARA BEKASI*\n\n1. KALIGRAFI 🥇 MOZA YANA ULFA ADABYA\n2. MTQ AWALIYAH 🥇 SITI LUTFIAH\n3. MHQ WUSTHO 🥇 SITI MUTHMAINNAH\n4. MQK AWALIYAH 🥇 SITI MAIMUNAH\n5. MQK WUSTHO 🥇 NURUL AULIA\n6. BADMINTON PUTRA 🥇 M. SYAHRI RAMADHAN\n7. BADMINTON PUTRI 🥇 SABILA TUL JANNAH\n8. FUTSAL SANTRI RJ CUP 2026 🏆 GREEN MATCHA\n   1. EDY AMRULLAH (C)\n   2. SHOFI YULLOH (GOALKEEPER)\n   3. SYAFI UDDIN\n   4. SYAHRUL FAHMI\n   5. M.ALI MURTADHO\n\nSelamat & berkah kepada para santri juarawan!\nInfo lengkap: ${window.location.origin}`;
+
   const handleShareWA = () => {
     const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareText)}`;
     window.open(waUrl, '_blank', 'noopener,noreferrer');
   };
 
+  const handleShareWinnersWA = () => {
+    const waUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareWinnersText)}`;
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleCopyWinners = () => {
+    navigator.clipboard.writeText(shareWinnersText);
+    setCopiedWinnersText(true);
+    setTimeout(() => setCopiedWinnersText(false), 3000);
+  };
+
   const tabs = [
     { id: 'agenda', label: 'Rangkaian Agenda & Jadwal', icon: Calendar },
-    { id: 'lomba', label: 'Musabaqah & Perlombaan', icon: Trophy },
+    { id: 'juara', label: 'Sang Juarawan Lomba', icon: Trophy, badge: 'Resmi' },
+    { id: 'lomba', label: 'Musabaqah & Perlombaan', icon: Award },
     { id: 'panitia', label: 'Susunan Panitia Pelaksana', icon: Users },
     { id: 'resolusi', label: 'Sejarah Resolusi Jihad', icon: Scroll },
     { id: 'mars', label: 'Mars & Ikrar Santri', icon: Volume2 }
@@ -312,6 +332,51 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
           </div>
         </div>
 
+        {/* BANNER PENGUMUMAN RESMI SANG JUARAWAN LOMBA */}
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-500 text-amber-950 p-5 sm:p-6 shadow-md border-2 border-amber-300">
+          <div className="absolute -right-8 -bottom-8 text-amber-600/20 text-9xl font-serif select-none pointer-events-none">
+            🏆
+          </div>
+          <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="flex items-start sm:items-center gap-3.5">
+              <div className="w-12 h-12 rounded-2xl bg-amber-950/15 border border-amber-950/20 flex items-center justify-center text-2xl shrink-0 shadow-2xs">
+                🏆
+              </div>
+              <div className="space-y-1">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="px-2 py-0.5 bg-amber-950 text-amber-300 rounded-md text-[10px] font-mono font-extrabold uppercase tracking-wider">
+                    Pengumuman Resmi Juara
+                  </span>
+                  <span className="text-xs font-bold text-amber-900 flex items-center gap-1">
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span>22 Oktober 2026</span>
+                  </span>
+                </div>
+                <h3 className="text-base sm:text-lg md:text-xl font-extrabold font-serif text-amber-950 tracking-tight leading-snug">
+                  SANG JUARAWAN LOMBA MUSYABAQOH HARI SANTRI NASIONAL 2026
+                </h3>
+                <p className="text-xs text-amber-900/90 font-medium">
+                  Selamat kepada 8 Juarawan Musabaqah Kitab Salaf, Kaligrafi, Al-Qur'an &amp; Kampiun Futsal RJ Cup 2026!
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 w-full md:w-auto shrink-0">
+              <button
+                onClick={() => {
+                  setActiveTab('juara');
+                  const el = document.getElementById('hsn-content-tabs');
+                  el?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="w-full md:w-auto px-5 py-2.5 bg-emerald-900 hover:bg-emerald-950 text-white rounded-xl text-xs font-bold uppercase tracking-wider shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>Lihat Juarawan</span>
+                <Trophy className="w-4 h-4 text-amber-300" />
+              </button>
+            </div>
+          </div>
+        </div>
+
         {/* TAB CONTROLS NAVIGATION */}
         <div id="hsn-content-tabs" className="scroll-mt-24">
           <div className="flex border-b border-brand-divider overflow-x-auto no-scrollbar gap-2 pb-1">
@@ -330,6 +395,11 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
                 >
                   <Icon className={`w-4 h-4 ${isActive ? 'text-brand-green' : 'text-slate-400'}`} />
                   <span>{tab.label}</span>
+                  {(tab as any).badge && (
+                    <span className="px-1.5 py-0.5 text-[9px] font-mono font-extrabold bg-amber-400 text-amber-950 rounded uppercase tracking-wider animate-pulse">
+                      {(tab as any).badge}
+                    </span>
+                  )}
                 </button>
               );
             })}
@@ -462,9 +532,267 @@ export default function HariSantri({ setCurrentTab }: HariSantriProps) {
             </div>
           )}
 
+          {/* TAB: SANG JUARAWAN LOMBA */}
+          {activeTab === 'juara' && (
+            <div className="space-y-8 animate-in fade-in duration-200">
+              
+              {/* Official Header Banner */}
+              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#123124] via-[#1B4332] to-[#0A1B14] text-white p-6 sm:p-8 md:p-10 border border-emerald-900/60 shadow-lg">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(245,158,11,0.2),transparent_55%)] pointer-events-none" />
+                <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                  <div className="space-y-3">
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/20 border border-amber-300/40 text-amber-300 text-xs font-mono font-extrabold uppercase tracking-wider">
+                      <Trophy className="w-4 h-4 text-amber-400" />
+                      <span>Hasil Resmi Dewan Juri &amp; Panitia</span>
+                    </div>
+
+                    <div className="space-y-1">
+                      <p className="text-xs uppercase tracking-widest text-emerald-200 font-mono font-bold">
+                        MDT RIYADLUL JANNAH CIKARANG UTARA BEKASI
+                      </p>
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold font-serif text-white tracking-tight">
+                        SANG JUARAWAN LOMBA
+                      </h3>
+                      <p className="text-sm sm:text-base font-serif text-amber-300 font-bold">
+                        MUSYABAQOH HARI SANTRI NASIONAL • 22 OKTOBER 2026
+                      </p>
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-emerald-100/85 font-light max-w-2xl leading-relaxed">
+                      Segenap Keluarga Besar MDT &amp; Pondok Pesantren Riyadlul Jannah Pasir Gombong mengucapkan selamat dan berkah atas capaian gemilang para santri juarawan pada 8 cabang perlombaan Hari Santri Nasional 2026.
+                    </p>
+                  </div>
+
+                  {/* Share & Copy Action Buttons */}
+                  <div className="flex flex-col sm:flex-row md:flex-col gap-2.5 shrink-0">
+                    <button
+                      onClick={handleShareWinnersWA}
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition-all shadow-sm cursor-pointer"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      <span>Bagikan ke WhatsApp</span>
+                    </button>
+                    <button
+                      onClick={handleCopyWinners}
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-xl text-xs font-bold border border-white/20 transition-all cursor-pointer"
+                    >
+                      {copiedWinnersText ? (
+                        <>
+                          <Check className="w-4 h-4 text-emerald-300" />
+                          <span className="text-emerald-300">Tersalin ke Clipboard!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-4 h-4" />
+                          <span>Salin Teks Pengumuman</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Filter Pills */}
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3">
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setWinnerCategoryFilter('all')}
+                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                      winnerCategoryFilter === 'all'
+                        ? 'bg-emerald-800 text-white shadow-2xs'
+                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                    }`}
+                  >
+                    Semua Juarawan (8)
+                  </button>
+                  <button
+                    onClick={() => setWinnerCategoryFilter('keagamaan')}
+                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                      winnerCategoryFilter === 'keagamaan'
+                        ? 'bg-emerald-800 text-white shadow-2xs'
+                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                    }`}
+                  >
+                    Musabaqah Kitab &amp; Al-Qur'an (5)
+                  </button>
+                  <button
+                    onClick={() => setWinnerCategoryFilter('olahraga')}
+                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                      winnerCategoryFilter === 'olahraga'
+                        ? 'bg-emerald-800 text-white shadow-2xs'
+                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                    }`}
+                  >
+                    Olahraga Santri &amp; RJ Cup (3)
+                  </button>
+                </div>
+
+                <div className="text-xs font-mono text-slate-500 font-semibold">
+                  MDT Riyadlul Jannah Pasir Gombong
+                </div>
+              </div>
+
+              {/* WINNERS CARDS (1 - 8) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {HSN_2026_DATA.winners
+                  .filter((w: any) => {
+                    if (winnerCategoryFilter === 'keagamaan') return w.no <= 5;
+                    if (winnerCategoryFilter === 'olahraga') return w.no >= 6;
+                    return true;
+                  })
+                  .map((item: any) => {
+                    const isFutsal = !!item.isTeam;
+                    return (
+                      <div
+                        key={item.no}
+                        className={`relative overflow-hidden rounded-2xl transition-all ${
+                          isFutsal
+                            ? 'md:col-span-2 border-2 border-amber-400 bg-gradient-to-br from-amber-50/90 via-white to-emerald-50/50 p-6 sm:p-7 shadow-md'
+                            : 'border-2 border-emerald-100/90 hover:border-amber-400 bg-white p-5 sm:p-6 shadow-2xs hover:shadow-sm'
+                        }`}
+                      >
+                        {/* Top bar with category & badge */}
+                        <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-3 mb-4">
+                          <div className="flex items-center gap-2">
+                            <span className="w-7 h-7 rounded-lg bg-emerald-900 text-amber-300 font-mono font-extrabold flex items-center justify-center text-xs">
+                              0{item.no}
+                            </span>
+                            <span className="text-xs sm:text-sm font-black font-mono tracking-wider uppercase text-emerald-950">
+                              {item.category}
+                            </span>
+                          </div>
+
+                          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-100 text-amber-900 rounded-full text-xs font-bold font-mono border border-amber-300/80 shadow-2xs">
+                            <span className="text-sm">{item.medal}</span>
+                            <span>{item.badge}</span>
+                          </div>
+                        </div>
+
+                        {/* Winner Name & Stage */}
+                        <div className="space-y-2">
+                          <p className="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-semibold">
+                            Sang Juarawan / Pemenang:
+                          </p>
+                          <div className="flex items-center gap-3">
+                            <span className="text-2xl sm:text-3xl select-none">
+                              {item.medal}
+                            </span>
+                            <div>
+                              <h4 className="text-xl sm:text-2xl font-black font-serif text-emerald-950 tracking-tight">
+                                {item.winner}
+                              </h4>
+                              <p className="text-xs text-slate-500 font-light mt-0.5">
+                                {item.stage}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* If Futsal Team: Show full squad roster */}
+                        {isFutsal && item.teamMembers && (
+                          <div className="mt-6 pt-5 border-t border-amber-200/80 space-y-3">
+                            <div className="flex items-center justify-between">
+                              <span className="text-xs font-mono font-extrabold uppercase tracking-wider text-amber-950 flex items-center gap-1.5">
+                                <span>⚽</span>
+                                <span>Daftar Skuad Juara Green Matcha:</span>
+                              </span>
+                              <span className="text-[10px] font-mono bg-emerald-800 text-white px-2.5 py-0.5 rounded-md font-bold">
+                                5 Personil Tim
+                              </span>
+                            </div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                              {item.teamMembers.map((member: any) => (
+                                <div
+                                  key={member.no}
+                                  className="p-3 bg-white rounded-xl border border-amber-200/90 shadow-2xs flex flex-col justify-between"
+                                >
+                                  <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 font-bold mb-1">
+                                    <span>#{member.no}</span>
+                                    <span className="px-1.5 py-0.5 bg-emerald-100 text-emerald-900 rounded font-bold">
+                                      {member.role}
+                                    </span>
+                                  </div>
+                                  <div className="font-extrabold text-xs sm:text-sm text-slate-900 font-serif leading-snug">
+                                    {member.name}
+                                  </div>
+                                  <div className="text-[10px] text-slate-500 font-medium mt-1">
+                                    {member.roleDesc}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+              </div>
+
+              {/* Congratulatory Footer */}
+              <div className="p-6 rounded-2xl bg-gradient-to-r from-emerald-50 via-emerald-100/50 to-amber-50 border border-emerald-200 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <span className="text-3xl">🌿</span>
+                  <div>
+                    <h5 className="font-serif font-bold text-sm sm:text-base text-emerald-950">
+                      Barakallahu Fiikum Lil Juarawan Wal Juarawat!
+                    </h5>
+                    <p className="text-xs text-emerald-900/80 font-light">
+                      Penyerahan piala penghargaan, medali, dan souvenir resmi dilaksanakan pada agenda penutupan HSN 2026, Kamis 22 Oktober 2026 pukul 16:00 - 17:00 WIB di Panggung Utama MDT Riyadlul Jannah.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 shrink-0">
+                  <button
+                    onClick={() => {
+                      setActiveTab('lomba');
+                      const el = document.getElementById('hsn-content-tabs');
+                      el?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="px-4 py-2 bg-white hover:bg-slate-50 text-emerald-900 border border-emerald-300 rounded-xl text-xs font-bold transition-all cursor-pointer shadow-2xs"
+                  >
+                    Juknis Lomba
+                  </button>
+                  <button
+                    onClick={handleShareWinnersWA}
+                    className="px-4 py-2 bg-emerald-800 hover:bg-emerald-900 text-white rounded-xl text-xs font-bold transition-all cursor-pointer shadow-2xs flex items-center gap-1.5"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span>Sebar ke WA</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          )}
+
           {/* TAB 2: MUSABAQAH & LOMBA */}
           {activeTab === 'lomba' && (
             <div className="space-y-6 animate-in fade-in duration-200">
+              
+              {/* Alert Link to Sang Juarawan */}
+              <div className="p-4 rounded-xl bg-gradient-to-r from-amber-50 to-amber-100/70 border border-amber-300 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-2xs">
+                <div className="flex items-center gap-2.5">
+                  <span className="text-2xl">🏆</span>
+                  <div>
+                    <p className="text-xs font-extrabold font-serif text-amber-950">
+                      Musabaqah &amp; Turnamen Futsal HSN 2026 telah selesai &amp; Sang Juarawan telah ditetapkan!
+                    </p>
+                    <p className="text-[11px] text-amber-900/80 font-light">
+                      Daftar 8 santri juarawan resmi telah diumumkan pada 22 Oktober 2026.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setActiveTab('juara')}
+                  className="shrink-0 px-3.5 py-1.5 bg-amber-500 hover:bg-amber-600 text-amber-950 rounded-lg text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-2xs flex items-center gap-1.5"
+                >
+                  <Trophy className="w-3.5 h-3.5" />
+                  <span>Lihat Sang Juarawan</span>
+                </button>
+              </div>
+
               <div className="border-b border-slate-100 pb-4">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-100 text-emerald-800 text-[11px] font-mono font-bold rounded-lg uppercase tracking-wider mb-2">
                   <Trophy className="w-3.5 h-3.5 text-emerald-700" />

@@ -469,6 +469,81 @@ export const HSN_2026_DATA = {
       pj: "Amira"
     }
   ],
+  winnersAnnouncementTitle: "SANG JUARAWAN LOMBA MUSYABAQOH HARI SANTRI NASIONAL 22 OKTOBER 2026 MDT RIYADLUL JANNAH CIKARANG UTARA BEKASI",
+  winners: [
+    {
+      no: 1,
+      category: "KALIGRAFI",
+      medal: "🥇",
+      winner: "MOZA YANA ULFA ADABYA",
+      stage: "Musabaqah Seni Kaligrafi Islam (Khat Al-Qur'an)",
+      badge: "Juara 1 Kaligrafi"
+    },
+    {
+      no: 2,
+      category: "MTQ AWALIYAH",
+      medal: "🥇",
+      winner: "SITI LUTFIAH",
+      stage: "Musabaqah Tilawatil Qur'an (Jenjang Awaliyah)",
+      badge: "Juara 1 MTQ Awaliyah"
+    },
+    {
+      no: 3,
+      category: "MHQ WUSTHO",
+      medal: "🥇",
+      winner: "SITI MUTHMAINNAH",
+      stage: "Musabaqah Hifdzil Qur'an Juz 'Amma (Jenjang Wustho)",
+      badge: "Juara 1 MHQ Wustho"
+    },
+    {
+      no: 4,
+      category: "MQK AWALIYAH",
+      medal: "🥇",
+      winner: "SITI MAIMUNAH",
+      stage: "Musabaqah Qira'atil Kutub / Baca Kitab Salaf (Jenjang Awaliyah)",
+      badge: "Juara 1 MQK Awaliyah"
+    },
+    {
+      no: 5,
+      category: "MQK WUSTHO",
+      medal: "🥇",
+      winner: "NURUL AULIA",
+      stage: "Musabaqah Qira'atil Kutub / Baca Kitab Salaf (Jenjang Wustho)",
+      badge: "Juara 1 MQK Wustho"
+    },
+    {
+      no: 6,
+      category: "BADMINTON PUTRA",
+      medal: "🥇",
+      winner: "M. SYAHRI RAMADHAN",
+      stage: "Turnamen Bulutangkis Santri Putra HSN 2026",
+      badge: "Juara 1 Badminton Putra"
+    },
+    {
+      no: 7,
+      category: "BADMINTON PUTRI",
+      medal: "🥇",
+      winner: "SABILA TUL JANNAH",
+      stage: "Turnamen Bulutangkis Santriwati Putri HSN 2026",
+      badge: "Juara 1 Badminton Putri"
+    },
+    {
+      no: 8,
+      category: "FUTSAL SANTRI RJ CUP 2026",
+      medal: "🏆",
+      winner: "GREEN MATCHA",
+      stage: "Turnamen Futsal Antar-Santri RJ Cup 2026",
+      badge: "Kampiun Juara 1 RJ Cup 2026",
+      isTeam: true,
+      teamMembers: [
+        { no: 1, name: "EDY AMRULLAH", role: "C", roleDesc: "Captain" },
+        { no: 2, name: "SHOFI YULLOH", role: "GOALKEEPER", roleDesc: "Penjaga Gawang" },
+        { no: 3, name: "SYAFI UDDIN", role: "PEMAIN", roleDesc: "Pemain" },
+        { no: 4, name: "SYAHRUL FAHMI", role: "PEMAIN", roleDesc: "Pemain" },
+        { no: 5, name: "M.ALI MURTADHO", role: "PEMAIN", roleDesc: "Pemain" }
+      ]
+    }
+  ],
   dressCode: {
     kirab: {
       event: "Kirab Santri Pawai Obor",
@@ -522,6 +597,36 @@ export const HSN_2026_DATA = {
 };
 
 export const ANNOUNCEMENTS: Announcement[] = [
+  {
+    id: "sang-juarawan-lomba-hsn-2026",
+    title: "SANG JUARAWAN LOMBA MUSYABAQOH HARI SANTRI NASIONAL 22 OKTOBER 2026 MDT RIYADLUL JANNAH CIKARANG UTARA BEKASI",
+    content: `SANG JUARAWAN LOMBA
+MUSYABAQOH HARI SANTRI NASIONAL 22 OKTOBER 2026
+MDT RIYADLUL JANNAH CIKARANG UTARA BEKASI
+
+Alhamdulillah wa Syukurillah, berikut adalah Pengumuman Resmi Sang Juarawan Musabaqah & Perlombaan Semarak Hari Santri Nasional 2026 di Madrasah Diniyah Takmiliyah (MDT) Riyadlul Jannah Pasir Gombong, Cikarang Utara, Bekasi:
+
+1. KALIGRAFI 🥇 MOZA YANA ULFA ADABYA
+2. MTQ AWALIYAH 🥇 SITI LUTFIAH
+3. MHQ WUSTHO 🥇 SITI MUTHMAINNAH
+4. MQK AWALIYAH 🥇 SITI MAIMUNAH
+5. MQK WUSTHO 🥇 NURUL AULIA
+6. BADMINTON PUTRA 🥇 M. SYAHRI RAMADHAN
+7. BADMINTON PUTRI 🥇 SABILA TUL JANNAH
+8. FUTSAL SANTRI RJ CUP 2026 🏆 GREEN MATCHA
+   1. EDY AMRULLAH (C) 
+   2. SHOFI YULLOH (GOALKEEPER)
+   3. SYAFI UDDIN 
+   4. SYAHRUL FAHMI 
+   5. M.ALI MURTADHO
+
+Barakallahu fiikum lil juarawan wal juarawat. Selamat atas prestasi gemilang yang diraih. Semoga senantiasa istiqomah dalam menuntut ilmu, berakhlakul karimah, serta membanggakan orang tua, kiai, guru-guru, dan madrasah tercinta.
+"Santri Menguatkan Negeri, Menuju Indonesia Emas!"`,
+    date: "2026-10-22",
+    category: "pengumuman",
+    important: true,
+    image: logoHSN
+  },
   {
     id: "peringatan-hari-santri-nasional-2026",
     title: "Semarak Peringatan Hari Santri Nasional (HSN) 2026 MDT Riyadlul Jannah: Rangkaian Upacara, Pawai Obor, Musabaqah Lalaran & Doa Bersama",
