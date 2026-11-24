@@ -102,12 +102,22 @@ export interface AcademicCalendarEvent {
   important?: boolean;
 }
 
+export interface ClassStaff {
+  className: string;
+  category: 'Awaliyah' | 'Wustho';
+  ketuaKelas: string;
+  wakilKetua: string;
+  academicYear: string;
+}
+
 export interface ClassStudentCount {
   level: string;
   total: number;
   putra: number;
   putri: number;
   category: 'Awaliyah' | 'Wustho';
+  ketuaKelas?: string;
+  wakilKetua?: string;
 }
 
 export interface StudentProfile {

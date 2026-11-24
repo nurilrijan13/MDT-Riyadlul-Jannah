@@ -21,9 +21,12 @@ import {
   CheckCircle2,
   Camera,
   Target,
-  Compass
+  Compass,
+  UserCheck,
+  ShieldCheck
 } from 'lucide-react';
-import { SCHOOL_PROFILE, TEACHERS } from '../data';
+import { SCHOOL_PROFILE, TEACHERS, CLASS_STAFF_2026_2027 } from '../data';
+import ShareButton from './ShareButton';
 
 import fotoGedungRJ from '../assets/images/fotogedungrj.jpeg';
 import bagianDepanRJ from '../assets/images/bagian depan rj.jpeg';
@@ -511,6 +514,104 @@ export default function Profile() {
                     )}
                   </div>
                 )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Staff Kelas MDT 2026-2027 M (1448 H) Section */}
+        <div className="space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-brand-divider/60 pb-6">
+            <div className="space-y-2 text-center md:text-left">
+              <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-amber-50 text-amber-900 text-[10px] font-extrabold rounded-full uppercase tracking-widest border border-amber-200">
+                <UserCheck className="w-3.5 h-3.5 text-amber-700" />
+                <span>Pengurus Kelas • 1448 H</span>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 font-serif">
+                Staff Kelas MDT 2026-2027 M (1448 H)
+              </h3>
+              <p className="text-slate-600 text-xs md:text-sm font-light max-w-2xl">
+                Susunan Ketua Kelas dan Wakil Ketua Kelas santri jenjang Awaliyah dan Wustho MDT Riyadlul Jannah yang bertugas mengkoordinasikan ketertiban serta kekompakan kelas.
+              </p>
+            </div>
+
+            <div className="self-center md:self-auto">
+              <ShareButton
+                variant="outline"
+                label="Bagikan Staff Kelas"
+                shareData={{
+                  title: "Staff Kelas MDT 2026-2027 M (1448 H)",
+                  text: `Staff Kelas MDT 2026-2027 M (1448 H) :\n\n` + CLASS_STAFF_2026_2027.map(c =>
+                    `${c.className}\n  Ketua Kelas : ${c.ketuaKelas}\n  Wakil Ketua : ${c.wakilKetua}`
+                  ).join('\n\n'),
+                  category: "Struktur Kelas"
+                }}
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {CLASS_STAFF_2026_2027.map((staff, idx) => (
+              <motion.div
+                key={staff.className}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.06 }}
+                className="bg-white border border-brand-divider rounded-2xl p-6 shadow-xs hover:shadow-md hover:border-emerald-500/40 transition-all duration-300 flex flex-col justify-between space-y-5 group"
+              >
+                <div className="flex items-center justify-between border-b border-slate-100 pb-3.5">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-xl bg-emerald-800 text-amber-300 font-mono font-extrabold text-xs flex items-center justify-center shadow-2xs">
+                      0{idx + 1}
+                    </div>
+                    <div>
+                      <h4 className="font-extrabold text-slate-900 text-base font-serif group-hover:text-emerald-800 transition-colors">
+                        {staff.className}
+                      </h4>
+                      <span className="text-[10px] uppercase font-mono font-bold tracking-wider text-emerald-700">
+                        Jenjang {staff.category}
+                      </span>
+                    </div>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80">
+                    1448 H
+                  </span>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-100 flex items-center justify-between gap-2">
+                    <div>
+                      <span className="text-[10px] uppercase tracking-wider font-extrabold text-emerald-700 block">
+                        Ketua Kelas
+                      </span>
+                      <p className="font-bold text-sm sm:text-base text-emerald-950 font-serif mt-0.5">
+                        {staff.ketuaKelas}
+                      </p>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-emerald-800 text-white flex items-center justify-center shrink-0">
+                      <ShieldCheck className="w-4 h-4 text-amber-300" />
+                    </div>
+                  </div>
+
+                  <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-between gap-2">
+                    <div>
+                      <span className="text-[10px] uppercase tracking-wider font-bold text-slate-500 block">
+                        Wakil Ketua
+                      </span>
+                      <p className="font-bold text-sm sm:text-base text-slate-800 font-serif mt-0.5">
+                        {staff.wakilKetua}
+                      </p>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-slate-200 text-slate-700 flex items-center justify-center shrink-0">
+                      <Users className="w-4 h-4" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[10px] font-mono text-slate-400">
+                  <span>TA {staff.academicYear}</span>
+                  <span className="text-emerald-700 font-bold uppercase">Aktif Menjabat</span>
+                </div>
               </motion.div>
             ))}
           </div>

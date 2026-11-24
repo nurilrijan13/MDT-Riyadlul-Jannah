@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Users, GraduationCap, UserCheck, Sparkles, School, PieChart, Info } from 'lucide-react';
+import { Users, GraduationCap, UserCheck, Sparkles, School, PieChart, Info, Crown, ShieldCheck } from 'lucide-react';
 import { STUDENT_STATS } from '../data';
 import ShareButton from './ShareButton';
 
@@ -29,8 +29,11 @@ export default function StudentStats({ className = '', compact = false }: Studen
   const awaliyahTotal = STUDENT_STATS.filter(s => s.category === 'Awaliyah').reduce((acc, curr) => acc + curr.total, 0);
   const wusthoTotal = STUDENT_STATS.filter(s => s.category === 'Wustho').reduce((acc, curr) => acc + curr.total, 0);
 
-  const shareText = `Data Jumlah Murid MDT Riyadlul Jannah:\n\n` +
-    STUDENT_STATS.map(s => `${s.level} : ${s.total} santri (Putra: ${s.putra}, Putri: ${s.putri})`).join('\n') +
+  const shareText = `Data Jumlah Murid & Staff Kelas MDT Riyadlul Jannah (2026-2027 M / 1448 H):\n\n` +
+    STUDENT_STATS.map(s =>
+      `${s.level} : ${s.total} santri (Putra: ${s.putra}, Putri: ${s.putri})` +
+      (s.ketuaKelas ? `\n  • Ketua Kelas: ${s.ketuaKelas}\n  • Wakil Ketua: ${s.wakilKetua}` : '')
+    ).join('\n\n') +
     `\n\nTotal Santri: ${totalOverall} (Putra: ${totalPutra}, Putri: ${totalPutri})`;
 
   return (
@@ -243,10 +246,35 @@ export default function StudentStats({ className = '', compact = false }: Studen
                     />
                   </div>
                 </div>
+
+                {/* Staff Kelas 2026-2027 M (1448 H) */}
+                {(item.ketuaKelas || item.wakilKetua) && (
+                  <div className="mt-4 pt-3 border-t border-slate-200/70 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] uppercase font-extrabold tracking-wider text-emerald-800 flex items-center gap-1">
+                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-700" />
+                        <span>Staff Kelas 2026-2027 M</span>
+                      </span>
+                      <span className="text-[9px] font-mono font-bold text-amber-800 bg-amber-100/80 px-1.5 py-0.5 rounded">
+                        1448 H
+                      </span>
+                    </div>
+                    <div className="bg-white border border-emerald-100/90 rounded-xl p-2.5 space-y-1.5 text-xs">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-[10px] uppercase font-bold text-slate-400 shrink-0">Ketua Kelas</span>
+                        <span className="font-bold text-emerald-950 font-serif text-right">{item.ketuaKelas}</span>
+                      </div>
+                      <div className="border-t border-slate-100 pt-1.5 flex items-center justify-between gap-2">
+                        <span className="text-[10px] uppercase font-bold text-slate-400 shrink-0">Wakil Ketua</span>
+                        <span className="font-semibold text-slate-800 font-serif text-right">{item.wakilKetua}</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className="mt-4 pt-3 border-t border-slate-200/50 flex items-center justify-between text-[11px] text-slate-400">
-                <span className="font-mono text-[10px]">TA 2025/2026</span>
+                <span className="font-mono text-[10px]">TA 2026/2027 (1448 H)</span>
                 <span className="text-emerald-700 font-bold">Aktif Terdaftar</span>
               </div>
             </motion.div>

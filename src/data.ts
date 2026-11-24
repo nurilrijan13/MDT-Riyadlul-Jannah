@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Announcement, Teacher, Program, StudentProfile, ClassStudentCount, BahtsulMasailSession } from './types';
+import { Announcement, Teacher, Program, StudentProfile, ClassStudentCount, ClassStaff, BahtsulMasailSession } from './types';
 import asatidzPhoto from './assets/images/asatidz.jpg';
 import musyawarahMalam from './assets/images/musyawarahmalam.jpeg';
 import rapatBulanan from './assets/images/rapatbulanan.jpeg';
@@ -597,6 +597,36 @@ export const HSN_2026_DATA = {
 };
 
 export const ANNOUNCEMENTS: Announcement[] = [
+  {
+    id: "staff-kelas-mdt-2026-2027",
+    title: "Penetapan Susunan Staff Kelas MDT Riyadlul Jannah Tahun Ajaran 2026-2027 M (1448 H)",
+    content: `Staff Kelas MDT 2026-2027 M (1448 H) :
+
+1 AWALIYAH
+   • Ketua Kelas : Syafi Uddin
+   • Wakil Ketua : Khuzaimah
+
+2 AWALIYAH
+   • Ketua Kelas : Layla Maulida
+   • Wakil Ketua : Raja Darmawan
+
+3 AWALIYAH
+   • Ketua Kelas : Latyfatul Barryroh
+   • Wakil Ketua : Putri Nur Alika Febriyanti
+
+1 WUSTHO
+   • Ketua Kelas : Siti Kholipah
+   • Wakil Ketua : M. Rafif Chandra
+
+2 WUSTHO
+   • Ketua Kelas : Fawazul Akmal
+   • Wakil Ketua : Arfi Hamada
+
+Semoga amanah yang diemban oleh seluruh Ketua dan Wakil Ketua Kelas dapat dijalankan dengan penuh tanggung jawab, menjadi teladan dalam kedisiplinan dan akhlakul karimah, serta mendukung kelancaran Kegiatan Belajar Mengajar (KBM) di MDT Riyadlul Jannah.`,
+    date: "2026-07-15",
+    category: "pengumuman",
+    important: true
+  },
   {
     id: "sang-juarawan-lomba-hsn-2026",
     title: "SANG JUARAWAN LOMBA MUSYABAQOH HARI SANTRI NASIONAL 22 OKTOBER 2026 MDT RIYADLUL JANNAH CIKARANG UTARA BEKASI",
@@ -1432,40 +1462,88 @@ export const ACADEMIC_CALENDAR = {
   ]
 };
 
+export const CLASS_STAFF_2026_2027: ClassStaff[] = [
+  {
+    className: "1 AWALIYAH",
+    category: "Awaliyah",
+    ketuaKelas: "Syafi Uddin",
+    wakilKetua: "Khuzaimah",
+    academicYear: "2026-2027 M (1448 H)"
+  },
+  {
+    className: "2 AWALIYAH",
+    category: "Awaliyah",
+    ketuaKelas: "Layla Maulida",
+    wakilKetua: "Raja Darmawan",
+    academicYear: "2026-2027 M (1448 H)"
+  },
+  {
+    className: "3 AWALIYAH",
+    category: "Awaliyah",
+    ketuaKelas: "Latyfatul Barryroh",
+    wakilKetua: "Putri Nur Alika Febriyanti",
+    academicYear: "2026-2027 M (1448 H)"
+  },
+  {
+    className: "1 WUSTHO",
+    category: "Wustho",
+    ketuaKelas: "Siti Kholipah",
+    wakilKetua: "M. Rafif Chandra",
+    academicYear: "2026-2027 M (1448 H)"
+  },
+  {
+    className: "2 WUSTHO",
+    category: "Wustho",
+    ketuaKelas: "Fawazul Akmal",
+    wakilKetua: "Arfi Hamada",
+    academicYear: "2026-2027 M (1448 H)"
+  }
+];
+
 export const STUDENT_STATS: ClassStudentCount[] = [
   {
     level: "1 Awaliyah",
     total: 33,
     putra: 18,
     putri: 15,
-    category: "Awaliyah"
+    category: "Awaliyah",
+    ketuaKelas: "Syafi Uddin",
+    wakilKetua: "Khuzaimah"
   },
   {
     level: "2 Awaliyah",
     total: 19,
     putra: 3,
     putri: 16,
-    category: "Awaliyah"
+    category: "Awaliyah",
+    ketuaKelas: "Layla Maulida",
+    wakilKetua: "Raja Darmawan"
   },
   {
     level: "3 Awaliyah",
     total: 20,
     putra: 9,
     putri: 11,
-    category: "Awaliyah"
+    category: "Awaliyah",
+    ketuaKelas: "Latyfatul Barryroh",
+    wakilKetua: "Putri Nur Alika Febriyanti"
   },
   {
     level: "1 Wustho",
     total: 11,
     putra: 9,
     putri: 3,
-    category: "Wustho"
+    category: "Wustho",
+    ketuaKelas: "Siti Kholipah",
+    wakilKetua: "M. Rafif Chandra"
   },
   {
     level: "2 Wustho",
     total: 7,
     putra: 3,
     putri: 4,
-    category: "Wustho"
+    category: "Wustho",
+    ketuaKelas: "Fawazul Akmal",
+    wakilKetua: "Arfi Hamada"
   }
 ];

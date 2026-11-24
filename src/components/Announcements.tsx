@@ -5,8 +5,8 @@
 
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Calendar, Tag, Search, MessageSquare, AlertCircle, ChevronRight, Award, Trophy, Star, Crown, Sparkles, BookOpen, HelpCircle, CheckCircle2, MapPin, Clock, UserCheck, FileText, Scale, BookMarked } from 'lucide-react';
-import { ANNOUNCEMENTS, RANKING_DATA_DAUR_2, BAHTSUL_MASAIL_SESSION_AUGUST_2026, HSN_2026_DATA } from '../data';
+import { Calendar, Tag, Search, MessageSquare, AlertCircle, ChevronRight, Award, Trophy, Star, Crown, Sparkles, BookOpen, HelpCircle, CheckCircle2, MapPin, Clock, UserCheck, FileText, Scale, BookMarked, Users, ShieldCheck } from 'lucide-react';
+import { ANNOUNCEMENTS, RANKING_DATA_DAUR_2, BAHTSUL_MASAIL_SESSION_AUGUST_2026, HSN_2026_DATA, CLASS_STAFF_2026_2027 } from '../data';
 import { Announcement } from '../types';
 import ShareButton from './ShareButton';
 
@@ -194,11 +194,76 @@ export default function Announcements() {
                 )}
 
                 {/* Content text (for standard announcements) */}
-                {activeAnnouncement.id !== 'bahtsul-masail-usbuyah-4-agustus-2026' && activeAnnouncement.id !== 'sang-juarawan-lomba-hsn-2026' && (
+                {activeAnnouncement.id !== 'bahtsul-masail-usbuyah-4-agustus-2026' &&
+                  activeAnnouncement.id !== 'sang-juarawan-lomba-hsn-2026' &&
+                  activeAnnouncement.id !== 'staff-kelas-mdt-2026-2027' && (
                   <div className="space-y-4 text-slate-600 text-sm md:text-base leading-relaxed font-light font-sans">
                     {activeAnnouncement.content.split('\n\n').map((paragraph, index) => (
                       <p key={index}>{paragraph}</p>
                     ))}
+                  </div>
+                )}
+
+                {/* Special Visual Display for Staff Kelas MDT 2026-2027 M (1448 H) */}
+                {activeAnnouncement.id === 'staff-kelas-mdt-2026-2027' && (
+                  <div className="space-y-6">
+                    <div className="p-6 rounded-2xl bg-gradient-to-br from-emerald-900 via-emerald-950 to-slate-900 text-white border border-emerald-700/60 shadow-md space-y-2.5">
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-amber-400 text-amber-950 rounded-full text-[11px] font-mono font-extrabold uppercase">
+                        <UserCheck className="w-3.5 h-3.5" />
+                        <span>Pengurus Kelas Resmi • 1448 H</span>
+                      </div>
+                      <h4 className="text-xl sm:text-2xl font-black font-serif text-white tracking-tight">
+                        Staff Kelas MDT 2026-2027 M (1448 H)
+                      </h4>
+                      <p className="text-xs text-emerald-200/90 font-light">
+                        Madrasah Diniyah Takmiliyah Riyadlul Jannah • Pasir Gombong, Cikarang Utara, Bekasi
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {CLASS_STAFF_2026_2027.map((staff, idx) => (
+                        <div
+                          key={staff.className}
+                          className="p-4 rounded-xl border border-slate-200 bg-slate-50/60 hover:bg-white hover:border-emerald-400 transition-all space-y-3"
+                        >
+                          <div className="flex items-center justify-between border-b border-slate-200/60 pb-2">
+                            <div className="flex items-center gap-2">
+                              <span className="w-6 h-6 rounded-lg bg-emerald-800 text-amber-300 text-[11px] font-mono font-extrabold flex items-center justify-center">
+                                0{idx + 1}
+                              </span>
+                              <span className="font-extrabold text-sm text-emerald-950 font-serif">
+                                {staff.className}
+                              </span>
+                            </div>
+                            <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
+                              {staff.category}
+                            </span>
+                          </div>
+
+                          <div className="space-y-2 text-xs">
+                            <div className="p-2.5 rounded-lg bg-white border border-emerald-100 flex items-center justify-between gap-2">
+                              <span className="text-[10px] font-bold uppercase text-emerald-700 flex items-center gap-1 shrink-0">
+                                <ShieldCheck className="w-3.5 h-3.5" />
+                                <span>Ketua Kelas</span>
+                              </span>
+                              <span className="font-bold text-slate-900 font-serif text-right">{staff.ketuaKelas}</span>
+                            </div>
+
+                            <div className="p-2.5 rounded-lg bg-white border border-slate-200/80 flex items-center justify-between gap-2">
+                              <span className="text-[10px] font-bold uppercase text-slate-500 flex items-center gap-1 shrink-0">
+                                <Users className="w-3.5 h-3.5" />
+                                <span>Wakil Ketua</span>
+                              </span>
+                              <span className="font-semibold text-slate-800 font-serif text-right">{staff.wakilKetua}</span>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="p-4 rounded-xl bg-emerald-50/70 border border-emerald-100 text-xs text-emerald-900/80 leading-relaxed font-light">
+                      Semoga amanah yang diemban oleh seluruh Ketua dan Wakil Ketua Kelas dapat dijalankan dengan penuh tanggung jawab, menjadi teladan dalam kedisiplinan dan akhlakul karimah, serta mendukung kelancaran Kegiatan Belajar Mengajar (KBM) di MDT Riyadlul Jannah.
+                    </div>
                   </div>
                 )}
 
